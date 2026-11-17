@@ -767,38 +767,20 @@ figma.ui.onmessage = async (msg) => {
         } = msg.payload || {};
 
         let node = await findNode(nodeId, componentName);
-        let wasCreated = false;
 
         if (!node) {
-          wasCreated = true;
-          node = figma.createComponent();
-          node.name = componentName || 'NewComponent';
-          node.resize(width || 200, height || 48);
-          node.layoutMode = 'HORIZONTAL';
-          node.primaryAxisAlignItems = 'CENTER';
-          node.counterAxisAlignItems = 'CENTER';
-          node.paddingLeft = node.paddingRight = padding?.left ?? 16;
-          node.paddingTop = node.paddingBottom = padding?.top ?? 10;
-          figma.currentPage.appendChild(node);
-
-          await figma.loadFontAsync({ family: 'Inter', style: 'Regular' });
-          const txt = figma.createText();
-          txt.characters = componentName || 'Component';
-          txt.fills = [{ type: 'SOLID', color: { r: 1, g: 1, b: 1 } }];
-          node.appendChild(txt);
-
-          figma.notify(`✅ Created "${node.name}" on canvas`);
-          log(`CREATED: "${node.name}" on canvas (id=${node.id})`);
-        } else {
-          const nodePage = getPageOfNode(node);
-          if (nodePage && nodePage.id !== figma.currentPage.id) {
-            try {
-              await figma.setCurrentPageAsync(nodePage);
-              log(`Switched to page "${nodePage.name}" for "${node.name}"`);
-            } catch {}
-          }
-          log(`UPDATING: "${node.name}" (${node.type}, id=${node.id})`);
+          log(`SKIPPED: "${componentName}" not found on canvas`);
+          break;
         }
+
+        const nodePage = getPageOfNode(node);
+        if (nodePage && nodePage.id !== figma.currentPage.id) {
+          try {
+            await figma.setCurrentPageAsync(nodePage);
+            log(`Switched to page "${nodePage.name}" for "${node.name}"`);
+          } catch {}
+        }
+        log(`UPDATING: "${node.name}" (${node.type}, id=${node.id})`);
 
         if (node.type === 'INSTANCE' && variantProperties && typeof variantProperties === 'object') {
           try {
