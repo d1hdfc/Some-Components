@@ -5,7 +5,7 @@
 
 _No description set in Figma._
 
-> Last updated: 2026-11-17T07:32:28.757Z
+> Last updated: 2026-11-17T07:33:10.169Z
 
 ## Overview
 
@@ -59,7 +59,7 @@ UIButton()
 
 | Size | Width × Height | Padding (T R B L) | Gap | Radius | Font size |
 | --- | --- | --- | --- | --- | --- |
-| Large | 194px × 72px | 0px 40px 0px 40px | 0px | 12px | 18px |
+| Large | 162px × 48px | 0px 20px 0px 20px | 4px | 12px | 18px |
 | Medium | 132px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px |
 | Small | 118px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px |
 | Xsmall | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px |
@@ -68,13 +68,13 @@ UIButton()
 
 | Spec | Value |
 | --- | --- |
-| Width × Height | 194px × 72px |
-| Padding | 0px 40px 0px 40px |
-| Gap | 0px |
+| Width × Height | 162px × 48px |
+| Padding | 0px 20px 0px 20px |
+| Gap | 4px |
 | Corner radius | 12px |
 | Font size | 18px |
 | Line height | — |
-| Background | #C7B9FF |
+| Background | #1C3FCA |
 | Text color | #FFFFFF |
 | Border color | #FFFFFF |
 | Layout mode | HORIZONTAL |
@@ -103,7 +103,7 @@ UIButton()
 | size=Large, style=Link, state=Pressed, type=Gradient | 114px × 24px | 0px 0px 0px 0px | 0px | 0px | 18px | — | — | — |
 | size=Large, style=Link, state=Pressed, type=Icon | 24px × 24px | 0px 0px 0px 0px | 0px | 0px | 18px | — | #FFFFFF | — |
 | size=Large, style=Link, state=Pressed, type=White | 114px × 24px | 0px 0px 0px 0px | 0px | 0px | 18px | — | #FFFFFF | — |
-| size=Large, style=Primary, state=Default, type=Default | 194px × 72px | 0px 40px 0px 40px | 0px | 12px | 18px | #C7B9FF | #FFFFFF | #FFFFFF |
+| size=Large, style=Primary, state=Default, type=Default | 162px × 48px | 0px 20px 0px 20px | 4px | 12px | 18px | #1C3FCA | #FFFFFF | #FFFFFF |
 | size=Large, style=Primary, state=Default, type=Gradient | 195px × 72px | 0px 40px 0px 40px | 0px | 12px | 18px | — | #FFFFFF | — |
 | size=Large, style=Primary, state=Default, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #1C3FCA | #FFFFFF | — |
 | size=Large, style=Primary, state=Default, type=White | 195px × 72px | 0px 40px 0px 40px | 0px | 12px | 18px | #FFFFFF | #1C3FCA | — |
@@ -111,7 +111,7 @@ UIButton()
 | size=Large, style=Primary, state=Disabled, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | — | #FFFFFF | — |
 | size=Large, style=Primary, state=Disabled, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #00815A | #FFFFFF | — |
 | size=Large, style=Primary, state=Disabled, type=White | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #FFFFFF | #9CB4F7 | — |
-| size=Large, style=Primary, state=Focus, type=Default | 195px × 72px | 0px 40px 0px 40px | 0px | 12px | 18px | #C7B9FF | #FFFFFF | #FFFFFF |
+| size=Large, style=Primary, state=Focus, type=Default | 163px × 48px | 0px 20px 0px 20px | 4px | 12px | 18px | #1C3FCA | #FFFFFF | #FFFFFF |
 | size=Large, style=Primary, state=Focus, type=Gradient | 195px × 72px | 0px 40px 0px 40px | 0px | 12px | 18px | — | #FFFFFF | — |
 | size=Large, style=Primary, state=Focus, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #1C3FCA | #FFFFFF | — |
 | size=Large, style=Primary, state=Focus, type=White | 195px × 72px | 0px 40px 0px 40px | 0px | 12px | 18px | #FFFFFF | #1C3FCA | — |
@@ -406,8 +406,23 @@ UIButton()
 
 ## Figma Changelog & Diff Status
 
-> [!TIP]
-> **Nothing changed** — the latest Figma sync matches the previous snapshot.
+> [!IMPORTANT]
+> **12 change(s) detected** in the latest Figma sync (2026-11-17T07:33:10.159Z).
+
+### Changes in latest sync
+
+- Base Width × Height: `194px × 72px` → `162px × 48px`
+- Base Padding: `0px 40px 0px 40px` → `0px 20px 0px 20px`
+- Base Gap: `0px` → `4px`
+- Base Background: `#C7B9FF` → `#1C3FCA`
+- Variant `size=Large, style=Primary, state=Default, type=Default` — Width × Height: `194px × 72px` → `162px × 48px`
+- Variant `size=Large, style=Primary, state=Default, type=Default` — Padding: `0px 40px 0px 40px` → `0px 20px 0px 20px`
+- Variant `size=Large, style=Primary, state=Default, type=Default` — Gap: `0px` → `4px`
+- Variant `size=Large, style=Primary, state=Default, type=Default` — Background: `#C7B9FF` → `#1C3FCA`
+- Variant `size=Large, style=Primary, state=Focus, type=Default` — Width × Height: `195px × 72px` → `163px × 48px`
+- Variant `size=Large, style=Primary, state=Focus, type=Default` — Padding: `0px 40px 0px 40px` → `0px 20px 0px 20px`
+- Variant `size=Large, style=Primary, state=Focus, type=Default` — Gap: `0px` → `4px`
+- Variant `size=Large, style=Primary, state=Focus, type=Default` — Background: `#C7B9FF` → `#1C3FCA`
 
 ### Previous changes
 

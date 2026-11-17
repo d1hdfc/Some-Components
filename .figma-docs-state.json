@@ -1,8 +1,25 @@
 {
   "button": {
-    "status": "unchanged",
+    "status": "changed",
     "baselineAt": "2026-11-09T07:52:17.559Z",
     "history": [
+      {
+        "at": "2026-11-17T07:33:10.159Z",
+        "changes": [
+          "Base Width × Height: `194px × 72px` → `162px × 48px`",
+          "Base Padding: `0px 40px 0px 40px` → `0px 20px 0px 20px`",
+          "Base Gap: `0px` → `4px`",
+          "Base Background: `#C7B9FF` → `#1C3FCA`",
+          "Variant `size=Large, style=Primary, state=Default, type=Default` — Width × Height: `194px × 72px` → `162px × 48px`",
+          "Variant `size=Large, style=Primary, state=Default, type=Default` — Padding: `0px 40px 0px 40px` → `0px 20px 0px 20px`",
+          "Variant `size=Large, style=Primary, state=Default, type=Default` — Gap: `0px` → `4px`",
+          "Variant `size=Large, style=Primary, state=Default, type=Default` — Background: `#C7B9FF` → `#1C3FCA`",
+          "Variant `size=Large, style=Primary, state=Focus, type=Default` — Width × Height: `195px × 72px` → `163px × 48px`",
+          "Variant `size=Large, style=Primary, state=Focus, type=Default` — Padding: `0px 40px 0px 40px` → `0px 20px 0px 20px`",
+          "Variant `size=Large, style=Primary, state=Focus, type=Default` — Gap: `0px` → `4px`",
+          "Variant `size=Large, style=Primary, state=Focus, type=Default` — Background: `#C7B9FF` → `#1C3FCA`"
+        ]
+      },
       {
         "at": "2026-11-17T07:32:13.704Z",
         "changes": [
@@ -186,37 +203,37 @@
         }
       },
       "base": {
-        "size": "194px × 72px",
-        "padding": "0px 40px 0px 40px",
-        "gap": "0px",
+        "size": "162px × 48px",
+        "padding": "0px 20px 0px 20px",
+        "gap": "4px",
         "radius": "12px",
         "fontSize": "18px",
         "lineHeight": null,
-        "background": "#C7B9FF",
+        "background": "#1C3FCA",
         "textColor": "#FFFFFF",
         "border": "#FFFFFF",
         "layoutMode": "HORIZONTAL"
       },
       "variants": {
         "size=Large, style=Primary, state=Default, type=Default": {
-          "size": "194px × 72px",
-          "padding": "0px 40px 0px 40px",
-          "gap": "0px",
+          "size": "162px × 48px",
+          "padding": "0px 20px 0px 20px",
+          "gap": "4px",
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#C7B9FF",
+          "background": "#1C3FCA",
           "textColor": "#FFFFFF",
           "border": "#FFFFFF"
         },
         "size=Large, style=Primary, state=Focus, type=Default": {
-          "size": "195px × 72px",
-          "padding": "0px 40px 0px 40px",
-          "gap": "0px",
+          "size": "163px × 48px",
+          "padding": "0px 20px 0px 20px",
+          "gap": "4px",
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#C7B9FF",
+          "background": "#1C3FCA",
           "textColor": "#FFFFFF",
           "border": "#FFFFFF"
         },
