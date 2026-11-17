@@ -52,6 +52,23 @@ export default function App() {
     return () => window.removeEventListener('hashchange', updatePage);
   }, []);
 
+  useEffect(() => {
+    if (!lastEvent) return;
+    if (
+      lastEvent.event === 'FIGMA_TO_CODE_COMPLETE' ||
+      lastEvent.event === 'FIGMA_TO_GITHUB_COMPLETE'
+    ) {
+      const created = lastEvent.result?.createdCount ?? 0;
+      const deleted = lastEvent.result?.deletedCount ?? 0;
+      if (created > 0 || deleted > 0) {
+        const timer = window.setTimeout(() => {
+          window.location.reload();
+        }, 700);
+        return () => window.clearTimeout(timer);
+      }
+    }
+  }, [lastEvent]);
+
   const genericComponent = componentDocumentation.find(
     (component) => component.routeSlug === currentPage && component.routeSlug !== 'button'
   );

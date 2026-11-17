@@ -872,13 +872,15 @@ function generateComponentFiles(figmaNode, options = {}) {
   }
 
   enforceFourFileStructure(componentDir, kebabName);
+  const pageName = appPageGenerator.ensureSingleComponentPage(kebabName) || `${pascalName}Page`;
   appPageGenerator.syncAppComponentPages();
 
-  console.log(`[CodeGenerator] Generated 4-file component (${kebabName}.tsx, .types.ts, .scss, .dart) in ${componentDir}`);
+  console.log(`[CodeGenerator] Generated 5-file component (${kebabName}.tsx, .types.ts, .scss, .dart, .md) in ${componentDir} & page src/app/pages/${pageName}`);
 
   return {
     componentName: pascalName,
     folder: kebabName,
+    pageName,
     files: {
       react: tsxPath,
       types: typesPath,
@@ -896,7 +898,7 @@ function deleteComponentFiles(rawName) {
   const kebabName = toKebabCase(rawName);
   const pascalName = toPascalCase(rawName);
   const componentDir = path.join(getComponentsDir(), kebabName);
-  const pageDirName = `${appPageGenerator.toPageName(kebabName)}Page`;
+  const pageDirName = `${pascalName}Page`;
   const pageDir = path.join(process.cwd(), 'src', 'app', 'pages', pageDirName);
 
   let removedAnything = false;
@@ -1016,6 +1018,7 @@ function normalizeSingleComponentFolder(rawFolderName) {
   ensureExportInIndex(pascalName, folder);
   ensureInLibraryScss(folder);
   enforceFourFileStructure(folderPath, folder);
+  appPageGenerator.ensureSingleComponentPage(folder);
   appPageGenerator.syncAppComponentPages();
   return folder;
 }
