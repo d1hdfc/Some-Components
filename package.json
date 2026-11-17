@@ -29,7 +29,7 @@
     "sync-tokens": "npx tsx src/tokens/figmaSyncTokens.ts --generate",
     "tokens:watch": "npx tsx src/tokens/figmaSyncTokens.ts --watch",
     "predev": "npm run sync:app-pages",
-    "dev": "concurrently -k \"npm run tokens:watch\" \"npm run figma:components:watch\" \"vite\"",
+    "dev": "vite --port 5174",
     "prebuild": "npm run sync:app-pages",
     "sync:app-pages": "node scripts/app-page-generator.cjs",
     "figma:components:sync": "tsx src/figma/syncComponents.ts",

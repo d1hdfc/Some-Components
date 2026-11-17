@@ -426,10 +426,16 @@ async function exportFullFigmaState(reason = 'manual', options = {}) {
 
   const collectFromPage = (page) => {
     if (isIgnoredPageName(page.name)) return;
+    const pageMap = new Map();
     const visit = (n, isTopLevel = false) => {
       if (!n || n.type === 'INSTANCE') return;
       if (isCandidateComponentNode(n, isTopLevel)) {
-        components.push(serializeComponentNode(n, page.name, selectedIds));
+        const serialized = serializeComponentNode(n, page.name, selectedIds);
+        const key = toKebabTokenName(String(serialized.name || '').replace(/^\d+[\.\s_-]+/, ''));
+        const existing = pageMap.get(key);
+        if (!existing || (serialized.type === 'COMPONENT_SET' && existing.type !== 'COMPONENT_SET')) {
+          pageMap.set(key, serialized);
+        }
         return;
       }
       if ('children' in n && Array.isArray(n.children)) {
@@ -439,15 +445,15 @@ async function exportFullFigmaState(reason = 'manual', options = {}) {
     if ('children' in page && Array.isArray(page.children)) {
       for (const child of page.children) visit(child, true);
     }
+    for (const comp of pageMap.values()) {
+      components.push(comp);
+    }
   };
 
   const isFullScan = (
     reason === 'manual' ||
     reason === 'github-sync' ||
-    reason === 'auto-connect' ||
-    reason === 'document-change' ||
-    reason === 'canvas-add-or-delete' ||
-    reason === 'pages-change'
+    reason === 'auto-connect'
   );
 
   if (isFullScan) {
@@ -472,28 +478,12 @@ async function exportFullFigmaState(reason = 'manual', options = {}) {
     for (const comp of components) {
       knownCanvasComponents.set(comp.id, { id: comp.id, name: comp.name, pageName: comp.pageName });
     }
-  } else {
-    const currentPageName = figma.currentPage.name;
-    const currentPageIds = new Set(components.map(c => c.id));
-    for (const [prevId, prevMeta] of knownCanvasComponents.entries()) {
-      if (prevMeta.pageName === currentPageName && !currentPageIds.has(prevId)) {
-        deletedComponents.push(prevMeta);
-        knownCanvasComponents.delete(prevId);
-      }
-    }
-    for (const comp of components) {
-      knownCanvasComponents.set(comp.id, { id: comp.id, name: comp.name, pageName: comp.pageName });
-    }
   }
 
   const allPageNames = figma.root.children.map(p => p.name);
   const pushToGithub = Boolean(
     options.pushToGithub ||
-    reason === 'github-sync' ||
-    reason === 'manual' ||
-    reason === 'canvas-add-or-delete' ||
-    reason === 'pages-change' ||
-    reason === 'document-change'
+    reason === 'github-sync'
   );
 
   figma.ui.postMessage({
@@ -927,10 +917,6 @@ figma.ui.onmessage = async (msg) => {
         const summary = `fontSize=${fontSize ?? 'map'}px (${updatedVariants} variants, ${updatedTexts} text nodes)`;
         figma.notify(`✅ Updated "${node.name}" — ${summary}`);
         log(`UPDATED: "${node.name}" — ${summary}`);
-
-        if (wasCreated) {
-          await exportFullFigmaState('code-created-component');
-        }
       } finally {
         setTimeout(() => { isApplyingCodeUpdate = false; }, 1500);
       }
@@ -951,107 +937,4 @@ figma.ui.onmessage = async (msg) => {
   }
 };
 
-// ── Real-Time Figma Change Listeners (Figma ➔ Code) ─────────
-
-let docChangeTimer = null;
-let lastAllPagesListHash = '';
-
-async function initRealtimeWatchers() {
-  try {
-    await ensureAllPagesLoaded();
-    figma.on('documentchange', (event) => {
-      if (isApplyingCodeUpdate) return;
-      const relevant = (event.documentChanges || []).some(
-        ch => ch.type === 'PROPERTY_CHANGE' || ch.type === 'CREATE' || ch.type === 'DELETE'
-      );
-      if (!relevant) return;
-
-      if ( docChangeTimer ) clearTimeout(docChangeTimer);
-      docChangeTimer = setTimeout(() => {
-        docChangeTimer = null;
-        exportFullFigmaState('document-change');
-      }, 800);
-    });
-    log('Real-time Figma canvas watcher active');
-  } catch (e) {
-    log(`⚠ Document watcher setup note: ${e.message}`);
-  }
-
-  setInterval(async () => {
-    if (isApplyingCodeUpdate) return;
-    try {
-      const { rawVariables } = await extractFigmaVariablesPayload();
-      const currentHash = rawVariables.map(v => `${v.scssKey}:${v.scssValue}`).join('|');
-      if (lastVariablesHash && currentHash !== lastVariablesHash) {
-        lastVariablesHash = currentHash;
-        log('🔄 Detected Figma Variables change — auto-syncing to VS Code...');
-        await exportFullFigmaState('variables-change');
-        return;
-      } else if (!lastVariablesHash) {
-        lastVariablesHash = currentHash;
-      }
-
-      // Snapshot all pages in document to detect when an entire Figma Page (e.g. Button1, Button2) is added or deleted
-      const currentPagesHash = figma.root.children.map(p => `${p.id}:${p.name}`).join('|');
-      if (lastAllPagesListHash && currentPagesHash !== lastAllPagesListHash) {
-        lastAllPagesListHash = currentPagesHash;
-        log('🔄 Detected Figma page list change (Page added/deleted) — auto-syncing to VS Code...');
-        await exportFullFigmaState('pages-change');
-        return;
-      } else if (!lastAllPagesListHash) {
-        lastAllPagesListHash = currentPagesHash;
-      }
-
-      // Snapshot all components on current page to detect hands-free ADD / EDIT / DELETE
-      const pageComps = [];
-      const visitPage = (n, isTopLevel = false) => {
-        if (!n || n.type === 'INSTANCE') return;
-        if (isCandidateComponentNode(n, isTopLevel)) {
-          const clean = n.name.trim();
-          const sample = (n.type === 'COMPONENT_SET' && Array.isArray(n.children) && n.children[0]) ? n.children[0] : n;
-          const txt = findAllTextChildren(sample)[0];
-          const fill = ('fills' in sample) ? extractFirstSolidColor(sample.fills)?.hex : '';
-          pageComps.push(`${n.id}:${clean}:${Math.round(sample.width || 0)}x${Math.round(sample.height || 0)}:p${'paddingLeft' in sample ? Math.round(sample.paddingLeft) : ''}:r${'cornerRadius' in sample ? String(sample.cornerRadius) : ''}:fs${txt ? String(txt.fontSize) : ''}:bg${fill}`);
-          return;
-        }
-        if ('children' in n && Array.isArray(n.children)) {
-          for (const c of n.children) visitPage(c, false);
-        }
-      };
-      if (!isIgnoredPageName(figma.currentPage.name) && 'children' in figma.currentPage) {
-        for (const child of figma.currentPage.children) visitPage(child, true);
-      }
-      const pageCompSnap = `${figma.currentPage.id}::${pageComps.join('|')}`;
-      if (lastPageComponentsHash && pageCompSnap !== lastPageComponentsHash) {
-        const prevPageId = lastPageComponentsHash.split('::')[0];
-        lastPageComponentsHash = pageCompSnap;
-        if (prevPageId === figma.currentPage.id) {
-          log('🔄 Detected canvas component lifecycle change (ADD / EDIT / DELETE) — auto-syncing to VS Code...');
-          await exportFullFigmaState('canvas-add-or-delete');
-          return;
-        }
-      } else {
-        lastPageComponentsHash = pageCompSnap;
-      }
-
-      if (figma.currentPage.selection.length > 0) {
-        const selSnap = figma.currentPage.selection.map(n => {
-          const txt = findAllTextChildren(n)[0];
-          const fill = ('fills' in n) ? extractFirstSolidColor(n.fills)?.hex : '';
-          return `${n.id}:${Math.round(n.width)}x${Math.round(n.height)}:p${'paddingLeft' in n ? Math.round(n.paddingLeft) : ''}:r${'cornerRadius' in n ? String(n.cornerRadius) : ''}:fs${txt ? String(txt.fontSize) : ''}:bg${fill}`;
-        }).join('|');
-        if (lastSelectionHash && selSnap !== lastSelectionHash) {
-          lastSelectionHash = selSnap;
-          log('🔄 Detected selected component edit — auto-syncing to VS Code...');
-          await exportFullFigmaState('selection-edit');
-        } else {
-          lastSelectionHash = selSnap;
-        }
-      }
-    } catch {
-      // Ignore transient errors
-    }
-  }, 2000);
-}
-
-initRealtimeWatchers();
+log('Ready in Manual Button-Triggered Sync Mode (background canvas watchers disabled).');

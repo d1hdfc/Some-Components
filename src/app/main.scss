@@ -22,17 +22,15 @@ input {
 
 .docs-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 200px;
+  grid-template-columns: 248px minmax(0, 1fr) 190px;
   align-items: start;
-  max-width: 1360px;
-  margin: 0 auto;
-  min-height: 100vh;
+  min-height: calc(100vh - 56px);
 }
 
 .docs-toc {
   position: sticky;
-  top: 32px;
-  max-height: calc(100vh - 64px);
+  top: 82px;
+  max-height: calc(100vh - 96px);
   overflow-y: auto;
   margin-top: 38px;
   padding: 0 20px 20px 0;
@@ -71,10 +69,16 @@ input {
 
 @media (max-width: 900px) {
   .docs-layout {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: 220px minmax(0, 1fr);
   }
 
   .docs-toc {
     display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .docs-layout {
+    display: block;
   }
 }

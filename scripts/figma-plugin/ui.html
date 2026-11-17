@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <title>Two-Way Auto-Sync & GitHub Pipeline</title>
+  <title>On-Demand Manual Sync & GitHub Pipeline</title>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -13,7 +12,6 @@
       background: #f7f8fa;
       font-size: 13px;
     }
-
     h2 {
       margin: 0 0 10px;
       font-size: 15px;
@@ -23,7 +21,6 @@
       justify-content: space-between;
       gap: 8px;
     }
-
     .badge {
       display: inline-block;
       padding: 3px 9px;
@@ -31,17 +28,14 @@
       border-radius: 12px;
       font-weight: 600;
     }
-
     .badge-connected {
       background: #e6f4ea;
       color: #137333;
     }
-
     .badge-disconnected {
       background: #fce8e6;
       color: #c5221f;
     }
-
     .card {
       background: #fff;
       border: 1px solid #dfe1e6;
@@ -50,7 +44,6 @@
       margin-bottom: 10px;
       box-shadow: 0 1px 2px rgba(9, 30, 66, 0.04);
     }
-
     .repo-meta {
       background: #f0f4ff;
       border: 1px solid #c9d8ff;
@@ -61,19 +54,16 @@
       line-height: 1.45;
       color: #1d2939;
     }
-
     .repo-meta div {
       display: flex;
       justify-content: space-between;
       gap: 8px;
     }
-
     .repo-meta code {
       font-family: monospace;
       color: #0c41b8;
       font-weight: 600;
     }
-
     .btn {
       display: block;
       width: 100%;
@@ -90,48 +80,38 @@
       margin-top: 6px;
       transition: background 0.15s ease, opacity 0.15s ease;
     }
-
     .btn:hover:not(:disabled) {
       background: #1d4076;
     }
-
     .btn:disabled {
       opacity: 0.65;
       cursor: wait;
     }
-
     .btn-github {
       background: linear-gradient(135deg, #117a37 0%, #1a9f49 100%);
       font-size: 13.5px;
       padding: 10px 12px;
-      margin-top: 0;
-      margin-bottom: 8px;
+      margin-top: 6px;
       box-shadow: 0 2px 5px rgba(17, 122, 55, 0.25);
     }
-
     .btn-github:hover:not(:disabled) {
       background: linear-gradient(135deg, #0d622c 0%, #14803a 100%);
     }
-
     .btn-primary-sync {
       background: #1245c8;
     }
-
     .btn-primary-sync:hover:not(:disabled) {
       background: #0c2f8f;
     }
-
     .btn-secondary {
       background: #fff;
       color: #0c2340;
       border: 1px solid #d1d5db;
       font-weight: 500;
     }
-
     .btn-secondary:hover:not(:disabled) {
       background: #f3f4f6;
     }
-
     .status-banner {
       display: none;
       padding: 8px 10px;
@@ -141,28 +121,24 @@
       margin-bottom: 8px;
       line-height: 1.4;
     }
-
     .status-banner.syncing {
       display: block;
       background: #fff8e6;
       border: 1px solid #f5cd47;
       color: #7f5f01;
     }
-
     .status-banner.success {
       display: block;
       background: #e6f4ea;
       border: 1px solid #8fd19e;
       color: #137333;
     }
-
     .status-banner.error {
       display: block;
       background: #fce8e6;
       border: 1px solid #f5a69f;
       color: #c5221f;
     }
-
     .log-box {
       background: #1e1e1e;
       color: #d4d4d4;
@@ -177,10 +153,9 @@
     }
   </style>
 </head>
-
 <body>
   <h2>
-    <span>HDFC Two-Way Auto-Sync</span>
+    <span>HDFC On-Demand Sync</span>
     <span id="statusBadge" class="badge badge-disconnected">Disconnected</span>
   </h2>
 
@@ -188,19 +163,19 @@
     <div class="repo-meta">
       <div><span>Figma File:</span> <code id="figmaFileLabel">Detecting...</code></div>
       <div><span>Target Repo:</span> <code id="targetRepoLabel">d1hdfc/Some-Components</code></div>
-      <div><span>Bridge:</span> <code>ws://localhost:3055</code></div>
+      <div><span>Mode:</span> <code>Manual Button-Triggered (ws://localhost:3055)</code></div>
     </div>
 
     <div id="syncStatusBanner" class="status-banner"></div>
 
+    <button id="syncNowBtn" class="btn">Sync Figma File ➔ VS Code</button>
     <button id="figmaToGithubBtn" class="btn btn-github">🚀 Figma to GitHub Sync</button>
-    <button id="syncNowBtn" class="btn">Sync Figma File ➔ VS Code (Add / Edit / Delete)</button>
     <button id="syncCodeToFigmaBtn" class="btn btn-primary-sync">Sync VS Code ➔ Figma Canvas</button>
     <button id="reconnectBtn" class="btn btn-secondary">Reconnect Bridge</button>
   </div>
 
-  <div style="font-weight: 600; margin-bottom: 6px; font-size: 12px;">Live Sync & Git Activity Log</div>
-  <div id="logBox" class="log-box">Initializing Figma bridge...</div>
+  <div style="font-weight: 600; margin-bottom: 6px; font-size: 12px;">Sync & Git Activity Log</div>
+  <div id="logBox" class="log-box">Ready (Manual On-Demand Mode — click a button above to sync)...</div>
 
   <script>
     const statusBadge = document.getElementById('statusBadge');
@@ -245,7 +220,7 @@
       } else if (/some[\s-_]*components/i.test(activeFileName) || activeFileKey === 'NhsXzdYzA1O9TPQlRL3wC4') {
         targetRepoLabel.textContent = 'd1hdfc/Some-Components';
       } else if (/ui[\s-_]*components|foundations/i.test(activeFileName) || activeFileKey === 'CXxUbHl3oMzt9Bzv3SKv75') {
-        targetRepoLabel.textContent = 'd1hdfc/Some-Components';
+        targetRepoLabel.textContent = 'd1hdfc/UI-Components';
       }
     }
 
@@ -255,6 +230,7 @@
         setBanner('error', '❌ Sync server is disconnected (ws://localhost:3055).');
         return;
       }
+      setBanner('syncing', '⏳ Pushing local VS Code component styles to Figma Canvas...');
       socket.send(JSON.stringify({
         type: 'message',
         channel: 'figma-sync',
@@ -278,19 +254,12 @@
 
         socket.onopen = () => {
           statusBadge.className = 'badge badge-connected';
-          statusBadge.textContent = 'Live Connected';
-          log('Connected to sync server! Universal Add/Edit/Delete auto-sync active.');
+          statusBadge.textContent = 'Connected (Manual Mode)';
+          log('Connected to ws://localhost:3055. Waiting for manual button click.');
           socket.send(JSON.stringify({ type: 'join', channel: 'figma-sync' }));
           parent.postMessage({
             pluginMessage: {
               type: 'REQUEST_FILE_INFO'
-            }
-          }, '*');
-          parent.postMessage({
-            pluginMessage: {
-              type: 'REQUEST_FULL_FIGMA_EXPORT',
-              reason: 'auto-connect',
-              pushToGithub: true
             }
           }, '*');
         };
@@ -305,33 +274,45 @@
                 updateRepoLabels(payload.fileName, payload.fileKey, payload.repoName);
               }
 
-              if (payload.event === 'FIGMA_TO_GITHUB_COMPLETE' || payload.event === 'FIGMA_TO_CODE_COMPLETE') {
+              if (payload.event === 'FIGMA_TO_CODE_COMPLETE') {
+                syncNowBtn.disabled = false;
+                syncNowBtn.textContent = 'Sync Figma File ➔ VS Code';
+                const result = payload.result || {};
+                const summary = `+${result.createdCount || 0} added, ~${result.updatedCount || 0} edited, -${result.deletedCount || 0} deleted, ${result.tokensUpdated || 0} tokens`;
+                const statusMsg = `✅ Synced to VS Code & Portal Sidebar (${summary})`;
+                setBanner('success', statusMsg);
+                log(statusMsg);
+                parent.postMessage({
+                  pluginMessage: {
+                    type: 'NOTIFY_GITHUB_SYNC',
+                    success: true,
+                    message: statusMsg
+                  }
+                }, '*');
+              } else if (payload.event === 'FIGMA_TO_GITHUB_COMPLETE') {
                 figmaToGithubBtn.disabled = false;
                 figmaToGithubBtn.textContent = '🚀 Figma to GitHub Sync';
+                syncNowBtn.disabled = false;
+                syncNowBtn.textContent = 'Sync Figma File ➔ VS Code';
                 const result = payload.result || {};
                 const git = payload.git || {};
-                const summary = `+${result.createdCount || 0} added, ~${result.updatedCount || 0} edited, -${result.deletedCount || 0} deleted, ${result.tokensUpdated || 0} tokens`;
-
-                log(`Figma ➔ Code (${summary})`);
-
-                if (git && (git.pushed || git.committed || git.success)) {
+                const summary = `+${result.createdCount || 0} added, ~${result.updatedCount || 0} edited, -${result.deletedCount || 0} deleted`;
+                if (git && git.success) {
                   const repoText = payload.repoName || git.repoUrl || targetRepoLabel.textContent;
                   const statusMsg = git.pushed
-                    ? `✅ Pushed to ${repoText} (${git.branch || 'main'}) — ${summary}`
-                    : `✅ Synced (${summary}) — ${git.message || 'Up to date on GitHub'}`;
+                    ? `🚀 Pushed to ${repoText} (${git.branch || 'main'}) — ${summary}`
+                    : `✅ ${git.message || 'Up to date on GitHub'} (${summary})`;
                   setBanner('success', statusMsg);
-                  log(`GitHub Push: ${statusMsg}`);
-                  if (payload.source === 'github-sync') {
-                    parent.postMessage({
-                      pluginMessage: {
-                        type: 'NOTIFY_GITHUB_SYNC',
-                        success: true,
-                        message: statusMsg
-                      }
-                    }, '*');
-                  }
-                } else if (git && git.error) {
-                  const errMsg = `❌ Git push error: ${git.error}`;
+                  log(`GitHub Sync: ${statusMsg}`);
+                  parent.postMessage({
+                    pluginMessage: {
+                      type: 'NOTIFY_GITHUB_SYNC',
+                      success: true,
+                      message: statusMsg
+                    }
+                  }, '*');
+                } else {
+                  const errMsg = `❌ Git push error: ${git?.error || 'Failed to push'}`;
                   setBanner('error', errMsg);
                   log(errMsg);
                   parent.postMessage({
@@ -341,17 +322,17 @@
                       message: errMsg
                     }
                   }, '*');
-                } else {
-                  setBanner('success', `✅ Synced to local project (${summary})`);
                 }
               } else if (payload.event === 'FIGMA_TO_CODE_ERROR' || payload.event === 'FIGMA_TO_GITHUB_ERROR') {
                 figmaToGithubBtn.disabled = false;
                 figmaToGithubBtn.textContent = '🚀 Figma to GitHub Sync';
+                syncNowBtn.disabled = false;
+                syncNowBtn.textContent = 'Sync Figma File ➔ VS Code';
                 const errText = payload.error || 'Unknown sync error';
                 setBanner('error', `❌ ${errText}`);
                 log(`Sync error: ${errText}`);
               } else if (payload.event === 'CODE_TO_FIGMA_DELETE') {
-                log(`Received code deletion for: ${payload.componentName || payload.nodeId}`);
+                log(`Applying code deletion on canvas: ${payload.componentName || payload.nodeId}`);
                 parent.postMessage({
                   pluginMessage: {
                     type: 'ACTION_DELETE_COMPONENT',
@@ -359,7 +340,8 @@
                   }
                 }, '*');
               } else if (payload.event === 'CODE_TO_FIGMA_UPDATE') {
-                log(`Received code update for: ${payload.componentName} (fontSize=${payload.fontSize ?? 'map'}px)`);
+                setBanner('success', `✅ Updated "${payload.componentName}" on Figma Canvas`);
+                log(`Applying code update on canvas: ${payload.componentName}`);
                 parent.postMessage({
                   pluginMessage: {
                     type: 'ACTION_UPDATE_COMPONENT',
@@ -380,8 +362,10 @@
           statusBadge.textContent = 'Disconnected';
           figmaToGithubBtn.disabled = false;
           figmaToGithubBtn.textContent = '🚀 Figma to GitHub Sync';
-          log('Socket connection closed. Retrying in 3s...');
-          setTimeout(connect, 3000);
+          syncNowBtn.disabled = false;
+          syncNowBtn.textContent = 'Sync Figma File ➔ VS Code';
+          log('Socket connection closed. Retrying in 5s...');
+          setTimeout(connect, 5000);
         };
 
         socket.onerror = () => {
@@ -390,7 +374,7 @@
         };
       } catch (err) {
         log(`Socket error: ${err.message}`);
-        setTimeout(connect, 3000);
+        setTimeout(connect, 5000);
       }
     }
 
@@ -407,6 +391,8 @@
         if (!socket || socket.readyState !== WebSocket.OPEN) {
           figmaToGithubBtn.disabled = false;
           figmaToGithubBtn.textContent = '🚀 Figma to GitHub Sync';
+          syncNowBtn.disabled = false;
+          syncNowBtn.textContent = 'Sync Figma File ➔ VS Code';
           setBanner('error', '❌ Cannot sync: local sync server ws://localhost:3055 is disconnected.');
           log('Cannot send Figma payload: local sync server is disconnected.');
           return;
@@ -415,13 +401,34 @@
           type: 'message',
           channel: 'figma-sync',
           message: {
-            event: 'FIGMA_LIVE_SYNC_PAYLOAD',
+            event: msg.payload?.pushToGithub ? 'FIGMA_TO_GITHUB_SYNC' : 'FIGMA_LIVE_SYNC_PAYLOAD',
             ...msg.payload
           }
         }));
       }
     };
 
+    // Button 1: Sync Figma File -> VS Code (Add, Edit, Delete in src/components/ & src/app/pages/)
+    syncNowBtn.onclick = () => {
+      if (!socket || socket.readyState !== WebSocket.OPEN) {
+        setBanner('error', '❌ Cannot sync: local sync server ws://localhost:3055 is disconnected.');
+        log('Cannot sync: the local sync server is disconnected.');
+        return;
+      }
+      syncNowBtn.disabled = true;
+      syncNowBtn.textContent = '⏳ Syncing Figma ➔ VS Code...';
+      setBanner('syncing', '⏳ Syncing Figma canvas (Add / Edit / Delete) to src/components/ & Portal UI...');
+      log('🖲️ [Button 1] Extracting Figma canvas state ➔ syncing to VS Code & Portal Sidebar...');
+      parent.postMessage({
+        pluginMessage: {
+          type: 'REQUEST_FULL_FIGMA_EXPORT',
+          reason: 'manual',
+          pushToGithub: false
+        }
+      }, '*');
+    };
+
+    // Button 2: 🚀 Figma to GitHub Sync (Sync + git add . + git commit + git push origin main)
     figmaToGithubBtn.onclick = () => {
       if (!socket || socket.readyState !== WebSocket.OPEN) {
         setBanner('error', '❌ Cannot sync: local sync server ws://localhost:3055 is disconnected.');
@@ -429,9 +436,9 @@
         return;
       }
       figmaToGithubBtn.disabled = true;
-      figmaToGithubBtn.textContent = '⏳ Syncing Figma ➔ Code ➔ GitHub...';
-      setBanner('syncing', `⏳ Syncing "${activeFileName || 'Figma'}" components & pushing to ${targetRepoLabel.textContent}...`);
-      log('🚀 Triggered Figma to GitHub Sync (Full Add/Edit/Delete + Git Push)...');
+      figmaToGithubBtn.textContent = '⏳ Pushing to GitHub...';
+      setBanner('syncing', `⏳ Syncing "${activeFileName || 'Figma'}" & pushing to ${targetRepoLabel.textContent}...`);
+      log('🚀 [Button 2] Triggered Figma to GitHub Sync (git add . && git commit && git push origin main)...');
       parent.postMessage({
         pluginMessage: {
           type: 'REQUEST_FULL_FIGMA_EXPORT',
@@ -441,23 +448,7 @@
       }, '*');
     };
 
-    syncNowBtn.onclick = () => {
-      if (!socket || socket.readyState !== WebSocket.OPEN) {
-        setBanner('error', '❌ Cannot sync: local sync server ws://localhost:3055 is disconnected.');
-        log('Cannot sync: the local sync server is disconnected.');
-        return;
-      }
-      setBanner('syncing', '⏳ Syncing Figma components & tokens to local project...');
-      log('Extracting live Figma Variables & Components from canvas...');
-      parent.postMessage({
-        pluginMessage: {
-          type: 'REQUEST_FULL_FIGMA_EXPORT',
-          reason: 'manual',
-          pushToGithub: true
-        }
-      }, '*');
-    };
-
+    // Button 3: Sync VS Code -> Figma Canvas
     syncCodeToFigmaBtn.onclick = () => {
       requestCodeToFigmaSync();
     };
@@ -470,5 +461,4 @@
     connect();
   </script>
 </body>
-
 </html>

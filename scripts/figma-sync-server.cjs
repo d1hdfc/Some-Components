@@ -634,10 +634,20 @@ function applyFigmaLivePayload(payload) {
     const seenIds = new Set();
     const seenKebabs = new Set();
 
+    // Deduplicate incoming components by kebab name (preferring COMPONENT_SET over COMPONENT)
+    const dedupedByKebab = new Map();
     for (const comp of payload.components) {
       if (!comp || !comp.id || !comp.name) continue;
       const kebab = codeGenerator.toKebabCase(comp.name);
       if (!kebab || kebab === 'assets') continue;
+      const existing = dedupedByKebab.get(kebab);
+      if (!existing || (comp.type === 'COMPONENT_SET' && existing.type !== 'COMPONENT_SET')) {
+        dedupedByKebab.set(kebab, comp);
+      }
+    }
+
+    for (const comp of dedupedByKebab.values()) {
+      const kebab = codeGenerator.toKebabCase(comp.name);
       seenIds.add(comp.id);
       seenKebabs.add(kebab);
       const compDir = path.join(componentsDir, kebab);
@@ -810,6 +820,7 @@ function applyFigmaLivePayload(payload) {
   // Ensure all documentation pages and component index are sanitized
   codeGenerator.sanitizeComponentIndex();
   appPageGenerator.syncAppComponentPages();
+  appPageGenerator.touchHmrEntryPoints();
 
   if (createdCount > 0 || updatedCount > 0 || deletedCount > 0 || tokensUpdated > 0 || docsUpdated > 0) {
     touchMainStylesheet();
@@ -845,7 +856,10 @@ function syncComponentDocs(payload) {
     // Skip unhydrated state records that have no serialized layout/variant properties
     const isHydrated = typeof node.width === 'number' || typeof node.height === 'number' || Array.isArray(node.children) || Boolean(node.componentPropertyDefinitions);
     if (!isHydrated) return;
-    byKebab.set(kebab, node);
+    const existing = byKebab.get(kebab);
+    if (!existing || (node.type === 'COMPONENT_SET' && existing.type !== 'COMPONENT_SET')) {
+      byKebab.set(kebab, node);
+    }
   };
   if (Array.isArray(payload.components)) payload.components.forEach(collect);
   if (Array.isArray(payload.selectedItems)) payload.selectedItems.forEach(collect);
@@ -936,29 +950,28 @@ function handleSocketMessage(socket, rawMessage) {
     const channelName = data.channel || 'figma-sync';
     const payload = data.message;
 
-    // 1. Live payload pushed directly from Figma Plugin (Variables + Components + GitHub Push)
+    // 1. On-Demand Button 1 (Sync Figma File -> VS Code) & Button 2 (🚀 Figma to GitHub Sync)
     if (payload?.event === 'FIGMA_LIVE_SYNC_PAYLOAD' || payload?.event === 'FIGMA_TO_GITHUB_SYNC') {
       const project = resolveProjectContext(payload);
-      console.log(`\n[Bridge] Received live Figma payload from "${payload.fileName || 'Figma'}" -> Target: ${project.projectDir} (${project.repoName}) [reason: ${payload.reason || 'sync'}]`);
-      const result = applyFigmaLivePayload(payload);
-      const hasChanges = (
-        result.createdCount > 0 ||
-        result.updatedCount > 0 ||
-        result.deletedCount > 0 ||
-        result.tokensUpdated > 0 ||
-        result.docsUpdated > 0
+      const isGithubPushRequest = Boolean(
+        payload.event === 'FIGMA_TO_GITHUB_SYNC' ||
+        payload.pushToGithub === true ||
+        payload.reason === 'github-sync'
       );
 
+      console.log(`\n[Bridge] 🖲️ Manual Button Action (${isGithubPushRequest ? '🚀 Figma to GitHub Sync' : 'Sync Figma File -> VS Code'}) from "${payload.fileName || 'Figma'}" -> Target: ${project.projectDir}`);
+      const result = applyFigmaLivePayload(payload);
+
       let gitResult = null;
-      if (payload.pushToGithub || payload.reason === 'github-sync' || hasChanges) {
+      if (isGithubPushRequest) {
         const parts = [];
         if (result.createdCount > 0) parts.push(`+${result.createdCount} added (${result.addedComponents.join(', ')})`);
         if (result.updatedCount > 0) parts.push(`~${result.updatedCount} updated`);
         if (result.deletedCount > 0) parts.push(`-${result.deletedCount} deleted (${result.removedComponents.join(', ')})`);
         if (result.tokensUpdated > 0) parts.push(`${result.tokensUpdated} tokens`);
         const commitMsg = parts.length > 0
-          ? `auto-sync(${project.id}): ${parts.join(', ')}`
-          : `auto-sync(${project.id}): sync Figma state with GitHub`;
+          ? `sync(${project.id}): ${parts.join(', ')}`
+          : `sync(${project.id}): manual Figma to GitHub sync`;
 
         gitResult = gitSync.commitAndPush(commitMsg, {
           cwd: project.projectDir,
@@ -967,7 +980,7 @@ function handleSocketMessage(socket, rawMessage) {
       }
 
       broadcastToChannel(channelName, {
-        event: payload.reason === 'github-sync' ? 'FIGMA_TO_GITHUB_COMPLETE' : 'FIGMA_TO_CODE_COMPLETE',
+        event: isGithubPushRequest ? 'FIGMA_TO_GITHUB_COMPLETE' : 'FIGMA_TO_CODE_COMPLETE',
         result,
         git: gitResult,
         projectDir: project.projectDir,
@@ -975,7 +988,7 @@ function handleSocketMessage(socket, rawMessage) {
         repoUrl: project.repoUrl,
         fileName: payload.fileName,
         fileKey: payload.fileKey || project.fileKey,
-        source: payload.reason || 'plugin-live'
+        source: payload.reason || 'manual'
       });
       return;
     }
@@ -1498,16 +1511,13 @@ if (require.main === module) {
 
   server.listen(PORT, HOST, () => {
     console.log('====================================================');
-    console.log(`🚀 HDFC Two-Way Real-Time Auto-Sync Server Running`);
-    console.log(`📡 HTTP & Webhook Endpoint: http://localhost:${PORT}/api/webhook`);
+    console.log(`🚀 HDFC On-Demand Sync & GitHub Server Running`);
+    console.log(`🖲️  Mode: Manual Button-Triggered Only (No Background Watchers)`);
     console.log(`🔌 Figma Plugin Bridge WebSocket: ws://localhost:${PORT}`);
     console.log(`🩺 Health & Status Check: http://localhost:${PORT}/api/sync/status`);
     console.log('====================================================');
 
-    // Normalize any newly pasted/renamed component folders on startup (e.g. "button copy" -> "button-copy")
     codeGenerator.generateForExistingComponents();
-    setupCodeWatcher();
-    setupFigmaPoller();
   });
 
   process.on('SIGINT', () => {
