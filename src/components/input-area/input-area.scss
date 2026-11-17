@@ -1,6 +1,6 @@
 @use 'sass:map';
 
-$final-input-area-component-sizes: (
+$input-area-sizes: (
   small: (
     height: var(--button-size-small-height),
     padding: var(--button-size-small-padding-x),
@@ -27,7 +27,7 @@ $final-input-area-component-sizes: (
   )
 );
 
-$final-input-area-component-variants: (
+$input-area-variants: (
   primary: (
     background: var(--button-primary-background-color-default),
     foreground: var(--button-primary-foreground-color-static),
@@ -54,7 +54,7 @@ $final-input-area-component-variants: (
   )
 );
 
-.ui-final-input-area-component {
+.ui-input-area {
   display: inline-flex;
   flex-direction: row;
   align-items: center;
@@ -83,10 +83,10 @@ $final-input-area-component-variants: (
     border: var(--global-scale-25) solid currentColor;
     border-right-color: var(--surface-root-opacity);
     border-radius: var(--layout-radius-full);
-    animation: ui-final-input-area-component-spin 0.75s linear infinite;
+    animation: ui-input-area-spin 0.75s linear infinite;
   }
 
-  @each $size, $props in $final-input-area-component-sizes {
+  @each $size, $props in $input-area-sizes {
     &--#{$size} {
       min-height: map.get($props, height);
       font-size: map.get($props, font-size);
@@ -97,13 +97,13 @@ $final-input-area-component-variants: (
     }
   }
 
-  @each $variant, $props in $final-input-area-component-variants {
+  @each $variant, $props in $input-area-variants {
     &--#{$variant} {
       background-color: map.get($props, background);
       color: map.get($props, foreground);
       border-color: map.get($props, border);
 
-      &:hover:not(.ui-final-input-area-component--disabled) {
+      &:hover:not(.ui-input-area--disabled) {
         background-color: map.get($props, hover-background);
       }
     }
@@ -121,7 +121,7 @@ $final-input-area-component-variants: (
   }
 }
 
-@keyframes ui-final-input-area-component-spin {
+@keyframes ui-input-area-spin {
   from {
     transform: rotate(0deg);
   }

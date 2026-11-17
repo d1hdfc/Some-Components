@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
 
-enum UIFinalInputAreaComponentVariant { primary, secondary, tertiary, outlined }
-enum UIFinalInputAreaComponentSize { small, medium }
+enum UIInputAreaVariant { primary, secondary, tertiary, outlined }
+enum UIInputAreaSize { small, medium }
 
-/// Auto-generated Flutter widget for [FinalInputAreaComponent] from Figma.
-class UIFinalInputAreaComponent extends StatelessWidget {
+/// Auto-generated Flutter widget for [InputArea] from Figma.
+class UIInputArea extends StatelessWidget {
   final String label;
   final Widget? child;
   final VoidCallback? onPressed;
-  final UIFinalInputAreaComponentVariant variant;
-  final UIFinalInputAreaComponentSize size;
+  final UIInputAreaVariant variant;
+  final UIInputAreaSize size;
   final bool isDisabled;
   final bool isLoading;
   final bool isFullWidth;
   final Widget? leadingIcon;
   final Widget? trailingIcon;
 
-  const UIFinalInputAreaComponent({
+  const UIInputArea({
     Key? key,
     this.label = 'Label',
     this.child,
     this.onPressed,
-    this.variant = UIFinalInputAreaComponentVariant.primary,
-    this.size = UIFinalInputAreaComponentSize.small,
+    this.variant = UIInputAreaVariant.primary,
+    this.size = UIInputAreaSize.small,
     this.isDisabled = false,
     this.isLoading = false,
     this.isFullWidth = false,
@@ -32,35 +32,35 @@ class UIFinalInputAreaComponent extends StatelessWidget {
 
   EdgeInsets _getPadding() {
     switch (size) {
-      case UIFinalInputAreaComponentSize.small:
+      case UIInputAreaSize.small:
         return const EdgeInsets.symmetric(horizontal: 8, vertical: 4);
-      case UIFinalInputAreaComponentSize.large:
+      case UIInputAreaSize.large:
         return const EdgeInsets.symmetric(horizontal: 0, vertical: 0);
-      case UIFinalInputAreaComponentSize.medium:
+      case UIInputAreaSize.medium:
       default:
         return const EdgeInsets.symmetric(horizontal: 0.0, vertical: 0.0);
     }
   }
 
   Color _getBackgroundColor(BuildContext context) {
-    if (variant == UIFinalInputAreaComponentVariant.primary) {
+    if (variant == UIInputAreaVariant.primary) {
       return const Color(0xFF0C2340);
     }
     return Colors.transparent;
   }
 
   Color _getTextColor(BuildContext context) {
-    if (variant == UIFinalInputAreaComponentVariant.primary) {
+    if (variant == UIInputAreaVariant.primary) {
       return Colors.white;
     }
     return const Color(0xFF0C2340);
   }
 
   BorderSide _getBorderSide(BuildContext context) {
-    if (variant == UIFinalInputAreaComponentVariant.secondary) {
+    if (variant == UIInputAreaVariant.secondary) {
       return const BorderSide(color: Color(0xFFD1D5DB), width: 1.0);
     }
-    if (variant == UIFinalInputAreaComponentVariant.outlined) {
+    if (variant == UIInputAreaVariant.outlined) {
       return const BorderSide(color: Color(0xFF0C2340), width: 1.5);
     }
     return BorderSide.none;

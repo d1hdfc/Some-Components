@@ -11,22 +11,22 @@
     },
     "8017:4011": {
       "id": "8017:4011",
-      "name": "2. Final Input Area Component",
-      "kebab": "final-input-area-component",
+      "name": "Input-Area",
+      "kebab": "input-area",
       "type": "COMPONENT_SET",
       "pageName": "Input-Area",
       "generated": true,
-      "updatedAt": "2026-11-17T07:32:13.692Z"
+      "updatedAt": "2026-11-17T08:32:41.677Z"
     },
-    "8017:4424": {
-      "id": "8017:4424",
-      "name": "FinalInputAreaComponent",
-      "kebab": "final-input-area-component",
-      "type": "COMPONENT",
-      "pageName": "Input-Area",
+    "8024:1408": {
+      "id": "8024:1408",
+      "name": "Button",
+      "kebab": "button",
+      "type": "COMPONENT_SET",
+      "pageName": "Button",
       "generated": true,
-      "updatedAt": "2026-11-17T07:33:39.832Z"
+      "updatedAt": "2026-11-17T08:32:39.676Z"
     }
   },
-  "lastSync": "2026-11-17T08:14:34.880Z"
+  "lastSync": "2026-11-17T11:10:31.513Z"
 }
