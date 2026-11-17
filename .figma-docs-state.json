@@ -4,6 +4,19 @@
     "baselineAt": "2026-11-09T07:52:17.559Z",
     "history": [
       {
+        "at": "2026-11-17T07:26:50.050Z",
+        "changes": [
+          "Base Text color: `#1C3FCA` → `#FFFFFF`",
+          "Base Border color: `—` → `#FFFFFF`",
+          "Variant `size=Large, style=Primary, state=Default, type=Default` — Text color: `#1C3FCA` → `#FFFFFF`",
+          "Variant `size=Large, style=Primary, state=Default, type=Default` — Border color: `—` → `#FFFFFF`",
+          "Variant `size=Large, style=Primary, state=Focus, type=Default` — Width × Height: `154px × 48px` → `194px × 72px`",
+          "Variant `size=Large, style=Primary, state=Focus, type=Default` — Padding: `0px 20px 0px 20px` → `0px 40px 0px 40px`",
+          "Variant `size=Large, style=Primary, state=Focus, type=Default` — Background: `#1C3FCA` → `#C7B9FF`",
+          "Variant `size=Large, style=Primary, state=Focus, type=Default` — Border color: `—` → `#FFFFFF`"
+        ]
+      },
+      {
         "at": "2026-11-17T07:25:38.546Z",
         "changes": [
           "Base Background: `#D61C53` → `#C7B9FF`",
@@ -158,8 +171,8 @@
         "fontSize": "18px",
         "lineHeight": null,
         "background": "#C7B9FF",
-        "textColor": "#1C3FCA",
-        "border": null,
+        "textColor": "#FFFFFF",
+        "border": "#FFFFFF",
         "layoutMode": "HORIZONTAL"
       },
       "variants": {
@@ -171,19 +184,19 @@
           "fontSize": "18px",
           "lineHeight": "24px",
           "background": "#C7B9FF",
-          "textColor": "#1C3FCA",
-          "border": null
+          "textColor": "#FFFFFF",
+          "border": "#FFFFFF"
         },
         "size=Large, style=Primary, state=Focus, type=Default": {
-          "size": "154px × 48px",
-          "padding": "0px 20px 0px 20px",
+          "size": "194px × 72px",
+          "padding": "0px 40px 0px 40px",
           "gap": "0px",
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#1C3FCA",
+          "background": "#C7B9FF",
           "textColor": "#FFFFFF",
-          "border": null
+          "border": "#FFFFFF"
         },
         "size=Large, style=Primary, state=Default, type=Gradient": {
           "size": "154px × 48px",

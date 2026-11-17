@@ -5,7 +5,7 @@
 
 _No description set in Figma._
 
-> Last updated: 2026-11-17T07:25:38.664Z
+> Last updated: 2026-11-17T07:26:50.062Z
 
 ## Overview
 
@@ -75,8 +75,8 @@ UIButton()
 | Font size | 18px |
 | Line height | — |
 | Background | #C7B9FF |
-| Text color | #1C3FCA |
-| Border color | — |
+| Text color | #FFFFFF |
+| Border color | #FFFFFF |
 | Layout mode | HORIZONTAL |
 
 ## Variants (320)
@@ -103,7 +103,7 @@ UIButton()
 | size=Large, style=Link, state=Pressed, type=Gradient | 114px × 24px | 0px 0px 0px 0px | 0px | 0px | 18px | — | — | — |
 | size=Large, style=Link, state=Pressed, type=Icon | 24px × 24px | 0px 0px 0px 0px | 0px | 0px | 18px | — | #FFFFFF | — |
 | size=Large, style=Link, state=Pressed, type=White | 114px × 24px | 0px 0px 0px 0px | 0px | 0px | 18px | — | #FFFFFF | — |
-| size=Large, style=Primary, state=Default, type=Default | 194px × 72px | 0px 40px 0px 40px | 0px | 12px | 18px | #C7B9FF | #1C3FCA | — |
+| size=Large, style=Primary, state=Default, type=Default | 194px × 72px | 0px 40px 0px 40px | 0px | 12px | 18px | #C7B9FF | #FFFFFF | #FFFFFF |
 | size=Large, style=Primary, state=Default, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | — | #FFFFFF | — |
 | size=Large, style=Primary, state=Default, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #1C3FCA | #FFFFFF | — |
 | size=Large, style=Primary, state=Default, type=White | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #FFFFFF | #1C3FCA | — |
@@ -111,7 +111,7 @@ UIButton()
 | size=Large, style=Primary, state=Disabled, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | — | #FFFFFF | — |
 | size=Large, style=Primary, state=Disabled, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #00815A | #FFFFFF | — |
 | size=Large, style=Primary, state=Disabled, type=White | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #FFFFFF | #9CB4F7 | — |
-| size=Large, style=Primary, state=Focus, type=Default | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #1C3FCA | #FFFFFF | — |
+| size=Large, style=Primary, state=Focus, type=Default | 194px × 72px | 0px 40px 0px 40px | 0px | 12px | 18px | #C7B9FF | #FFFFFF | #FFFFFF |
 | size=Large, style=Primary, state=Focus, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | — | #FFFFFF | — |
 | size=Large, style=Primary, state=Focus, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #1C3FCA | #FFFFFF | — |
 | size=Large, style=Primary, state=Focus, type=White | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #FFFFFF | #1C3FCA | — |
@@ -407,9 +407,22 @@ UIButton()
 ## Figma Changelog & Diff Status
 
 > [!IMPORTANT]
-> **79 change(s) detected** in the latest Figma sync (2026-11-17T07:25:38.546Z).
+> **8 change(s) detected** in the latest Figma sync (2026-11-17T07:26:50.050Z).
 
 ### Changes in latest sync
+
+- Base Text color: `#1C3FCA` → `#FFFFFF`
+- Base Border color: `—` → `#FFFFFF`
+- Variant `size=Large, style=Primary, state=Default, type=Default` — Text color: `#1C3FCA` → `#FFFFFF`
+- Variant `size=Large, style=Primary, state=Default, type=Default` — Border color: `—` → `#FFFFFF`
+- Variant `size=Large, style=Primary, state=Focus, type=Default` — Width × Height: `154px × 48px` → `194px × 72px`
+- Variant `size=Large, style=Primary, state=Focus, type=Default` — Padding: `0px 20px 0px 20px` → `0px 40px 0px 40px`
+- Variant `size=Large, style=Primary, state=Focus, type=Default` — Background: `#1C3FCA` → `#C7B9FF`
+- Variant `size=Large, style=Primary, state=Focus, type=Default` — Border color: `—` → `#FFFFFF`
+
+### Previous changes
+
+**2026-11-17T07:25:38.546Z**
 
 - Base Background: `#D61C53` → `#C7B9FF`
 - Base Text color: `#FFFFFF` → `#1C3FCA`
