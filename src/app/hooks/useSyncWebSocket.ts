@@ -64,3 +64,4 @@ export function useSyncWebSocket(url = 'ws://localhost:3055') {
 
   return { status, lastEvent };
 }
+

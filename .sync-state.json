@@ -26,7 +26,196 @@
       "pageName": "Input-Area",
       "generated": true,
       "updatedAt": "2026-11-17T07:33:39.832Z"
+    },
+    "8018:4670": {
+      "id": "8018:4670",
+      "name": "BrowserBar",
+      "kebab": "browser-bar",
+      "type": "COMPONENT",
+      "pageName": "Button",
+      "generated": true,
+      "updatedAt": "2026-11-17T08:07:21.914Z"
+    },
+    "8018:4712": {
+      "id": "8018:4712",
+      "name": "BottomSh",
+      "kebab": "bottom-sh",
+      "type": "COMPONENT",
+      "pageName": "Button",
+      "generated": true,
+      "updatedAt": "2026-11-17T08:07:22.676Z"
+    },
+    "8020:4754": {
+      "id": "8020:4754",
+      "name": "Carousel",
+      "kebab": "carousel",
+      "type": "COMPONENT",
+      "pageName": "Button",
+      "generated": true,
+      "updatedAt": "2026-11-17T08:07:24.275Z"
+    },
+    "8020:4764": {
+      "id": "8020:4764",
+      "name": "Checkbox",
+      "kebab": "checkbox",
+      "type": "COMPONENT",
+      "pageName": "Button",
+      "generated": true,
+      "updatedAt": "2026-11-17T08:07:25.492Z"
+    },
+    "8020:4790": {
+      "id": "8020:4790",
+      "name": "Controls",
+      "kebab": "controls",
+      "type": "COMPONENT",
+      "pageName": "Button",
+      "generated": true,
+      "updatedAt": "2026-11-17T08:07:26.788Z"
+    },
+    "8020:5179": {
+      "id": "8020:5179",
+      "name": "MPinInput",
+      "kebab": "m-pin-input",
+      "type": "COMPONENT",
+      "pageName": "Button",
+      "generated": true,
+      "updatedAt": "2026-11-17T08:07:27.597Z"
+    },
+    "8020:5479": {
+      "id": "8020:5479",
+      "name": "Popover",
+      "kebab": "popover",
+      "type": "COMPONENT",
+      "pageName": "Button",
+      "generated": true,
+      "updatedAt": "2026-11-17T08:07:29.161Z"
+    },
+    "8020:5480": {
+      "id": "8020:5480",
+      "name": "ProgressBar",
+      "kebab": "progress-bar",
+      "type": "COMPONENT",
+      "pageName": "Button",
+      "generated": true,
+      "updatedAt": "2026-11-17T08:07:30.360Z"
+    },
+    "8020:5481": {
+      "id": "8020:5481",
+      "name": "Radio",
+      "kebab": "radio",
+      "type": "COMPONENT",
+      "pageName": "Button",
+      "generated": true,
+      "updatedAt": "2026-11-17T08:07:31.874Z"
+    },
+    "8020:5482": {
+      "id": "8020:5482",
+      "name": "RatingBase",
+      "kebab": "rating-base",
+      "type": "COMPONENT",
+      "pageName": "Button",
+      "generated": true,
+      "updatedAt": "2026-11-17T08:07:32.690Z"
+    },
+    "8020:5483": {
+      "id": "8020:5483",
+      "name": "Rating",
+      "kebab": "rating",
+      "type": "COMPONENT",
+      "pageName": "Button",
+      "generated": true,
+      "updatedAt": "2026-11-17T08:07:33.997Z"
+    },
+    "8020:5484": {
+      "id": "8020:5484",
+      "name": "Ratings",
+      "kebab": "ratings",
+      "type": "COMPONENT",
+      "pageName": "Button",
+      "generated": true,
+      "updatedAt": "2026-11-17T08:07:35.744Z"
+    },
+    "8020:5485": {
+      "id": "8020:5485",
+      "name": "SearchBar",
+      "kebab": "search-bar",
+      "type": "COMPONENT",
+      "pageName": "Button",
+      "generated": true,
+      "updatedAt": "2026-11-17T08:07:37.728Z"
+    },
+    "8020:5486": {
+      "id": "8020:5486",
+      "name": "Separator",
+      "kebab": "separator",
+      "type": "COMPONENT",
+      "pageName": "Button",
+      "generated": true,
+      "updatedAt": "2026-11-17T08:07:39.379Z"
+    },
+    "8020:5538": {
+      "id": "8020:5538",
+      "name": "Switch",
+      "kebab": "switch",
+      "type": "COMPONENT",
+      "pageName": "Button",
+      "generated": true,
+      "updatedAt": "2026-11-17T08:07:41.143Z"
+    },
+    "8020:5574": {
+      "id": "8020:5574",
+      "name": "Tabs",
+      "kebab": "tabs",
+      "type": "COMPONENT",
+      "pageName": "Button",
+      "generated": true,
+      "updatedAt": "2026-11-17T08:07:42.468Z"
+    },
+    "8020:5575": {
+      "id": "8020:5575",
+      "name": "TextArea",
+      "kebab": "text-area",
+      "type": "COMPONENT",
+      "pageName": "Button",
+      "generated": true,
+      "updatedAt": "2026-11-17T08:07:43.335Z"
+    },
+    "8020:5576": {
+      "id": "8020:5576",
+      "name": "TextField",
+      "kebab": "text-field",
+      "type": "COMPONENT",
+      "pageName": "Button",
+      "generated": true,
+      "updatedAt": "2026-11-17T08:07:44.234Z"
+    },
+    "8020:5577": {
+      "id": "8020:5577",
+      "name": "Toast",
+      "kebab": "toast",
+      "type": "COMPONENT",
+      "pageName": "Button",
+      "generated": true,
+      "updatedAt": "2026-11-17T08:07:45.609Z"
+    },
+    "8020:5578": {
+      "id": "8020:5578",
+      "name": "Toggle",
+      "kebab": "toggle",
+      "type": "COMPONENT",
+      "pageName": "Button",
+      "generated": true,
+      "updatedAt": "2026-11-17T08:07:47.187Z"
+    },
+    "8020:5580": {
+      "id": "8020:5580",
+      "name": "Tooltip",
+      "kebab": "tooltip",
+      "type": "COMPONENT",
+      "pageName": "Button",
+      "generated": true,
+      "updatedAt": "2026-11-17T08:07:48.505Z"
     }
   },
-  "lastSync": "2026-11-17T08:01:23.339Z"
+  "lastSync": "2026-11-17T08:07:48.505Z"
 }

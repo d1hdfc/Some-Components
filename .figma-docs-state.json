@@ -1,8 +1,151 @@
 {
   "button": {
-    "status": "unchanged",
+    "status": "changed",
     "baselineAt": "2026-11-09T07:52:17.559Z",
     "history": [
+      {
+        "at": "2026-11-17T08:07:48.515Z",
+        "changes": [
+          "Base Width × Height: `162px × 48px` → `194px × 72px`",
+          "Base Padding: `0px 20px 0px 20px` → `0px 40px 0px 40px`",
+          "Base Gap: `4px` → `0px`",
+          "Base Background: `#1C3FCA` → `#C7B9FF`",
+          "Variant `size=Large, style=Primary, state=Default, type=Default` — Width × Height: `162px × 48px` → `194px × 72px`",
+          "Variant `size=Large, style=Primary, state=Default, type=Default` — Padding: `0px 20px 0px 20px` → `0px 40px 0px 40px`",
+          "Variant `size=Large, style=Primary, state=Default, type=Default` — Gap: `4px` → `0px`",
+          "Variant `size=Large, style=Primary, state=Default, type=Default` — Background: `#1C3FCA` → `#C7B9FF`",
+          "Variant `size=Large, style=Primary, state=Focus, type=Default` — Width × Height: `163px × 48px` → `195px × 72px`",
+          "Variant `size=Large, style=Primary, state=Focus, type=Default` — Padding: `0px 20px 0px 20px` → `0px 40px 0px 40px`",
+          "Variant `size=Large, style=Primary, state=Focus, type=Default` — Gap: `4px` → `0px`",
+          "Variant `size=Large, style=Primary, state=Focus, type=Default` — Background: `#1C3FCA` → `#C7B9FF`",
+          "Variant `size=Large, style=Primary, state=Focus, type=Gradient` — Width × Height: `195px × 72px` → `163px × 48px`",
+          "Variant `size=Large, style=Primary, state=Focus, type=Gradient` — Padding: `0px 40px 0px 40px` → `0px 20px 0px 20px`",
+          "Variant `size=Large, style=Primary, state=Focus, type=Gradient` — Gap: `0px` → `4px`",
+          "Variant `size=Large, style=Primary, state=Default, type=White` — Width × Height: `195px × 72px` → `163px × 48px`",
+          "Variant `size=Large, style=Primary, state=Default, type=White` — Padding: `0px 40px 0px 40px` → `0px 20px 0px 20px`",
+          "Variant `size=Large, style=Primary, state=Default, type=White` — Gap: `0px` → `4px`",
+          "Variant `size=Large, style=Primary, state=Focus, type=White` — Width × Height: `195px × 72px` → `163px × 48px`",
+          "Variant `size=Large, style=Primary, state=Focus, type=White` — Padding: `0px 40px 0px 40px` → `0px 20px 0px 20px`",
+          "Variant `size=Large, style=Primary, state=Focus, type=White` — Gap: `0px` → `4px`",
+          "Variant `size=Medium, style=Primary, state=Default, type=White` — Width × Height: `132px × 40px` → `124px × 230px`",
+          "Variant `size=Medium, style=Primary, state=Default, type=White` — Padding: `0px 16px 0px 16px` → `0px 0px 0px 0px`",
+          "Variant `size=Medium, style=Primary, state=Default, type=White` — Gap: `0px` → `12px`",
+          "Variant `size=Medium, style=Primary, state=Default, type=White` — Corner radius: `12px` → `0px`",
+          "Variant `size=Medium, style=Primary, state=Focus, type=White` — Width × Height: `132px × 40px` → `124px × 230px`",
+          "Variant `size=Medium, style=Primary, state=Focus, type=White` — Padding: `0px 16px 0px 16px` → `0px 0px 0px 0px`",
+          "Variant `size=Medium, style=Primary, state=Focus, type=White` — Gap: `0px` → `12px`",
+          "Variant `size=Medium, style=Primary, state=Focus, type=White` — Corner radius: `12px` → `0px`",
+          "Variant `size=Medium, style=Primary, state=Hover, type=White` — Width × Height: `132px × 40px` → `124px × 230px`",
+          "Variant `size=Medium, style=Primary, state=Hover, type=White` — Padding: `0px 16px 0px 16px` → `0px 0px 0px 0px`",
+          "Variant `size=Medium, style=Primary, state=Hover, type=White` — Gap: `0px` → `12px`",
+          "Variant `size=Medium, style=Primary, state=Hover, type=White` — Corner radius: `12px` → `0px`",
+          "Variant `size=Medium, style=Primary, state=Pressed, type=White` — Width × Height: `132px × 40px` → `124px × 230px`",
+          "Variant `size=Medium, style=Primary, state=Pressed, type=White` — Padding: `0px 16px 0px 16px` → `0px 0px 0px 0px`",
+          "Variant `size=Medium, style=Primary, state=Pressed, type=White` — Gap: `0px` → `12px`",
+          "Variant `size=Medium, style=Primary, state=Pressed, type=White` — Corner radius: `12px` → `0px`",
+          "Variant `size=Medium, style=Primary, state=Disabled, type=White` — Width × Height: `132px × 40px` → `124px × 230px`",
+          "Variant `size=Medium, style=Primary, state=Disabled, type=White` — Padding: `0px 16px 0px 16px` → `0px 0px 0px 0px`",
+          "Variant `size=Medium, style=Primary, state=Disabled, type=White` — Gap: `0px` → `12px`",
+          "Variant `size=Medium, style=Primary, state=Disabled, type=White` — Corner radius: `12px` → `0px`",
+          "Variant `size=Small, style=Primary, state=Default, type=White` — Width × Height: `118px × 36px` → `110px × 174px`",
+          "Variant `size=Small, style=Primary, state=Default, type=White` — Padding: `0px 12px 0px 12px` → `0px 0px 0px 0px`",
+          "Variant `size=Small, style=Primary, state=Default, type=White` — Gap: `0px` → `8px`",
+          "Variant `size=Small, style=Primary, state=Default, type=White` — Corner radius: `8px` → `0px`",
+          "Variant `size=Small, style=Primary, state=Focus, type=White` — Width × Height: `121px × 36px` → `110px × 174px`",
+          "Variant `size=Small, style=Primary, state=Focus, type=White` — Padding: `0px 12px 0px 12px` → `0px 0px 0px 0px`",
+          "Variant `size=Small, style=Primary, state=Focus, type=White` — Gap: `2px` → `8px`",
+          "Variant `size=Small, style=Primary, state=Focus, type=White` — Corner radius: `8px` → `0px`",
+          "Variant `size=Small, style=Primary, state=Hover, type=White` — Width × Height: `117px × 36px` → `110px × 174px`",
+          "Variant `size=Small, style=Primary, state=Hover, type=White` — Padding: `0px 12px 0px 12px` → `0px 0px 0px 0px`",
+          "Variant `size=Small, style=Primary, state=Hover, type=White` — Gap: `0px` → `8px`",
+          "Variant `size=Small, style=Primary, state=Hover, type=White` — Corner radius: `8px` → `0px`",
+          "Variant `size=Small, style=Primary, state=Pressed, type=White` — Width × Height: `117px × 36px` → `110px × 174px`",
+          "Variant `size=Small, style=Primary, state=Pressed, type=White` — Padding: `0px 12px 0px 12px` → `0px 0px 0px 0px`",
+          "Variant `size=Small, style=Primary, state=Pressed, type=White` — Gap: `0px` → `8px`",
+          "Variant `size=Small, style=Primary, state=Pressed, type=White` — Corner radius: `8px` → `0px`",
+          "Variant `size=Small, style=Primary, state=Disabled, type=White` — Width × Height: `117px × 36px` → `110px × 174px`",
+          "Variant `size=Small, style=Primary, state=Disabled, type=White` — Padding: `0px 12px 0px 12px` → `0px 0px 0px 0px`",
+          "Variant `size=Small, style=Primary, state=Disabled, type=White` — Gap: `0px` → `8px`",
+          "Variant `size=Small, style=Primary, state=Disabled, type=White` — Corner radius: `8px` → `0px`",
+          "Variant `size=Xsmall, style=Primary, state=Default, type=White` — Width × Height: `95px × 28px` → `99px × 28px`",
+          "Variant `size=Xsmall, style=Primary, state=Default, type=White` — Gap: `0px` → `2px`",
+          "Variant `size=Xsmall, style=Primary, state=Focus, type=White` — Width × Height: `95px × 28px` → `99px × 28px`",
+          "Variant `size=Xsmall, style=Primary, state=Focus, type=White` — Gap: `0px` → `2px`",
+          "Variant `size=Xsmall, style=Primary, state=Hover, type=White` — Width × Height: `95px × 28px` → `99px × 28px`",
+          "Variant `size=Xsmall, style=Primary, state=Hover, type=White` — Gap: `0px` → `2px`",
+          "Variant `size=Xsmall, style=Primary, state=Pressed, type=White` — Width × Height: `95px × 28px` → `99px × 28px`",
+          "Variant `size=Xsmall, style=Primary, state=Pressed, type=White` — Gap: `0px` → `2px`",
+          "Variant `size=Xsmall, style=Primary, state=Disabled, type=White` — Width × Height: `95px × 28px` → `99px × 28px`",
+          "Variant `size=Xsmall, style=Primary, state=Disabled, type=White` — Gap: `0px` → `2px`",
+          "Variant `size=Large, style=Primary, state=Hover, type=Gradient` — Width × Height: `154px × 48px` → `163px × 48px`",
+          "Variant `size=Large, style=Primary, state=Hover, type=Gradient` — Gap: `0px` → `4px`",
+          "Variant `size=Large, style=Primary, state=Pressed, type=Gradient` — Width × Height: `154px × 48px` → `163px × 48px`",
+          "Variant `size=Large, style=Primary, state=Pressed, type=Gradient` — Gap: `0px` → `4px`",
+          "Variant `size=Large, style=Primary, state=Pressed, type=White` — Width × Height: `154px × 48px` → `163px × 48px`",
+          "Variant `size=Large, style=Primary, state=Pressed, type=White` — Gap: `0px` → `4px`",
+          "Variant `size=Large, style=Primary, state=Disabled, type=Gradient` — Width × Height: `154px × 48px` → `163px × 48px`",
+          "Variant `size=Large, style=Primary, state=Disabled, type=Gradient` — Gap: `0px` → `4px`",
+          "Variant `size=Large, style=Primary, state=Disabled, type=White` — Width × Height: `154px × 48px` → `163px × 48px`",
+          "Variant `size=Large, style=Primary, state=Disabled, type=White` — Gap: `0px` → `4px`",
+          "Variant `size=Large, style=Primary, state=Default, type=Icon` — Gap: `0px` → `4px`",
+          "Variant `size=Large, style=Primary, state=Focus, type=Icon` — Gap: `0px` → `4px`",
+          "Variant `size=Medium, style=Primary, state=Default, type=Icon` — Width × Height: `40px × 40px` → `230px × 230px`",
+          "Variant `size=Medium, style=Primary, state=Default, type=Icon` — Gap: `0px` → `12px`",
+          "Variant `size=Medium, style=Primary, state=Default, type=Icon` — Corner radius: `12px` → `0px`",
+          "Variant `size=Medium, style=Primary, state=Default, type=Icon` — Font size: `18px` → `16px`",
+          "Variant `size=Medium, style=Primary, state=Focus, type=Icon` — Width × Height: `40px × 40px` → `230px × 230px`",
+          "Variant `size=Medium, style=Primary, state=Focus, type=Icon` — Gap: `0px` → `12px`",
+          "Variant `size=Medium, style=Primary, state=Focus, type=Icon` — Corner radius: `12px` → `0px`",
+          "Variant `size=Medium, style=Primary, state=Focus, type=Icon` — Font size: `18px` → `16px`",
+          "Variant `size=Small, style=Primary, state=Default, type=Icon` — Width × Height: `36px × 36px` → `174px × 174px`",
+          "Variant `size=Small, style=Primary, state=Default, type=Icon` — Gap: `0px` → `8px`",
+          "Variant `size=Small, style=Primary, state=Default, type=Icon` — Corner radius: `8px` → `0px`",
+          "Variant `size=Small, style=Primary, state=Default, type=Icon` — Font size: `18px` → `14px`",
+          "Variant `size=Small, style=Primary, state=Focus, type=Icon` — Width × Height: `36px × 36px` → `174px × 174px`",
+          "Variant `size=Small, style=Primary, state=Focus, type=Icon` — Gap: `0px` → `8px`",
+          "Variant `size=Small, style=Primary, state=Focus, type=Icon` — Corner radius: `8px` → `0px`",
+          "Variant `size=Small, style=Primary, state=Focus, type=Icon` — Font size: `18px` → `14px`",
+          "Variant `size=Xsmall, style=Primary, state=Default, type=Icon` — Gap: `0px` → `2px`",
+          "Variant `size=Xsmall, style=Primary, state=Default, type=Icon` — Font size: `18px` → `12px`",
+          "Variant `size=Xsmall, style=Primary, state=Focus, type=Icon` — Gap: `0px` → `2px`",
+          "Variant `size=Xsmall, style=Primary, state=Focus, type=Icon` — Font size: `18px` → `12px`",
+          "Variant `size=Medium, style=Primary, state=Hover, type=Icon` — Width × Height: `40px × 40px` → `230px × 230px`",
+          "Variant `size=Medium, style=Primary, state=Hover, type=Icon` — Gap: `0px` → `12px`",
+          "Variant `size=Medium, style=Primary, state=Hover, type=Icon` — Corner radius: `12px` → `0px`",
+          "Variant `size=Medium, style=Primary, state=Hover, type=Icon` — Font size: `18px` → `16px`",
+          "Variant `size=Small, style=Primary, state=Hover, type=Icon` — Width × Height: `36px × 36px` → `174px × 174px`",
+          "Variant `size=Small, style=Primary, state=Hover, type=Icon` — Gap: `0px` → `8px`",
+          "Variant `size=Small, style=Primary, state=Hover, type=Icon` — Corner radius: `8px` → `0px`",
+          "Variant `size=Small, style=Primary, state=Hover, type=Icon` — Font size: `18px` → `14px`",
+          "Variant `size=Xsmall, style=Primary, state=Hover, type=Icon` — Gap: `0px` → `2px`",
+          "Variant `size=Xsmall, style=Primary, state=Hover, type=Icon` — Font size: `18px` → `12px`",
+          "Variant `size=Medium, style=Primary, state=Pressed, type=Icon` — Width × Height: `40px × 40px` → `230px × 230px`",
+          "Variant `size=Medium, style=Primary, state=Pressed, type=Icon` — Gap: `0px` → `12px`",
+          "Variant `size=Medium, style=Primary, state=Pressed, type=Icon` — Corner radius: `12px` → `0px`",
+          "Variant `size=Medium, style=Primary, state=Pressed, type=Icon` — Font size: `18px` → `16px`",
+          "Variant `size=Small, style=Primary, state=Pressed, type=Icon` — Width × Height: `36px × 36px` → `174px × 174px`",
+          "Variant `size=Small, style=Primary, state=Pressed, type=Icon` — Gap: `0px` → `8px`",
+          "Variant `size=Small, style=Primary, state=Pressed, type=Icon` — Corner radius: `8px` → `0px`",
+          "Variant `size=Small, style=Primary, state=Pressed, type=Icon` — Font size: `18px` → `14px`",
+          "Variant `size=Xsmall, style=Primary, state=Pressed, type=Icon` — Gap: `0px` → `2px`",
+          "Variant `size=Xsmall, style=Primary, state=Pressed, type=Icon` — Font size: `18px` → `12px`",
+          "Variant `size=Medium, style=Primary, state=Disabled, type=Icon` — Width × Height: `40px × 40px` → `230px × 230px`",
+          "Variant `size=Medium, style=Primary, state=Disabled, type=Icon` — Gap: `0px` → `12px`",
+          "Variant `size=Medium, style=Primary, state=Disabled, type=Icon` — Corner radius: `12px` → `0px`",
+          "Variant `size=Medium, style=Primary, state=Disabled, type=Icon` — Font size: `18px` → `16px`",
+          "Variant `size=Small, style=Primary, state=Disabled, type=Icon` — Width × Height: `36px × 36px` → `174px × 174px`",
+          "Variant `size=Small, style=Primary, state=Disabled, type=Icon` — Gap: `0px` → `8px`",
+          "Variant `size=Small, style=Primary, state=Disabled, type=Icon` — Corner radius: `8px` → `0px`",
+          "Variant `size=Small, style=Primary, state=Disabled, type=Icon` — Font size: `18px` → `14px`",
+          "Variant `size=Xsmall, style=Primary, state=Disabled, type=Icon` — Gap: `0px` → `2px`",
+          "Variant `size=Xsmall, style=Primary, state=Disabled, type=Icon` — Font size: `18px` → `12px`",
+          "Variant `size=Large, style=Primary, state=Hover, type=Icon` — Gap: `0px` → `4px`",
+          "Variant `size=Large, style=Primary, state=Pressed, type=Icon` — Gap: `0px` → `4px`",
+          "Variant `size=Large, style=Primary, state=Disabled, type=Icon` — Gap: `0px` → `4px`",
+          "Variant `size=Large, style=Secondary, state=Default, type=Icon` — Gap: `0px` → `4px`",
+          "Variant `size=Large, style=Secondary, state=Focus, type=Icon` — Gap: `0px` → `4px`"
+        ]
+      },
       {
         "at": "2026-11-17T07:34:02.614Z",
         "changes": [
@@ -211,37 +354,37 @@
         }
       },
       "base": {
-        "size": "162px × 48px",
-        "padding": "0px 20px 0px 20px",
-        "gap": "4px",
+        "size": "194px × 72px",
+        "padding": "0px 40px 0px 40px",
+        "gap": "0px",
         "radius": "12px",
         "fontSize": "18px",
         "lineHeight": null,
-        "background": "#1C3FCA",
+        "background": "#C7B9FF",
         "textColor": "#FFFFFF",
         "border": "#FFFFFF",
         "layoutMode": "HORIZONTAL"
       },
       "variants": {
         "size=Large, style=Primary, state=Default, type=Default": {
-          "size": "162px × 48px",
-          "padding": "0px 20px 0px 20px",
-          "gap": "4px",
+          "size": "194px × 72px",
+          "padding": "0px 40px 0px 40px",
+          "gap": "0px",
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#1C3FCA",
+          "background": "#C7B9FF",
           "textColor": "#FFFFFF",
           "border": "#FFFFFF"
         },
         "size=Large, style=Primary, state=Focus, type=Default": {
-          "size": "163px × 48px",
-          "padding": "0px 20px 0px 20px",
-          "gap": "4px",
+          "size": "195px × 72px",
+          "padding": "0px 40px 0px 40px",
+          "gap": "0px",
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#1C3FCA",
+          "background": "#C7B9FF",
           "textColor": "#FFFFFF",
           "border": "#FFFFFF"
         },
@@ -257,9 +400,9 @@
           "border": null
         },
         "size=Large, style=Primary, state=Focus, type=Gradient": {
-          "size": "195px × 72px",
-          "padding": "0px 40px 0px 40px",
-          "gap": "0px",
+          "size": "163px × 48px",
+          "padding": "0px 20px 0px 20px",
+          "gap": "4px",
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
@@ -268,9 +411,9 @@
           "border": null
         },
         "size=Large, style=Primary, state=Default, type=White": {
-          "size": "195px × 72px",
-          "padding": "0px 40px 0px 40px",
-          "gap": "0px",
+          "size": "163px × 48px",
+          "padding": "0px 20px 0px 20px",
+          "gap": "4px",
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
@@ -279,9 +422,9 @@
           "border": null
         },
         "size=Large, style=Primary, state=Focus, type=White": {
-          "size": "195px × 72px",
-          "padding": "0px 40px 0px 40px",
-          "gap": "0px",
+          "size": "163px × 48px",
+          "padding": "0px 20px 0px 20px",
+          "gap": "4px",
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
@@ -290,10 +433,10 @@
           "border": null
         },
         "size=Medium, style=Primary, state=Default, type=White": {
-          "size": "132px × 40px",
-          "padding": "0px 16px 0px 16px",
-          "gap": "0px",
-          "radius": "12px",
+          "size": "124px × 230px",
+          "padding": "0px 0px 0px 0px",
+          "gap": "12px",
+          "radius": "0px",
           "fontSize": "16px",
           "lineHeight": "20px",
           "background": "#FFFFFF",
@@ -301,10 +444,10 @@
           "border": null
         },
         "size=Medium, style=Primary, state=Focus, type=White": {
-          "size": "132px × 40px",
-          "padding": "0px 16px 0px 16px",
-          "gap": "0px",
-          "radius": "12px",
+          "size": "124px × 230px",
+          "padding": "0px 0px 0px 0px",
+          "gap": "12px",
+          "radius": "0px",
           "fontSize": "16px",
           "lineHeight": "20px",
           "background": "#FFFFFF",
@@ -312,10 +455,10 @@
           "border": null
         },
         "size=Medium, style=Primary, state=Hover, type=White": {
-          "size": "132px × 40px",
-          "padding": "0px 16px 0px 16px",
-          "gap": "0px",
-          "radius": "12px",
+          "size": "124px × 230px",
+          "padding": "0px 0px 0px 0px",
+          "gap": "12px",
+          "radius": "0px",
           "fontSize": "16px",
           "lineHeight": "20px",
           "background": "#FFFFFF",
@@ -323,10 +466,10 @@
           "border": null
         },
         "size=Medium, style=Primary, state=Pressed, type=White": {
-          "size": "132px × 40px",
-          "padding": "0px 16px 0px 16px",
-          "gap": "0px",
-          "radius": "12px",
+          "size": "124px × 230px",
+          "padding": "0px 0px 0px 0px",
+          "gap": "12px",
+          "radius": "0px",
           "fontSize": "16px",
           "lineHeight": "20px",
           "background": "#FFFFFF",
@@ -334,10 +477,10 @@
           "border": null
         },
         "size=Medium, style=Primary, state=Disabled, type=White": {
-          "size": "132px × 40px",
-          "padding": "0px 16px 0px 16px",
-          "gap": "0px",
-          "radius": "12px",
+          "size": "124px × 230px",
+          "padding": "0px 0px 0px 0px",
+          "gap": "12px",
+          "radius": "0px",
           "fontSize": "16px",
           "lineHeight": "20px",
           "background": "#FFFFFF",
@@ -345,10 +488,10 @@
           "border": null
         },
         "size=Small, style=Primary, state=Default, type=White": {
-          "size": "118px × 36px",
-          "padding": "0px 12px 0px 12px",
-          "gap": "0px",
-          "radius": "8px",
+          "size": "110px × 174px",
+          "padding": "0px 0px 0px 0px",
+          "gap": "8px",
+          "radius": "0px",
           "fontSize": "14px",
           "lineHeight": "18px",
           "background": "#FFFFFF",
@@ -356,10 +499,10 @@
           "border": null
         },
         "size=Small, style=Primary, state=Focus, type=White": {
-          "size": "121px × 36px",
-          "padding": "0px 12px 0px 12px",
-          "gap": "2px",
-          "radius": "8px",
+          "size": "110px × 174px",
+          "padding": "0px 0px 0px 0px",
+          "gap": "8px",
+          "radius": "0px",
           "fontSize": "14px",
           "lineHeight": "18px",
           "background": "#FFFFFF",
@@ -367,10 +510,10 @@
           "border": null
         },
         "size=Small, style=Primary, state=Hover, type=White": {
-          "size": "117px × 36px",
-          "padding": "0px 12px 0px 12px",
-          "gap": "0px",
-          "radius": "8px",
+          "size": "110px × 174px",
+          "padding": "0px 0px 0px 0px",
+          "gap": "8px",
+          "radius": "0px",
           "fontSize": "14px",
           "lineHeight": "18px",
           "background": "#FFFFFF",
@@ -378,10 +521,10 @@
           "border": null
         },
         "size=Small, style=Primary, state=Pressed, type=White": {
-          "size": "117px × 36px",
-          "padding": "0px 12px 0px 12px",
-          "gap": "0px",
-          "radius": "8px",
+          "size": "110px × 174px",
+          "padding": "0px 0px 0px 0px",
+          "gap": "8px",
+          "radius": "0px",
           "fontSize": "14px",
           "lineHeight": "18px",
           "background": "#FFFFFF",
@@ -389,10 +532,10 @@
           "border": null
         },
         "size=Small, style=Primary, state=Disabled, type=White": {
-          "size": "117px × 36px",
-          "padding": "0px 12px 0px 12px",
-          "gap": "0px",
-          "radius": "8px",
+          "size": "110px × 174px",
+          "padding": "0px 0px 0px 0px",
+          "gap": "8px",
+          "radius": "0px",
           "fontSize": "14px",
           "lineHeight": "18px",
           "background": "#FFFFFF",
@@ -400,9 +543,9 @@
           "border": null
         },
         "size=Xsmall, style=Primary, state=Default, type=White": {
-          "size": "95px × 28px",
+          "size": "99px × 28px",
           "padding": "0px 8px 0px 8px",
-          "gap": "0px",
+          "gap": "2px",
           "radius": "8px",
           "fontSize": "12px",
           "lineHeight": "16px",
@@ -411,9 +554,9 @@
           "border": null
         },
         "size=Xsmall, style=Primary, state=Focus, type=White": {
-          "size": "95px × 28px",
+          "size": "99px × 28px",
           "padding": "0px 8px 0px 8px",
-          "gap": "0px",
+          "gap": "2px",
           "radius": "8px",
           "fontSize": "12px",
           "lineHeight": "16px",
@@ -422,9 +565,9 @@
           "border": null
         },
         "size=Xsmall, style=Primary, state=Hover, type=White": {
-          "size": "95px × 28px",
+          "size": "99px × 28px",
           "padding": "0px 8px 0px 8px",
-          "gap": "0px",
+          "gap": "2px",
           "radius": "8px",
           "fontSize": "12px",
           "lineHeight": "16px",
@@ -433,9 +576,9 @@
           "border": null
         },
         "size=Xsmall, style=Primary, state=Pressed, type=White": {
-          "size": "95px × 28px",
+          "size": "99px × 28px",
           "padding": "0px 8px 0px 8px",
-          "gap": "0px",
+          "gap": "2px",
           "radius": "8px",
           "fontSize": "12px",
           "lineHeight": "16px",
@@ -444,9 +587,9 @@
           "border": null
         },
         "size=Xsmall, style=Primary, state=Disabled, type=White": {
-          "size": "95px × 28px",
+          "size": "99px × 28px",
           "padding": "0px 8px 0px 8px",
-          "gap": "0px",
+          "gap": "2px",
           "radius": "8px",
           "fontSize": "12px",
           "lineHeight": "16px",
@@ -455,9 +598,9 @@
           "border": null
         },
         "size=Large, style=Primary, state=Hover, type=Gradient": {
-          "size": "154px × 48px",
+          "size": "163px × 48px",
           "padding": "0px 20px 0px 20px",
-          "gap": "0px",
+          "gap": "4px",
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
@@ -466,9 +609,9 @@
           "border": null
         },
         "size=Large, style=Primary, state=Pressed, type=Gradient": {
-          "size": "154px × 48px",
+          "size": "163px × 48px",
           "padding": "0px 20px 0px 20px",
-          "gap": "0px",
+          "gap": "4px",
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
@@ -477,9 +620,9 @@
           "border": null
         },
         "size=Large, style=Primary, state=Pressed, type=White": {
-          "size": "154px × 48px",
+          "size": "163px × 48px",
           "padding": "0px 20px 0px 20px",
-          "gap": "0px",
+          "gap": "4px",
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
@@ -488,9 +631,9 @@
           "border": null
         },
         "size=Large, style=Primary, state=Disabled, type=Gradient": {
-          "size": "154px × 48px",
+          "size": "163px × 48px",
           "padding": "0px 20px 0px 20px",
-          "gap": "0px",
+          "gap": "4px",
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
@@ -499,9 +642,9 @@
           "border": null
         },
         "size=Large, style=Primary, state=Disabled, type=White": {
-          "size": "154px × 48px",
+          "size": "163px × 48px",
           "padding": "0px 20px 0px 20px",
-          "gap": "0px",
+          "gap": "4px",
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
@@ -512,7 +655,7 @@
         "size=Large, style=Primary, state=Default, type=Icon": {
           "size": "48px × 48px",
           "padding": "0px 12px 0px 12px",
-          "gap": "0px",
+          "gap": "4px",
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
@@ -523,7 +666,7 @@
         "size=Large, style=Primary, state=Focus, type=Icon": {
           "size": "48px × 48px",
           "padding": "0px 12px 0px 12px",
-          "gap": "0px",
+          "gap": "4px",
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
@@ -532,44 +675,44 @@
           "border": null
         },
         "size=Medium, style=Primary, state=Default, type=Icon": {
-          "size": "40px × 40px",
+          "size": "230px × 230px",
           "padding": "0px 12px 0px 12px",
-          "gap": "0px",
-          "radius": "12px",
-          "fontSize": "18px",
+          "gap": "12px",
+          "radius": "0px",
+          "fontSize": "16px",
           "lineHeight": "24px",
           "background": "#1C3FCA",
           "textColor": "#FFFFFF",
           "border": null
         },
         "size=Medium, style=Primary, state=Focus, type=Icon": {
-          "size": "40px × 40px",
+          "size": "230px × 230px",
           "padding": "0px 12px 0px 12px",
-          "gap": "0px",
-          "radius": "12px",
-          "fontSize": "18px",
+          "gap": "12px",
+          "radius": "0px",
+          "fontSize": "16px",
           "lineHeight": "24px",
           "background": "#1C3FCA",
           "textColor": "#FFFFFF",
           "border": null
         },
         "size=Small, style=Primary, state=Default, type=Icon": {
-          "size": "36px × 36px",
+          "size": "174px × 174px",
           "padding": "0px 8px 0px 8px",
-          "gap": "0px",
-          "radius": "8px",
-          "fontSize": "18px",
+          "gap": "8px",
+          "radius": "0px",
+          "fontSize": "14px",
           "lineHeight": "24px",
           "background": "#1C3FCA",
           "textColor": "#FFFFFF",
           "border": null
         },
         "size=Small, style=Primary, state=Focus, type=Icon": {
-          "size": "36px × 36px",
+          "size": "174px × 174px",
           "padding": "0px 8px 0px 8px",
-          "gap": "0px",
-          "radius": "8px",
-          "fontSize": "18px",
+          "gap": "8px",
+          "radius": "0px",
+          "fontSize": "14px",
           "lineHeight": "24px",
           "background": "#1C3FCA",
           "textColor": "#FFFFFF",
@@ -578,9 +721,9 @@
         "size=Xsmall, style=Primary, state=Default, type=Icon": {
           "size": "28px × 28px",
           "padding": "0px 8px 0px 8px",
-          "gap": "0px",
+          "gap": "2px",
           "radius": "8px",
-          "fontSize": "18px",
+          "fontSize": "12px",
           "lineHeight": "24px",
           "background": "#1C3FCA",
           "textColor": "#FFFFFF",
@@ -589,31 +732,31 @@
         "size=Xsmall, style=Primary, state=Focus, type=Icon": {
           "size": "28px × 28px",
           "padding": "0px 8px 0px 8px",
-          "gap": "0px",
+          "gap": "2px",
           "radius": "8px",
-          "fontSize": "18px",
+          "fontSize": "12px",
           "lineHeight": "24px",
           "background": "#1C3FCA",
           "textColor": "#FFFFFF",
           "border": null
         },
         "size=Medium, style=Primary, state=Hover, type=Icon": {
-          "size": "40px × 40px",
+          "size": "230px × 230px",
           "padding": "0px 12px 0px 12px",
-          "gap": "0px",
-          "radius": "12px",
-          "fontSize": "18px",
+          "gap": "12px",
+          "radius": "0px",
+          "fontSize": "16px",
           "lineHeight": "24px",
           "background": "#D61C53",
           "textColor": "#FFFFFF",
           "border": null
         },
         "size=Small, style=Primary, state=Hover, type=Icon": {
-          "size": "36px × 36px",
+          "size": "174px × 174px",
           "padding": "0px 8px 0px 8px",
-          "gap": "0px",
-          "radius": "8px",
-          "fontSize": "18px",
+          "gap": "8px",
+          "radius": "0px",
+          "fontSize": "14px",
           "lineHeight": "24px",
           "background": "#D61C53",
           "textColor": "#FFFFFF",
@@ -622,31 +765,31 @@
         "size=Xsmall, style=Primary, state=Hover, type=Icon": {
           "size": "28px × 28px",
           "padding": "0px 8px 0px 8px",
-          "gap": "0px",
+          "gap": "2px",
           "radius": "8px",
-          "fontSize": "18px",
+          "fontSize": "12px",
           "lineHeight": "24px",
           "background": "#D61C53",
           "textColor": "#FFFFFF",
           "border": null
         },
         "size=Medium, style=Primary, state=Pressed, type=Icon": {
-          "size": "40px × 40px",
+          "size": "230px × 230px",
           "padding": "0px 12px 0px 12px",
-          "gap": "0px",
-          "radius": "12px",
-          "fontSize": "18px",
+          "gap": "12px",
+          "radius": "0px",
+          "fontSize": "16px",
           "lineHeight": "24px",
           "background": "#00815A",
           "textColor": "#FFFFFF",
           "border": null
         },
         "size=Small, style=Primary, state=Pressed, type=Icon": {
-          "size": "36px × 36px",
+          "size": "174px × 174px",
           "padding": "0px 8px 0px 8px",
-          "gap": "0px",
-          "radius": "8px",
-          "fontSize": "18px",
+          "gap": "8px",
+          "radius": "0px",
+          "fontSize": "14px",
           "lineHeight": "24px",
           "background": "#00815A",
           "textColor": "#FFFFFF",
@@ -655,31 +798,31 @@
         "size=Xsmall, style=Primary, state=Pressed, type=Icon": {
           "size": "28px × 28px",
           "padding": "0px 8px 0px 8px",
-          "gap": "0px",
+          "gap": "2px",
           "radius": "8px",
-          "fontSize": "18px",
+          "fontSize": "12px",
           "lineHeight": "24px",
           "background": "#00815A",
           "textColor": "#FFFFFF",
           "border": null
         },
         "size=Medium, style=Primary, state=Disabled, type=Icon": {
-          "size": "40px × 40px",
+          "size": "230px × 230px",
           "padding": "0px 12px 0px 12px",
-          "gap": "0px",
-          "radius": "12px",
-          "fontSize": "18px",
+          "gap": "12px",
+          "radius": "0px",
+          "fontSize": "16px",
           "lineHeight": "24px",
           "background": "#00815A",
           "textColor": "#FFFFFF",
           "border": null
         },
         "size=Small, style=Primary, state=Disabled, type=Icon": {
-          "size": "36px × 36px",
+          "size": "174px × 174px",
           "padding": "0px 8px 0px 8px",
-          "gap": "0px",
-          "radius": "8px",
-          "fontSize": "18px",
+          "gap": "8px",
+          "radius": "0px",
+          "fontSize": "14px",
           "lineHeight": "24px",
           "background": "#00815A",
           "textColor": "#FFFFFF",
@@ -688,9 +831,9 @@
         "size=Xsmall, style=Primary, state=Disabled, type=Icon": {
           "size": "28px × 28px",
           "padding": "0px 8px 0px 8px",
-          "gap": "0px",
+          "gap": "2px",
           "radius": "8px",
-          "fontSize": "18px",
+          "fontSize": "12px",
           "lineHeight": "24px",
           "background": "#00815A",
           "textColor": "#FFFFFF",
@@ -699,7 +842,7 @@
         "size=Large, style=Primary, state=Hover, type=Icon": {
           "size": "48px × 48px",
           "padding": "0px 12px 0px 12px",
-          "gap": "0px",
+          "gap": "4px",
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
@@ -710,7 +853,7 @@
         "size=Large, style=Primary, state=Pressed, type=Icon": {
           "size": "48px × 48px",
           "padding": "0px 12px 0px 12px",
-          "gap": "0px",
+          "gap": "4px",
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
@@ -721,7 +864,7 @@
         "size=Large, style=Primary, state=Disabled, type=Icon": {
           "size": "48px × 48px",
           "padding": "0px 12px 0px 12px",
-          "gap": "0px",
+          "gap": "4px",
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
@@ -732,7 +875,7 @@
         "size=Large, style=Secondary, state=Default, type=Icon": {
           "size": "48px × 48px",
           "padding": "0px 12px 0px 12px",
-          "gap": "0px",
+          "gap": "4px",
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
@@ -743,7 +886,7 @@
         "size=Large, style=Secondary, state=Focus, type=Icon": {
           "size": "48px × 48px",
           "padding": "0px 12px 0px 12px",
-          "gap": "0px",
+          "gap": "4px",
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
@@ -3876,6 +4019,510 @@
           "border": null
         }
       }
+    }
+  },
+  "browser-bar": {
+    "status": "unchanged",
+    "baselineAt": "2026-11-17T08:07:20.937Z",
+    "history": [],
+    "snapshot": {
+      "name": "BrowserBar",
+      "description": "",
+      "textContent": "BrowserBar",
+      "properties": {},
+      "base": {
+        "size": "20px × 14px",
+        "padding": "0px 10px 0px 10px",
+        "gap": "6px",
+        "radius": "1440px",
+        "fontSize": "14px",
+        "lineHeight": null,
+        "background": null,
+        "textColor": "#FFFFFF",
+        "border": null,
+        "layoutMode": "HORIZONTAL"
+      },
+      "variants": {}
+    }
+  },
+  "bottom-sh": {
+    "status": "unchanged",
+    "baselineAt": "2026-11-17T08:07:21.953Z",
+    "history": [],
+    "snapshot": {
+      "name": "BottomSh",
+      "description": "",
+      "textContent": "BottomSh",
+      "properties": {},
+      "base": {
+        "size": "32px × 14px",
+        "padding": "0px 16px 0px 16px",
+        "gap": "6px",
+        "radius": "1440px",
+        "fontSize": "14px",
+        "lineHeight": null,
+        "background": null,
+        "textColor": "#FFFFFF",
+        "border": null,
+        "layoutMode": "HORIZONTAL"
+      },
+      "variants": {}
+    }
+  },
+  "carousel": {
+    "status": "unchanged",
+    "baselineAt": "2026-11-17T08:07:22.773Z",
+    "history": [],
+    "snapshot": {
+      "name": "Carousel",
+      "description": "",
+      "textContent": "Carousel",
+      "properties": {},
+      "base": {
+        "size": "34px × 22px",
+        "padding": "10px 16px 10px 16px",
+        "gap": "8px",
+        "radius": "1440px",
+        "fontSize": "22px",
+        "lineHeight": null,
+        "background": "#FFFFFF",
+        "textColor": "#111111",
+        "border": "#D9D9D9",
+        "layoutMode": "HORIZONTAL"
+      },
+      "variants": {}
+    }
+  },
+  "checkbox": {
+    "status": "unchanged",
+    "baselineAt": "2026-11-17T08:07:24.295Z",
+    "history": [],
+    "snapshot": {
+      "name": "Checkbox",
+      "description": "",
+      "textContent": "Checkbox",
+      "properties": {},
+      "base": {
+        "size": "34px × 22px",
+        "padding": "10px 16px 10px 16px",
+        "gap": "3px",
+        "radius": "4px",
+        "fontSize": "12px",
+        "lineHeight": null,
+        "background": "#1C3FCA",
+        "textColor": "#111111",
+        "border": "#1C3FCA",
+        "layoutMode": "HORIZONTAL"
+      },
+      "variants": {}
+    }
+  },
+  "controls": {
+    "status": "unchanged",
+    "baselineAt": "2026-11-17T08:07:25.507Z",
+    "history": [],
+    "snapshot": {
+      "name": "Controls",
+      "description": "",
+      "textContent": "Controls",
+      "properties": {},
+      "base": {
+        "size": "24px × 16px",
+        "padding": "7px 11px 7px 11px",
+        "gap": "6px",
+        "radius": "1440px",
+        "fontSize": "16px",
+        "lineHeight": null,
+        "background": "#1C3FCA",
+        "textColor": "#FFFFFF",
+        "border": "#D9D9D9",
+        "layoutMode": "HORIZONTAL"
+      },
+      "variants": {}
+    }
+  },
+  "m-pin-input": {
+    "status": "unchanged",
+    "baselineAt": "2026-11-17T08:07:26.799Z",
+    "history": [],
+    "snapshot": {
+      "name": "MPinInput",
+      "description": "",
+      "textContent": "MPinInput",
+      "properties": {},
+      "base": {
+        "size": "34px × 14px",
+        "padding": "0px 16px 0px 16px",
+        "gap": "6px",
+        "radius": "1440px",
+        "fontSize": "16px",
+        "lineHeight": null,
+        "background": "#C7B9FF",
+        "textColor": "#FFFFFF",
+        "border": "#FFFFFF",
+        "layoutMode": "HORIZONTAL"
+      },
+      "variants": {}
+    }
+  },
+  "popover": {
+    "status": "unchanged",
+    "baselineAt": "2026-11-17T08:07:27.629Z",
+    "history": [],
+    "snapshot": {
+      "name": "Popover",
+      "description": "",
+      "textContent": "Popover",
+      "properties": {},
+      "base": {
+        "size": "81px × 48px",
+        "padding": "10px 16px 10px 16px",
+        "gap": "0px",
+        "radius": "12px",
+        "fontSize": "12px",
+        "lineHeight": null,
+        "background": "#FFFFFF",
+        "textColor": "#111111",
+        "border": "#D9D9D9",
+        "layoutMode": "HORIZONTAL"
+      },
+      "variants": {}
+    }
+  },
+  "progress-bar": {
+    "status": "unchanged",
+    "baselineAt": "2026-11-17T08:07:29.201Z",
+    "history": [],
+    "snapshot": {
+      "name": "ProgressBar",
+      "description": "",
+      "textContent": "ProgressBar",
+      "properties": {},
+      "base": {
+        "size": "20px × 14px",
+        "padding": "0px 10px 0px 10px",
+        "gap": "6px",
+        "radius": "1440px",
+        "fontSize": "14px",
+        "lineHeight": null,
+        "background": null,
+        "textColor": "#FFFFFF",
+        "border": null,
+        "layoutMode": "HORIZONTAL"
+      },
+      "variants": {}
+    }
+  },
+  "radio": {
+    "status": "unchanged",
+    "baselineAt": "2026-11-17T08:07:30.428Z",
+    "history": [],
+    "snapshot": {
+      "name": "Radio",
+      "description": "",
+      "textContent": "Radio",
+      "properties": {},
+      "base": {
+        "size": "34px × 22px",
+        "padding": "10px 16px 10px 16px",
+        "gap": "3px",
+        "radius": "1440px",
+        "fontSize": "12px",
+        "lineHeight": null,
+        "background": "#FFFFFF",
+        "textColor": "#111111",
+        "border": "#D9D9D9",
+        "layoutMode": "HORIZONTAL"
+      },
+      "variants": {}
+    }
+  },
+  "rating-base": {
+    "status": "unchanged",
+    "baselineAt": "2026-11-17T08:07:31.900Z",
+    "history": [],
+    "snapshot": {
+      "name": "RatingBase",
+      "description": "",
+      "textContent": "RatingBase",
+      "properties": {},
+      "base": {
+        "size": "20px × 14px",
+        "padding": "0px 10px 0px 10px",
+        "gap": "6px",
+        "radius": "1440px",
+        "fontSize": "12px",
+        "lineHeight": null,
+        "background": null,
+        "textColor": "#FFFFFF",
+        "border": null,
+        "layoutMode": "HORIZONTAL"
+      },
+      "variants": {}
+    }
+  },
+  "rating": {
+    "status": "unchanged",
+    "baselineAt": "2026-11-17T08:07:32.704Z",
+    "history": [],
+    "snapshot": {
+      "name": "Rating",
+      "description": "",
+      "textContent": "Rating",
+      "properties": {},
+      "base": {
+        "size": "68px × 48px",
+        "padding": "10px 16px 10px 16px",
+        "gap": "4px",
+        "radius": "8px",
+        "fontSize": "12px",
+        "lineHeight": null,
+        "background": "#FFFFFF",
+        "textColor": "#D9D9D9",
+        "border": null,
+        "layoutMode": "HORIZONTAL"
+      },
+      "variants": {}
+    }
+  },
+  "ratings": {
+    "status": "unchanged",
+    "baselineAt": "2026-11-17T08:07:34.010Z",
+    "history": [],
+    "snapshot": {
+      "name": "Ratings",
+      "description": "",
+      "textContent": "Ratings",
+      "properties": {},
+      "base": {
+        "size": "30px × 30px",
+        "padding": "14px 14px 14px 14px",
+        "gap": "6px",
+        "radius": "1440px",
+        "fontSize": "12px",
+        "lineHeight": null,
+        "background": "#1C3FCA",
+        "textColor": "#FFFFFF",
+        "border": "#D9D9D9",
+        "layoutMode": "HORIZONTAL"
+      },
+      "variants": {}
+    }
+  },
+  "search-bar": {
+    "status": "unchanged",
+    "baselineAt": "2026-11-17T08:07:35.756Z",
+    "history": [],
+    "snapshot": {
+      "name": "SearchBar",
+      "description": "",
+      "textContent": "SearchBar",
+      "properties": {},
+      "base": {
+        "size": "20px × 14px",
+        "padding": "0px 10px 0px 10px",
+        "gap": "6px",
+        "radius": "1440px",
+        "fontSize": "12px",
+        "lineHeight": null,
+        "background": null,
+        "textColor": "#FFFFFF",
+        "border": null,
+        "layoutMode": "HORIZONTAL"
+      },
+      "variants": {}
+    }
+  },
+  "separator": {
+    "status": "unchanged",
+    "baselineAt": "2026-11-17T08:07:37.740Z",
+    "history": [],
+    "snapshot": {
+      "name": "Separator",
+      "description": "",
+      "textContent": "Separator",
+      "properties": {},
+      "base": {
+        "size": "32px × 20px",
+        "padding": "10px 16px 10px 16px",
+        "gap": "0px",
+        "radius": "8px",
+        "fontSize": "12px",
+        "lineHeight": null,
+        "background": "#D9D9D9",
+        "textColor": "#FFFFFF",
+        "border": null,
+        "layoutMode": "HORIZONTAL"
+      },
+      "variants": {}
+    }
+  },
+  "switch": {
+    "status": "baseline",
+    "baselineAt": "2026-11-17T08:07:39.394Z",
+    "history": [],
+    "snapshot": {
+      "name": "Switch",
+      "description": "",
+      "textContent": "Switch",
+      "properties": {},
+      "base": {
+        "size": "32px × 20px",
+        "padding": "10px 16px 10px 16px",
+        "gap": "2px",
+        "radius": "1440px",
+        "fontSize": "12px",
+        "lineHeight": null,
+        "background": "#1C3FCA",
+        "textColor": "#111111",
+        "border": null,
+        "layoutMode": "HORIZONTAL"
+      },
+      "variants": {}
+    }
+  },
+  "tabs": {
+    "status": "baseline",
+    "baselineAt": "2026-11-17T08:07:41.158Z",
+    "history": [],
+    "snapshot": {
+      "name": "Tabs",
+      "description": "",
+      "textContent": "Tabs",
+      "properties": {},
+      "base": {
+        "size": "52px × 48px",
+        "padding": "16px 12px 16px 12px",
+        "gap": "4px",
+        "radius": "8px",
+        "fontSize": "12px",
+        "lineHeight": null,
+        "background": "#FFFFFF",
+        "textColor": "#444444",
+        "border": null,
+        "layoutMode": "HORIZONTAL"
+      },
+      "variants": {}
+    }
+  },
+  "text-area": {
+    "status": "baseline",
+    "baselineAt": "2026-11-17T08:07:42.481Z",
+    "history": [],
+    "snapshot": {
+      "name": "TextArea",
+      "description": "",
+      "textContent": "TextArea",
+      "properties": {},
+      "base": {
+        "size": "20px × 14px",
+        "padding": "0px 10px 0px 10px",
+        "gap": "6px",
+        "radius": "1440px",
+        "fontSize": "12px",
+        "lineHeight": null,
+        "background": null,
+        "textColor": "#FFFFFF",
+        "border": null,
+        "layoutMode": "HORIZONTAL"
+      },
+      "variants": {}
+    }
+  },
+  "text-field": {
+    "status": "baseline",
+    "baselineAt": "2026-11-17T08:07:43.349Z",
+    "history": [],
+    "snapshot": {
+      "name": "TextField",
+      "description": "",
+      "textContent": "TextField",
+      "properties": {},
+      "base": {
+        "size": "20px × 14px",
+        "padding": "0px 10px 0px 10px",
+        "gap": "6px",
+        "radius": "1440px",
+        "fontSize": "12px",
+        "lineHeight": null,
+        "background": null,
+        "textColor": "#FFFFFF",
+        "border": null,
+        "layoutMode": "HORIZONTAL"
+      },
+      "variants": {}
+    }
+  },
+  "toast": {
+    "status": "baseline",
+    "baselineAt": "2026-11-17T08:07:44.256Z",
+    "history": [],
+    "snapshot": {
+      "name": "Toast",
+      "description": "",
+      "textContent": "Toast",
+      "properties": {},
+      "base": {
+        "size": "26px × 18px",
+        "padding": "8px 12px 8px 12px",
+        "gap": "12px",
+        "radius": "1440px",
+        "fontSize": "12px",
+        "lineHeight": null,
+        "background": "#FFFFFF",
+        "textColor": "#111111",
+        "border": "#D9D9D9",
+        "layoutMode": "HORIZONTAL"
+      },
+      "variants": {}
+    }
+  },
+  "toggle": {
+    "status": "baseline",
+    "baselineAt": "2026-11-17T08:07:45.629Z",
+    "history": [],
+    "snapshot": {
+      "name": "Toggle",
+      "description": "",
+      "textContent": "Toggle",
+      "properties": {},
+      "base": {
+        "size": "24px × 16px",
+        "padding": "7px 11px 7px 11px",
+        "gap": "6px",
+        "radius": "1440px",
+        "fontSize": "12px",
+        "lineHeight": null,
+        "background": "#1C3FCA",
+        "textColor": "#FFFFFF",
+        "border": "#D9D9D9",
+        "layoutMode": "HORIZONTAL"
+      },
+      "variants": {}
+    }
+  },
+  "tooltip": {
+    "status": "baseline",
+    "baselineAt": "2026-11-17T08:07:47.212Z",
+    "history": [],
+    "snapshot": {
+      "name": "Tooltip",
+      "description": "",
+      "textContent": "Tooltip",
+      "properties": {},
+      "base": {
+        "size": "59px × 48px",
+        "padding": "8px 10px 8px 10px",
+        "gap": "0px",
+        "radius": "8px",
+        "fontSize": "12px",
+        "lineHeight": null,
+        "background": "#2C2C2C",
+        "textColor": "#FFFFFF",
+        "border": null,
+        "layoutMode": "HORIZONTAL"
+      },
+      "variants": {}
     }
   }
 }

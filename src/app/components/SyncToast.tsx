@@ -46,3 +46,4 @@ export function SyncToast({ event }: SyncToastProps) {
     </div>
   );
 }
+
