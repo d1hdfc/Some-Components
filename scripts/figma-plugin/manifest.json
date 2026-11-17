@@ -1,0 +1,18 @@
+{
+  "name": "HDFC Some Components Two-Way Auto-Sync",
+  "id": "1697899357280966247",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html",
+  "editorType": [
+    "figma",
+    "dev"
+  ],
+  "documentAccess": "dynamic-page",
+  "networkAccess": {
+    "allowedDomains": [
+      "*"
+    ],
+    "reasoning": "Connects to local Node.js auto-sync server and WebSocket bridge on localhost to sync Some Components in real time."
+  }
+}

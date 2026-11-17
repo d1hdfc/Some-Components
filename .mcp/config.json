@@ -1,0 +1,42 @@
+{
+  "mcpVersion": "1.0.0",
+  "name": "figma-UI-mcp-server",
+  "connection": {
+    "type": "figma",
+    "apiEndpoint": "https://api.figma.com/v1",
+    "accessTokenEnv": "FIGMA_PERSONAL_ACCESS_TOKEN",
+    "fileKeyEnv": "FIGMA_DESIGN_FILE_KEY",
+    "defaultFileKey": "NhsXzdYzA1O9TPQlRL3wC4",
+    "defaultNodeId": "2617:4609"
+  },
+  "mappingRules": {
+    "componentPrefix": "UI",
+    "tokenPath": "src/tokens",
+    "componentsPath": "src/components",
+    "autoLayoutToFlex": true,
+    "propNameTransform": "camelCase",
+    "variantMappings": {
+      "Variant": "variant",
+      "Size": "size",
+      "State": "state",
+      "Disabled": "isDisabled",
+      "Loading": "isLoading",
+      "Full Width": "isFullWidth"
+    },
+    "tokenCategoryMappings": {
+      "COLOR": "colors",
+      "SPACING": "spacing",
+      "TYPOGRAPHY": "typography",
+      "BORDER_RADIUS": "borderRadii",
+      "ELEVATION": "shadows"
+    }
+  },
+  "components": [
+    {
+      "figmaComponentName": "Button",
+      "codeComponentName": "Button",
+      "filePath": "src/components/button/button.tsx",
+      "typesPath": "src/components/button/button.types.ts"
+    }
+  ]
+}

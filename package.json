@@ -1,0 +1,68 @@
+{
+  "name": "@d1hdfc/ui-components",
+  "version": "0.1.0",
+  "private": false,
+  "description": "HDFC UI component library",
+  "repository": "https://github.com/d1hdfc/UI-Components",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "./lib/index.cjs",
+  "module": "./lib/index.js",
+  "types": "./lib/types/library.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/library.d.ts",
+      "import": "./lib/index.js",
+      "require": "./lib/index.cjs"
+    },
+    "./style.css": "./lib/style.css"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "tokens:build": "npx tsx src/tokens/figmaSyncTokens.ts --generate",
+    "sync-tokens": "npx tsx src/tokens/figmaSyncTokens.ts --generate",
+    "tokens:watch": "npx tsx src/tokens/figmaSyncTokens.ts --watch",
+    "predev": "npm run sync:app-pages",
+    "dev": "concurrently -k \"npm run tokens:watch\" \"npm run figma:components:watch\" \"vite\"",
+    "prebuild": "npm run sync:app-pages",
+    "sync:app-pages": "node scripts/app-page-generator.cjs",
+    "figma:components:sync": "tsx src/figma/syncComponents.ts",
+    "figma:components:watch": "tsx src/figma/syncComponents.ts --watch",
+    "build": "tsc && vite build",
+    "prebuild:library": "npm run sync:app-pages",
+    "build:library": "vite build --config vite.library.config.ts && tsc -p tsconfig.library.json",
+    "preview": "vite preview",
+    "sync": "sync.bat",
+    "sync:server": "node scripts/figma-sync-server.cjs",
+    "sync:watch": "node scripts/figma-sync-server.cjs",
+    "sync:all": "node scripts/cli-sync.cjs --all",
+    "sync:figma-to-code": "node scripts/cli-sync.cjs --figma-to-code",
+    "sync:code-to-figma": "node scripts/cli-sync.cjs --code-to-figma",
+    "sync:generate-all": "node scripts/cli-sync.cjs --generate-existing"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "ws": "^8.22.0"
+  },
+  "devDependencies": {
+    "@figma/code-connect": "^2.1.0",
+    "@types/node": "^26.6.4",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^4.0.0",
+    "concurrently": "^10.0.5",
+    "sass": "^1.105.1",
+    "sass-embedded": "^1.105.1",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vite": "^5.0.0"
+  }
+}

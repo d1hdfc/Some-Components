@@ -1,0 +1,14 @@
+{
+  "version": "2416103925057920543",
+  "components": {
+    "3972:30799": {
+      "id": "3972:30799",
+      "name": "Button",
+      "type": "COMPONENT_SET",
+      "pageName": "Button",
+      "updatedAt": "2026-11-17T06:00:00.000Z",
+      "kebab": "button"
+    }
+  },
+  "lastSync": "2026-11-17T06:00:00.000Z"
+}

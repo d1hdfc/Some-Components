@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Two-Way Auto-Sync & GitHub Pipeline</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 14px;
+      color: #172b4d;
+      background: #f7f8fa;
+      font-size: 13px;
+    }
+    h2 {
+      margin: 0 0 10px;
+      font-size: 15px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 3px 9px;
+      font-size: 11px;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+    .badge-connected {
+      background: #e6f4ea;
+      color: #137333;
+    }
+    .badge-disconnected {
+      background: #fce8e6;
+      color: #c5221f;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #dfe1e6;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 10px;
+      box-shadow: 0 1px 2px rgba(9, 30, 66, 0.04);
+    }
+    .repo-meta {
+      background: #f0f4ff;
+      border: 1px solid #c9d8ff;
+      border-radius: 6px;
+      padding: 8px 10px;
+      margin-bottom: 10px;
+      font-size: 11.5px;
+      line-height: 1.45;
+      color: #1d2939;
+    }
+    .repo-meta div {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .repo-meta code {
+      font-family: monospace;
+      color: #0c41b8;
+      font-weight: 600;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 9px 12px;
+      background: #0c2340;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      box-sizing: border-box;
+      margin-top: 6px;
+      transition: background 0.15s ease, opacity 0.15s ease;
+    }
+    .btn:hover:not(:disabled) {
+      background: #1d4076;
+    }
+    .btn:disabled {
+      opacity: 0.65;
+      cursor: wait;
+    }
+    .btn-github {
+      background: linear-gradient(135deg, #117a37 0%, #1a9f49 100%);
+      font-size: 13.5px;
+      padding: 10px 12px;
+      margin-top: 0;
+      margin-bottom: 8px;
+      box-shadow: 0 2px 5px rgba(17, 122, 55, 0.25);
+    }
+    .btn-github:hover:not(:disabled) {
+      background: linear-gradient(135deg, #0d622c 0%, #14803a 100%);
+    }
+    .btn-primary-sync {
+      background: #1245c8;
+    }
+    .btn-primary-sync:hover:not(:disabled) {
+      background: #0c2f8f;
+    }
+    .btn-secondary {
+      background: #fff;
+      color: #0c2340;
+      border: 1px solid #d1d5db;
+      font-weight: 500;
+    }
+    .btn-secondary:hover:not(:disabled) {
+      background: #f3f4f6;
+    }
+    .status-banner {
+      display: none;
+      padding: 8px 10px;
+      border-radius: 6px;
+      font-size: 11.5px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    .status-banner.syncing {
+      display: block;
+      background: #fff8e6;
+      border: 1px solid #f5cd47;
+      color: #7f5f01;
+    }
+    .status-banner.success {
+      display: block;
+      background: #e6f4ea;
+      border: 1px solid #8fd19e;
+      color: #137333;
+    }
+    .status-banner.error {
+      display: block;
+      background: #fce8e6;
+      border: 1px solid #f5a69f;
+      color: #c5221f;
+    }
+    .log-box {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      font-family: monospace;
+      font-size: 11px;
+      padding: 8px;
+      border-radius: 6px;
+      height: 195px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+  <h2>
+    <span>HDFC Two-Way Auto-Sync</span>
+    <span id="statusBadge" class="badge badge-disconnected">Disconnected</span>
+  </h2>
+
+  <div class="card">
+    <div class="repo-meta">
+      <div><span>Figma File:</span> <code id="figmaFileLabel">Detecting...</code></div>
+      <div><span>Target Repo:</span> <code id="targetRepoLabel">d1hdfc/Some-Components</code></div>
+      <div><span>Bridge:</span> <code>ws://localhost:3055</code></div>
+    </div>
+
+    <div id="syncStatusBanner" class="status-banner"></div>
+
+    <button id="figmaToGithubBtn" class="btn btn-github">🚀 Figma to GitHub Sync</button>
+    <button id="syncNowBtn" class="btn">Sync Figma File ➔ VS Code (Add / Edit / Delete)</button>
+    <button id="syncCodeToFigmaBtn" class="btn btn-primary-sync">Sync VS Code ➔ Figma Canvas</button>
+    <button id="reconnectBtn" class="btn btn-secondary">Reconnect Bridge</button>
+  </div>
+
+  <div style="font-weight: 600; margin-bottom: 6px; font-size: 12px;">Live Sync & Git Activity Log</div>
+  <div id="logBox" class="log-box">Initializing Figma bridge...</div>
+
+  <script>
+    const statusBadge = document.getElementById('statusBadge');
+    const logBox = document.getElementById('logBox');
+    const figmaToGithubBtn = document.getElementById('figmaToGithubBtn');
+    const syncCodeToFigmaBtn = document.getElementById('syncCodeToFigmaBtn');
+    const syncNowBtn = document.getElementById('syncNowBtn');
+    const reconnectBtn = document.getElementById('reconnectBtn');
+    const syncStatusBanner = document.getElementById('syncStatusBanner');
+    const figmaFileLabel = document.getElementById('figmaFileLabel');
+    const targetRepoLabel = document.getElementById('targetRepoLabel');
+
+    let socket = null;
+    let activeFileName = '';
+    let activeFileKey = '';
+
+    function log(msg) {
+      const time = new Date().toLocaleTimeString();
+      logBox.textContent = `[${time}] ${msg}\n` + logBox.textContent;
+    }
+
+    function setBanner(kind, text) {
+      if (!kind) {
+        syncStatusBanner.className = 'status-banner';
+        syncStatusBanner.textContent = '';
+        return;
+      }
+      syncStatusBanner.className = `status-banner ${kind}`;
+      syncStatusBanner.textContent = text;
+    }
+
+    function updateRepoLabels(fileName, fileKey, repoName) {
+      if (fileName) {
+        activeFileName = fileName;
+        figmaFileLabel.textContent = fileName;
+      }
+      if (fileKey) {
+        activeFileKey = fileKey;
+      }
+      if (repoName) {
+        targetRepoLabel.textContent = repoName;
+      } else if (/some[\s-_]*components/i.test(activeFileName) || activeFileKey === 'NhsXzdYzA1O9TPQlRL3wC4') {
+        targetRepoLabel.textContent = 'd1hdfc/Some-Components';
+      } else if (/ui[\s-_]*components|foundations/i.test(activeFileName) || activeFileKey === 'CXxUbHl3oMzt9Bzv3SKv75') {
+        targetRepoLabel.textContent = 'd1hdfc/UI-Components';
+      }
+    }
+
+    function requestCodeToFigmaSync() {
+      if (!socket || socket.readyState !== WebSocket.OPEN) {
+        log('Cannot sync: the local sync server is disconnected.');
+        setBanner('error', '❌ Sync server is disconnected (ws://localhost:3055).');
+        return;
+      }
+      socket.send(JSON.stringify({
+        type: 'message',
+        channel: 'figma-sync',
+        message: {
+          event: 'CODE_TO_FIGMA_SYNC_REQUEST',
+          fileName: activeFileName,
+          fileKey: activeFileKey,
+          componentFolder: 'button'
+        }
+      }));
+      log('Requested VS Code ➔ Figma Canvas sync...');
+    }
+
+    function connect() {
+      log('Connecting to WebSocket ws://localhost:3055...');
+      statusBadge.className = 'badge badge-disconnected';
+      statusBadge.textContent = 'Connecting...';
+
+      try {
+        socket = new WebSocket('ws://localhost:3055');
+
+        socket.onopen = () => {
+          statusBadge.className = 'badge badge-connected';
+          statusBadge.textContent = 'Live Connected';
+          log('Connected to sync server! Universal Add/Edit/Delete auto-sync active.');
+          socket.send(JSON.stringify({ type: 'join', channel: 'figma-sync' }));
+          parent.postMessage({
+            pluginMessage: {
+              type: 'REQUEST_FILE_INFO'
+            }
+          }, '*');
+          parent.postMessage({
+            pluginMessage: {
+              type: 'REQUEST_FULL_FIGMA_EXPORT',
+              reason: 'auto-connect',
+              pushToGithub: true
+            }
+          }, '*');
+        };
+
+        socket.onmessage = (event) => {
+          try {
+            const data = JSON.parse(event.data);
+            if (data.type === 'broadcast' && data.message) {
+              const payload = data.message;
+
+              if (payload.repoName) {
+                updateRepoLabels(payload.fileName, payload.fileKey, payload.repoName);
+              }
+
+              if (payload.event === 'FIGMA_TO_GITHUB_COMPLETE' || payload.event === 'FIGMA_TO_CODE_COMPLETE') {
+                figmaToGithubBtn.disabled = false;
+                figmaToGithubBtn.textContent = '🚀 Figma to GitHub Sync';
+                const result = payload.result || {};
+                const git = payload.git || {};
+                const summary = `+${result.createdCount || 0} added, ~${result.updatedCount || 0} edited, -${result.deletedCount || 0} deleted, ${result.tokensUpdated || 0} tokens`;
+
+                log(`Figma ➔ Code (${summary})`);
+
+                if (git && (git.pushed || git.committed || git.success)) {
+                  const repoText = payload.repoName || git.repoUrl || targetRepoLabel.textContent;
+                  const statusMsg = git.pushed
+                    ? `✅ Pushed to ${repoText} (${git.branch || 'main'}) — ${summary}`
+                    : `✅ Synced (${summary}) — ${git.message || 'Up to date on GitHub'}`;
+                  setBanner('success', statusMsg);
+                  log(`GitHub Push: ${statusMsg}`);
+                  if (payload.source === 'github-sync') {
+                    parent.postMessage({
+                      pluginMessage: {
+                        type: 'NOTIFY_GITHUB_SYNC',
+                        success: true,
+                        message: statusMsg
+                      }
+                    }, '*');
+                  }
+                } else if (git && git.error) {
+                  const errMsg = `❌ Git push error: ${git.error}`;
+                  setBanner('error', errMsg);
+                  log(errMsg);
+                  parent.postMessage({
+                    pluginMessage: {
+                      type: 'NOTIFY_GITHUB_SYNC',
+                      success: false,
+                      message: errMsg
+                    }
+                  }, '*');
+                } else {
+                  setBanner('success', `✅ Synced to local project (${summary})`);
+                }
+              } else if (payload.event === 'FIGMA_TO_CODE_ERROR' || payload.event === 'FIGMA_TO_GITHUB_ERROR') {
+                figmaToGithubBtn.disabled = false;
+                figmaToGithubBtn.textContent = '🚀 Figma to GitHub Sync';
+                const errText = payload.error || 'Unknown sync error';
+                setBanner('error', `❌ ${errText}`);
+                log(`Sync error: ${errText}`);
+              } else if (payload.event === 'CODE_TO_FIGMA_DELETE') {
+                log(`Received code deletion for: ${payload.componentName || payload.nodeId}`);
+                parent.postMessage({
+                  pluginMessage: {
+                    type: 'ACTION_DELETE_COMPONENT',
+                    payload
+                  }
+                }, '*');
+              } else if (payload.event === 'CODE_TO_FIGMA_UPDATE') {
+                log(`Received code update for: ${payload.componentName} (fontSize=${payload.fontSize ?? 'map'}px)`);
+                parent.postMessage({
+                  pluginMessage: {
+                    type: 'ACTION_UPDATE_COMPONENT',
+                    payload
+                  }
+                }, '*');
+              }
+            } else if (data.type === 'system') {
+              log(`System: ${data.message}`);
+            }
+          } catch (e) {
+            log('Error parsing socket message');
+          }
+        };
+
+        socket.onclose = () => {
+          statusBadge.className = 'badge badge-disconnected';
+          statusBadge.textContent = 'Disconnected';
+          figmaToGithubBtn.disabled = false;
+          figmaToGithubBtn.textContent = '🚀 Figma to GitHub Sync';
+          log('Socket connection closed. Retrying in 3s...');
+          setTimeout(connect, 3000);
+        };
+
+        socket.onerror = () => {
+          statusBadge.className = 'badge badge-disconnected';
+          statusBadge.textContent = 'Error';
+        };
+      } catch (err) {
+        log(`Socket error: ${err.message}`);
+        setTimeout(connect, 3000);
+      }
+    }
+
+    window.onmessage = (event) => {
+      const msg = event.data.pluginMessage;
+      if (!msg) return;
+
+      if (msg.type === 'LOG') {
+        log(msg.message);
+      } else if (msg.type === 'FILE_INFO') {
+        updateRepoLabels(msg.fileName, msg.fileKey, null);
+      } else if (msg.type === 'FIGMA_LIVE_SYNC_PAYLOAD') {
+        updateRepoLabels(msg.payload?.fileName, msg.payload?.fileKey, null);
+        if (!socket || socket.readyState !== WebSocket.OPEN) {
+          figmaToGithubBtn.disabled = false;
+          figmaToGithubBtn.textContent = '🚀 Figma to GitHub Sync';
+          setBanner('error', '❌ Cannot sync: local sync server ws://localhost:3055 is disconnected.');
+          log('Cannot send Figma payload: local sync server is disconnected.');
+          return;
+        }
+        socket.send(JSON.stringify({
+          type: 'message',
+          channel: 'figma-sync',
+          message: {
+            event: 'FIGMA_LIVE_SYNC_PAYLOAD',
+            ...msg.payload
+          }
+        }));
+      }
+    };
+
+    figmaToGithubBtn.onclick = () => {
+      if (!socket || socket.readyState !== WebSocket.OPEN) {
+        setBanner('error', '❌ Cannot sync: local sync server ws://localhost:3055 is disconnected.');
+        log('Cannot sync: the local sync server is disconnected.');
+        return;
+      }
+      figmaToGithubBtn.disabled = true;
+      figmaToGithubBtn.textContent = '⏳ Syncing Figma ➔ Code ➔ GitHub...';
+      setBanner('syncing', `⏳ Syncing "${activeFileName || 'Figma'}" components & pushing to ${targetRepoLabel.textContent}...`);
+      log('🚀 Triggered Figma to GitHub Sync (Full Add/Edit/Delete + Git Push)...');
+      parent.postMessage({
+        pluginMessage: {
+          type: 'REQUEST_FULL_FIGMA_EXPORT',
+          reason: 'github-sync',
+          pushToGithub: true
+        }
+      }, '*');
+    };
+
+    syncNowBtn.onclick = () => {
+      if (!socket || socket.readyState !== WebSocket.OPEN) {
+        setBanner('error', '❌ Cannot sync: local sync server ws://localhost:3055 is disconnected.');
+        log('Cannot sync: the local sync server is disconnected.');
+        return;
+      }
+      setBanner('syncing', '⏳ Syncing Figma components & tokens to local project...');
+      log('Extracting live Figma Variables & Components from canvas...');
+      parent.postMessage({
+        pluginMessage: {
+          type: 'REQUEST_FULL_FIGMA_EXPORT',
+          reason: 'manual',
+          pushToGithub: true
+        }
+      }, '*');
+    };
+
+    syncCodeToFigmaBtn.onclick = () => {
+      requestCodeToFigmaSync();
+    };
+
+    reconnectBtn.onclick = () => {
+      if (socket) socket.close();
+      connect();
+    };
+
+    connect();
+  </script>
+</body>
+</html>

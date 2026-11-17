@@ -1,0 +1,15 @@
+{
+  "fileKey": "NhsXzdYzA1O9TPQlRL3wC4",
+  "version": "2417505386316149871",
+  "components": [
+    {
+      "key": "3972:30799",
+      "name": "Button",
+      "pageName": "Button",
+      "description": "320 variants",
+      "nodeId": "3972:30799",
+      "type": "COMPONENT_SET",
+      "thumbnailUrl": "/figma/components/6343-1205.png"
+    }
+  ]
+}
