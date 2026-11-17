@@ -5,7 +5,7 @@
 
 _No description set in Figma._
 
-> Last updated: 2026-11-17T07:33:10.169Z
+> Last updated: 2026-11-17T07:33:39.850Z
 
 ## Overview
 
@@ -406,10 +406,12 @@ UIButton()
 
 ## Figma Changelog & Diff Status
 
-> [!IMPORTANT]
-> **12 change(s) detected** in the latest Figma sync (2026-11-17T07:33:10.159Z).
+> [!TIP]
+> **Nothing changed** — the latest Figma sync matches the previous snapshot.
 
-### Changes in latest sync
+### Previous changes
+
+**2026-11-17T07:33:10.159Z**
 
 - Base Width × Height: `194px × 72px` → `162px × 48px`
 - Base Padding: `0px 40px 0px 40px` → `0px 20px 0px 20px`
@@ -423,8 +425,6 @@ UIButton()
 - Variant `size=Large, style=Primary, state=Focus, type=Default` — Padding: `0px 40px 0px 40px` → `0px 20px 0px 20px`
 - Variant `size=Large, style=Primary, state=Focus, type=Default` — Gap: `0px` → `4px`
 - Variant `size=Large, style=Primary, state=Focus, type=Default` — Background: `#C7B9FF` → `#1C3FCA`
-
-### Previous changes
 
 **2026-11-17T07:32:13.704Z**
 

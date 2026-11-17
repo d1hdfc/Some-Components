@@ -1,6 +1,6 @@
 {
   "button": {
-    "status": "changed",
+    "status": "unchanged",
     "baselineAt": "2026-11-09T07:52:17.559Z",
     "history": [
       {
@@ -3739,232 +3739,63 @@
     }
   },
   "final-input-area-component": {
-    "status": "unchanged",
+    "status": "changed",
     "baselineAt": "2026-11-17T07:32:07.245Z",
-    "history": [],
-    "snapshot": {
-      "name": "2. Final Input Area Component",
-      "description": "",
-      "textContent": "Label",
-      "properties": {
-        "helperText": {
-          "type": "BOOLEAN",
-          "defaultValue": "true",
-          "options": []
-        },
-        "states": {
-          "type": "VARIANT",
-          "defaultValue": "Inactive",
-          "options": [
-            "Inactive",
-            "Focus",
-            "Active",
-            "Disabled",
-            "Error",
-            "Success",
-            "Loading",
-            "Read Only"
-          ]
-        },
-        "size": {
-          "type": "VARIANT",
-          "defaultValue": "Small",
-          "options": [
-            "Small",
-            "Medium"
-          ]
-        }
-      },
-      "base": {
-        "size": "320px × 174px",
-        "padding": "0px 0px 0px 0px",
-        "gap": "8px",
-        "radius": "0px",
-        "fontSize": "14px",
-        "lineHeight": null,
-        "background": null,
-        "textColor": "#444444",
-        "border": null,
-        "layoutMode": "VERTICAL"
-      },
-      "variants": {
-        "states=Inactive, size=Small": {
-          "size": "320px × 174px",
-          "padding": "0px 0px 0px 0px",
-          "gap": "8px",
-          "radius": "0px",
-          "fontSize": "14px",
-          "lineHeight": "18px",
-          "background": null,
-          "textColor": "#444444",
-          "border": null
-        },
-        "states=Active, size=Small": {
-          "size": "320px × 174px",
-          "padding": "0px 0px 0px 0px",
-          "gap": "8px",
-          "radius": "0px",
-          "fontSize": "14px",
-          "lineHeight": "18px",
-          "background": null,
-          "textColor": "#111111",
-          "border": null
-        },
-        "states=Loading, size=Small": {
-          "size": "320px × 174px",
-          "padding": "0px 0px 0px 0px",
-          "gap": "8px",
-          "radius": "0px",
-          "fontSize": "14px",
-          "lineHeight": "18px",
-          "background": null,
-          "textColor": "#444444",
-          "border": null
-        },
-        "states=Inactive, size=Medium": {
-          "size": "360px × 230px",
-          "padding": "0px 0px 0px 0px",
-          "gap": "12px",
-          "radius": "0px",
-          "fontSize": "18px",
-          "lineHeight": "24px",
-          "background": null,
-          "textColor": "#5C6172",
-          "border": null
-        },
-        "states=Active, size=Medium": {
-          "size": "360px × 230px",
-          "padding": "0px 0px 0px 0px",
-          "gap": "12px",
-          "radius": "0px",
-          "fontSize": "14px",
-          "lineHeight": "24px",
-          "background": null,
-          "textColor": "#111111",
-          "border": null
-        },
-        "states=Loading, size=Medium": {
-          "size": "360px × 230px",
-          "padding": "0px 0px 0px 0px",
-          "gap": "12px",
-          "radius": "0px",
-          "fontSize": "18px",
-          "lineHeight": "24px",
-          "background": null,
-          "textColor": "#444444",
-          "border": null
-        },
-        "states=Disabled, size=Medium": {
-          "size": "360px × 230px",
-          "padding": "0px 0px 0px 0px",
-          "gap": "12px",
-          "radius": "0px",
-          "fontSize": "14px",
-          "lineHeight": "24px",
-          "background": null,
-          "textColor": "#D9D9D9",
-          "border": null
-        },
-        "states=Focus, size=Medium": {
-          "size": "360px × 230px",
-          "padding": "0px 0px 0px 0px",
-          "gap": "12px",
-          "radius": "0px",
-          "fontSize": "14px",
-          "lineHeight": "24px",
-          "background": null,
-          "textColor": "#111111",
-          "border": null
-        },
-        "states=Error, size=Medium": {
-          "size": "360px × 230px",
-          "padding": "0px 0px 0px 0px",
-          "gap": "12px",
-          "radius": "0px",
-          "fontSize": "14px",
-          "lineHeight": "24px",
-          "background": null,
-          "textColor": "#111111",
-          "border": null
-        },
-        "states=Success, size=Medium": {
-          "size": "360px × 230px",
-          "padding": "0px 0px 0px 0px",
-          "gap": "12px",
-          "radius": "0px",
-          "fontSize": "14px",
-          "lineHeight": "24px",
-          "background": null,
-          "textColor": "#111111",
-          "border": null
-        },
-        "states=Focus, size=Small": {
-          "size": "320px × 174px",
-          "padding": "0px 0px 0px 0px",
-          "gap": "8px",
-          "radius": "0px",
-          "fontSize": "14px",
-          "lineHeight": "18px",
-          "background": null,
-          "textColor": "#111111",
-          "border": null
-        },
-        "states=Disabled, size=Small": {
-          "size": "320px × 174px",
-          "padding": "0px 0px 0px 0px",
-          "gap": "8px",
-          "radius": "0px",
-          "fontSize": "14px",
-          "lineHeight": "18px",
-          "background": null,
-          "textColor": "#D9D9D9",
-          "border": null
-        },
-        "states=Error, size=Small": {
-          "size": "320px × 174px",
-          "padding": "0px 0px 0px 0px",
-          "gap": "8px",
-          "radius": "0px",
-          "fontSize": "14px",
-          "lineHeight": "18px",
-          "background": null,
-          "textColor": "#111111",
-          "border": null
-        },
-        "states=Success, size=Small": {
-          "size": "320px × 174px",
-          "padding": "0px 0px 0px 0px",
-          "gap": "8px",
-          "radius": "0px",
-          "fontSize": "14px",
-          "lineHeight": "18px",
-          "background": null,
-          "textColor": "#111111",
-          "border": null
-        },
-        "states=Read Only, size=Small": {
-          "size": "320px × 36px",
-          "padding": "0px 0px 0px 0px",
-          "gap": "8px",
-          "radius": "0px",
-          "fontSize": "14px",
-          "lineHeight": "18px",
-          "background": null,
-          "textColor": "#111111",
-          "border": null
-        },
-        "states=Read Only, size=Medium": {
-          "size": "360px × 44px",
-          "padding": "0px 0px 0px 0px",
-          "gap": "8px",
-          "radius": "0px",
-          "fontSize": "14px",
-          "lineHeight": "18px",
-          "background": null,
-          "textColor": "#111111",
-          "border": null
-        }
+    "history": [
+      {
+        "at": "2026-11-17T07:33:39.929Z",
+        "changes": [
+          "Renamed: `2. Final Input Area Component` → `FinalInputAreaComponent`",
+          "Label text changed: \"Label\" → \"FinalInputAreaComponent\"",
+          "Property removed: `helperText`",
+          "Property removed: `states`",
+          "Property removed: `size`",
+          "Base Width × Height: `320px × 174px` → `34px × 14px`",
+          "Base Padding: `0px 0px 0px 0px` → `0px 16px 0px 16px`",
+          "Base Gap: `8px` → `6px`",
+          "Base Corner radius: `0px` → `1440px`",
+          "Base Font size: `14px` → `16px`",
+          "Base Background: `—` → `#1C3FCA`",
+          "Base Text color: `#444444` → `#FFFFFF`",
+          "Base Border color: `—` → `#FFFFFF`",
+          "Base Layout mode: `VERTICAL` → `HORIZONTAL`",
+          "Variant removed: `states=Inactive, size=Small`",
+          "Variant removed: `states=Active, size=Small`",
+          "Variant removed: `states=Loading, size=Small`",
+          "Variant removed: `states=Inactive, size=Medium`",
+          "Variant removed: `states=Active, size=Medium`",
+          "Variant removed: `states=Loading, size=Medium`",
+          "Variant removed: `states=Disabled, size=Medium`",
+          "Variant removed: `states=Focus, size=Medium`",
+          "Variant removed: `states=Error, size=Medium`",
+          "Variant removed: `states=Success, size=Medium`",
+          "Variant removed: `states=Focus, size=Small`",
+          "Variant removed: `states=Disabled, size=Small`",
+          "Variant removed: `states=Error, size=Small`",
+          "Variant removed: `states=Success, size=Small`",
+          "Variant removed: `states=Read Only, size=Small`",
+          "Variant removed: `states=Read Only, size=Medium`"
+        ]
       }
+    ],
+    "snapshot": {
+      "name": "FinalInputAreaComponent",
+      "description": "",
+      "textContent": "FinalInputAreaComponent",
+      "properties": {},
+      "base": {
+        "size": "34px × 14px",
+        "padding": "0px 16px 0px 16px",
+        "gap": "6px",
+        "radius": "1440px",
+        "fontSize": "16px",
+        "lineHeight": null,
+        "background": "#1C3FCA",
+        "textColor": "#FFFFFF",
+        "border": "#FFFFFF",
+        "layoutMode": "HORIZONTAL"
+      },
+      "variants": {}
     }
   }
 }

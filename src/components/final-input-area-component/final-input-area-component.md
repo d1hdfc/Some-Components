@@ -5,24 +5,24 @@
 
 _No description set in Figma._
 
-> Last updated: 2026-11-17T07:32:28.847Z
+> Last updated: 2026-11-17T07:33:39.934Z
 
 ## Overview
 
 | Field | Value |
 | --- | --- |
-| Figma name | 2. Final Input Area Component |
-| Node ID | 8017:4011 |
-| Node type | COMPONENT_SET |
+| Figma name | FinalInputAreaComponent |
+| Node ID | 8017:4424 |
+| Node type | COMPONENT |
 | Figma page | Input-Area |
-| Variants | 16 |
+| Variants | 0 |
 | Code folder | `src/components/final-input-area-component/` |
 
 ## Text elements
 
 | Element | Default text |
 | --- | --- |
-| Primary label | Label |
+| Primary label | FinalInputAreaComponent |
 
 ## Installation
 
@@ -34,7 +34,7 @@ npm install @d1hdfc/Some-Components@main
 import { FinalInputAreaComponent } from '@d1hdfc/Some-Components';
 import '@d1hdfc/Some-Components/style.css';
 
-<FinalInputAreaComponent size="small">Label</FinalInputAreaComponent>
+<FinalInputAreaComponent>FinalInputAreaComponent</FinalInputAreaComponent>
 ```
 
 ```dart
@@ -44,59 +44,60 @@ UIFinalInputAreaComponent()
 
 ## Properties
 
-| Property | Type | Default | Options |
-| --- | --- | --- | --- |
-| `helperText` | BOOLEAN | true | — |
-| `size` | VARIANT | Small | Small, Medium |
-| `states` | VARIANT | Inactive | Inactive, Focus, Active, Disabled, Error, Success, Loading, Read Only |
-
-## Size configurations
-
-| Size | Width × Height | Padding (T R B L) | Gap | Radius | Font size |
-| --- | --- | --- | --- | --- | --- |
-| Small | 320px × 174px | 0px 0px 0px 0px | 8px | 0px | 14px |
-| Medium | 360px × 230px | 0px 0px 0px 0px | 12px | 0px | 18px |
+_No component properties defined in Figma._
 
 ## Base specs
 
 | Spec | Value |
 | --- | --- |
-| Width × Height | 320px × 174px |
-| Padding | 0px 0px 0px 0px |
-| Gap | 8px |
-| Corner radius | 0px |
-| Font size | 14px |
+| Width × Height | 34px × 14px |
+| Padding | 0px 16px 0px 16px |
+| Gap | 6px |
+| Corner radius | 1440px |
+| Font size | 16px |
 | Line height | — |
-| Background | — |
-| Text color | #444444 |
-| Border color | — |
-| Layout mode | VERTICAL |
-
-## Variants (16)
-
-| Variant | W × H | Padding | Gap | Radius | Font size | Background | Text | Border |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| states=Active, size=Medium | 360px × 230px | 0px 0px 0px 0px | 12px | 0px | 14px | — | #111111 | — |
-| states=Active, size=Small | 320px × 174px | 0px 0px 0px 0px | 8px | 0px | 14px | — | #111111 | — |
-| states=Disabled, size=Medium | 360px × 230px | 0px 0px 0px 0px | 12px | 0px | 14px | — | #D9D9D9 | — |
-| states=Disabled, size=Small | 320px × 174px | 0px 0px 0px 0px | 8px | 0px | 14px | — | #D9D9D9 | — |
-| states=Error, size=Medium | 360px × 230px | 0px 0px 0px 0px | 12px | 0px | 14px | — | #111111 | — |
-| states=Error, size=Small | 320px × 174px | 0px 0px 0px 0px | 8px | 0px | 14px | — | #111111 | — |
-| states=Focus, size=Medium | 360px × 230px | 0px 0px 0px 0px | 12px | 0px | 14px | — | #111111 | — |
-| states=Focus, size=Small | 320px × 174px | 0px 0px 0px 0px | 8px | 0px | 14px | — | #111111 | — |
-| states=Inactive, size=Medium | 360px × 230px | 0px 0px 0px 0px | 12px | 0px | 18px | — | #5C6172 | — |
-| states=Inactive, size=Small | 320px × 174px | 0px 0px 0px 0px | 8px | 0px | 14px | — | #444444 | — |
-| states=Loading, size=Medium | 360px × 230px | 0px 0px 0px 0px | 12px | 0px | 18px | — | #444444 | — |
-| states=Loading, size=Small | 320px × 174px | 0px 0px 0px 0px | 8px | 0px | 14px | — | #444444 | — |
-| states=Read Only, size=Medium | 360px × 44px | 0px 0px 0px 0px | 8px | 0px | 14px | — | #111111 | — |
-| states=Read Only, size=Small | 320px × 36px | 0px 0px 0px 0px | 8px | 0px | 14px | — | #111111 | — |
-| states=Success, size=Medium | 360px × 230px | 0px 0px 0px 0px | 12px | 0px | 14px | — | #111111 | — |
-| states=Success, size=Small | 320px × 174px | 0px 0px 0px 0px | 8px | 0px | 14px | — | #111111 | — |
+| Background | #1C3FCA |
+| Text color | #FFFFFF |
+| Border color | #FFFFFF |
+| Layout mode | HORIZONTAL |
 
 ## Figma Changelog & Diff Status
 
-> [!TIP]
-> **Nothing changed** — the latest Figma sync matches the previous snapshot.
+> [!IMPORTANT]
+> **30 change(s) detected** in the latest Figma sync (2026-11-17T07:33:39.929Z).
+
+### Changes in latest sync
+
+- Renamed: `2. Final Input Area Component` → `FinalInputAreaComponent`
+- Label text changed: "Label" → "FinalInputAreaComponent"
+- Property removed: `helperText`
+- Property removed: `states`
+- Property removed: `size`
+- Base Width × Height: `320px × 174px` → `34px × 14px`
+- Base Padding: `0px 0px 0px 0px` → `0px 16px 0px 16px`
+- Base Gap: `8px` → `6px`
+- Base Corner radius: `0px` → `1440px`
+- Base Font size: `14px` → `16px`
+- Base Background: `—` → `#1C3FCA`
+- Base Text color: `#444444` → `#FFFFFF`
+- Base Border color: `—` → `#FFFFFF`
+- Base Layout mode: `VERTICAL` → `HORIZONTAL`
+- Variant removed: `states=Inactive, size=Small`
+- Variant removed: `states=Active, size=Small`
+- Variant removed: `states=Loading, size=Small`
+- Variant removed: `states=Inactive, size=Medium`
+- Variant removed: `states=Active, size=Medium`
+- Variant removed: `states=Loading, size=Medium`
+- Variant removed: `states=Disabled, size=Medium`
+- Variant removed: `states=Focus, size=Medium`
+- Variant removed: `states=Error, size=Medium`
+- Variant removed: `states=Success, size=Medium`
+- Variant removed: `states=Focus, size=Small`
+- Variant removed: `states=Disabled, size=Small`
+- Variant removed: `states=Error, size=Small`
+- Variant removed: `states=Success, size=Small`
+- Variant removed: `states=Read Only, size=Small`
+- Variant removed: `states=Read Only, size=Medium`
 
 ## Code files
 

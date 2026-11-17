@@ -17,7 +17,16 @@
       "pageName": "Input-Area",
       "generated": true,
       "updatedAt": "2026-11-17T07:32:13.692Z"
+    },
+    "8017:4424": {
+      "id": "8017:4424",
+      "name": "FinalInputAreaComponent",
+      "kebab": "final-input-area-component",
+      "type": "COMPONENT",
+      "pageName": "Input-Area",
+      "generated": true,
+      "updatedAt": "2026-11-17T07:33:39.832Z"
     }
   },
-  "lastSync": "2026-11-17T07:33:10.153Z"
+  "lastSync": "2026-11-17T07:33:39.832Z"
 }
