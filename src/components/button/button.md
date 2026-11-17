@@ -5,7 +5,7 @@
 
 _No description set in Figma._
 
-> Last updated: 2026-11-12T09:07:56.001Z
+> Last updated: 2026-11-17T07:25:38.664Z
 
 ## Overview
 
@@ -105,19 +105,19 @@ UIButton()
 | size=Large, style=Link, state=Pressed, type=White | 114px × 24px | 0px 0px 0px 0px | 0px | 0px | 18px | — | #FFFFFF | — |
 | size=Large, style=Primary, state=Default, type=Default | 194px × 72px | 0px 40px 0px 40px | 0px | 12px | 18px | #C7B9FF | #1C3FCA | — |
 | size=Large, style=Primary, state=Default, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | — | #FFFFFF | — |
-| size=Large, style=Primary, state=Default, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #00815A | #FFFFFF | — |
+| size=Large, style=Primary, state=Default, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #1C3FCA | #FFFFFF | — |
 | size=Large, style=Primary, state=Default, type=White | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #FFFFFF | #1C3FCA | — |
 | size=Large, style=Primary, state=Disabled, type=Default | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #00815A | #F3F6FD | — |
 | size=Large, style=Primary, state=Disabled, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | — | #FFFFFF | — |
 | size=Large, style=Primary, state=Disabled, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #00815A | #FFFFFF | — |
 | size=Large, style=Primary, state=Disabled, type=White | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #FFFFFF | #9CB4F7 | — |
-| size=Large, style=Primary, state=Focus, type=Default | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #00815A | #FFFFFF | — |
+| size=Large, style=Primary, state=Focus, type=Default | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #1C3FCA | #FFFFFF | — |
 | size=Large, style=Primary, state=Focus, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | — | #FFFFFF | — |
-| size=Large, style=Primary, state=Focus, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #00815A | #FFFFFF | — |
+| size=Large, style=Primary, state=Focus, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #1C3FCA | #FFFFFF | — |
 | size=Large, style=Primary, state=Focus, type=White | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #FFFFFF | #1C3FCA | — |
-| size=Large, style=Primary, state=Hover, type=Default | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #00815A | #FFFFFF | — |
+| size=Large, style=Primary, state=Hover, type=Default | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #D61C53 | #FFFFFF | — |
 | size=Large, style=Primary, state=Hover, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | — | #FFFFFF | — |
-| size=Large, style=Primary, state=Hover, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #00815A | #FFFFFF | — |
+| size=Large, style=Primary, state=Hover, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #D61C53 | #FFFFFF | — |
 | size=Large, style=Primary, state=Hover, type=White | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #FFFFFF | #1C3FCA | — |
 | size=Large, style=Primary, state=Pressed, type=Default | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #00815A | #FFFFFF | — |
 | size=Large, style=Primary, state=Pressed, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | — | #FFFFFF | — |
@@ -183,21 +183,21 @@ UIButton()
 | size=Medium, style=Link, state=Pressed, type=Gradient | 99px × 20px | 0px 0px 0px 0px | 0px | 0px | 16px | — | — | — |
 | size=Medium, style=Link, state=Pressed, type=Icon | 20px × 20px | 0px 0px 0px 0px | 0px | 0px | 18px | — | #FFFFFF | — |
 | size=Medium, style=Link, state=Pressed, type=White | 99px × 20px | 0px 0px 0px 0px | 0px | 0px | 16px | — | #FFFFFF | — |
-| size=Medium, style=Primary, state=Default, type=Default | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #00815A | #FFFFFF | — |
+| size=Medium, style=Primary, state=Default, type=Default | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #1C3FCA | #FFFFFF | — |
 | size=Medium, style=Primary, state=Default, type=Gradient | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | — | #FFFFFF | — |
-| size=Medium, style=Primary, state=Default, type=Icon | 40px × 40px | 0px 12px 0px 12px | 0px | 12px | 18px | #00815A | #FFFFFF | — |
+| size=Medium, style=Primary, state=Default, type=Icon | 40px × 40px | 0px 12px 0px 12px | 0px | 12px | 18px | #1C3FCA | #FFFFFF | — |
 | size=Medium, style=Primary, state=Default, type=White | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #FFFFFF | #1C3FCA | — |
 | size=Medium, style=Primary, state=Disabled, type=Default | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #00815A | #F3F6FD | — |
 | size=Medium, style=Primary, state=Disabled, type=Gradient | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | — | #FFFFFF | — |
 | size=Medium, style=Primary, state=Disabled, type=Icon | 40px × 40px | 0px 12px 0px 12px | 0px | 12px | 18px | #00815A | #FFFFFF | — |
 | size=Medium, style=Primary, state=Disabled, type=White | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #FFFFFF | #9CB4F7 | — |
-| size=Medium, style=Primary, state=Focus, type=Default | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #00815A | #FFFFFF | — |
+| size=Medium, style=Primary, state=Focus, type=Default | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #1C3FCA | #FFFFFF | — |
 | size=Medium, style=Primary, state=Focus, type=Gradient | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | — | #FFFFFF | — |
-| size=Medium, style=Primary, state=Focus, type=Icon | 40px × 40px | 0px 12px 0px 12px | 0px | 12px | 18px | #00815A | #FFFFFF | — |
+| size=Medium, style=Primary, state=Focus, type=Icon | 40px × 40px | 0px 12px 0px 12px | 0px | 12px | 18px | #1C3FCA | #FFFFFF | — |
 | size=Medium, style=Primary, state=Focus, type=White | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #FFFFFF | #1C3FCA | — |
-| size=Medium, style=Primary, state=Hover, type=Default | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #00815A | #FFFFFF | — |
+| size=Medium, style=Primary, state=Hover, type=Default | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #D61C53 | #FFFFFF | — |
 | size=Medium, style=Primary, state=Hover, type=Gradient | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | — | #FFFFFF | — |
-| size=Medium, style=Primary, state=Hover, type=Icon | 40px × 40px | 0px 12px 0px 12px | 0px | 12px | 18px | #00815A | #FFFFFF | — |
+| size=Medium, style=Primary, state=Hover, type=Icon | 40px × 40px | 0px 12px 0px 12px | 0px | 12px | 18px | #D61C53 | #FFFFFF | — |
 | size=Medium, style=Primary, state=Hover, type=White | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #FFFFFF | #1C3FCA | — |
 | size=Medium, style=Primary, state=Pressed, type=Default | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #00815A | #FFFFFF | — |
 | size=Medium, style=Primary, state=Pressed, type=Gradient | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | — | #FFFFFF | — |
@@ -263,21 +263,21 @@ UIButton()
 | size=Small, style=Link, state=Pressed, type=Gradient | 93px × 20px | 0px 0px 0px 0px | 0px | 0px | 14px | — | — | — |
 | size=Small, style=Link, state=Pressed, type=Icon | 20px × 20px | 0px 0px 0px 0px | 0px | 8px | 18px | — | #FFFFFF | — |
 | size=Small, style=Link, state=Pressed, type=White | 93px × 20px | 0px 0px 0px 0px | 0px | 0px | 14px | — | #FFFFFF | — |
-| size=Small, style=Primary, state=Default, type=Default | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #00815A | #FFFFFF | — |
+| size=Small, style=Primary, state=Default, type=Default | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #1C3FCA | #FFFFFF | — |
 | size=Small, style=Primary, state=Default, type=Gradient | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | — | #FFFFFF | — |
-| size=Small, style=Primary, state=Default, type=Icon | 36px × 36px | 0px 8px 0px 8px | 0px | 8px | 18px | #00815A | #FFFFFF | — |
+| size=Small, style=Primary, state=Default, type=Icon | 36px × 36px | 0px 8px 0px 8px | 0px | 8px | 18px | #1C3FCA | #FFFFFF | — |
 | size=Small, style=Primary, state=Default, type=White | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #FFFFFF | #1C3FCA | — |
 | size=Small, style=Primary, state=Disabled, type=Default | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #00815A | #F3F6FD | — |
 | size=Small, style=Primary, state=Disabled, type=Gradient | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | — | #FFFFFF | — |
 | size=Small, style=Primary, state=Disabled, type=Icon | 36px × 36px | 0px 8px 0px 8px | 0px | 8px | 18px | #00815A | #FFFFFF | — |
 | size=Small, style=Primary, state=Disabled, type=White | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #FFFFFF | #9CB4F7 | — |
-| size=Small, style=Primary, state=Focus, type=Default | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #00815A | #FFFFFF | — |
+| size=Small, style=Primary, state=Focus, type=Default | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #1C3FCA | #FFFFFF | — |
 | size=Small, style=Primary, state=Focus, type=Gradient | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | — | #FFFFFF | — |
-| size=Small, style=Primary, state=Focus, type=Icon | 36px × 36px | 0px 8px 0px 8px | 0px | 8px | 18px | #00815A | #FFFFFF | — |
+| size=Small, style=Primary, state=Focus, type=Icon | 36px × 36px | 0px 8px 0px 8px | 0px | 8px | 18px | #1C3FCA | #FFFFFF | — |
 | size=Small, style=Primary, state=Focus, type=White | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #FFFFFF | #1C3FCA | — |
-| size=Small, style=Primary, state=Hover, type=Default | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #00815A | #FFFFFF | — |
+| size=Small, style=Primary, state=Hover, type=Default | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #D61C53 | #FFFFFF | — |
 | size=Small, style=Primary, state=Hover, type=Gradient | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | — | #FFFFFF | — |
-| size=Small, style=Primary, state=Hover, type=Icon | 36px × 36px | 0px 8px 0px 8px | 0px | 8px | 18px | #00815A | #FFFFFF | — |
+| size=Small, style=Primary, state=Hover, type=Icon | 36px × 36px | 0px 8px 0px 8px | 0px | 8px | 18px | #D61C53 | #FFFFFF | — |
 | size=Small, style=Primary, state=Hover, type=White | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #FFFFFF | #1C3FCA | — |
 | size=Small, style=Primary, state=Pressed, type=Default | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #00815A | #FFFFFF | — |
 | size=Small, style=Primary, state=Pressed, type=Gradient | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | — | #FFFFFF | — |
@@ -343,21 +343,21 @@ UIButton()
 | size=Xsmall, style=Link, state=Pressed, type=Gradient | 79px × 16px | 0px 0px 0px 0px | 0px | 0px | 12px | — | — | — |
 | size=Xsmall, style=Link, state=Pressed, type=Icon | 16px × 16px | 0px 0px 0px 0px | 0px | 0px | 18px | — | #FFFFFF | — |
 | size=Xsmall, style=Link, state=Pressed, type=White | 79px × 16px | 0px 0px 0px 0px | 0px | 0px | 12px | — | #FFFFFF | — |
-| size=Xsmall, style=Primary, state=Default, type=Default | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #00815A | #FFFFFF | — |
+| size=Xsmall, style=Primary, state=Default, type=Default | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #1C3FCA | #FFFFFF | — |
 | size=Xsmall, style=Primary, state=Default, type=Gradient | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | — | #FFFFFF | — |
-| size=Xsmall, style=Primary, state=Default, type=Icon | 28px × 28px | 0px 8px 0px 8px | 0px | 8px | 18px | #00815A | #FFFFFF | — |
+| size=Xsmall, style=Primary, state=Default, type=Icon | 28px × 28px | 0px 8px 0px 8px | 0px | 8px | 18px | #1C3FCA | #FFFFFF | — |
 | size=Xsmall, style=Primary, state=Default, type=White | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #FFFFFF | #1C3FCA | — |
 | size=Xsmall, style=Primary, state=Disabled, type=Default | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #00815A | #F3F6FD | — |
 | size=Xsmall, style=Primary, state=Disabled, type=Gradient | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | — | #FFFFFF | — |
 | size=Xsmall, style=Primary, state=Disabled, type=Icon | 28px × 28px | 0px 8px 0px 8px | 0px | 8px | 18px | #00815A | #FFFFFF | — |
 | size=Xsmall, style=Primary, state=Disabled, type=White | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #FFFFFF | #9CB4F7 | — |
-| size=Xsmall, style=Primary, state=Focus, type=Default | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #00815A | #FFFFFF | — |
+| size=Xsmall, style=Primary, state=Focus, type=Default | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #1C3FCA | #FFFFFF | — |
 | size=Xsmall, style=Primary, state=Focus, type=Gradient | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | — | #FFFFFF | — |
-| size=Xsmall, style=Primary, state=Focus, type=Icon | 28px × 28px | 0px 8px 0px 8px | 0px | 8px | 18px | #00815A | #FFFFFF | — |
+| size=Xsmall, style=Primary, state=Focus, type=Icon | 28px × 28px | 0px 8px 0px 8px | 0px | 8px | 18px | #1C3FCA | #FFFFFF | — |
 | size=Xsmall, style=Primary, state=Focus, type=White | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #FFFFFF | #1C3FCA | — |
-| size=Xsmall, style=Primary, state=Hover, type=Default | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #00815A | #FFFFFF | — |
+| size=Xsmall, style=Primary, state=Hover, type=Default | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #D61C53 | #FFFFFF | — |
 | size=Xsmall, style=Primary, state=Hover, type=Gradient | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | — | #FFFFFF | — |
-| size=Xsmall, style=Primary, state=Hover, type=Icon | 28px × 28px | 0px 8px 0px 8px | 0px | 8px | 18px | #00815A | #FFFFFF | — |
+| size=Xsmall, style=Primary, state=Hover, type=Icon | 28px × 28px | 0px 8px 0px 8px | 0px | 8px | 18px | #D61C53 | #FFFFFF | — |
 | size=Xsmall, style=Primary, state=Hover, type=White | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #FFFFFF | #1C3FCA | — |
 | size=Xsmall, style=Primary, state=Pressed, type=Default | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #00815A | #FFFFFF | — |
 | size=Xsmall, style=Primary, state=Pressed, type=Gradient | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | — | #FFFFFF | — |
@@ -406,36 +406,34 @@ UIButton()
 
 ## Figma Changelog & Diff Status
 
-> [!TIP]
-> **Nothing changed** — the latest Figma sync matches the previous snapshot.
+> [!IMPORTANT]
+> **79 change(s) detected** in the latest Figma sync (2026-11-17T07:25:38.546Z).
 
-### Previous changes
-
-**2026-11-12T09:07:37.271Z**
+### Changes in latest sync
 
 - Base Background: `#D61C53` → `#C7B9FF`
 - Base Text color: `#FFFFFF` → `#1C3FCA`
 - Variant `size=Large, style=Primary, state=Default, type=Default` — Background: `#D61C53` → `#C7B9FF`
 - Variant `size=Large, style=Primary, state=Default, type=Default` — Text color: `#FFFFFF` → `#1C3FCA`
-- Variant `size=Large, style=Primary, state=Focus, type=Default` — Background: `#F2B102` → `#00815A`
-- Variant `size=Large, style=Primary, state=Default, type=Icon` — Background: `#F2B102` → `#00815A`
-- Variant `size=Large, style=Primary, state=Focus, type=Icon` — Background: `#F2B102` → `#00815A`
-- Variant `size=Medium, style=Primary, state=Default, type=Icon` — Background: `#F2B102` → `#00815A`
-- Variant `size=Medium, style=Primary, state=Focus, type=Icon` — Background: `#F2B102` → `#00815A`
-- Variant `size=Small, style=Primary, state=Default, type=Icon` — Background: `#F2B102` → `#00815A`
-- Variant `size=Small, style=Primary, state=Focus, type=Icon` — Background: `#F2B102` → `#00815A`
-- Variant `size=Xsmall, style=Primary, state=Default, type=Icon` — Background: `#F2B102` → `#00815A`
-- Variant `size=Xsmall, style=Primary, state=Focus, type=Icon` — Background: `#F2B102` → `#00815A`
-- Variant `size=Medium, style=Primary, state=Hover, type=Icon` — Background: `#B65805` → `#00815A`
-- Variant `size=Small, style=Primary, state=Hover, type=Icon` — Background: `#B65805` → `#00815A`
-- Variant `size=Xsmall, style=Primary, state=Hover, type=Icon` — Background: `#B65805` → `#00815A`
+- Variant `size=Large, style=Primary, state=Focus, type=Default` — Background: `#F2B102` → `#1C3FCA`
+- Variant `size=Large, style=Primary, state=Default, type=Icon` — Background: `#F2B102` → `#1C3FCA`
+- Variant `size=Large, style=Primary, state=Focus, type=Icon` — Background: `#F2B102` → `#1C3FCA`
+- Variant `size=Medium, style=Primary, state=Default, type=Icon` — Background: `#F2B102` → `#1C3FCA`
+- Variant `size=Medium, style=Primary, state=Focus, type=Icon` — Background: `#F2B102` → `#1C3FCA`
+- Variant `size=Small, style=Primary, state=Default, type=Icon` — Background: `#F2B102` → `#1C3FCA`
+- Variant `size=Small, style=Primary, state=Focus, type=Icon` — Background: `#F2B102` → `#1C3FCA`
+- Variant `size=Xsmall, style=Primary, state=Default, type=Icon` — Background: `#F2B102` → `#1C3FCA`
+- Variant `size=Xsmall, style=Primary, state=Focus, type=Icon` — Background: `#F2B102` → `#1C3FCA`
+- Variant `size=Medium, style=Primary, state=Hover, type=Icon` — Background: `#B65805` → `#D61C53`
+- Variant `size=Small, style=Primary, state=Hover, type=Icon` — Background: `#B65805` → `#D61C53`
+- Variant `size=Xsmall, style=Primary, state=Hover, type=Icon` — Background: `#B65805` → `#D61C53`
 - Variant `size=Medium, style=Primary, state=Pressed, type=Icon` — Background: `#1F30AD` → `#00815A`
 - Variant `size=Small, style=Primary, state=Pressed, type=Icon` — Background: `#1F30AD` → `#00815A`
 - Variant `size=Xsmall, style=Primary, state=Pressed, type=Icon` — Background: `#1F30AD` → `#00815A`
 - Variant `size=Medium, style=Primary, state=Disabled, type=Icon` — Background: `#9CB4F7` → `#00815A`
 - Variant `size=Small, style=Primary, state=Disabled, type=Icon` — Background: `#9CB4F7` → `#00815A`
 - Variant `size=Xsmall, style=Primary, state=Disabled, type=Icon` — Background: `#9CB4F7` → `#00815A`
-- Variant `size=Large, style=Primary, state=Hover, type=Icon` — Background: `#B65805` → `#00815A`
+- Variant `size=Large, style=Primary, state=Hover, type=Icon` — Background: `#B65805` → `#D61C53`
 - Variant `size=Large, style=Primary, state=Pressed, type=Icon` — Background: `#1F30AD` → `#00815A`
 - Variant `size=Large, style=Primary, state=Disabled, type=Icon` — Background: `#9CB4F7` → `#00815A`
 - Variant `size=Large, style=Secondary, state=Default, type=Icon` — Background: `#FFFFFF` → `#00815A`
@@ -450,22 +448,22 @@ UIButton()
 - Variant `size=Small, style=Secondary, state=Hover, type=Icon` — Background: `#F3F6FD` → `#00815A`
 - Variant `size=Xsmall, style=Secondary, state=Hover, type=Icon` — Background: `#F3F6FD` → `#00815A`
 - Variant `size=Large, style=Secondary, state=Hover, type=Icon` — Background: `#F3F6FD` → `#00815A`
-- Variant `size=Large, style=Primary, state=Hover, type=Default` — Background: `#B65805` → `#00815A`
+- Variant `size=Large, style=Primary, state=Hover, type=Default` — Background: `#B65805` → `#D61C53`
 - Variant `size=Large, style=Primary, state=Pressed, type=Default` — Background: `#1F30AD` → `#00815A`
 - Variant `size=Large, style=Primary, state=Disabled, type=Default` — Background: `#9CB4F7` → `#00815A`
-- Variant `size=Medium, style=Primary, state=Default, type=Default` — Background: `#F2B102` → `#00815A`
-- Variant `size=Medium, style=Primary, state=Focus, type=Default` — Background: `#F2B102` → `#00815A`
-- Variant `size=Medium, style=Primary, state=Hover, type=Default` — Background: `#B65805` → `#00815A`
+- Variant `size=Medium, style=Primary, state=Default, type=Default` — Background: `#F2B102` → `#1C3FCA`
+- Variant `size=Medium, style=Primary, state=Focus, type=Default` — Background: `#F2B102` → `#1C3FCA`
+- Variant `size=Medium, style=Primary, state=Hover, type=Default` — Background: `#B65805` → `#D61C53`
 - Variant `size=Medium, style=Primary, state=Pressed, type=Default` — Background: `#1F30AD` → `#00815A`
 - Variant `size=Medium, style=Primary, state=Disabled, type=Default` — Background: `#9CB4F7` → `#00815A`
-- Variant `size=Small, style=Primary, state=Default, type=Default` — Background: `#F2B102` → `#00815A`
-- Variant `size=Small, style=Primary, state=Focus, type=Default` — Background: `#F2B102` → `#00815A`
-- Variant `size=Small, style=Primary, state=Hover, type=Default` — Background: `#B65805` → `#00815A`
+- Variant `size=Small, style=Primary, state=Default, type=Default` — Background: `#F2B102` → `#1C3FCA`
+- Variant `size=Small, style=Primary, state=Focus, type=Default` — Background: `#F2B102` → `#1C3FCA`
+- Variant `size=Small, style=Primary, state=Hover, type=Default` — Background: `#B65805` → `#D61C53`
 - Variant `size=Small, style=Primary, state=Pressed, type=Default` — Background: `#1F30AD` → `#00815A`
 - Variant `size=Small, style=Primary, state=Disabled, type=Default` — Background: `#9CB4F7` → `#00815A`
-- Variant `size=Xsmall, style=Primary, state=Default, type=Default` — Background: `#F2B102` → `#00815A`
-- Variant `size=Xsmall, style=Primary, state=Focus, type=Default` — Background: `#F2B102` → `#00815A`
-- Variant `size=Xsmall, style=Primary, state=Hover, type=Default` — Background: `#B65805` → `#00815A`
+- Variant `size=Xsmall, style=Primary, state=Default, type=Default` — Background: `#F2B102` → `#1C3FCA`
+- Variant `size=Xsmall, style=Primary, state=Focus, type=Default` — Background: `#F2B102` → `#1C3FCA`
+- Variant `size=Xsmall, style=Primary, state=Hover, type=Default` — Background: `#B65805` → `#D61C53`
 - Variant `size=Xsmall, style=Primary, state=Pressed, type=Default` — Background: `#1F30AD` → `#00815A`
 - Variant `size=Xsmall, style=Primary, state=Disabled, type=Default` — Background: `#9CB4F7` → `#00815A`
 - Variant `size=Large, style=Secondary, state=Default, type=Default` — Background: `#FFFFFF` → `#00815A`
