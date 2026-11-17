@@ -5,24 +5,24 @@
 
 _No description set in Figma._
 
-> Last updated: 2026-11-17T07:34:02.677Z
+> Last updated: 2026-11-17T08:01:23.369Z
 
 ## Overview
 
 | Field | Value |
 | --- | --- |
-| Figma name | FinalInputAreaComponent |
-| Node ID | 8017:4424 |
-| Node type | COMPONENT |
+| Figma name | 2. Final Input Area Component |
+| Node ID | 8017:4011 |
+| Node type | COMPONENT_SET |
 | Figma page | Input-Area |
-| Variants | 0 |
+| Variants | 2 |
 | Code folder | `src/components/final-input-area-component/` |
 
 ## Text elements
 
 | Element | Default text |
 | --- | --- |
-| Primary label | FinalInputAreaComponent |
+| Primary label | Label |
 
 ## Installation
 
@@ -34,7 +34,7 @@ npm install @d1hdfc/Some-Components@main
 import { FinalInputAreaComponent } from '@d1hdfc/Some-Components';
 import '@d1hdfc/Some-Components/style.css';
 
-<FinalInputAreaComponent>FinalInputAreaComponent</FinalInputAreaComponent>
+<FinalInputAreaComponent size="small">Label</FinalInputAreaComponent>
 ```
 
 ```dart
@@ -44,27 +44,64 @@ UIFinalInputAreaComponent()
 
 ## Properties
 
-_No component properties defined in Figma._
+| Property | Type | Default | Options |
+| --- | --- | --- | --- |
+| `helperText` | BOOLEAN | true | — |
+| `size` | VARIANT | Small | Small, Medium |
+| `states` | VARIANT | Inactive | Inactive, Focus, Active, Disabled, Error, Success, Loading, Read Only |
+
+## Size configurations
+
+| Size | Width × Height | Padding (T R B L) | Gap | Radius | Font size |
+| --- | --- | --- | --- | --- | --- |
+| Small | 320px × 174px | 0px 0px 0px 0px | 8px | 0px | 14px |
+| Medium | 360px × 230px | 0px 0px 0px 0px | 12px | 0px | 16px |
 
 ## Base specs
 
 | Spec | Value |
 | --- | --- |
-| Width × Height | 34px × 14px |
-| Padding | 0px 16px 0px 16px |
-| Gap | 6px |
-| Corner radius | 1440px |
-| Font size | 16px |
+| Width × Height | 320px × 174px |
+| Padding | 0px 0px 0px 0px |
+| Gap | 8px |
+| Corner radius | 0px |
+| Font size | 14px |
 | Line height | — |
-| Background | #1C3FCA |
-| Text color | #FFFFFF |
-| Border color | #FFFFFF |
-| Layout mode | HORIZONTAL |
+| Background | — |
+| Text color | #444444 |
+| Border color | — |
+| Layout mode | VERTICAL |
+
+## Variants (2)
+
+| Variant | W × H | Padding | Gap | Radius | Font size | Background | Text | Border |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| states=Inactive, size=Medium | 360px × 230px | 0px 0px 0px 0px | 12px | 0px | 16px | — | #5C6172 | — |
+| states=Inactive, size=Small | 320px × 174px | 0px 0px 0px 0px | 8px | 0px | 14px | — | #444444 | — |
 
 ## Figma Changelog & Diff Status
 
-> [!TIP]
-> **Nothing changed** — the latest Figma sync matches the previous snapshot.
+> [!IMPORTANT]
+> **16 change(s) detected** in the latest Figma sync (2026-11-17T08:01:23.357Z).
+
+### Changes in latest sync
+
+- Renamed: `FinalInputAreaComponent` → `2. Final Input Area Component`
+- Label text changed: "FinalInputAreaComponent" → "Label"
+- Property added: `helperText` (BOOLEAN)
+- Property added: `states` (VARIANT)
+- Property added: `size` (VARIANT)
+- Base Width × Height: `34px × 14px` → `320px × 174px`
+- Base Padding: `0px 16px 0px 16px` → `0px 0px 0px 0px`
+- Base Gap: `6px` → `8px`
+- Base Corner radius: `1440px` → `0px`
+- Base Font size: `16px` → `14px`
+- Base Background: `#1C3FCA` → `—`
+- Base Text color: `#FFFFFF` → `#444444`
+- Base Border color: `#FFFFFF` → `—`
+- Base Layout mode: `HORIZONTAL` → `VERTICAL`
+- Variant added: `states=Inactive, size=Small`
+- Variant added: `states=Inactive, size=Medium`
 
 ### Previous changes
 

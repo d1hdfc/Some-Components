@@ -3747,9 +3747,30 @@
     }
   },
   "final-input-area-component": {
-    "status": "unchanged",
+    "status": "changed",
     "baselineAt": "2026-11-17T07:32:07.245Z",
     "history": [
+      {
+        "at": "2026-11-17T08:01:23.357Z",
+        "changes": [
+          "Renamed: `FinalInputAreaComponent` → `2. Final Input Area Component`",
+          "Label text changed: \"FinalInputAreaComponent\" → \"Label\"",
+          "Property added: `helperText` (BOOLEAN)",
+          "Property added: `states` (VARIANT)",
+          "Property added: `size` (VARIANT)",
+          "Base Width × Height: `34px × 14px` → `320px × 174px`",
+          "Base Padding: `0px 16px 0px 16px` → `0px 0px 0px 0px`",
+          "Base Gap: `6px` → `8px`",
+          "Base Corner radius: `1440px` → `0px`",
+          "Base Font size: `16px` → `14px`",
+          "Base Background: `#1C3FCA` → `—`",
+          "Base Text color: `#FFFFFF` → `#444444`",
+          "Base Border color: `#FFFFFF` → `—`",
+          "Base Layout mode: `HORIZONTAL` → `VERTICAL`",
+          "Variant added: `states=Inactive, size=Small`",
+          "Variant added: `states=Inactive, size=Medium`"
+        ]
+      },
       {
         "at": "2026-11-17T07:33:39.929Z",
         "changes": [
@@ -3787,23 +3808,74 @@
       }
     ],
     "snapshot": {
-      "name": "FinalInputAreaComponent",
+      "name": "2. Final Input Area Component",
       "description": "",
-      "textContent": "FinalInputAreaComponent",
-      "properties": {},
-      "base": {
-        "size": "34px × 14px",
-        "padding": "0px 16px 0px 16px",
-        "gap": "6px",
-        "radius": "1440px",
-        "fontSize": "16px",
-        "lineHeight": null,
-        "background": "#1C3FCA",
-        "textColor": "#FFFFFF",
-        "border": "#FFFFFF",
-        "layoutMode": "HORIZONTAL"
+      "textContent": "Label",
+      "properties": {
+        "helperText": {
+          "type": "BOOLEAN",
+          "defaultValue": "true",
+          "options": []
+        },
+        "states": {
+          "type": "VARIANT",
+          "defaultValue": "Inactive",
+          "options": [
+            "Inactive",
+            "Focus",
+            "Active",
+            "Disabled",
+            "Error",
+            "Success",
+            "Loading",
+            "Read Only"
+          ]
+        },
+        "size": {
+          "type": "VARIANT",
+          "defaultValue": "Small",
+          "options": [
+            "Small",
+            "Medium"
+          ]
+        }
       },
-      "variants": {}
+      "base": {
+        "size": "320px × 174px",
+        "padding": "0px 0px 0px 0px",
+        "gap": "8px",
+        "radius": "0px",
+        "fontSize": "14px",
+        "lineHeight": null,
+        "background": null,
+        "textColor": "#444444",
+        "border": null,
+        "layoutMode": "VERTICAL"
+      },
+      "variants": {
+        "states=Inactive, size=Small": {
+          "size": "320px × 174px",
+          "padding": "0px 0px 0px 0px",
+          "gap": "8px",
+          "radius": "0px",
+          "fontSize": "14px",
+          "lineHeight": null,
+          "background": null,
+          "textColor": "#444444",
+          "border": null
+        },
+        "states=Inactive, size=Medium": {
+          "size": "360px × 230px",
+          "padding": "0px 0px 0px 0px",
+          "gap": "12px",
+          "radius": "0px",
+          "fontSize": "16px",
+          "lineHeight": null,
+          "background": null,
+          "textColor": "#5C6172",
+          "border": null
+        }
+      }
     }
   }
 }
