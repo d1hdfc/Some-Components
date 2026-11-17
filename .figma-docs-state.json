@@ -1,6 +1,6 @@
 {
   "button": {
-    "status": "changed",
+    "status": "unchanged",
     "baselineAt": "2026-11-09T07:52:17.559Z",
     "history": [
       {
@@ -3722,7 +3722,7 @@
     }
   },
   "final-input-area-component": {
-    "status": "baseline",
+    "status": "unchanged",
     "baselineAt": "2026-11-17T07:32:07.245Z",
     "history": [],
     "snapshot": {

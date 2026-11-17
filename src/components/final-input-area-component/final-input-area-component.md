@@ -5,7 +5,7 @@
 
 _No description set in Figma._
 
-> Last updated: 2026-11-17T07:32:07.252Z
+> Last updated: 2026-11-17T07:32:28.847Z
 
 ## Overview
 
@@ -95,8 +95,8 @@ UIFinalInputAreaComponent()
 
 ## Figma Changelog & Diff Status
 
-> [!NOTE]
-> **Nothing to change** — first Figma sync captured the baseline snapshot (2026-11-17T07:32:07.245Z).
+> [!TIP]
+> **Nothing changed** — the latest Figma sync matches the previous snapshot.
 
 ## Code files
 
