@@ -1,6 +1,6 @@
 # Some Components — UI-like Design System Starter
 
-This repo is a starter UI component library inspired by Razorpay UI, with a simple MCP configuration to map Figma tokens & components to TypeScript.
+This repo is a starter Some component library inspired by Razorpay UI, with a simple MCP configuration to map Figma tokens & components to TypeScript.
 
 Quick start
 
@@ -35,8 +35,8 @@ Project structure
 
 ## Install the component library
 
-The library is published privately to GitHub Packages as `@d1hdfc/ui-components`.
-Consumers need access to the `d1hdfc/UI-Components` repository/package and a
+The library is published privately to GitHub Packages as `@d1hdfc/Some-Components`.
+Consumers need access to the `d1hdfc/Some-Components` repository/package and a
 GitHub personal access token with `read:packages` permission.
 
 Configure npm to use GitHub Packages for the `@d1hdfc` scope. Keep the token in
@@ -51,14 +51,14 @@ an environment variable; do not commit it:
 Install the latest build from `main`:
 
 ```bash
-npm install @d1hdfc/ui-components@main
+npm install @d1hdfc/Some-Components@main
 ```
 
 Use the component and import its styles:
 
 ```tsx
-import { Button } from '@d1hdfc/ui-components';
-import '@d1hdfc/ui-components/style.css';
+import { Button } from '@d1hdfc/Some-Components';
+import '@d1hdfc/Some-Components/style.css';
 
 export function Example() {
   return <Button variant="primary">Continue</Button>;

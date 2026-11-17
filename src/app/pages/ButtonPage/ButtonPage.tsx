@@ -9,10 +9,10 @@ import type {
 import './ButtonPage.scss';
 import { ComponentMarkdownSection } from '../../components/MarkdownView';
 
-const buttonSourceUrl = 'https://github.com/d1hdfc/UI-Components/tree/main/src/components/button';
-const installCode = `npm install @d1hdfc/ui-components@main`;
-const importCode = `import { Button } from '@d1hdfc/ui-components';
-import '@d1hdfc/ui-components/style.scss';`;
+const buttonSourceUrl = 'https://github.com/d1hdfc/Some-Components/tree/main/src/components/button';
+const installCode = `npm install @d1hdfc/Some-Components@main`;
+const importCode = `import { Button } from '@d1hdfc/Some-Components';
+import '@d1hdfc/Some-Components/style.scss';`;
 
 const VARIANT_OPTIONS: { value: ButtonVariant; label: string }[] = [
   { value: 'primary', label: 'Primary' },

@@ -19,7 +19,7 @@ const path = require('node:path');
 
 const getComponentsDir = () => path.join(process.cwd(), 'src', 'components');
 const getStateFile = () => path.join(process.cwd(), '.figma-docs-state.json');
-const PACKAGE_NAME = '@d1hdfc/ui-components';
+const PACKAGE_NAME = '@d1hdfc/Some-Components';
 const HISTORY_LIMIT = 10;
 const SYNC_BURST_MS = Number(process.env.DOCS_SYNC_BURST_MS || 10_000);
 

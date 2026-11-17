@@ -34,12 +34,12 @@ const PROJECT_REGISTRY = [
     repoName: 'd1hdfc/Some-Components'
   },
   {
-    id: 'ui-components',
+    id: 'Some-Components',
     fileKey: 'CXxUbHl3oMzt9Bzv3SKv75',
     namePattern: /ui[\s-_]*components|foundations/i,
-    projectDir: 'D:\\HDFC\\UI Components',
-    repoUrl: 'https://github.com/d1hdfc/UI-Components.git',
-    repoName: 'd1hdfc/UI-Components'
+    projectDir: 'D:\\HDFC\\Some Components',
+    repoUrl: 'https://github.com/d1hdfc/Some-Components.git',
+    repoName: 'd1hdfc/Some-Components'
   }
 ];
 
@@ -198,7 +198,7 @@ function pxToTokenVar(pxValue, propertyContext = '') {
       const entryRe = /["']([a-zA-Z0-9_-]+)["']\s*:\s*(-?\d+(?:\.\d+)?)/g;
       let m;
       while ((m = entryRe.exec(scalesBlockMatch[1])) !== null) {
-        if (Math.round( parseFloat(m[2]) ) === num) {
+        if (Math.round(parseFloat(m[2])) === num) {
           return `var(--global-scale-${m[1]})`;
         }
       }
@@ -290,8 +290,8 @@ function touchMainStylesheet() {
   const now = new Date();
   const mainScss = path.join(process.cwd(), 'src', 'app', 'main.scss');
   const libScss = path.join(getComponentsDir(), 'library.scss');
-  try { if (fs.existsSync(libScss)) fs.utimesSync(libScss, now, now); } catch {}
-  try { if (fs.existsSync(mainScss)) fs.utimesSync(mainScss, now, now); } catch {}
+  try { if (fs.existsSync(libScss)) fs.utimesSync(libScss, now, now); } catch { }
+  try { if (fs.existsSync(mainScss)) fs.utimesSync(mainScss, now, now); } catch { }
 }
 
 function setTokenInScssFile(filePath, tokenKey, newTokenVarValue) {
@@ -372,7 +372,7 @@ function updateComponentScssMapProperty(scssPath, sizeOrVariantKey, propName, ne
       if (updatedSem) {
         // Touch component SCSS file mtime so Vite HMR reloads component styles immediately
         const now = new Date();
-        try { fs.utimesSync(scssPath, now, now); } catch {}
+        try { fs.utimesSync(scssPath, now, now); } catch { }
         return true;
       }
     }
@@ -1155,7 +1155,7 @@ async function triggerCodeToFigmaSync(componentFolder, action = 'update', projec
   if (compData.nodeId) {
     try {
       const fileKey = figmaApi.getFileKey();
-      const repoUrl = `https://github.com/d1hdfc/UI-Components/blob/main/src/components/${compData.folder}/${compData.folder}.tsx`;
+      const repoUrl = `https://github.com/d1hdfc/Some-Components/blob/main/src/components/${compData.folder}/${compData.folder}.tsx`;
       await figmaApi.createDevResources(fileKey, [
         {
           name: `${compData.componentName} (Code Component)`,
@@ -1301,16 +1301,7 @@ function setupCodeWatcherForProject(projectDir) {
 }
 
 function setupCodeWatcher() {
-  const watchedDirs = new Set();
-  for (const proj of PROJECT_REGISTRY) {
-    if (fs.existsSync(proj.projectDir) && !watchedDirs.has(proj.projectDir.toLowerCase())) {
-      watchedDirs.add(proj.projectDir.toLowerCase());
-      setupCodeWatcherForProject(proj.projectDir);
-    }
-  }
-  if (!watchedDirs.has(process.cwd().toLowerCase())) {
-    setupCodeWatcherForProject(process.cwd());
-  }
+  setupCodeWatcherForProject(process.cwd());
 }
 
 // ==========================================

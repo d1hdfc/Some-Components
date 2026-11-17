@@ -324,18 +324,7 @@ function setupLiveBiDirectionalBridge(): void {
           const data = JSON.parse(raw.toString());
           if (data.type === 'broadcast' && data.message) {
             const payload = data.message;
-            if (payload.event === 'FIGMA_LIVE_SYNC_PAYLOAD') {
-              suppressForwarderUntil = Date.now() + 3000;
-              const serverModPath = path.join(process.cwd(), 'scripts', 'figma-sync-server.cjs');
-              delete require.cache[require.resolve(serverModPath)];
-              const { applyFigmaLivePayload } = require(serverModPath);
-              const result = applyFigmaLivePayload(payload);
-              postToSyncBridge({
-                event: 'FIGMA_TO_CODE_COMPLETE',
-                result,
-                source: payload.reason || 'plugin-live'
-              });
-            } else if (payload.event === 'CODE_TO_FIGMA_SYNC_REQUEST') {
+            if (payload.event === 'CODE_TO_FIGMA_SYNC_REQUEST') {
               pushComponentUpdate(payload.componentFolder || lastFolder || 'button');
             }
           }

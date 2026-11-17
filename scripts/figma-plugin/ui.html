@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Two-Way Auto-Sync & GitHub Pipeline</title>
@@ -12,6 +13,7 @@
       background: #f7f8fa;
       font-size: 13px;
     }
+
     h2 {
       margin: 0 0 10px;
       font-size: 15px;
@@ -21,6 +23,7 @@
       justify-content: space-between;
       gap: 8px;
     }
+
     .badge {
       display: inline-block;
       padding: 3px 9px;
@@ -28,14 +31,17 @@
       border-radius: 12px;
       font-weight: 600;
     }
+
     .badge-connected {
       background: #e6f4ea;
       color: #137333;
     }
+
     .badge-disconnected {
       background: #fce8e6;
       color: #c5221f;
     }
+
     .card {
       background: #fff;
       border: 1px solid #dfe1e6;
@@ -44,6 +50,7 @@
       margin-bottom: 10px;
       box-shadow: 0 1px 2px rgba(9, 30, 66, 0.04);
     }
+
     .repo-meta {
       background: #f0f4ff;
       border: 1px solid #c9d8ff;
@@ -54,16 +61,19 @@
       line-height: 1.45;
       color: #1d2939;
     }
+
     .repo-meta div {
       display: flex;
       justify-content: space-between;
       gap: 8px;
     }
+
     .repo-meta code {
       font-family: monospace;
       color: #0c41b8;
       font-weight: 600;
     }
+
     .btn {
       display: block;
       width: 100%;
@@ -80,13 +90,16 @@
       margin-top: 6px;
       transition: background 0.15s ease, opacity 0.15s ease;
     }
+
     .btn:hover:not(:disabled) {
       background: #1d4076;
     }
+
     .btn:disabled {
       opacity: 0.65;
       cursor: wait;
     }
+
     .btn-github {
       background: linear-gradient(135deg, #117a37 0%, #1a9f49 100%);
       font-size: 13.5px;
@@ -95,24 +108,30 @@
       margin-bottom: 8px;
       box-shadow: 0 2px 5px rgba(17, 122, 55, 0.25);
     }
+
     .btn-github:hover:not(:disabled) {
       background: linear-gradient(135deg, #0d622c 0%, #14803a 100%);
     }
+
     .btn-primary-sync {
       background: #1245c8;
     }
+
     .btn-primary-sync:hover:not(:disabled) {
       background: #0c2f8f;
     }
+
     .btn-secondary {
       background: #fff;
       color: #0c2340;
       border: 1px solid #d1d5db;
       font-weight: 500;
     }
+
     .btn-secondary:hover:not(:disabled) {
       background: #f3f4f6;
     }
+
     .status-banner {
       display: none;
       padding: 8px 10px;
@@ -122,24 +141,28 @@
       margin-bottom: 8px;
       line-height: 1.4;
     }
+
     .status-banner.syncing {
       display: block;
       background: #fff8e6;
       border: 1px solid #f5cd47;
       color: #7f5f01;
     }
+
     .status-banner.success {
       display: block;
       background: #e6f4ea;
       border: 1px solid #8fd19e;
       color: #137333;
     }
+
     .status-banner.error {
       display: block;
       background: #fce8e6;
       border: 1px solid #f5a69f;
       color: #c5221f;
     }
+
     .log-box {
       background: #1e1e1e;
       color: #d4d4d4;
@@ -154,6 +177,7 @@
     }
   </style>
 </head>
+
 <body>
   <h2>
     <span>HDFC Two-Way Auto-Sync</span>
@@ -221,7 +245,7 @@
       } else if (/some[\s-_]*components/i.test(activeFileName) || activeFileKey === 'NhsXzdYzA1O9TPQlRL3wC4') {
         targetRepoLabel.textContent = 'd1hdfc/Some-Components';
       } else if (/ui[\s-_]*components|foundations/i.test(activeFileName) || activeFileKey === 'CXxUbHl3oMzt9Bzv3SKv75') {
-        targetRepoLabel.textContent = 'd1hdfc/UI-Components';
+        targetRepoLabel.textContent = 'd1hdfc/Some-Components';
       }
     }
 
@@ -446,4 +470,5 @@
     connect();
   </script>
 </body>
+
 </html>

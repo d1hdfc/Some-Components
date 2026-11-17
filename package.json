@@ -1,9 +1,9 @@
 {
-  "name": "@d1hdfc/ui-components",
+  "name": "@d1hdfc/Some-Components",
   "version": "0.1.0",
   "private": false,
-  "description": "HDFC UI component library",
-  "repository": "https://github.com/d1hdfc/UI-Components",
+  "description": "HDFC Some component library",
+  "repository": "https://github.com/d1hdfc/Some-Components",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },

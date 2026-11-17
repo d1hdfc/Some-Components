@@ -78,7 +78,7 @@ When a developer modifies or deletes a component in VS Code / Git:
    - **Component Deletion**: Dispatches `CODE_TO_FIGMA_DELETE` to the Figma Plugin, which finds the node on canvas and executes `node.remove()`.
    - **Component Modification**: Dispatches `CODE_TO_FIGMA_UPDATE` to the Figma Plugin, which dynamically updates background color, corner radius, padding, layout mode, and text on the canvas.
 3. **Figma REST API Dev Resources**:
-   - Attaches/updates Dev Resources on the Figma node linking directly to the source code file on GitHub (`https://github.com/d1hdfc/UI-Components/blob/main/src/components/...`).
+   - Attaches/updates Dev Resources on the Figma node linking directly to the source code file on GitHub (`https://github.com/d1hdfc/Some-Components/blob/main/src/components/...`).
 
 ---
 

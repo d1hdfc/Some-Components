@@ -28,12 +28,12 @@ _No description set in Figma._
 ## Installation
 
 ```bash
-npm install @d1hdfc/ui-components@main
+npm install @d1hdfc/Some-Components@main
 ```
 
 ```tsx
-import { Button } from '@d1hdfc/ui-components';
-import '@d1hdfc/ui-components/style.css';
+import { Button } from '@d1hdfc/Some-Components';
+import '@d1hdfc/Some-Components/style.css';
 
 <Button variant="primary" size="large">Button</Button>
 ```

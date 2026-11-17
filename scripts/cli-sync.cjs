@@ -338,7 +338,7 @@ async function syncCodeToFigma(options = {}) {
     const compData = codeParser.parseComponentDir(folder);
 
     if (compData.nodeId) {
-      const repoUrl = `https://github.com/d1hdfc/UI-Components/blob/main/src/components/${folder}/${folder}.tsx`;
+      const repoUrl = `https://github.com/d1hdfc/Some-Components/blob/main/src/components/${folder}/${folder}.tsx`;
       const key = `${compData.nodeId}|${repoUrl}`;
 
       if (existingMap.has(key)) {
