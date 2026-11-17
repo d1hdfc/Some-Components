@@ -5,7 +5,7 @@
 
 _No description set in Figma._
 
-> Last updated: 2026-11-17T07:33:39.850Z
+> Last updated: 2026-11-17T07:34:02.628Z
 
 ## Overview
 
@@ -104,7 +104,7 @@ UIButton()
 | size=Large, style=Link, state=Pressed, type=Icon | 24px × 24px | 0px 0px 0px 0px | 0px | 0px | 18px | — | #FFFFFF | — |
 | size=Large, style=Link, state=Pressed, type=White | 114px × 24px | 0px 0px 0px 0px | 0px | 0px | 18px | — | #FFFFFF | — |
 | size=Large, style=Primary, state=Default, type=Default | 162px × 48px | 0px 20px 0px 20px | 4px | 12px | 18px | #1C3FCA | #FFFFFF | #FFFFFF |
-| size=Large, style=Primary, state=Default, type=Gradient | 195px × 72px | 0px 40px 0px 40px | 0px | 12px | 18px | — | #FFFFFF | — |
+| size=Large, style=Primary, state=Default, type=Gradient | 163px × 48px | 0px 20px 0px 20px | 4px | 12px | 18px | — | #FFFFFF | — |
 | size=Large, style=Primary, state=Default, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #1C3FCA | #FFFFFF | — |
 | size=Large, style=Primary, state=Default, type=White | 195px × 72px | 0px 40px 0px 40px | 0px | 12px | 18px | #FFFFFF | #1C3FCA | — |
 | size=Large, style=Primary, state=Disabled, type=Default | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #00815A | #F3F6FD | — |
@@ -406,8 +406,14 @@ UIButton()
 
 ## Figma Changelog & Diff Status
 
-> [!TIP]
-> **Nothing changed** — the latest Figma sync matches the previous snapshot.
+> [!IMPORTANT]
+> **3 change(s) detected** in the latest Figma sync (2026-11-17T07:34:02.614Z).
+
+### Changes in latest sync
+
+- Variant `size=Large, style=Primary, state=Default, type=Gradient` — Width × Height: `195px × 72px` → `163px × 48px`
+- Variant `size=Large, style=Primary, state=Default, type=Gradient` — Padding: `0px 40px 0px 40px` → `0px 20px 0px 20px`
+- Variant `size=Large, style=Primary, state=Default, type=Gradient` — Gap: `0px` → `4px`
 
 ### Previous changes
 
