@@ -51,7 +51,7 @@ jobs:
 
           fs.appendFileSync(process.env.GITHUB_ENV, `PACKAGE_VERSION=${version}\n`);
           NODE
-      - name: Set build version
+       - name: Set build version
         if: github.event_name == 'push'
         run: npm version "$PACKAGE_VERSION" --no-git-tag-version
       - name: Publish to GitHub Packages
