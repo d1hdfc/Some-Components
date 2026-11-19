@@ -453,7 +453,8 @@ async function exportFullFigmaState(reason = 'manual', options = {}) {
   const isFullScan = (
     reason === 'manual' ||
     reason === 'github-sync' ||
-    reason === 'auto-connect'
+    reason === 'auto-connect' ||
+    reason === 'pre-sync-check'
   );
 
   if (isFullScan) {
@@ -472,11 +473,15 @@ async function exportFullFigmaState(reason = 'manual', options = {}) {
     for (const [prevId, prevMeta] of knownCanvasComponents.entries()) {
       if (!currentIds.has(prevId)) {
         deletedComponents.push(prevMeta);
-        knownCanvasComponents.delete(prevId);
+        if (!options.isPreSyncCheck) {
+          knownCanvasComponents.delete(prevId);
+        }
       }
     }
-    for (const comp of components) {
-      knownCanvasComponents.set(comp.id, { id: comp.id, name: comp.name, pageName: comp.pageName });
+    if (!options.isPreSyncCheck) {
+      for (const comp of components) {
+        knownCanvasComponents.set(comp.id, { id: comp.id, name: comp.name, pageName: comp.pageName });
+      }
     }
   }
 
@@ -487,9 +492,11 @@ async function exportFullFigmaState(reason = 'manual', options = {}) {
   );
 
   figma.ui.postMessage({
-    type: 'FIGMA_LIVE_SYNC_PAYLOAD',
+    type: options.isPreSyncCheck ? 'PRE_SYNC_FIGMA_PAYLOAD' : 'FIGMA_LIVE_SYNC_PAYLOAD',
     payload: {
       reason,
+      direction: options.direction || (pushToGithub ? 'figma-to-github' : 'figma-to-code'),
+      isPreSyncCheck: Boolean(options.isPreSyncCheck),
       isFullScan,
       pushToGithub,
       allPageNames,
@@ -727,27 +734,129 @@ figma.ui.onmessage = async (msg) => {
       break;
     }
 
+    // ── Pre-Sync Check Export (Figma <-> Code Diff Scan) ─────
+    case 'REQUEST_PRE_SYNC_EXPORT': {
+      await exportFullFigmaState('pre-sync-check', {
+        isPreSyncCheck: true,
+        direction: msg.direction || 'figma-to-code',
+        pushToGithub: Boolean(msg.pushToGithub)
+      });
+      break;
+    }
+
     // ── Full Export Request (Figma ➔ VS Code / GitHub) ──────
     case 'REQUEST_FULL_FIGMA_EXPORT': {
       await exportFullFigmaState(msg.reason || 'manual', { pushToGithub: Boolean(msg.pushToGithub) });
       break;
     }
 
-    // ── DELETE component from canvas (Code ➔ Figma) ─────────
+    // ── DELETE component & dedicated page from canvas (Code ➔ Figma)
     case 'ACTION_DELETE_COMPONENT': {
       isApplyingCodeUpdate = true;
       try {
-        const { nodeId, componentName } = msg.payload || {};
-        const node = await findNode(nodeId, componentName);
+        await ensureAllPagesLoaded();
+        const { nodeId, componentName, folder, figmaPageName, summary } = msg.payload || {};
+        const targetNorm = normalizeName(componentName || folder);
+        const folderNorm = normalizeName(folder || componentName);
+        let removedNodeCount = 0;
+        let removedPageName = null;
+
+        // 1. Find and remove the primary target node (and any duplicate/wrapper frame with the same component name)
+        const node = await findNode(nodeId, componentName || folder);
+        const hostPage = node ? getPageOfNode(node) : null;
+
         if (node) {
-          const name = node.name;
+          const parentNode = node.parent;
+          knownCanvasComponents.delete(node.id);
           node.remove();
-          figma.notify(`🗑️ Deleted "${name}" from Figma canvas`);
-          log(`DELETED: "${name}" (nodeId=${nodeId || 'by-name'})`);
-        } else {
-          log(`DELETE: Node "${componentName}" not found on canvas`);
-          figma.notify(`⚠️ Component "${componentName}" not found on canvas`);
+          removedNodeCount++;
+
+          // If the parent was a wrapper frame/group that is now empty or had the exact same name, clean it up
+          if (parentNode && parentNode.type !== 'PAGE' && parentNode.type !== 'DOCUMENT') {
+            if (('children' in parentNode && parentNode.children.length === 0) ||
+                normalizeName(parentNode.name) === targetNorm ||
+                normalizeName(parentNode.name) === folderNorm) {
+              try {
+                knownCanvasComponents.delete(parentNode.id);
+                parentNode.remove();
+              } catch {}
+            }
+          }
         }
+
+        // 2. Also sweep all pages for any remaining top-level component/frame matching this deleted component
+        for (const page of figma.root.children) {
+          if (isIgnoredPageName(page.name)) continue;
+          const matches = page.findAll(n =>
+            (n.type === 'COMPONENT_SET' || n.type === 'COMPONENT' || (n.parent === page && n.type === 'FRAME')) &&
+            (normalizeName(n.name) === targetNorm || normalizeName(n.name) === folderNorm)
+          );
+          for (const m of matches) {
+            try {
+              knownCanvasComponents.delete(m.id);
+              m.remove();
+              removedNodeCount++;
+            } catch {}
+          }
+        }
+
+        // 3. If a dedicated Figma Page exists for this component (e.g., page "button01") or hostPage is now empty, remove the page too
+        if (figma.root.children.length > 1) {
+          const candidatePages = figma.root.children.filter(p => {
+            const pNorm = normalizeName(p.name);
+            const matchesName = pNorm === targetNorm || pNorm === folderNorm || (figmaPageName && pNorm === normalizeName(figmaPageName));
+            if (!matchesName && (!hostPage || p.id !== hostPage.id)) return false;
+            // Only remove the page if its name matches the deleted component OR it has 0 remaining components
+            const hasRemainingComponents = p.findOne(n => isCandidateComponentNode(n, n.parent === p));
+            return matchesName || !hasRemainingComponents;
+          });
+
+          for (const pageToDelete of candidatePages) {
+            if (figma.root.children.length <= 1) break;
+            // If pageToDelete still has other unrelated components and doesn't match the deleted component's name, keep it
+            const pNorm = normalizeName(pageToDelete.name);
+            const isDedicatedNamedPage = (pNorm === targetNorm || pNorm === folderNorm);
+            const remainingComp = pageToDelete.findOne(n =>
+              isCandidateComponentNode(n, n.parent === pageToDelete) &&
+              normalizeName(n.name) !== targetNorm &&
+              normalizeName(n.name) !== folderNorm
+            );
+            if (remainingComp && !isDedicatedNamedPage) continue;
+
+            if (figma.currentPage.id === pageToDelete.id) {
+              const fallbackPage = figma.root.children.find(p => p.id !== pageToDelete.id);
+              if (fallbackPage) {
+                await figma.setCurrentPageAsync(fallbackPage);
+              }
+            }
+            removedPageName = pageToDelete.name;
+            pageToDelete.remove();
+          }
+        }
+
+        const displayTarget = folder || componentName;
+        const humanSummary = summary ||
+          `${displayTarget}: removed from Figma${removedPageName ? ` (including page "${removedPageName}")` : ''} because it was deleted in code`;
+
+        if (removedNodeCount > 0 || removedPageName) {
+          figma.notify(`🗑️ ${humanSummary}`);
+          log(`DELETED: ${humanSummary}`);
+        } else {
+          figma.notify(`ℹ️ "${displayTarget}" was already removed from Figma canvas`);
+          log(`DELETE: "${displayTarget}" not found on canvas (already clean)`);
+        }
+
+        figma.ui.postMessage({
+          type: 'CANVAS_ACTION_SUMMARY',
+          item: {
+            slug: folder || toKebabTokenName(componentName),
+            componentName: displayTarget,
+            action: 'deleted',
+            direction: 'code-to-figma',
+            summary: humanSummary,
+            timestamp: new Date().toISOString()
+          }
+        });
       } finally {
         setTimeout(() => { isApplyingCodeUpdate = false; }, 1500);
       }
@@ -759,14 +868,44 @@ figma.ui.onmessage = async (msg) => {
       isApplyingCodeUpdate = true;
       try {
         const {
-          nodeId, componentName,
+          nodeId, componentName, folder, isNewComponent, summary: incomingSummary,
           fontSize, fontWeight,
           cornerRadius, padding, backgroundColor, textColor, borderColor,
           opacity, width, height, gap,
           sizesMap, variantsMap, variantProperties,
         } = msg.payload || {};
 
-        let node = await findNode(nodeId, componentName);
+        let node = await findNode(nodeId, componentName || folder);
+
+        if (!node && isNewComponent) {
+          // Create new component on Figma canvas when added in local code
+          const comp = figma.createComponent();
+          comp.name = componentName || folder || 'NewComponent';
+          comp.layoutMode = 'HORIZONTAL';
+          comp.primaryAxisAlignItems = 'CENTER';
+          comp.counterAxisAlignItems = 'CENTER';
+          comp.paddingLeft = padding?.left ?? 16;
+          comp.paddingRight = padding?.right ?? 16;
+          comp.paddingTop = padding?.top ?? 10;
+          comp.paddingBottom = padding?.bottom ?? 10;
+          comp.itemSpacing = gap ?? 8;
+          comp.cornerRadius = cornerRadius ?? 8;
+          if (backgroundColor) {
+            comp.fills = [{ type: 'SOLID', color: { r: backgroundColor.r ?? 0.05, g: backgroundColor.g ?? 0.14, b: backgroundColor.b ?? 0.25 } }];
+          }
+          await figma.loadFontAsync({ family: 'Inter', style: 'Medium' });
+          const label = figma.createText();
+          label.fontName = { family: 'Inter', style: 'Medium' };
+          label.characters = componentName || folder || 'Component';
+          label.fontSize = fontSize || 16;
+          if (textColor) {
+            label.fills = [{ type: 'SOLID', color: { r: textColor.r ?? 1, g: textColor.g ?? 1, b: textColor.b ?? 1 } }];
+          }
+          comp.appendChild(label);
+          figma.currentPage.appendChild(comp);
+          node = comp;
+          knownCanvasComponents.set(node.id, { id: node.id, name: node.name, pageName: figma.currentPage.name });
+        }
 
         if (!node) {
           log(`SKIPPED: "${componentName}" not found on canvas`);
@@ -896,9 +1035,22 @@ figma.ui.onmessage = async (msg) => {
           figma.viewport.scrollAndZoomIntoView([node]);
         } catch {}
 
-        const summary = `fontSize=${fontSize ?? 'map'}px (${updatedVariants} variants, ${updatedTexts} text nodes)`;
-        figma.notify(`✅ Updated "${node.name}" — ${summary}`);
-        log(`UPDATED: "${node.name}" — ${summary}`);
+        const humanSummary = incomingSummary ||
+          `${folder || node.name}: updated styles on Figma canvas (${updatedVariants} variant${updatedVariants === 1 ? '' : 's'})`;
+        figma.notify(`✅ ${humanSummary}`);
+        log(`UPDATED: ${humanSummary}`);
+
+        figma.ui.postMessage({
+          type: 'CANVAS_ACTION_SUMMARY',
+          item: {
+            slug: folder || toKebabTokenName(node.name),
+            componentName: node.name,
+            action: isNewComponent ? 'added' : 'updated',
+            direction: 'code-to-figma',
+            summary: humanSummary,
+            timestamp: new Date().toISOString()
+          }
+        });
       } finally {
         setTimeout(() => { isApplyingCodeUpdate = false; }, 1500);
       }

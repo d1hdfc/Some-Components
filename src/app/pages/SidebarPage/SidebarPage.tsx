@@ -47,9 +47,10 @@ function categorize(links: Array<{ slug: string; name: string }>) {
 interface SidebarPageProps {
   currentPage: string;
   syncStatus: 'connecting' | 'connected' | 'disconnected';
+  updatesCount?: number;
 }
 
-export function SidebarPage({ currentPage, syncStatus }: SidebarPageProps) {
+export function SidebarPage({ currentPage, syncStatus, updatesCount = 0 }: SidebarPageProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [collapsed, setCollapsed] = useState<Record<string, boolean>>({});
   const searchRef = useRef<HTMLInputElement>(null);
@@ -98,9 +99,19 @@ export function SidebarPage({ currentPage, syncStatus }: SidebarPageProps) {
       </label>
 
       <nav>
-        <p className="docs-nav-heading">GET STARTED</p>
+        <p className="docs-nav-heading">GET STARTED &amp; SYNC</p>
         <a href="#installation" className={currentPage === 'installation' ? 'docs-nav-active' : ''}>
           Installation
+        </a>
+        <a
+          href="#updated-code"
+          className={currentPage === 'updated-code' ? 'docs-nav-active' : ''}
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
+        >
+          <span>Updated Code &amp; Diffs</span>
+          {updatesCount > 0 && (
+            <span className="docs-nav-count">{updatesCount}</span>
+          )}
         </a>
 
         {isSearching ? (

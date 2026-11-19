@@ -56,10 +56,17 @@ export function HeaderPage({ syncStatus, currentPage, onNav }: HeaderPageProps) 
       <nav className="docs-topbar-nav" aria-label="Main navigation">
         <a
           href="#button"
-          className={currentPage !== 'installation' ? 'docs-topbar-nav-active' : ''}
+          className={currentPage !== 'installation' && currentPage !== 'updated-code' ? 'docs-topbar-nav-active' : ''}
           onClick={() => onNav('button')}
         >
           Components
+        </a>
+        <a
+          href="#updated-code"
+          className={currentPage === 'updated-code' ? 'docs-topbar-nav-active' : ''}
+          onClick={() => onNav('updated-code')}
+        >
+          Updated Code
         </a>
         <a
           href="https://www.figma.com/design/NhsXzdYzA1O9TPQlRL3wC4/Some-Components?node-id=2617-4609"

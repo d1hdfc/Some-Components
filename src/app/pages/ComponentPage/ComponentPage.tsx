@@ -7,6 +7,9 @@ import {
   isFigmaSourcedMarkdown
 } from './componentMarkdown';
 import { ComponentSourceInspector, MarkdownView } from '../../components/MarkdownView';
+import { RecentUpdatesBanner } from '../../components/RecentUpdatesBanner';
+import type { SyncHistoryEntry } from '../../hooks/useSyncWebSocket';
+import initialSyncHistory from '../../../figma/syncHistory.json';
 import './ComponentPage.scss';
 
 function formatValue(value: unknown): string | undefined {
@@ -79,7 +82,13 @@ function ComponentPreview({
 type PortalMainTab = 'preview' | 'code' | 'specs';
 type QuickCodeTab = 'tsx' | 'scss' | 'dart' | 'md';
 
-export function ComponentPage({ component }: { component: ComponentDocumentation }) {
+export function ComponentPage({
+  component,
+  historyEntries = (initialSyncHistory as { entries?: SyncHistoryEntry[] }).entries ?? []
+}: {
+  component: ComponentDocumentation;
+  historyEntries?: SyncHistoryEntry[];
+}) {
   const [portalTab, setPortalTab] = useState<PortalMainTab>('preview');
   const [showCode, setShowCode] = useState(false);
   const [activeCodeTab, setActiveCodeTab] = useState<QuickCodeTab>('tsx');
@@ -140,6 +149,8 @@ export function ComponentPage({ component }: { component: ComponentDocumentation
         <span>/</span>
         <strong>{component.title}</strong>
       </div>
+
+      <RecentUpdatesBanner entries={historyEntries} activeSlug={component.slug} />
 
       {/* Header */}
       <header className="docs-heading">

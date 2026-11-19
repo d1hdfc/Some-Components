@@ -4,8 +4,10 @@ import { ButtonPage } from './pages/ButtonPage/ButtonPage';
 import { HeaderPage } from './pages/HeaderPage/HeaderPage';
 import { SidebarPage } from './pages/SidebarPage/SidebarPage';
 import { ComponentPage } from './pages/ComponentPage/ComponentPage';
+import { UpdatedCodePage } from './pages/UpdatedCodePage/UpdatedCodePage';
 import { componentDocumentation } from './pages/ComponentPage/componentRegistry';
 import { SyncToast } from './components/SyncToast';
+import { SyncConfirmModal } from './components/SyncConfirmModal';
 import { useSyncWebSocket } from './hooks/useSyncWebSocket';
 
 const componentPageModules = import.meta.glob<{
@@ -22,11 +24,20 @@ const componentPages = new Map(
 );
 
 export default function App() {
-  const { status: syncStatus, lastEvent } = useSyncWebSocket();
+  const {
+    status: syncStatus,
+    lastEvent,
+    historyEntries,
+    pendingModalState,
+    requestPreSyncFromPortal,
+    confirmSyncFromPortal,
+    cancelSyncFromPortal
+  } = useSyncWebSocket();
 
   const getCurrentPage = (): string => {
     const hash = window.location.hash.slice(1);
     if (hash.startsWith('installation')) return 'installation';
+    if (hash.startsWith('updated-code')) return 'updated-code';
     return (
       componentDocumentation.find(
         (component) => hash === component.slug || hash === component.routeSlug
@@ -42,6 +53,7 @@ export default function App() {
       const isRouteHash =
         !hash ||
         hash.startsWith('installation') ||
+        hash.startsWith('updated-code') ||
         componentDocumentation.some(
           (component) => hash === component.slug || hash === component.routeSlug
         );
@@ -56,7 +68,8 @@ export default function App() {
     if (!lastEvent) return;
     if (
       lastEvent.event === 'FIGMA_TO_CODE_COMPLETE' ||
-      lastEvent.event === 'FIGMA_TO_GITHUB_COMPLETE'
+      lastEvent.event === 'FIGMA_TO_GITHUB_COMPLETE' ||
+      lastEvent.event === 'CODE_TO_FIGMA_COMPLETE'
     ) {
       const created = lastEvent.result?.createdCount ?? 0;
       const deleted = lastEvent.result?.deletedCount ?? 0;
@@ -69,9 +82,12 @@ export default function App() {
     }
   }, [lastEvent]);
 
-  const genericComponent = componentDocumentation.find(
-    (component) => component.routeSlug === currentPage && component.routeSlug !== 'button'
-  );
+  const isUpdatedCodePage = currentPage === 'updated-code';
+  const genericComponent = !isUpdatedCodePage
+    ? componentDocumentation.find(
+        (component) => component.routeSlug === currentPage && component.routeSlug !== 'button'
+      )
+    : undefined;
   const DedicatedComponentPage = genericComponent
     ? componentPages.get(genericComponent.slug)
     : undefined;
@@ -81,27 +97,32 @@ export default function App() {
     { href: '#md-figma-changelog-diff-status', label: 'Figma changelog', nested: true }
   ];
 
-  const tocLinks: Array<{ href: string; label: string; nested?: boolean }> = genericComponent
+  const tocLinks: Array<{ href: string; label: string; nested?: boolean }> = isUpdatedCodePage
     ? [
-        ...markdownTocLinks,
-        { href: '#component-examples', label: 'Preview & playground' },
-        { href: '#component-installation', label: 'Installation' },
-        { href: '#component-guidelines', label: 'Usage guidelines' },
-        { href: '#component-api', label: 'API reference' }
+        { href: '#recent-updates', label: 'What Updated (Sync Feed)' },
+        { href: '#active-code-bundles', label: 'Active Component Bundles' }
       ]
-    : [
-        ...markdownTocLinks,
-        { href: '#playground', label: 'Try it out' },
-        { href: '#figma-matrix', label: 'Figma variant matrix' },
-        { href: '#examples', label: 'Examples' },
-        { href: '#variant-examples', label: 'Variants', nested: true },
-        { href: '#size-examples', label: 'Sizes', nested: true },
-        { href: '#icon-examples', label: 'Icons', nested: true },
-        { href: '#state-examples', label: 'States', nested: true },
-        { href: '#installation', label: 'Installation' },
-        { href: '#guidelines', label: 'Usage guidelines' },
-        { href: '#api', label: 'API reference' }
-      ];
+    : genericComponent
+      ? [
+          ...markdownTocLinks,
+          { href: '#component-examples', label: 'Preview & playground' },
+          { href: '#component-installation', label: 'Installation' },
+          { href: '#component-guidelines', label: 'Usage guidelines' },
+          { href: '#component-api', label: 'API reference' }
+        ]
+      : [
+          ...markdownTocLinks,
+          { href: '#playground', label: 'Try it out' },
+          { href: '#figma-matrix', label: 'Figma variant matrix' },
+          { href: '#examples', label: 'Examples' },
+          { href: '#variant-examples', label: 'Variants', nested: true },
+          { href: '#size-examples', label: 'Sizes', nested: true },
+          { href: '#icon-examples', label: 'Icons', nested: true },
+          { href: '#state-examples', label: 'States', nested: true },
+          { href: '#installation', label: 'Installation' },
+          { href: '#guidelines', label: 'Usage guidelines' },
+          { href: '#api', label: 'API reference' }
+        ];
 
   return (
     <div className="docs-shell">
@@ -111,16 +132,25 @@ export default function App() {
         onNav={(page: string) => setCurrentPage(page)}
       />
       <div className="docs-layout" id="top">
-        <SidebarPage currentPage={currentPage} syncStatus={syncStatus} />
+        <SidebarPage
+          currentPage={currentPage}
+          syncStatus={syncStatus}
+          updatesCount={historyEntries.length}
+        />
 
-        {genericComponent ? (
+        {isUpdatedCodePage ? (
+          <UpdatedCodePage
+            entries={historyEntries}
+            onRequestPreSync={requestPreSyncFromPortal}
+          />
+        ) : genericComponent ? (
           DedicatedComponentPage ? (
             <DedicatedComponentPage />
           ) : (
-            <ComponentPage component={genericComponent} />
+            <ComponentPage component={genericComponent} historyEntries={historyEntries} />
           )
         ) : (
-          <ButtonPage />
+          <ButtonPage historyEntries={historyEntries} />
         )}
 
         <aside className="docs-toc" aria-label="On this page">
@@ -138,6 +168,14 @@ export default function App() {
           </nav>
         </aside>
       </div>
+
+      <SyncConfirmModal
+        open={pendingModalState.open}
+        direction={pendingModalState.direction}
+        items={pendingModalState.items}
+        onConfirm={confirmSyncFromPortal}
+        onCancel={cancelSyncFromPortal}
+      />
 
       <SyncToast event={lastEvent} />
     </div>

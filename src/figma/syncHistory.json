@@ -1,0 +1,108 @@
+{
+  "lastUpdated": "2026-11-19T08:30:00.000Z",
+  "entries": [
+    {
+      "id": "sync-init-button",
+      "timestamp": "2026-11-19T08:30:00.000Z",
+      "direction": "figma-to-code",
+      "action": "updated",
+      "slug": "button",
+      "componentName": "Button",
+      "pageName": "ButtonPage",
+      "summary": "button: synced primary variant tokens, size scale bindings & Figma specifications",
+      "details": [
+        "Bound size heights, paddings, radii & font-sizes to semantic tokens in src/tokens/variables/semantics.scss",
+        "Updated src/components/button/button.scss and src/components/button/button.md"
+      ],
+      "files": [
+        {
+          "path": "src/components/button/button.scss",
+          "ext": "scss",
+          "action": "updated",
+          "diff": "@@ $sizes / $variants token map @@\n+ height: var(--button-size-large-height);\n+ padding: var(--button-size-large-padding-x);\n+ radius: var(--button-size-large-radius);\n+ background: var(--button-primary-background-color-default);"
+        },
+        {
+          "path": "src/components/button/button.tsx",
+          "ext": "tsx",
+          "action": "updated",
+          "diff": "@@ Button component export @@\n+ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(...)"
+        },
+        {
+          "path": "src/app/pages/ButtonPage/ButtonPage.tsx",
+          "ext": "tsx",
+          "action": "updated",
+          "diff": "@@ Portal route #button @@\n+ Live interactive playground & Figma 320-variant matrix"
+        }
+      ]
+    },
+    {
+      "id": "sync-init-input-area",
+      "timestamp": "2026-11-19T08:15:00.000Z",
+      "direction": "figma-to-code",
+      "action": "added",
+      "slug": "input-area",
+      "componentName": "InputArea",
+      "pageName": "InputAreaPage",
+      "summary": "input-area: scaffolded 5-file component bundle & registered InputAreaPage in portal sidebar",
+      "details": [
+        "Created src/components/input-area/ (.tsx, .types.ts, .scss, .dart, .md)",
+        "Created src/app/pages/InputAreaPage/ (InputAreaPage.tsx, .ts, .scss)"
+      ],
+      "files": [
+        {
+          "path": "src/components/input-area/input-area.tsx",
+          "ext": "tsx",
+          "action": "added",
+          "diff": "+ export const InputArea: React.FC<InputAreaProps> = ({ children = 'Input-Area', size = 'medium', variant = 'primary', ... })"
+        },
+        {
+          "path": "src/components/input-area/input-area.scss",
+          "ext": "scss",
+          "action": "added",
+          "diff": "+ $input-area-sizes: ( small: (...), medium: (...), large: (...) );\n+ .ui-input-area { display: inline-flex; ... }"
+        },
+        {
+          "path": "src/app/pages/InputAreaPage/InputAreaPage.tsx",
+          "ext": "tsx",
+          "action": "added",
+          "diff": "+ export const componentSlug = \"input-area\";\n+ export function InputAreaPage() { ... }"
+        }
+      ]
+    },
+    {
+      "id": "sync-init-button01",
+      "timestamp": "2026-11-19T07:41:43.000Z",
+      "direction": "figma-to-code",
+      "action": "added",
+      "slug": "button01",
+      "componentName": "Button01",
+      "pageName": "Button01Page",
+      "summary": "button01: scaffolded 5-file component bundle & registered Button01Page in portal sidebar",
+      "details": [
+        "Created src/components/button01/ (button01.tsx, button01.types.ts, button01.scss, button01.dart, button01.md)",
+        "Created src/app/pages/Button01Page/ (Button01Page.tsx, Button01Page.ts, Button01Page.scss)"
+      ],
+      "files": [
+        {
+          "path": "src/components/button01/button01.tsx",
+          "ext": "tsx",
+          "action": "added",
+          "diff": "+ export const Button01: React.FC<Button01Props> = ({ children = 'Button01', size = 'medium', variant = 'primary', ... })"
+        },
+        {
+          "path": "src/components/button01/button01.scss",
+          "ext": "scss",
+          "action": "added",
+          "diff": "+ $button01-sizes: ( small: (...), medium: (...), large: (...) );\n+ .ui-button01 { display: inline-flex; ... }"
+        },
+        {
+          "path": "src/app/pages/Button01Page/Button01Page.tsx",
+          "ext": "tsx",
+          "action": "added",
+          "diff": "+ export const componentSlug = \"button01\";\n+ export function Button01Page() { ... }"
+        }
+      ]
+    }
+  ]
+}
+

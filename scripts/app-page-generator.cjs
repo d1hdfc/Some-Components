@@ -13,7 +13,8 @@ const PROTECTED_PAGE_DIRS = new Set([
   'HeaderPage',
   'SidebarPage',
   'FigmaComponentsPage',
-  'ComponentPage'
+  'ComponentPage',
+  'UpdatedCodePage'
 ]);
 
 function toPageName(slug) {

@@ -8,6 +8,8 @@ import type {
 } from '../../../components/button/button.types';
 import './ButtonPage.scss';
 import { ComponentMarkdownSection } from '../../components/MarkdownView';
+import { RecentUpdatesBanner } from '../../components/RecentUpdatesBanner';
+import type { SyncHistoryEntry } from '../../hooks/useSyncWebSocket';
 
 const buttonSourceUrl = 'https://github.com/d1hdfc/Some-Components/tree/main/src/components/button';
 const installCode = `npm install @d1hdfc/Some-Components@main`;
@@ -111,7 +113,7 @@ function CodeExample({
   );
 }
 
-export function ButtonPage() {
+export function ButtonPage({ historyEntries = [] }: { historyEntries?: SyncHistoryEntry[] }) {
   const [playgroundVariant, setPlaygroundVariant] = useState<ButtonVariant>('primary');
   const [playgroundSize, setPlaygroundSize] = useState<ButtonSize>('large');
   const [playgroundState, setPlaygroundState] = useState<ButtonState>('default');
@@ -220,6 +222,8 @@ font-size: var(${fontSizeTokenName}, ${computedMetrics.fontSize});`;
       <div className="docs-breadcrumbs">
         <a href="#components">Components</a><span>/</span><strong>Button</strong>
       </div>
+
+      <RecentUpdatesBanner entries={historyEntries} activeSlug="button" />
 
       <header className="docs-heading">
         <div className="docs-heading-top">
