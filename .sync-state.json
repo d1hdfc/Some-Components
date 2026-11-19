@@ -6,8 +6,1180 @@
       "name": "Button",
       "type": "COMPONENT_SET",
       "pageName": "Button",
-      "updatedAt": "2026-11-19T08:30:00.000Z",
-      "kebab": "button"
+      "updatedAt": "2026-11-19T09:03:06.454Z",
+      "kebab": "button",
+      "generated": true,
+      "codeCombinedHash": "a2f1df0c5806",
+      "codeHashes": {
+        "tsx": "11839f6a1143",
+        "types": "87d18dd271f9",
+        "scss": "5b64aeeccf1b",
+        "dart": "e1e996319043",
+        "md": "63a61bda497f"
+      },
+      "codeFilesSnapshot": {
+        "tsx": "import React from 'react';\r\nimport type { ButtonProps, ButtonVisualType } from './button.types';\r\n\r\nconst chevronLeft =\r\n  'data:image/svg+xml;utf8,%3Csvg%20preserveAspectRatio%3D%22none%22%20overflow%3D%22visible%22%20style%3D%22display%3A%20block%3B%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%20%3Cg%20id%3D%22Icon%2FArrow%2FChevron%20Left%22%3E%20%3Cpath%20id%3D%221%22%20d%3D%22M15.0191%203.5507C15.3119%203.25786%2015.7868%203.25797%2016.0797%203.5507C16.3726%203.84359%2016.3726%204.31835%2016.0797%204.61125L9.55964%2011.1313C9.08289%2011.6082%209.0831%2012.3929%209.55964%2012.87L16.0797%2019.3901C16.3725%2019.6829%2016.3724%2020.1577%2016.0797%2020.4506C15.7868%2020.7435%2015.312%2020.7435%2015.0191%2020.4506L8.49909%2013.9306C7.43677%2012.8677%207.43655%2011.1335%208.49909%2010.0707L15.0191%203.5507Z%22%20fill%3D%22white%22%2F%3E%20%3C%2Fg%3E%20%3C%2Fsvg%3E';\r\nconst chevronRight =\r\n  'data:image/svg+xml;utf8,%3Csvg%20preserveAspectRatio%3D%22none%22%20overflow%3D%22visible%22%20style%3D%22display%3A%20block%3B%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%20%3Cg%20id%3D%22Icon%2FArrow%2FChevron%20Right%22%3E%20%3Cpath%20id%3D%221%22%20d%3D%22M7.92187%203.55078C8.21477%203.25789%208.68953%203.25789%208.98242%203.55078L15.5024%2010.0708C16.5652%2011.1336%2016.565%2012.8677%2015.5024%2013.9307L8.98242%2020.4507C8.68953%2020.7436%208.21477%2020.7436%207.92187%2020.4507C7.6293%2020.1578%207.62909%2019.6829%207.92187%2019.3901L14.4419%2012.8701C14.9187%2012.393%2014.9189%2011.6083%2014.4419%2011.1313L7.92187%204.61133C7.62898%204.31844%207.62898%203.84367%207.92187%203.55078Z%22%20fill%3D%22white%22%2F%3E%20%3C%2Fg%3E%20%3C%2Fsvg%3E';\r\n\r\nconst cx = (...parts: Array<string | false | undefined>) => parts.filter(Boolean).join(' ');\r\n\r\nconst VISUAL_TYPES = new Set<ButtonVisualType>(['default', 'icon', 'gradient', 'white']);\r\n\r\nconst renderIcon = (\r\n  icon: boolean | React.ReactNode,\r\n  direction: 'left' | 'right'\r\n) => {\r\n  if (!icon) return null;\r\n  const maskImage = `url(\"${direction === 'left' ? chevronLeft : chevronRight}\")`;\r\n\r\n  return (\r\n    <span\r\n      className={`btn-icon${icon === true ? ` btn-icon--${direction}` : ''}`}\r\n      style={icon === true ? { maskImage } : undefined}\r\n      aria-hidden=\"true\"\r\n    >\r\n      {icon === true ? null : icon}\r\n    </span>\r\n  );\r\n};\r\n\r\nexport const Button: React.FC<ButtonProps> = ({\r\n  children = 'Button',\r\n  size = 'medium',\r\n  variant = 'primary',\r\n  state = 'default',\r\n  type = 'default',\r\n  buttonType,\r\n  leftIcon = false,\r\n  rightIcon = false,\r\n  loading = false,\r\n  disabled = false,\r\n  selected = false,\r\n  fullWidth = false,\r\n  className,\r\n  ...rest\r\n}) => {\r\n  const resolvedVisualType: ButtonVisualType =\r\n    buttonType ?? (VISUAL_TYPES.has(type as ButtonVisualType) ? (type as ButtonVisualType) : 'default');\r\n  const htmlButtonType: 'button' | 'submit' | 'reset' =\r\n    type === 'submit' || type === 'reset' ? type : 'button';\r\n\r\n  const isDisabled = disabled || loading || state === 'disabled';\r\n  const isPressed = selected || state === 'pressed';\r\n  const isHover = state === 'hover';\r\n  const isFocus = state === 'focus';\r\n  const isIconOnly = resolvedVisualType === 'icon';\r\n\r\n  const combinedClasses = cx(\r\n    'btn',\r\n    `btn-${size}`,\r\n    `btn-${variant}`,\r\n    `btn--state-${state}`,\r\n    `btn--type-${resolvedVisualType}`,\r\n    isHover && 'btn--show-hover',\r\n    isPressed && 'btn--selected',\r\n    isFocus && 'btn--state-focus',\r\n    fullWidth && 'btn--full-width',\r\n    isDisabled && 'btn--disabled',\r\n    className\r\n  );\r\n\r\n  return (\r\n    <button\r\n      {...rest}\r\n      type={htmlButtonType}\r\n      className={combinedClasses}\r\n      disabled={isDisabled}\r\n      aria-busy={loading || undefined}\r\n      aria-pressed={isPressed || undefined}\r\n    >\r\n      {isIconOnly ? (\r\n        renderIcon(leftIcon || rightIcon || true, 'left')\r\n      ) : (\r\n        <>\r\n          {renderIcon(leftIcon, 'left')}\r\n          <span className=\"btn-label\">{children}</span>\r\n          {loading && <span className=\"spinner\" aria-hidden=\"true\" />}\r\n          {!loading && renderIcon(rightIcon, 'right')}\r\n        </>\r\n      )}\r\n    </button>\r\n  );\r\n};\r\n\r\nexport default Button;\r\n",
+        "types": "import React from 'react';\n\nexport type ButtonSize = 'xsmall' | 'small' | 'medium' | 'large';\n\nexport type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'link';\n\nexport type ButtonState = 'default' | 'hover' | 'pressed' | 'disabled' | 'focus';\n\nexport type ButtonVisualType = 'default' | 'icon' | 'gradient' | 'white';\n\nexport interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'type'> {\n  children?: React.ReactNode;\n  size?: ButtonSize;\n  variant?: ButtonVariant;\n  state?: ButtonState;\n  type?: ButtonVisualType | 'button' | 'submit' | 'reset';\n  buttonType?: ButtonVisualType;\n  leftIcon?: boolean | React.ReactNode;\n  rightIcon?: boolean | React.ReactNode;\n  loading?: boolean;\n  disabled?: boolean;\n  selected?: boolean;\n  fullWidth?: boolean;\n}\n",
+        "scss": "@use 'sass:map';\n\n$button-sizes: (\n  large: (\n    height: var(--button-size-large-height),\n    padding: var(--button-size-large-padding-x),\n    radius: var(--button-size-large-radius),\n    gap: var(--button-size-large-gap),\n    font-size: var(--button-size-large-font-size),\n    icon-size: var(--button-size-large-icon-size)\n  ),\n  medium: (\n    height: var(--button-size-medium-height),\n    padding: var(--button-size-medium-padding-x),\n    radius: var(--button-size-medium-radius),\n    gap: var(--button-size-medium-gap),\n    font-size: var(--button-size-medium-font-size),\n    icon-size: var(--button-size-medium-icon-size)\n  ),\n  small: (\n    height: var(--button-size-small-height),\n    padding: var(--button-size-small-padding-x),\n    radius: var(--button-size-small-radius),\n    gap: var(--button-size-small-gap),\n    font-size: var(--button-size-small-font-size),\n    icon-size: var(--button-size-small-icon-size)\n  ),\n  xsmall: (\n    height: var(--button-size-xsmall-height),\n    padding: var(--button-size-xsmall-padding-x),\n    radius: var(--button-size-xsmall-radius),\n    gap: var(--button-size-xsmall-gap),\n    font-size: var(--button-size-xsmall-font-size),\n    icon-size: var(--button-size-xsmall-icon-size)\n  )\n);\n\n$button-variants: (\n  primary: (\n    background: var(--button-primary-background-color-default),\n    foreground: var(--button-primary-foreground-color-static),\n    border: var(--surface-root-opacity),\n    hover-background: var(--button-primary-background-color-hover),\n    hover-foreground: var(--button-primary-foreground-color-static),\n    hover-border: var(--surface-root-opacity),\n    active-background: var(--button-primary-background-color-pressed),\n    active-foreground: var(--button-primary-foreground-color-static),\n    active-border: var(--surface-root-opacity),\n    disabled-background: var(--button-primary-background-color-disabled),\n    disabled-foreground: var(--button-primary-foreground-color-disabled),\n    disabled-border: var(--surface-root-opacity)\n  ),\n  secondary: (\n    background: var(--button-secondary-background-color-default),\n    foreground: var(--button-secondary-foreground-color-default),\n    border: var(--button-secondary-border-color-default),\n    hover-background: var(--button-secondary-background-color-hover),\n    hover-foreground: var(--button-secondary-foreground-color-hover),\n    hover-border: var(--button-secondary-border-color-hover),\n    active-background: var(--button-secondary-background-color-pressed),\n    active-foreground: var(--button-secondary-foreground-color-pressed),\n    active-border: var(--button-secondary-border-color-pressed),\n    disabled-background: var(--button-secondary-background-color-disabled),\n    disabled-foreground: var(--button-secondary-foreground-color-disabled),\n    disabled-border: var(--button-secondary-border-color-disabled)\n  ),\n  tertiary: (\n    background: var(--button-tertiary-background-color-default),\n    foreground: var(--button-tertiary-foreground-color-default),\n    border: var(--surface-root-opacity),\n    hover-background: var(--button-tertiary-background-color-hover),\n    hover-foreground: var(--button-tertiary-foreground-color-hover),\n    hover-border: var(--surface-root-opacity),\n    active-background: var(--button-tertiary-background-color-pressed),\n    active-foreground: var(--button-tertiary-foreground-color-pressed),\n    active-border: var(--surface-root-opacity),\n    disabled-background: var(--button-tertiary-background-color-disabled),\n    disabled-foreground: var(--button-tertiary-foreground-color-disabled),\n    disabled-border: var(--surface-root-opacity)\n  ),\n  link: (\n    background: var(--surface-root-opacity),\n    foreground: var(--button-link-foreground-color-default),\n    border: var(--surface-root-opacity),\n    hover-background: var(--surface-root-opacity),\n    hover-foreground: var(--button-link-foreground-color-hover),\n    hover-border: var(--surface-root-opacity),\n    active-background: var(--surface-root-opacity),\n    active-foreground: var(--button-link-foreground-color-pressed),\n    active-border: var(--surface-root-opacity),\n    disabled-background: var(--surface-root-opacity),\n    disabled-foreground: var(--button-link-foreground-color-disabled),\n    disabled-border: var(--surface-root-opacity)\n  )\n);\n\n.btn {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  min-width: max-content;\n  border: var(--button-size-border-width) solid var(--btn-border);\n  border-radius: var(--button-radius);\n  padding: var(--global-scale-0) var(--button-padding);\n  gap: var(--button-gap);\n  background-color: var(--btn-background);\n  color: var(--btn-foreground);\n  font-family: var(--font-family-inter);\n  font-size: var(--button-font-size);\n  font-weight: var(--font-weight-600);\n  line-height: var(--font-line-height-none);\n  cursor: pointer;\n  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;\n\n  &:hover:not(:disabled),\n  &--show-hover:not(:disabled),\n  &--state-hover:not(:disabled) {\n    background-color: var(--btn-hover-background);\n    border-color: var(--btn-hover-border);\n    color: var(--btn-hover-foreground);\n  }\n\n  &:active:not(:disabled),\n  &--selected:not(:disabled),\n  &--state-pressed:not(:disabled) {\n    background-color: var(--btn-active-background);\n    border-color: var(--btn-active-border);\n    color: var(--btn-active-foreground);\n  }\n\n  &:focus-visible,\n  &--state-focus {\n    outline: var(--button-focus-border-width) solid var(--button-focus-brand);\n    outline-offset: var(--layout-spacing-2xs);\n  }\n\n  &:disabled,\n  &--disabled,\n  &--state-disabled {\n    background-color: var(--btn-disabled-background);\n    border-color: var(--btn-disabled-border);\n    color: var(--btn-disabled-foreground);\n    cursor: not-allowed;\n  }\n\n  &--type-icon {\n    width: var(--button-height);\n    min-width: var(--button-height);\n    padding: var(--global-scale-0);\n  }\n\n  &--type-gradient {\n    background-image: linear-gradient(to right, var(--surface-primary-base), var(--surface-primary-on-light));\n    color: var(--button-primary-foreground-color-static);\n    border-color: var(--surface-root-opacity);\n  }\n\n  &--type-white {\n    &.btn-primary {\n      --btn-background: var(--button-white-primary-background-color-default);\n      --btn-foreground: var(--button-white-primary-foreground-color-default);\n      --btn-border: var(--surface-root-opacity);\n      --btn-hover-background: var(--button-white-primary-background-color-hover);\n      --btn-hover-foreground: var(--button-white-primary-foreground-color-hover);\n      --btn-active-background: var(--button-white-primary-background-color-pressed);\n      --btn-active-foreground: var(--button-white-primary-foreground-color-pressed);\n      --btn-disabled-background: var(--button-white-primary-background-color-disabled);\n      --btn-disabled-foreground: var(--button-white-primary-foreground-color-disabled);\n    }\n\n    &.btn-secondary {\n      --btn-background: var(--button-white-secondary-background-color-default);\n      --btn-foreground: var(--button-white-secondary-foreground-color-default);\n      --btn-border: var(--border-static);\n      --btn-hover-background: var(--button-white-secondary-background-color-hover);\n      --btn-hover-foreground: var(--button-white-secondary-foreground-color-hover);\n      --btn-active-background: var(--button-white-secondary-background-color-pressed);\n      --btn-active-foreground: var(--button-white-secondary-foreground-color-pressed);\n      --btn-disabled-background: var(--button-white-secondary-background-color-disabled);\n      --btn-disabled-foreground: var(--button-white-secondary-foreground-color-disabled);\n    }\n\n    &.btn-tertiary {\n      --btn-background: var(--button-white-tertiary-background-color-default);\n      --btn-foreground: var(--button-white-tertiary-foreground-color-default);\n      --btn-border: var(--surface-root-opacity);\n      --btn-hover-background: var(--button-white-tertiary-background-color-hover);\n      --btn-hover-foreground: var(--button-white-tertiary-foreground-color-hover);\n      --btn-active-background: var(--button-white-tertiary-background-color-pressed);\n      --btn-active-foreground: var(--button-white-tertiary-foreground-color-pressed);\n      --btn-disabled-background: var(--button-white-tertiary-background-color-disabled);\n      --btn-disabled-foreground: var(--button-white-tertiary-foreground-color-disabled);\n    }\n\n    &.btn-link {\n      --btn-background: var(--surface-root-opacity);\n      --btn-foreground: var(--button-white-link-foreground-color-default);\n      --btn-border: var(--surface-root-opacity);\n      --btn-hover-foreground: var(--button-white-link-foreground-color-hover);\n      --btn-active-foreground: var(--button-white-link-foreground-color-pressed);\n      --btn-disabled-foreground: var(--button-white-link-foreground-color-disabled);\n    }\n\n    &:focus-visible,\n    &.btn--state-focus {\n      outline-color: var(--button-focus-white);\n    }\n  }\n\n  &--full-width {\n    width: 100%;\n  }\n\n  &-label {\n    white-space: nowrap;\n  }\n\n  &-icon {\n    display: inline-flex;\n    flex: 0 0 auto;\n    width: var(--button-icon-size);\n    height: var(--button-icon-size);\n    align-items: center;\n    justify-content: center;\n\n    &--left,\n    &--right {\n      background-color: currentColor;\n      mask-position: center;\n      mask-repeat: no-repeat;\n      mask-size: contain;\n    }\n  }\n}\n\n@each $size, $tokens in $button-sizes {\n  .btn-#{$size} {\n    --button-height: #{map.get($tokens, height)};\n    --button-padding: #{map.get($tokens, padding)};\n    --button-radius: #{map.get($tokens, radius)};\n    --button-gap: #{map.get($tokens, gap)};\n    --button-font-size: #{map.get($tokens, font-size)};\n    --button-icon-size: #{map.get($tokens, icon-size)};\n\n    height: var(--button-height);\n  }\n}\n\n@each $variant, $tokens in $button-variants {\n  .btn-#{$variant} {\n    @each $property, $token in $tokens {\n      --btn-#{$property}: #{$token};\n    }\n  }\n}\n\n.spinner {\n  width: var(--button-icon-size);\n  height: var(--button-icon-size);\n  border: var(--layout-border-md) solid currentColor;\n  border-right-color: var(--surface-root-opacity);\n  border-radius: var(--layout-radius-full);\n  animation: button-spin 0.7s linear infinite;\n}\n\n@keyframes button-spin {\n  to {\n    transform: rotate(360deg);\n  }\n}",
+        "dart": "import 'package:flutter/material.dart';\r\n\r\nenum UIButtonVariant { primary, secondary, tertiary, outlined, link, default, white, gradient, icon }\r\nenum UIButtonSize { small, medium, large, xsmall }\r\n\r\n/// Auto-generated Flutter widget for [Button] from Figma.\r\nclass UIButton extends StatelessWidget {\r\n  final String label;\r\n  final Widget? child;\r\n  final VoidCallback? onPressed;\r\n  final UIButtonVariant variant;\r\n  final UIButtonSize size;\r\n  final bool isDisabled;\r\n  final bool isLoading;\r\n  final bool isFullWidth;\r\n  final Widget? leadingIcon;\r\n  final Widget? trailingIcon;\r\n\r\n  const UIButton({\r\n    Key? key,\r\n    this.label = 'Button',\r\n    this.child,\r\n    this.onPressed,\r\n    this.variant = UIButtonVariant.primary,\r\n    this.size = UIButtonSize.small,\r\n    this.isDisabled = false,\r\n    this.isLoading = false,\r\n    this.isFullWidth = false,\r\n    this.leadingIcon,\r\n    this.trailingIcon,\r\n  }) : super(key: key);\r\n\r\n  EdgeInsets _getPadding() {\r\n    switch (size) {\r\n      case UIButtonSize.small:\r\n        return const EdgeInsets.symmetric(horizontal: 14, vertical: 7);\r\n      case UIButtonSize.large:\r\n        return const EdgeInsets.symmetric(horizontal: 26, vertical: 13);\r\n      case UIButtonSize.medium:\r\n      default:\r\n        return const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0);\r\n    }\r\n  }\r\n\r\n  Color _getBackgroundColor(BuildContext context) {\r\n    if (variant == UIButtonVariant.primary) {\r\n      return const Color(0xFF0C2340);\r\n    }\r\n    return Colors.transparent;\r\n  }\r\n\r\n  Color _getTextColor(BuildContext context) {\r\n    if (variant == UIButtonVariant.primary) {\r\n      return Colors.white;\r\n    }\r\n    return const Color(0xFF0C2340);\r\n  }\r\n\r\n  BorderSide _getBorderSide(BuildContext context) {\r\n    if (variant == UIButtonVariant.secondary) {\r\n      return const BorderSide(color: Color(0xFFD1D5DB), width: 1.0);\r\n    }\r\n    if (variant == UIButtonVariant.outlined) {\r\n      return const BorderSide(color: Color(0xFF0C2340), width: 1.5);\r\n    }\r\n    return BorderSide.none;\r\n  }\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    final effectiveEnabled = !isDisabled && !isLoading;\r\n    final content = Row(\r\n      mainAxisSize: isFullWidth ? MainAxisSize.max : MainAxisSize.min,\r\n      mainAxisAlignment: MainAxisAlignment.center,\r\n      children: [\r\n        if (isLoading)\r\n          const Padding(\r\n            padding: EdgeInsets.only(right: 8.0),\r\n            child: SizedBox(\r\n              width: 16,\r\n              height: 16,\r\n              child: CircularProgressIndicator(strokeWidth: 2.0),\r\n            ),\r\n          )\r\n        else if (leadingIcon != null)\r\n          Padding(\r\n            padding: const EdgeInsets.only(right: 6.0),\r\n            child: leadingIcon!,\r\n          ),\r\n        child ??\r\n            Text(\r\n              label,\r\n              style: TextStyle(\r\n                color: _getTextColor(context),\r\n                fontWeight: FontWeight.w600,\r\n              ),\r\n            ),\r\n        if (trailingIcon != null && !isLoading)\r\n          Padding(\r\n            padding: const EdgeInsets.only(left: 6.0),\r\n            child: trailingIcon!,\r\n          ),\r\n      ],\r\n    );\r\n\r\n    return Opacity(\r\n      opacity: effectiveEnabled ? 1.0 : 0.5,\r\n      child: Material(\r\n        color: _getBackgroundColor(context),\r\n        borderRadius: BorderRadius.circular(12.0),\r\n        child: InkWell(\r\n          onTap: effectiveEnabled ? onPressed : null,\r\n          borderRadius: BorderRadius.circular(12.0),\r\n          child: Container(\r\n            padding: _getPadding(),\r\n            decoration: BoxDecoration(\r\n              border: Border.fromBorderSide(_getBorderSide(context)),\r\n              borderRadius: BorderRadius.circular(12.0),\r\n            ),\r\n            child: content,\r\n          ),\r\n        ),\r\n      ),\r\n    );\r\n  }\r\n}\r\n"
+      }
+    },
+    "8024:1408": {
+      "id": "8024:1408",
+      "name": "Button",
+      "kebab": "button",
+      "type": "COMPONENT_SET",
+      "pageName": "Button",
+      "generated": true,
+      "updatedAt": "2026-11-19T09:12:47.719Z",
+      "codeCombinedHash": "a2f1df0c5806",
+      "codeHashes": {
+        "tsx": "11839f6a1143",
+        "types": "87d18dd271f9",
+        "scss": "5b64aeeccf1b",
+        "dart": "e1e996319043",
+        "md": "088167d597c9"
+      },
+      "codeFilesSnapshot": {
+        "tsx": "import React from 'react';\r\nimport type { ButtonProps, ButtonVisualType } from './button.types';\r\n\r\nconst chevronLeft =\r\n  'data:image/svg+xml;utf8,%3Csvg%20preserveAspectRatio%3D%22none%22%20overflow%3D%22visible%22%20style%3D%22display%3A%20block%3B%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%20%3Cg%20id%3D%22Icon%2FArrow%2FChevron%20Left%22%3E%20%3Cpath%20id%3D%221%22%20d%3D%22M15.0191%203.5507C15.3119%203.25786%2015.7868%203.25797%2016.0797%203.5507C16.3726%203.84359%2016.3726%204.31835%2016.0797%204.61125L9.55964%2011.1313C9.08289%2011.6082%209.0831%2012.3929%209.55964%2012.87L16.0797%2019.3901C16.3725%2019.6829%2016.3724%2020.1577%2016.0797%2020.4506C15.7868%2020.7435%2015.312%2020.7435%2015.0191%2020.4506L8.49909%2013.9306C7.43677%2012.8677%207.43655%2011.1335%208.49909%2010.0707L15.0191%203.5507Z%22%20fill%3D%22white%22%2F%3E%20%3C%2Fg%3E%20%3C%2Fsvg%3E';\r\nconst chevronRight =\r\n  'data:image/svg+xml;utf8,%3Csvg%20preserveAspectRatio%3D%22none%22%20overflow%3D%22visible%22%20style%3D%22display%3A%20block%3B%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%20%3Cg%20id%3D%22Icon%2FArrow%2FChevron%20Right%22%3E%20%3Cpath%20id%3D%221%22%20d%3D%22M7.92187%203.55078C8.21477%203.25789%208.68953%203.25789%208.98242%203.55078L15.5024%2010.0708C16.5652%2011.1336%2016.565%2012.8677%2015.5024%2013.9307L8.98242%2020.4507C8.68953%2020.7436%208.21477%2020.7436%207.92187%2020.4507C7.6293%2020.1578%207.62909%2019.6829%207.92187%2019.3901L14.4419%2012.8701C14.9187%2012.393%2014.9189%2011.6083%2014.4419%2011.1313L7.92187%204.61133C7.62898%204.31844%207.62898%203.84367%207.92187%203.55078Z%22%20fill%3D%22white%22%2F%3E%20%3C%2Fg%3E%20%3C%2Fsvg%3E';\r\n\r\nconst cx = (...parts: Array<string | false | undefined>) => parts.filter(Boolean).join(' ');\r\n\r\nconst VISUAL_TYPES = new Set<ButtonVisualType>(['default', 'icon', 'gradient', 'white']);\r\n\r\nconst renderIcon = (\r\n  icon: boolean | React.ReactNode,\r\n  direction: 'left' | 'right'\r\n) => {\r\n  if (!icon) return null;\r\n  const maskImage = `url(\"${direction === 'left' ? chevronLeft : chevronRight}\")`;\r\n\r\n  return (\r\n    <span\r\n      className={`btn-icon${icon === true ? ` btn-icon--${direction}` : ''}`}\r\n      style={icon === true ? { maskImage } : undefined}\r\n      aria-hidden=\"true\"\r\n    >\r\n      {icon === true ? null : icon}\r\n    </span>\r\n  );\r\n};\r\n\r\nexport const Button: React.FC<ButtonProps> = ({\r\n  children = 'Button',\r\n  size = 'medium',\r\n  variant = 'primary',\r\n  state = 'default',\r\n  type = 'default',\r\n  buttonType,\r\n  leftIcon = false,\r\n  rightIcon = false,\r\n  loading = false,\r\n  disabled = false,\r\n  selected = false,\r\n  fullWidth = false,\r\n  className,\r\n  ...rest\r\n}) => {\r\n  const resolvedVisualType: ButtonVisualType =\r\n    buttonType ?? (VISUAL_TYPES.has(type as ButtonVisualType) ? (type as ButtonVisualType) : 'default');\r\n  const htmlButtonType: 'button' | 'submit' | 'reset' =\r\n    type === 'submit' || type === 'reset' ? type : 'button';\r\n\r\n  const isDisabled = disabled || loading || state === 'disabled';\r\n  const isPressed = selected || state === 'pressed';\r\n  const isHover = state === 'hover';\r\n  const isFocus = state === 'focus';\r\n  const isIconOnly = resolvedVisualType === 'icon';\r\n\r\n  const combinedClasses = cx(\r\n    'btn',\r\n    `btn-${size}`,\r\n    `btn-${variant}`,\r\n    `btn--state-${state}`,\r\n    `btn--type-${resolvedVisualType}`,\r\n    isHover && 'btn--show-hover',\r\n    isPressed && 'btn--selected',\r\n    isFocus && 'btn--state-focus',\r\n    fullWidth && 'btn--full-width',\r\n    isDisabled && 'btn--disabled',\r\n    className\r\n  );\r\n\r\n  return (\r\n    <button\r\n      {...rest}\r\n      type={htmlButtonType}\r\n      className={combinedClasses}\r\n      disabled={isDisabled}\r\n      aria-busy={loading || undefined}\r\n      aria-pressed={isPressed || undefined}\r\n    >\r\n      {isIconOnly ? (\r\n        renderIcon(leftIcon || rightIcon || true, 'left')\r\n      ) : (\r\n        <>\r\n          {renderIcon(leftIcon, 'left')}\r\n          <span className=\"btn-label\">{children}</span>\r\n          {loading && <span className=\"spinner\" aria-hidden=\"true\" />}\r\n          {!loading && renderIcon(rightIcon, 'right')}\r\n        </>\r\n      )}\r\n    </button>\r\n  );\r\n};\r\n\r\nexport default Button;\r\n",
+        "types": "import React from 'react';\n\nexport type ButtonSize = 'xsmall' | 'small' | 'medium' | 'large';\n\nexport type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'link';\n\nexport type ButtonState = 'default' | 'hover' | 'pressed' | 'disabled' | 'focus';\n\nexport type ButtonVisualType = 'default' | 'icon' | 'gradient' | 'white';\n\nexport interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'type'> {\n  children?: React.ReactNode;\n  size?: ButtonSize;\n  variant?: ButtonVariant;\n  state?: ButtonState;\n  type?: ButtonVisualType | 'button' | 'submit' | 'reset';\n  buttonType?: ButtonVisualType;\n  leftIcon?: boolean | React.ReactNode;\n  rightIcon?: boolean | React.ReactNode;\n  loading?: boolean;\n  disabled?: boolean;\n  selected?: boolean;\n  fullWidth?: boolean;\n}\n",
+        "scss": "@use 'sass:map';\n\n$button-sizes: (\n  large: (\n    height: var(--button-size-large-height),\n    padding: var(--button-size-large-padding-x),\n    radius: var(--button-size-large-radius),\n    gap: var(--button-size-large-gap),\n    font-size: var(--button-size-large-font-size),\n    icon-size: var(--button-size-large-icon-size)\n  ),\n  medium: (\n    height: var(--button-size-medium-height),\n    padding: var(--button-size-medium-padding-x),\n    radius: var(--button-size-medium-radius),\n    gap: var(--button-size-medium-gap),\n    font-size: var(--button-size-medium-font-size),\n    icon-size: var(--button-size-medium-icon-size)\n  ),\n  small: (\n    height: var(--button-size-small-height),\n    padding: var(--button-size-small-padding-x),\n    radius: var(--button-size-small-radius),\n    gap: var(--button-size-small-gap),\n    font-size: var(--button-size-small-font-size),\n    icon-size: var(--button-size-small-icon-size)\n  ),\n  xsmall: (\n    height: var(--button-size-xsmall-height),\n    padding: var(--button-size-xsmall-padding-x),\n    radius: var(--button-size-xsmall-radius),\n    gap: var(--button-size-xsmall-gap),\n    font-size: var(--button-size-xsmall-font-size),\n    icon-size: var(--button-size-xsmall-icon-size)\n  )\n);\n\n$button-variants: (\n  primary: (\n    background: var(--button-primary-background-color-default),\n    foreground: var(--button-primary-foreground-color-static),\n    border: var(--surface-root-opacity),\n    hover-background: var(--button-primary-background-color-hover),\n    hover-foreground: var(--button-primary-foreground-color-static),\n    hover-border: var(--surface-root-opacity),\n    active-background: var(--button-primary-background-color-pressed),\n    active-foreground: var(--button-primary-foreground-color-static),\n    active-border: var(--surface-root-opacity),\n    disabled-background: var(--button-primary-background-color-disabled),\n    disabled-foreground: var(--button-primary-foreground-color-disabled),\n    disabled-border: var(--surface-root-opacity)\n  ),\n  secondary: (\n    background: var(--button-secondary-background-color-default),\n    foreground: var(--button-secondary-foreground-color-default),\n    border: var(--button-secondary-border-color-default),\n    hover-background: var(--button-secondary-background-color-hover),\n    hover-foreground: var(--button-secondary-foreground-color-hover),\n    hover-border: var(--button-secondary-border-color-hover),\n    active-background: var(--button-secondary-background-color-pressed),\n    active-foreground: var(--button-secondary-foreground-color-pressed),\n    active-border: var(--button-secondary-border-color-pressed),\n    disabled-background: var(--button-secondary-background-color-disabled),\n    disabled-foreground: var(--button-secondary-foreground-color-disabled),\n    disabled-border: var(--button-secondary-border-color-disabled)\n  ),\n  tertiary: (\n    background: var(--button-tertiary-background-color-default),\n    foreground: var(--button-tertiary-foreground-color-default),\n    border: var(--surface-root-opacity),\n    hover-background: var(--button-tertiary-background-color-hover),\n    hover-foreground: var(--button-tertiary-foreground-color-hover),\n    hover-border: var(--surface-root-opacity),\n    active-background: var(--button-tertiary-background-color-pressed),\n    active-foreground: var(--button-tertiary-foreground-color-pressed),\n    active-border: var(--surface-root-opacity),\n    disabled-background: var(--button-tertiary-background-color-disabled),\n    disabled-foreground: var(--button-tertiary-foreground-color-disabled),\n    disabled-border: var(--surface-root-opacity)\n  ),\n  link: (\n    background: var(--surface-root-opacity),\n    foreground: var(--button-link-foreground-color-default),\n    border: var(--surface-root-opacity),\n    hover-background: var(--surface-root-opacity),\n    hover-foreground: var(--button-link-foreground-color-hover),\n    hover-border: var(--surface-root-opacity),\n    active-background: var(--surface-root-opacity),\n    active-foreground: var(--button-link-foreground-color-pressed),\n    active-border: var(--surface-root-opacity),\n    disabled-background: var(--surface-root-opacity),\n    disabled-foreground: var(--button-link-foreground-color-disabled),\n    disabled-border: var(--surface-root-opacity)\n  )\n);\n\n.btn {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  min-width: max-content;\n  border: var(--button-size-border-width) solid var(--btn-border);\n  border-radius: var(--button-radius);\n  padding: var(--global-scale-0) var(--button-padding);\n  gap: var(--button-gap);\n  background-color: var(--btn-background);\n  color: var(--btn-foreground);\n  font-family: var(--font-family-inter);\n  font-size: var(--button-font-size);\n  font-weight: var(--font-weight-600);\n  line-height: var(--font-line-height-none);\n  cursor: pointer;\n  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;\n\n  &:hover:not(:disabled),\n  &--show-hover:not(:disabled),\n  &--state-hover:not(:disabled) {\n    background-color: var(--btn-hover-background);\n    border-color: var(--btn-hover-border);\n    color: var(--btn-hover-foreground);\n  }\n\n  &:active:not(:disabled),\n  &--selected:not(:disabled),\n  &--state-pressed:not(:disabled) {\n    background-color: var(--btn-active-background);\n    border-color: var(--btn-active-border);\n    color: var(--btn-active-foreground);\n  }\n\n  &:focus-visible,\n  &--state-focus {\n    outline: var(--button-focus-border-width) solid var(--button-focus-brand);\n    outline-offset: var(--layout-spacing-2xs);\n  }\n\n  &:disabled,\n  &--disabled,\n  &--state-disabled {\n    background-color: var(--btn-disabled-background);\n    border-color: var(--btn-disabled-border);\n    color: var(--btn-disabled-foreground);\n    cursor: not-allowed;\n  }\n\n  &--type-icon {\n    width: var(--button-height);\n    min-width: var(--button-height);\n    padding: var(--global-scale-0);\n  }\n\n  &--type-gradient {\n    background-image: linear-gradient(to right, var(--surface-primary-base), var(--surface-primary-on-light));\n    color: var(--button-primary-foreground-color-static);\n    border-color: var(--surface-root-opacity);\n  }\n\n  &--type-white {\n    &.btn-primary {\n      --btn-background: var(--button-white-primary-background-color-default);\n      --btn-foreground: var(--button-white-primary-foreground-color-default);\n      --btn-border: var(--surface-root-opacity);\n      --btn-hover-background: var(--button-white-primary-background-color-hover);\n      --btn-hover-foreground: var(--button-white-primary-foreground-color-hover);\n      --btn-active-background: var(--button-white-primary-background-color-pressed);\n      --btn-active-foreground: var(--button-white-primary-foreground-color-pressed);\n      --btn-disabled-background: var(--button-white-primary-background-color-disabled);\n      --btn-disabled-foreground: var(--button-white-primary-foreground-color-disabled);\n    }\n\n    &.btn-secondary {\n      --btn-background: var(--button-white-secondary-background-color-default);\n      --btn-foreground: var(--button-white-secondary-foreground-color-default);\n      --btn-border: var(--border-static);\n      --btn-hover-background: var(--button-white-secondary-background-color-hover);\n      --btn-hover-foreground: var(--button-white-secondary-foreground-color-hover);\n      --btn-active-background: var(--button-white-secondary-background-color-pressed);\n      --btn-active-foreground: var(--button-white-secondary-foreground-color-pressed);\n      --btn-disabled-background: var(--button-white-secondary-background-color-disabled);\n      --btn-disabled-foreground: var(--button-white-secondary-foreground-color-disabled);\n    }\n\n    &.btn-tertiary {\n      --btn-background: var(--button-white-tertiary-background-color-default);\n      --btn-foreground: var(--button-white-tertiary-foreground-color-default);\n      --btn-border: var(--surface-root-opacity);\n      --btn-hover-background: var(--button-white-tertiary-background-color-hover);\n      --btn-hover-foreground: var(--button-white-tertiary-foreground-color-hover);\n      --btn-active-background: var(--button-white-tertiary-background-color-pressed);\n      --btn-active-foreground: var(--button-white-tertiary-foreground-color-pressed);\n      --btn-disabled-background: var(--button-white-tertiary-background-color-disabled);\n      --btn-disabled-foreground: var(--button-white-tertiary-foreground-color-disabled);\n    }\n\n    &.btn-link {\n      --btn-background: var(--surface-root-opacity);\n      --btn-foreground: var(--button-white-link-foreground-color-default);\n      --btn-border: var(--surface-root-opacity);\n      --btn-hover-foreground: var(--button-white-link-foreground-color-hover);\n      --btn-active-foreground: var(--button-white-link-foreground-color-pressed);\n      --btn-disabled-foreground: var(--button-white-link-foreground-color-disabled);\n    }\n\n    &:focus-visible,\n    &.btn--state-focus {\n      outline-color: var(--button-focus-white);\n    }\n  }\n\n  &--full-width {\n    width: 100%;\n  }\n\n  &-label {\n    white-space: nowrap;\n  }\n\n  &-icon {\n    display: inline-flex;\n    flex: 0 0 auto;\n    width: var(--button-icon-size);\n    height: var(--button-icon-size);\n    align-items: center;\n    justify-content: center;\n\n    &--left,\n    &--right {\n      background-color: currentColor;\n      mask-position: center;\n      mask-repeat: no-repeat;\n      mask-size: contain;\n    }\n  }\n}\n\n@each $size, $tokens in $button-sizes {\n  .btn-#{$size} {\n    --button-height: #{map.get($tokens, height)};\n    --button-padding: #{map.get($tokens, padding)};\n    --button-radius: #{map.get($tokens, radius)};\n    --button-gap: #{map.get($tokens, gap)};\n    --button-font-size: #{map.get($tokens, font-size)};\n    --button-icon-size: #{map.get($tokens, icon-size)};\n\n    height: var(--button-height);\n  }\n}\n\n@each $variant, $tokens in $button-variants {\n  .btn-#{$variant} {\n    @each $property, $token in $tokens {\n      --btn-#{$property}: #{$token};\n    }\n  }\n}\n\n.spinner {\n  width: var(--button-icon-size);\n  height: var(--button-icon-size);\n  border: var(--layout-border-md) solid currentColor;\n  border-right-color: var(--surface-root-opacity);\n  border-radius: var(--layout-radius-full);\n  animation: button-spin 0.7s linear infinite;\n}\n\n@keyframes button-spin {\n  to {\n    transform: rotate(360deg);\n  }\n}",
+        "dart": "import 'package:flutter/material.dart';\r\n\r\nenum UIButtonVariant { primary, secondary, tertiary, outlined, link, default, white, gradient, icon }\r\nenum UIButtonSize { small, medium, large, xsmall }\r\n\r\n/// Auto-generated Flutter widget for [Button] from Figma.\r\nclass UIButton extends StatelessWidget {\r\n  final String label;\r\n  final Widget? child;\r\n  final VoidCallback? onPressed;\r\n  final UIButtonVariant variant;\r\n  final UIButtonSize size;\r\n  final bool isDisabled;\r\n  final bool isLoading;\r\n  final bool isFullWidth;\r\n  final Widget? leadingIcon;\r\n  final Widget? trailingIcon;\r\n\r\n  const UIButton({\r\n    Key? key,\r\n    this.label = 'Button',\r\n    this.child,\r\n    this.onPressed,\r\n    this.variant = UIButtonVariant.primary,\r\n    this.size = UIButtonSize.small,\r\n    this.isDisabled = false,\r\n    this.isLoading = false,\r\n    this.isFullWidth = false,\r\n    this.leadingIcon,\r\n    this.trailingIcon,\r\n  }) : super(key: key);\r\n\r\n  EdgeInsets _getPadding() {\r\n    switch (size) {\r\n      case UIButtonSize.small:\r\n        return const EdgeInsets.symmetric(horizontal: 14, vertical: 7);\r\n      case UIButtonSize.large:\r\n        return const EdgeInsets.symmetric(horizontal: 26, vertical: 13);\r\n      case UIButtonSize.medium:\r\n      default:\r\n        return const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0);\r\n    }\r\n  }\r\n\r\n  Color _getBackgroundColor(BuildContext context) {\r\n    if (variant == UIButtonVariant.primary) {\r\n      return const Color(0xFF0C2340);\r\n    }\r\n    return Colors.transparent;\r\n  }\r\n\r\n  Color _getTextColor(BuildContext context) {\r\n    if (variant == UIButtonVariant.primary) {\r\n      return Colors.white;\r\n    }\r\n    return const Color(0xFF0C2340);\r\n  }\r\n\r\n  BorderSide _getBorderSide(BuildContext context) {\r\n    if (variant == UIButtonVariant.secondary) {\r\n      return const BorderSide(color: Color(0xFFD1D5DB), width: 1.0);\r\n    }\r\n    if (variant == UIButtonVariant.outlined) {\r\n      return const BorderSide(color: Color(0xFF0C2340), width: 1.5);\r\n    }\r\n    return BorderSide.none;\r\n  }\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    final effectiveEnabled = !isDisabled && !isLoading;\r\n    final content = Row(\r\n      mainAxisSize: isFullWidth ? MainAxisSize.max : MainAxisSize.min,\r\n      mainAxisAlignment: MainAxisAlignment.center,\r\n      children: [\r\n        if (isLoading)\r\n          const Padding(\r\n            padding: EdgeInsets.only(right: 8.0),\r\n            child: SizedBox(\r\n              width: 16,\r\n              height: 16,\r\n              child: CircularProgressIndicator(strokeWidth: 2.0),\r\n            ),\r\n          )\r\n        else if (leadingIcon != null)\r\n          Padding(\r\n            padding: const EdgeInsets.only(right: 6.0),\r\n            child: leadingIcon!,\r\n          ),\r\n        child ??\r\n            Text(\r\n              label,\r\n              style: TextStyle(\r\n                color: _getTextColor(context),\r\n                fontWeight: FontWeight.w600,\r\n              ),\r\n            ),\r\n        if (trailingIcon != null && !isLoading)\r\n          Padding(\r\n            padding: const EdgeInsets.only(left: 6.0),\r\n            child: trailingIcon!,\r\n          ),\r\n      ],\r\n    );\r\n\r\n    return Opacity(\r\n      opacity: effectiveEnabled ? 1.0 : 0.5,\r\n      child: Material(\r\n        color: _getBackgroundColor(context),\r\n        borderRadius: BorderRadius.circular(12.0),\r\n        child: InkWell(\r\n          onTap: effectiveEnabled ? onPressed : null,\r\n          borderRadius: BorderRadius.circular(12.0),\r\n          child: Container(\r\n            padding: _getPadding(),\r\n            decoration: BoxDecoration(\r\n              border: Border.fromBorderSide(_getBorderSide(context)),\r\n              borderRadius: BorderRadius.circular(12.0),\r\n            ),\r\n            child: content,\r\n          ),\r\n        ),\r\n      ),\r\n    );\r\n  }\r\n}\r\n"
+      }
+    },
+    "1860:25021": {
+      "id": "1860:25021",
+      "name": "HDFC_Logo",
+      "kebab": "hdfc-logo",
+      "type": "COMPONENT_SET",
+      "pageName": "Logo",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:09.049Z"
+    },
+    "2126:16149": {
+      "id": "2126:16149",
+      "name": "HDFC_Logo_Master",
+      "kebab": "hdfc-logo-master",
+      "type": "COMPONENT_SET",
+      "pageName": "Logo",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:10.053Z"
+    },
+    "1862:34679": {
+      "id": "1862:34679",
+      "name": "Partner Logo",
+      "kebab": "partner-logo",
+      "type": "COMPONENT_SET",
+      "pageName": "Logo",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:10.913Z"
+    },
+    "1869:3729": {
+      "id": "1869:3729",
+      "name": "Partner Logo\\Payzapp",
+      "kebab": "partner-logo-payzapp",
+      "type": "COMPONENT_SET",
+      "pageName": "Logo",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:11.886Z"
+    },
+    "1869:3911": {
+      "id": "1869:3911",
+      "name": "Partner Logo\\SmartWealth",
+      "kebab": "partner-logo-smart-wealth",
+      "type": "COMPONENT_SET",
+      "pageName": "Logo",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:12.875Z"
+    },
+    "2143:840": {
+      "id": "2143:840",
+      "name": "Partner Logo_Master",
+      "kebab": "partner-logo-master",
+      "type": "COMPONENT_SET",
+      "pageName": "Logo",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:13.871Z"
+    },
+    "4104:3783": {
+      "id": "4104:3783",
+      "name": "Gradient Button",
+      "kebab": "gradient-button",
+      "type": "COMPONENT_SET",
+      "pageName": "Button",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:15.064Z"
+    },
+    "2922:5360": {
+      "id": "2922:5360",
+      "name": "2. Final Input Area Component",
+      "kebab": "final-input-area-component",
+      "type": "COMPONENT_SET",
+      "pageName": "Input-Area",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:17.015Z"
+    },
+    "3198:12013": {
+      "id": "3198:12013",
+      "name": "Icons/Light/20/Essential/Sort",
+      "kebab": "icons-light-20-essential-sort",
+      "type": "COMPONENT",
+      "pageName": "Input-Area",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:18.274Z"
+    },
+    "2922:5494": {
+      "id": "2922:5494",
+      "name": "3. Final MPIN Component",
+      "kebab": "final-mpin-component",
+      "type": "COMPONENT_SET",
+      "pageName": "MPIN-input",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:20.585Z"
+    },
+    "2922:5536": {
+      "id": "2922:5536",
+      "name": "MPIN | Types (4,6)",
+      "kebab": "mpin-types-4-6",
+      "type": "COMPONENT_SET",
+      "pageName": "MPIN-input",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:23.092Z"
+    },
+    "4285:37118": {
+      "id": "4285:37118",
+      "name": "Preview",
+      "kebab": "preview",
+      "type": "FRAME",
+      "pageName": "MPIN-input",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:25.214Z"
+    },
+    "3557:23845": {
+      "id": "3557:23845",
+      "name": "1. Final Search Component",
+      "kebab": "final-search-component",
+      "type": "COMPONENT_SET",
+      "pageName": "Search bar",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:26.897Z"
+    },
+    "3557:23891": {
+      "id": "3557:23891",
+      "name": "right-area",
+      "kebab": "right-area",
+      "type": "COMPONENT",
+      "pageName": "Search bar",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:28.594Z"
+    },
+    "3557:23895": {
+      "id": "3557:23895",
+      "name": "Search Field",
+      "kebab": "search-field",
+      "type": "COMPONENT_SET",
+      "pageName": "Search bar",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:29.517Z"
+    },
+    "3121:22679": {
+      "id": "3121:22679",
+      "name": "Examples",
+      "kebab": "examples",
+      "type": "FRAME",
+      "pageName": "Chips",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:30.909Z"
+    },
+    "4129:2348": {
+      "id": "4129:2348",
+      "name": "Chips",
+      "kebab": "chips",
+      "type": "COMPONENT_SET",
+      "pageName": "Chips",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:32.321Z"
+    },
+    "4535:81329": {
+      "id": "4535:81329",
+      "name": "focus ring",
+      "kebab": "focus-ring",
+      "type": "COMPONENT",
+      "pageName": "Focus ring",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:34.044Z"
+    },
+    "3991:3115": {
+      "id": "3991:3115",
+      "name": "Badge/size",
+      "kebab": "badge-size",
+      "type": "COMPONENT_SET",
+      "pageName": "Badge",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:35.104Z"
+    },
+    "3991:3173": {
+      "id": "3991:3173",
+      "name": "Badge",
+      "kebab": "badge",
+      "type": "COMPONENT_SET",
+      "pageName": "Badge",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:36.512Z"
+    },
+    "4014:6505": {
+      "id": "4014:6505",
+      "name": "Test",
+      "kebab": "test",
+      "type": "FRAME",
+      "pageName": "Badge",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:37.975Z"
+    },
+    "3873:103451": {
+      "id": "3873:103451",
+      "name": "MF Scheme Card",
+      "kebab": "mf-scheme-card",
+      "type": "FRAME",
+      "pageName": "Badge",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:39.519Z"
+    },
+    "6167:167170": {
+      "id": "6167:167170",
+      "name": "SearchBar",
+      "kebab": "search-bar",
+      "type": "COMPONENT",
+      "pageName": "Badge",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:40.933Z"
+    },
+    "3032:10171": {
+      "id": "3032:10171",
+      "name": "Color fallback",
+      "kebab": "color-fallback",
+      "type": "COMPONENT_SET",
+      "pageName": "Avatar",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:42.474Z"
+    },
+    "3032:10175": {
+      "id": "3032:10175",
+      "name": "Status",
+      "kebab": "status",
+      "type": "COMPONENT_SET",
+      "pageName": "Avatar",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:44.820Z"
+    },
+    "3032:10198": {
+      "id": "3032:10198",
+      "name": "Profile picture",
+      "kebab": "profile-picture",
+      "type": "COMPONENT_SET",
+      "pageName": "Avatar",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:46.200Z"
+    },
+    "3032:10221": {
+      "id": "3032:10221",
+      "name": "Avatar",
+      "kebab": "avatar",
+      "type": "COMPONENT_SET",
+      "pageName": "Avatar",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:47.944Z"
+    },
+    "3032:10251": {
+      "id": "3032:10251",
+      "name": "Style",
+      "kebab": "style",
+      "type": "COMPONENT_SET",
+      "pageName": "Avatar",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:50.160Z"
+    },
+    "3686:42299": {
+      "id": "3686:42299",
+      "name": "Text Colour",
+      "kebab": "text-colour",
+      "type": "COMPONENT_SET",
+      "pageName": "Avatar",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:51.621Z"
+    },
+    "3557:23728": {
+      "id": "3557:23728",
+      "name": "tag",
+      "kebab": "tag",
+      "type": "COMPONENT_SET",
+      "pageName": "tag",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:53.386Z"
+    },
+    "3557:23721": {
+      "id": "3557:23721",
+      "name": "tag/size",
+      "kebab": "tag-size",
+      "type": "COMPONENT_SET",
+      "pageName": "tag",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:56.043Z"
+    },
+    "2999:10007": {
+      "id": "2999:10007",
+      "name": "checkbox/size",
+      "kebab": "checkbox-size",
+      "type": "COMPONENT_SET",
+      "pageName": "Controls",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:57.674Z"
+    },
+    "2999:10014": {
+      "id": "2999:10014",
+      "name": "checkbox",
+      "kebab": "checkbox",
+      "type": "COMPONENT_SET",
+      "pageName": "Controls",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:46:59.388Z"
+    },
+    "2999:10024": {
+      "id": "2999:10024",
+      "name": "radio/size",
+      "kebab": "radio-size",
+      "type": "COMPONENT_SET",
+      "pageName": "Controls",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:47:00.723Z"
+    },
+    "3219:4512": {
+      "id": "3219:4512",
+      "name": "radio",
+      "kebab": "radio",
+      "type": "COMPONENT_SET",
+      "pageName": "Controls",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:47:03.977Z"
+    },
+    "3225:4398": {
+      "id": "3225:4398",
+      "name": "toggle/size",
+      "kebab": "toggle-size",
+      "type": "COMPONENT_SET",
+      "pageName": "Controls",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:47:05.517Z"
+    },
+    "3225:4419": {
+      "id": "3225:4419",
+      "name": "toggle",
+      "kebab": "toggle",
+      "type": "COMPONENT_SET",
+      "pageName": "Controls",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:47:07.325Z"
+    },
+    "3234:12064": {
+      "id": "3234:12064",
+      "name": "controls",
+      "kebab": "controls",
+      "type": "COMPONENT_SET",
+      "pageName": "Controls",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:47:09.824Z"
+    },
+    "4201:21995": {
+      "id": "4201:21995",
+      "name": "Rating-base",
+      "kebab": "rating-base",
+      "type": "COMPONENT_SET",
+      "pageName": "Rating",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:47:11.501Z"
+    },
+    "4201:22017": {
+      "id": "4201:22017",
+      "name": "Ratings",
+      "kebab": "ratings",
+      "type": "COMPONENT_SET",
+      "pageName": "Rating",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:47:13.534Z"
+    },
+    "3557:23145": {
+      "id": "3557:23145",
+      "name": "Progress-bar/circular",
+      "kebab": "progress-bar-circular",
+      "type": "COMPONENT_SET",
+      "pageName": "Progress bar",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:47:16.473Z"
+    },
+    "3557:23132": {
+      "id": "3557:23132",
+      "name": "Progress-bar/linear",
+      "kebab": "progress-bar-linear",
+      "type": "COMPONENT_SET",
+      "pageName": "Progress bar",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:47:17.916Z"
+    },
+    "3557:23269": {
+      "id": "3557:23269",
+      "name": "actionPrevious",
+      "kebab": "action-previous",
+      "type": "COMPONENT_SET",
+      "pageName": "Pagination",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:47:19.374Z"
+    },
+    "3557:23276": {
+      "id": "3557:23276",
+      "name": "actionNext",
+      "kebab": "action-next",
+      "type": "COMPONENT_SET",
+      "pageName": "Pagination",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:47:21.673Z"
+    },
+    "3557:23283": {
+      "id": "3557:23283",
+      "name": "base",
+      "kebab": "base",
+      "type": "COMPONENT_SET",
+      "pageName": "Pagination",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:47:23.619Z"
+    },
+    "3928:1701": {
+      "id": "3928:1701",
+      "name": "Pagination",
+      "kebab": "pagination",
+      "type": "COMPONENT_SET",
+      "pageName": "Pagination",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:47:26.210Z"
+    },
+    "3557:23387": {
+      "id": "3557:23387",
+      "name": "actionFirst",
+      "kebab": "action-first",
+      "type": "COMPONENT_SET",
+      "pageName": "Pagination",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:47:27.925Z"
+    },
+    "3557:23404": {
+      "id": "3557:23404",
+      "name": "actionLast",
+      "kebab": "action-last",
+      "type": "COMPONENT_SET",
+      "pageName": "Pagination",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:47:29.514Z"
+    },
+    "3557:23421": {
+      "id": "3557:23421",
+      "name": "actionLeftArrow",
+      "kebab": "action-left-arrow",
+      "type": "COMPONENT_SET",
+      "pageName": "Pagination",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:47:32.627Z"
+    },
+    "3928:2199": {
+      "id": "3928:2199",
+      "name": "actionRightArrow",
+      "kebab": "action-right-arrow",
+      "type": "COMPONENT_SET",
+      "pageName": "Pagination",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:47:34.340Z"
+    },
+    "3612:11201": {
+      "id": "3612:11201",
+      "name": "Tab item",
+      "kebab": "tab-item",
+      "type": "COMPONENT_SET",
+      "pageName": "Tabs",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:47:36.145Z"
+    },
+    "2690:3262": {
+      "id": "2690:3262",
+      "name": "Seperator",
+      "kebab": "seperator",
+      "type": "COMPONENT_SET",
+      "pageName": "seperator",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:47:39.475Z"
+    },
+    "4235:1824": {
+      "id": "4235:1824",
+      "name": "Toast",
+      "kebab": "toast",
+      "type": "COMPONENT_SET",
+      "pageName": "Toast",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:47:44.039Z"
+    },
+    "3242:4332": {
+      "id": "3242:4332",
+      "name": "Grabber",
+      "kebab": "grabber",
+      "type": "COMPONENT",
+      "pageName": "bottomsheet",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:47:46.401Z"
+    },
+    "3612:11322": {
+      "id": "3612:11322",
+      "name": "Carousel Hook",
+      "kebab": "carousel-hook",
+      "type": "COMPONENT_SET",
+      "pageName": "Carousel hook",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:47:48.992Z"
+    },
+    "3317:10418": {
+      "id": "3317:10418",
+      "name": "content",
+      "kebab": "content",
+      "type": "FRAME",
+      "pageName": "bottomsheet",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:47:51.557Z"
+    },
+    "3278:15371": {
+      "id": "3278:15371",
+      "name": "Bottom Sh",
+      "kebab": "bottom-sh",
+      "type": "COMPONENT_SET",
+      "pageName": "bottomsheet",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:47:54.427Z"
+    },
+    "3287:20482": {
+      "id": "3287:20482",
+      "name": "header",
+      "kebab": "header",
+      "type": "COMPONENT_SET",
+      "pageName": "bottomsheet",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:47:56.846Z"
+    },
+    "3298:13536": {
+      "id": "3298:13536",
+      "name": "PA offer screen",
+      "kebab": "pa-offer-screen",
+      "type": "FRAME",
+      "pageName": "bottomsheet",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:47:58.688Z"
+    },
+    "3317:5765": {
+      "id": "3317:5765",
+      "name": "Grabber Notch",
+      "kebab": "grabber-notch",
+      "type": "COMPONENT",
+      "pageName": "bottomsheet",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:48:01.114Z"
+    },
+    "3125:4299": {
+      "id": "3125:4299",
+      "name": "bottomsheet",
+      "kebab": "bottomsheet",
+      "type": "COMPONENT",
+      "pageName": "bottomsheet",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:48:03.465Z"
+    },
+    "3346:30606": {
+      "id": "3346:30606",
+      "name": "Slot Block",
+      "kebab": "slot-block",
+      "type": "COMPONENT",
+      "pageName": "bottomsheet",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:48:06.454Z"
+    },
+    "3333:28941": {
+      "id": "3333:28941",
+      "name": "OTP",
+      "kebab": "otp",
+      "type": "COMPONENT",
+      "pageName": "bottomsheet",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:48:08.830Z"
+    },
+    "3357:34111": {
+      "id": "3357:34111",
+      "name": "bottomsheet footer",
+      "kebab": "bottomsheet-footer",
+      "type": "COMPONENT_SET",
+      "pageName": "bottomsheet",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:48:11.393Z"
+    },
+    "3365:11196": {
+      "id": "3365:11196",
+      "name": "Mobile",
+      "kebab": "mobile",
+      "type": "FRAME",
+      "pageName": "bottomsheet",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:48:13.838Z"
+    },
+    "3365:11383": {
+      "id": "3365:11383",
+      "name": "Tablet",
+      "kebab": "tablet",
+      "type": "FRAME",
+      "pageName": "bottomsheet",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:48:16.596Z"
+    },
+    "3365:11459": {
+      "id": "3365:11459",
+      "name": "Desktop",
+      "kebab": "desktop",
+      "type": "FRAME",
+      "pageName": "bottomsheet",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:48:19.575Z"
+    },
+    "6156:165969": {
+      "id": "6156:165969",
+      "name": "BrowserBar",
+      "kebab": "browser-bar",
+      "type": "COMPONENT",
+      "pageName": "bottomsheet",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:48:22.392Z"
+    },
+    "3287:21673": {
+      "id": "3287:21673",
+      "name": "Aadhar Card",
+      "kebab": "aadhar-card",
+      "type": "FRAME",
+      "pageName": "popover",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:48:24.692Z"
+    },
+    "3287:23427": {
+      "id": "3287:23427",
+      "name": "KYC Preference: Aadhaar",
+      "kebab": "kyc-preference-aadhaar",
+      "type": "FRAME",
+      "pageName": "popover",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:48:27.458Z"
+    },
+    "3555:22871": {
+      "id": "3555:22871",
+      "name": "Status Bar",
+      "kebab": "status-bar",
+      "type": "COMPONENT",
+      "pageName": "status bar / browser",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:48:30.376Z"
+    },
+    "3555:22878": {
+      "id": "3555:22878",
+      "name": "Browser",
+      "kebab": "browser",
+      "type": "COMPONENT_SET",
+      "pageName": "status bar / browser",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:48:33.838Z"
+    },
+    "3555:23068": {
+      "id": "3555:23068",
+      "name": "Browser+StatusBar",
+      "kebab": "browser-status-bar",
+      "type": "COMPONENT",
+      "pageName": "status bar / browser",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:48:36.030Z"
+    },
+    "3612:11335": {
+      "id": "3612:11335",
+      "name": "Arrow",
+      "kebab": "arrow",
+      "type": "COMPONENT_SET",
+      "pageName": "Carousel hook",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:48:39.452Z"
+    },
+    "3612:11467": {
+      "id": "3612:11467",
+      "name": "Card/Component Placeholder",
+      "kebab": "card-component-placeholder",
+      "type": "COMPONENT",
+      "pageName": "Card",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:48:42.794Z"
+    },
+    "3612:11469": {
+      "id": "3612:11469",
+      "name": "Card",
+      "kebab": "card",
+      "type": "COMPONENT_SET",
+      "pageName": "Card",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:48:46.988Z"
+    },
+    "4242:28824": {
+      "id": "4242:28824",
+      "name": "Tooltip",
+      "kebab": "tooltip",
+      "type": "COMPONENT_SET",
+      "pageName": "Tooltip",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:48:51.047Z"
+    },
+    "3612:11390": {
+      "id": "3612:11390",
+      "name": "Snackbar",
+      "kebab": "snackbar",
+      "type": "COMPONENT_SET",
+      "pageName": "Snackbar",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:48:55.019Z"
+    },
+    "4276:19478": {
+      "id": "4276:19478",
+      "name": "Input Field",
+      "kebab": "input-field",
+      "type": "COMPONENT_SET",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:48:58.666Z"
+    },
+    "4276:38166": {
+      "id": "4276:38166",
+      "name": "❖ Input Field — Obra Autodocs",
+      "kebab": "input-field-obra-autodocs",
+      "type": "FRAME",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:49:01.078Z"
+    },
+    "4276:40394": {
+      "id": "4276:40394",
+      "name": "Helper Text | Medium",
+      "kebab": "helper-text-medium",
+      "type": "FRAME",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:49:04.045Z"
+    },
+    "4276:40048": {
+      "id": "4276:40048",
+      "name": "Leading Area | Medium",
+      "kebab": "leading-area-medium",
+      "type": "FRAME",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:49:06.629Z"
+    },
+    "4276:39880": {
+      "id": "4276:39880",
+      "name": "Helper Text | Small",
+      "kebab": "helper-text-small",
+      "type": "FRAME",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:49:09.815Z"
+    },
+    "4276:39534": {
+      "id": "4276:39534",
+      "name": "Leading Area | Small",
+      "kebab": "leading-area-small",
+      "type": "FRAME",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:49:13.486Z"
+    },
+    "4276:39088": {
+      "id": "4276:39088",
+      "name": "helperText: Off + trailingArea: Off",
+      "kebab": "helper-text-off-trailing-area-off",
+      "type": "FRAME",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:49:16.603Z"
+    },
+    "4276:38643": {
+      "id": "4276:38643",
+      "name": "trailingArea: Off",
+      "kebab": "trailing-area-off",
+      "type": "FRAME",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:49:20.222Z"
+    },
+    "4276:38198": {
+      "id": "4276:38198",
+      "name": "helperText: Off",
+      "kebab": "helper-text-off",
+      "type": "FRAME",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:49:26.070Z"
+    },
+    "4276:4419": {
+      "id": "4276:4419",
+      "name": "Nested Instances",
+      "kebab": "nested-instances",
+      "type": "FRAME",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:49:29.330Z"
+    },
+    "4276:3546": {
+      "id": "4276:3546",
+      "name": "Boolean Visibility",
+      "kebab": "boolean-visibility",
+      "type": "FRAME",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:49:38.266Z"
+    },
+    "4276:8571": {
+      "id": "4276:8571",
+      "name": "Input Field - All Variants",
+      "kebab": "input-field-all-variants",
+      "type": "FRAME",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:49:45.052Z"
+    },
+    "4276:50010": {
+      "id": "4276:50010",
+      "name": "Variables",
+      "kebab": "variables",
+      "type": "FRAME",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:49:50.063Z"
+    },
+    "4278:56633": {
+      "id": "4278:56633",
+      "name": "bubble",
+      "kebab": "bubble",
+      "type": "FRAME",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:49:53.256Z"
+    },
+    "4442:29081": {
+      "id": "4442:29081",
+      "name": "Order Status",
+      "kebab": "order-status",
+      "type": "FRAME",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:49:56.491Z"
+    },
+    "4442:34530": {
+      "id": "4442:34530",
+      "name": "Demat Status",
+      "kebab": "demat-status",
+      "type": "FRAME",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:50:00.421Z"
+    },
+    "4488:38297": {
+      "id": "4488:38297",
+      "name": "use case- name letters less than 19- disabled state",
+      "kebab": "use-case-name-letters-less-than-19-disabled-state",
+      "type": "FRAME",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:50:05.396Z"
+    },
+    "4488:56029": {
+      "id": "4488:56029",
+      "name": "No PAN",
+      "kebab": "no-pan",
+      "type": "FRAME",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:50:08.571Z"
+    },
+    "4491:65505": {
+      "id": "4491:65505",
+      "name": "Enter mPIN",
+      "kebab": "enter-m-pin",
+      "type": "FRAME",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:50:12.574Z"
+    },
+    "4492:68234": {
+      "id": "4492:68234",
+      "name": "Request Add-on card 7",
+      "kebab": "request-add-on-card-7",
+      "type": "FRAME",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:50:16.851Z"
+    },
+    "4492:68302": {
+      "id": "4492:68302",
+      "name": "Request Add-on card 8",
+      "kebab": "request-add-on-card-8",
+      "type": "FRAME",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:50:20.218Z"
+    },
+    "4492:68370": {
+      "id": "4492:68370",
+      "name": "Request Add-on card 3",
+      "kebab": "request-add-on-card-3",
+      "type": "FRAME",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:50:23.753Z"
+    },
+    "4492:68459": {
+      "id": "4492:68459",
+      "name": "Request Add-on card 25",
+      "kebab": "request-add-on-card-25",
+      "type": "FRAME",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:50:27.479Z"
+    },
+    "4492:68546": {
+      "id": "4492:68546",
+      "name": "Request Add-on card 28",
+      "kebab": "request-add-on-card-28",
+      "type": "FRAME",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:50:30.836Z"
+    },
+    "4492:68633": {
+      "id": "4492:68633",
+      "name": "Request Add-on card 29",
+      "kebab": "request-add-on-card-29",
+      "type": "FRAME",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:50:34.495Z"
+    },
+    "4494:74894": {
+      "id": "4494:74894",
+      "name": "Convert to EMI",
+      "kebab": "convert-to-emi",
+      "type": "FRAME",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:50:37.637Z"
+    },
+    "4494:74947": {
+      "id": "4494:74947",
+      "name": "Review Details",
+      "kebab": "review-details",
+      "type": "FRAME",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:50:41.952Z"
+    },
+    "4566:101262": {
+      "id": "4566:101262",
+      "name": "Proto",
+      "kebab": "proto",
+      "type": "FRAME",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:50:49.079Z"
+    },
+    "6167:167164": {
+      "id": "6167:167164",
+      "name": "MPinInput",
+      "kebab": "m-pin-input",
+      "type": "COMPONENT",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:50:52.940Z"
+    },
+    "6167:167166": {
+      "id": "6167:167166",
+      "name": "Popover",
+      "kebab": "popover",
+      "type": "COMPONENT",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:50:57.792Z"
+    },
+    "6167:167168": {
+      "id": "6167:167168",
+      "name": "ProgressBar",
+      "kebab": "progress-bar",
+      "type": "COMPONENT",
+      "pageName": "Testing",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:51:00.926Z"
+    },
+    "2011:26574": {
+      "id": "2011:26574",
+      "name": "Cover-card",
+      "kebab": "cover-card",
+      "type": "COMPONENT",
+      "pageName": "Components",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:51:04.985Z"
+    },
+    "1268:2219": {
+      "id": "1268:2219",
+      "name": "row",
+      "kebab": "row",
+      "type": "COMPONENT",
+      "pageName": "Components",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:51:10.251Z"
+    },
+    "1272:3783": {
+      "id": "1272:3783",
+      "name": "container",
+      "kebab": "container",
+      "type": "COMPONENT",
+      "pageName": "Components",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:51:16.142Z"
+    },
+    "1379:1073": {
+      "id": "1379:1073",
+      "name": "Usage_guidelines_tag",
+      "kebab": "usage-guidelines-tag",
+      "type": "COMPONENT",
+      "pageName": "Components",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:51:21.579Z"
+    },
+    "1379:1067": {
+      "id": "1379:1067",
+      "name": "Usage_guideline_tag",
+      "kebab": "usage-guideline-tag",
+      "type": "COMPONENT",
+      "pageName": "Components",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:51:27.086Z"
+    },
+    "1486:1544": {
+      "id": "1486:1544",
+      "name": "Footer_hyperlink",
+      "kebab": "footer-hyperlink",
+      "type": "COMPONENT",
+      "pageName": "Components",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:51:31.019Z"
+    },
+    "1486:1351": {
+      "id": "1486:1351",
+      "name": "Footer_down",
+      "kebab": "footer-down",
+      "type": "COMPONENT",
+      "pageName": "Components",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:51:34.312Z"
+    },
+    "2228:3754": {
+      "id": "2228:3754",
+      "name": "Label",
+      "kebab": "label",
+      "type": "COMPONENT",
+      "pageName": "Components",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:51:38.658Z"
+    },
+    "2228:4144": {
+      "id": "2228:4144",
+      "name": "Text Item",
+      "kebab": "text-item",
+      "type": "COMPONENT",
+      "pageName": "Components",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:51:42.618Z"
+    },
+    "447:4202": {
+      "id": "447:4202",
+      "name": "Compliance",
+      "kebab": "compliance",
+      "type": "COMPONENT",
+      "pageName": "Components",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:51:48.160Z"
+    },
+    "1005:1919": {
+      "id": "1005:1919",
+      "name": "alias_roles",
+      "kebab": "alias-roles",
+      "type": "COMPONENT",
+      "pageName": "Components",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:51:51.447Z"
+    },
+    "999:1843": {
+      "id": "999:1843",
+      "name": "color_roles",
+      "kebab": "color-roles",
+      "type": "COMPONENT",
+      "pageName": "Components",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:51:55.559Z"
+    },
+    "3604:39265": {
+      "id": "3604:39265",
+      "name": "thumbnail_header",
+      "kebab": "thumbnail-header",
+      "type": "COMPONENT",
+      "pageName": "Components",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:51:59.599Z"
+    },
+    "3667:73": {
+      "id": "3667:73",
+      "name": "cursor-redlines-and-annotations",
+      "kebab": "cursor-redlines-and-annotations",
+      "type": "FRAME",
+      "pageName": "Components",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:52:03.730Z"
+    },
+    "3811:25706": {
+      "id": "3811:25706",
+      "name": "Token_name",
+      "kebab": "token-name",
+      "type": "COMPONENT",
+      "pageName": "Components",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:52:08.824Z"
+    },
+    "3811:25696": {
+      "id": "3811:25696",
+      "name": "Token_name_pill",
+      "kebab": "token-name-pill",
+      "type": "COMPONENT",
+      "pageName": "Components",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:52:14.841Z"
+    },
+    "1180:2361": {
+      "id": "1180:2361",
+      "name": "Color Role",
+      "kebab": "color-role",
+      "type": "COMPONENT",
+      "pageName": "Components",
+      "generated": true,
+      "updatedAt": "2026-11-19T08:52:19.414Z"
     },
     "8017:4011": {
       "id": "8017:4011",
@@ -16,17 +1188,22 @@
       "type": "COMPONENT_SET",
       "pageName": "Input-Area",
       "generated": true,
-      "updatedAt": "2026-11-19T08:15:00.000Z"
-    },
-    "8066:1124": {
-      "id": "8066:1124",
-      "name": "button01",
-      "kebab": "button01",
-      "type": "COMPONENT_SET",
-      "pageName": "button01",
-      "generated": true,
-      "updatedAt": "2026-11-19T07:41:43.374Z"
+      "updatedAt": "2026-11-19T09:12:49.177Z",
+      "codeCombinedHash": "6621c9ad5de6",
+      "codeHashes": {
+        "tsx": "d1b98fd3f888",
+        "types": "fd9546c479c0",
+        "scss": "597947ff1279",
+        "dart": "2605acff84c8",
+        "md": "b6211ad59eff"
+      },
+      "codeFilesSnapshot": {
+        "tsx": "// Generated from Figma by scripts/code-generator.cjs.\nimport React from 'react';\nimport type { InputAreaProps } from './input-area.types';\nimport './input-area.scss';\n\nconst cx = (...parts: Array<string | false | undefined>) => parts.filter(Boolean).join(' ');\n\nexport const InputArea: React.FC<InputAreaProps> = ({\n  children = 'Label',\n  size = 'medium',\n  variant = 'primary',\n  disabled = false,\n  loading = false,\n  fullWidth = false,\n  className,\n  ...rest\n}) => {\n  const isDisabled = disabled || loading;\n\n  const combinedClasses = cx(\n    'ui-input-area',\n    `ui-input-area--${size}`,\n    `ui-input-area--${variant}`,\n    fullWidth && 'ui-input-area--full-width',\n    isDisabled && 'ui-input-area--disabled',\n    loading && 'ui-input-area--loading',\n    className\n  );\n\n  return (\n    <div\n      {...rest}\n      className={combinedClasses}\n      aria-disabled={isDisabled || undefined}\n      aria-busy={loading || undefined}\n    >\n      {loading && <span className=\"ui-input-area__spinner\" aria-hidden=\"true\" />}\n      <span className=\"ui-input-area__content\">{children}</span>\n    </div>\n  );\n};\n\nexport default InputArea;\n",
+        "types": "// Generated from Figma by scripts/code-generator.cjs.\nimport type React from 'react';\n\nexport type InputAreaVariant = 'primary' | 'secondary' | 'tertiary' | 'outlined';\nexport type InputAreaSize = 'small' | 'medium';\n\nexport interface InputAreaProps extends React.HTMLAttributes<HTMLDivElement> {\n  children?: React.ReactNode;\n  variant?: InputAreaVariant;\n  size?: InputAreaSize;\n  disabled?: boolean;\n  loading?: boolean;\n  fullWidth?: boolean;\n  className?: string;\n}\n",
+        "scss": "@use 'sass:map';\n\n$input-area-sizes: (\n  small: (\n    height: var(--button-size-small-height),\n    padding: var(--button-size-small-padding-x),\n    radius: var(--button-size-small-radius),\n    gap: var(--button-size-small-gap),\n    font-size: var(--button-size-small-font-size),\n    line-height: var(--font-line-height-paragraph-xsm)\n  ),\n  medium: (\n    height: var(--button-size-medium-height),\n    padding: var(--button-size-medium-padding-x),\n    radius: var(--button-size-medium-radius),\n    gap: var(--button-size-medium-gap),\n    font-size: var(--button-size-medium-font-size),\n    line-height: var(--font-line-height-paragraph-md)\n  ),\n  large: (\n    height: var(--button-size-large-height),\n    padding: var(--button-size-large-padding-x),\n    radius: var(--button-size-large-radius),\n    gap: var(--button-size-large-gap),\n    font-size: var(--button-size-large-font-size),\n    line-height: var(--font-line-height-paragraph-lg)\n  )\n);\n\n$input-area-variants: (\n  primary: (\n    background: var(--button-primary-background-color-default),\n    foreground: var(--button-primary-foreground-color-static),\n    border: var(--surface-root-opacity),\n    hover-background: var(--button-primary-background-color-hover)\n  ),\n  secondary: (\n    background: var(--button-secondary-background-color-default),\n    foreground: var(--button-secondary-foreground-color-default),\n    border: var(--button-secondary-border-color-default),\n    hover-background: var(--button-secondary-background-color-hover)\n  ),\n  tertiary: (\n    background: var(--button-tertiary-background-color-default),\n    foreground: var(--button-tertiary-foreground-color-default),\n    border: var(--surface-root-opacity),\n    hover-background: var(--button-tertiary-background-color-hover)\n  ),\n  outlined: (\n    background: var(--surface-root-opacity),\n    foreground: var(--color-interactive-primary),\n    border: var(--color-border-subtle),\n    hover-background: var(--button-secondary-background-color-hover)\n  )\n);\n\n.ui-input-area {\n  display: inline-flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n  gap: var(--global-scale-100);\n  box-sizing: border-box;\n  font-family: var(--font-family-inter);\n  font-weight: var(--font-weight-500);\n  text-decoration: none;\n  cursor: pointer;\n  border: var(--button-size-border-width) solid var(--surface-root-opacity);\n  border-radius: var(--button-size-medium-radius);\n  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;\n  user-select: none;\n  outline: none;\n\n  &__content {\n    display: inline-flex;\n    align-items: center;\n    gap: var(--global-scale-75);\n  }\n\n  &__spinner {\n    width: var(--global-scale-175);\n    height: var(--global-scale-175);\n    border: var(--global-scale-25) solid currentColor;\n    border-right-color: var(--surface-root-opacity);\n    border-radius: var(--layout-radius-full);\n    animation: ui-input-area-spin 0.75s linear infinite;\n  }\n\n  @each $size, $props in $input-area-sizes {\n    &--#{$size} {\n      min-height: map.get($props, height);\n      font-size: map.get($props, font-size);\n      line-height: map.get($props, line-height);\n      padding: var(--global-scale-100) map.get($props, padding);\n      border-radius: map.get($props, radius);\n      gap: map.get($props, gap);\n    }\n  }\n\n  @each $variant, $props in $input-area-variants {\n    &--#{$variant} {\n      background-color: map.get($props, background);\n      color: map.get($props, foreground);\n      border-color: map.get($props, border);\n\n      &:hover:not(.ui-input-area--disabled) {\n        background-color: map.get($props, hover-background);\n      }\n    }\n  }\n\n  &--full-width {\n    width: 100%;\n    display: flex;\n  }\n\n  &--disabled {\n    opacity: 0.55;\n    cursor: not-allowed;\n    pointer-events: none;\n  }\n}\n\n@keyframes ui-input-area-spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n",
+        "dart": "import 'package:flutter/material.dart';\n\nenum UIInputAreaVariant { primary, secondary, tertiary, outlined }\nenum UIInputAreaSize { small, medium }\n\n/// Auto-generated Flutter widget for [InputArea] from Figma.\nclass UIInputArea extends StatelessWidget {\n  final String label;\n  final Widget? child;\n  final VoidCallback? onPressed;\n  final UIInputAreaVariant variant;\n  final UIInputAreaSize size;\n  final bool isDisabled;\n  final bool isLoading;\n  final bool isFullWidth;\n  final Widget? leadingIcon;\n  final Widget? trailingIcon;\n\n  const UIInputArea({\n    Key? key,\n    this.label = 'Label',\n    this.child,\n    this.onPressed,\n    this.variant = UIInputAreaVariant.primary,\n    this.size = UIInputAreaSize.small,\n    this.isDisabled = false,\n    this.isLoading = false,\n    this.isFullWidth = false,\n    this.leadingIcon,\n    this.trailingIcon,\n  }) : super(key: key);\n\n  EdgeInsets _getPadding() {\n    switch (size) {\n      case UIInputAreaSize.small:\n        return const EdgeInsets.symmetric(horizontal: 8, vertical: 4);\n      case UIInputAreaSize.large:\n        return const EdgeInsets.symmetric(horizontal: 0, vertical: 0);\n      case UIInputAreaSize.medium:\n      default:\n        return const EdgeInsets.symmetric(horizontal: 0.0, vertical: 0.0);\n    }\n  }\n\n  Color _getBackgroundColor(BuildContext context) {\n    if (variant == UIInputAreaVariant.primary) {\n      return const Color(0xFF0C2340);\n    }\n    return Colors.transparent;\n  }\n\n  Color _getTextColor(BuildContext context) {\n    if (variant == UIInputAreaVariant.primary) {\n      return Colors.white;\n    }\n    return const Color(0xFF0C2340);\n  }\n\n  BorderSide _getBorderSide(BuildContext context) {\n    if (variant == UIInputAreaVariant.secondary) {\n      return const BorderSide(color: Color(0xFFD1D5DB), width: 1.0);\n    }\n    if (variant == UIInputAreaVariant.outlined) {\n      return const BorderSide(color: Color(0xFF0C2340), width: 1.5);\n    }\n    return BorderSide.none;\n  }\n\n  @override\n  Widget build(BuildContext context) {\n    final effectiveEnabled = !isDisabled && !isLoading;\n    final content = Row(\n      mainAxisSize: isFullWidth ? MainAxisSize.max : MainAxisSize.min,\n      mainAxisAlignment: MainAxisAlignment.center,\n      children: [\n        if (isLoading)\n          const Padding(\n            padding: EdgeInsets.only(right: 8.0),\n            child: SizedBox(\n              width: 16,\n              height: 16,\n              child: CircularProgressIndicator(strokeWidth: 2.0),\n            ),\n          )\n        else if (leadingIcon != null)\n          Padding(\n            padding: const EdgeInsets.only(right: 6.0),\n            child: leadingIcon!,\n          ),\n        child ??\n            Text(\n              label,\n              style: TextStyle(\n                color: _getTextColor(context),\n                fontWeight: FontWeight.w600,\n              ),\n            ),\n        if (trailingIcon != null && !isLoading)\n          Padding(\n            padding: const EdgeInsets.only(left: 6.0),\n            child: trailingIcon!,\n          ),\n      ],\n    );\n\n    return Opacity(\n      opacity: effectiveEnabled ? 1.0 : 0.5,\n      child: Material(\n        color: _getBackgroundColor(context),\n        borderRadius: BorderRadius.circular(0.0),\n        child: InkWell(\n          onTap: effectiveEnabled ? onPressed : null,\n          borderRadius: BorderRadius.circular(0.0),\n          child: Container(\n            padding: _getPadding(),\n            decoration: BoxDecoration(\n              border: Border.fromBorderSide(_getBorderSide(context)),\n              borderRadius: BorderRadius.circular(0.0),\n            ),\n            child: content,\n          ),\n        ),\n      ),\n    );\n  }\n}\n"
+      }
     }
   },
-  "lastSync": "2026-11-19T08:30:00.000Z"
+  "lastSync": "2026-11-19T09:12:39.473Z"
 }

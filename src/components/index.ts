@@ -6,3 +6,6 @@ export type {
   ButtonVariant,
   ButtonVisualType
 } from './button/button.types';
+
+export { InputArea } from './input-area/input-area'
+export type { InputAreaProps } from './input-area/input-area.types'

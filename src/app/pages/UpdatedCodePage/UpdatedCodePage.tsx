@@ -167,9 +167,8 @@ export function UpdatedCodePage({ entries, onRequestPreSync }: UpdatedCodePagePr
                 <button
                   key={tab}
                   type="button"
-                  className={`updated-code-filter-tab${
-                    filter === tab ? ' updated-code-filter-tab--active' : ''
-                  }`}
+                  className={`updated-code-filter-tab${filter === tab ? ' updated-code-filter-tab--active' : ''
+                    }`}
                   onClick={() => setFilter(tab)}
                 >
                   {tab === 'all'
@@ -319,9 +318,8 @@ export function UpdatedCodePage({ entries, onRequestPreSync }: UpdatedCodePagePr
             <button
               key={comp.slug}
               type="button"
-              className={`updated-code-bundle-pill${
-                selectedLiveSlug === comp.slug ? ' updated-code-bundle-pill--active' : ''
-              }`}
+              className={`updated-code-bundle-pill${selectedLiveSlug === comp.slug ? ' updated-code-bundle-pill--active' : ''
+                }`}
               onClick={() => setSelectedLiveSlug(comp.slug)}
             >
               <span>{comp.title}</span>

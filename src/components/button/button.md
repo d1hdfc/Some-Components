@@ -5,14 +5,14 @@
 
 _No description set in Figma._
 
-> Last updated: 2026-11-19T08:52:26.641Z
+> Last updated: 2026-11-19T09:12:47.628Z
 
 ## Overview
 
 | Field | Value |
 | --- | --- |
 | Figma name | Button |
-| Node ID | 3972:30799 |
+| Node ID | 8024:1408 |
 | Node type | COMPONENT_SET |
 | Figma page | Button |
 | Variants | 320 |
@@ -28,12 +28,12 @@ _No description set in Figma._
 ## Installation
 
 ```bash
-npm install @d1hdfc/ui-components@main
+npm install @d1hdfc/Some-Components@main
 ```
 
 ```tsx
-import { Button } from '@d1hdfc/ui-components';
-import '@d1hdfc/ui-components/style.css';
+import { Button } from '@d1hdfc/Some-Components';
+import '@d1hdfc/Some-Components/style.css';
 
 <Button variant="primary" size="large">Button</Button>
 ```
@@ -59,7 +59,7 @@ UIButton()
 
 | Size | Width × Height | Padding (T R B L) | Gap | Radius | Font size |
 | --- | --- | --- | --- | --- | --- |
-| Large | 194px × 72px | 0px 40px 0px 40px | 0px | 12px | 18px |
+| Large | 154px × 48px | 0px 40px 0px 40px | 0px | 12px | 18px |
 | Medium | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px |
 | Small | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px |
 | Xsmall | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px |
@@ -68,15 +68,15 @@ UIButton()
 
 | Spec | Value |
 | --- | --- |
-| Width × Height | 194px × 72px |
+| Width × Height | 154px × 48px |
 | Padding | 0px 40px 0px 40px |
 | Gap | 0px |
 | Corner radius | 12px |
 | Font size | 18px |
 | Line height | — |
 | Background | #C7B9FF |
-| Text color | #FFFFFF |
-| Border color | #FFFFFF |
+| Text color | #1C3FCA |
+| Border color | — |
 | Layout mode | HORIZONTAL |
 
 ## Variants (320)
@@ -103,41 +103,41 @@ UIButton()
 | size=Large, style=Link, state=Pressed, type=Gradient | 114px × 24px | 0px 0px 0px 0px | 0px | 0px | 18px | — | — | — |
 | size=Large, style=Link, state=Pressed, type=Icon | 24px × 24px | 0px 0px 0px 0px | 0px | 0px | 18px | — | #FFFFFF | — |
 | size=Large, style=Link, state=Pressed, type=White | 114px × 24px | 0px 0px 0px 0px | 0px | 0px | 18px | — | #FFFFFF | — |
-| size=Large, style=Primary, state=Default, type=Default | 194px × 72px | 0px 40px 0px 40px | 0px | 12px | 18px | #C7B9FF | #FFFFFF | #FFFFFF |
-| size=Large, style=Primary, state=Default, type=Gradient | 194px × 72px | 0px 40px 0px 40px | 0px | 12px | 18px | — | #FFFFFF | — |
-| size=Large, style=Primary, state=Default, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #1C3FCA | #FFFFFF | — |
+| size=Large, style=Primary, state=Default, type=Default | 154px × 48px | 0px 40px 0px 40px | 0px | 12px | 18px | #C7B9FF | #1C3FCA | — |
+| size=Large, style=Primary, state=Default, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | — | #FFFFFF | — |
+| size=Large, style=Primary, state=Default, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #D61C53 | #FFFFFF | — |
 | size=Large, style=Primary, state=Default, type=White | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #FFFFFF | #1C3FCA | — |
-| size=Large, style=Primary, state=Disabled, type=Default | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #00815A | #F3F6FD | — |
+| size=Large, style=Primary, state=Disabled, type=Default | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #1C3FCA | #F3F6FD | — |
 | size=Large, style=Primary, state=Disabled, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | — | #FFFFFF | — |
-| size=Large, style=Primary, state=Disabled, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #00815A | #FFFFFF | — |
+| size=Large, style=Primary, state=Disabled, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #1C3FCA | #FFFFFF | — |
 | size=Large, style=Primary, state=Disabled, type=White | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #FFFFFF | #9CB4F7 | — |
-| size=Large, style=Primary, state=Focus, type=Default | 195px × 72px | 0px 40px 0px 40px | 0px | 12px | 18px | #C7B9FF | #FFFFFF | #FFFFFF |
+| size=Large, style=Primary, state=Focus, type=Default | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #D61C53 | #FFFFFF | — |
 | size=Large, style=Primary, state=Focus, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | — | #FFFFFF | — |
-| size=Large, style=Primary, state=Focus, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #1C3FCA | #FFFFFF | — |
+| size=Large, style=Primary, state=Focus, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #D61C53 | #FFFFFF | — |
 | size=Large, style=Primary, state=Focus, type=White | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #FFFFFF | #1C3FCA | — |
 | size=Large, style=Primary, state=Hover, type=Default | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #D61C53 | #FFFFFF | — |
 | size=Large, style=Primary, state=Hover, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | — | #FFFFFF | — |
 | size=Large, style=Primary, state=Hover, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #D61C53 | #FFFFFF | — |
 | size=Large, style=Primary, state=Hover, type=White | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #FFFFFF | #1C3FCA | — |
-| size=Large, style=Primary, state=Pressed, type=Default | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #00815A | #FFFFFF | — |
+| size=Large, style=Primary, state=Pressed, type=Default | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #111111 | #FFFFFF | — |
 | size=Large, style=Primary, state=Pressed, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | — | #FFFFFF | — |
-| size=Large, style=Primary, state=Pressed, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #00815A | #FFFFFF | — |
+| size=Large, style=Primary, state=Pressed, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #111111 | #FFFFFF | — |
 | size=Large, style=Primary, state=Pressed, type=White | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #FFFFFF | #1C3FCA | — |
-| size=Large, style=Secondary, state=Default, type=Default | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #00815A | #1C3FCA | #1C3FCA |
-| size=Large, style=Secondary, state=Default, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #00815A | — | — |
-| size=Large, style=Secondary, state=Default, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #00815A | #FFFFFF | #1C3FCA |
+| size=Large, style=Secondary, state=Default, type=Default | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #B65805 | #1C3FCA | #1C3FCA |
+| size=Large, style=Secondary, state=Default, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #B65805 | — | — |
+| size=Large, style=Secondary, state=Default, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #B65805 | #FFFFFF | #1C3FCA |
 | size=Large, style=Secondary, state=Default, type=White | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #FFFFFF | #FFFFFF | #FFFFFF |
 | size=Large, style=Secondary, state=Disabled, type=Default | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #FFFFFF | #9CB4F7 | #9CB4F7 |
 | size=Large, style=Secondary, state=Disabled, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #FFFFFF | — | — |
 | size=Large, style=Secondary, state=Disabled, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #FFFFFF | #FFFFFF | #9CB4F7 |
 | size=Large, style=Secondary, state=Disabled, type=White | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #FFFFFF | #FFFFFF | #FFFFFF |
-| size=Large, style=Secondary, state=Focus, type=Default | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #00815A | #1C3FCA | #1C3FCA |
-| size=Large, style=Secondary, state=Focus, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #00815A | — | — |
-| size=Large, style=Secondary, state=Focus, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #00815A | #FFFFFF | #1C3FCA |
+| size=Large, style=Secondary, state=Focus, type=Default | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #B65805 | #1C3FCA | #1C3FCA |
+| size=Large, style=Secondary, state=Focus, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #B65805 | — | — |
+| size=Large, style=Secondary, state=Focus, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #B65805 | #FFFFFF | #1C3FCA |
 | size=Large, style=Secondary, state=Focus, type=White | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #FFFFFF | #FFFFFF | #FFFFFF |
-| size=Large, style=Secondary, state=Hover, type=Default | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #00815A | #1C3FCA | #1C3FCA |
-| size=Large, style=Secondary, state=Hover, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #00815A | — | — |
-| size=Large, style=Secondary, state=Hover, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #00815A | #FFFFFF | #1C3FCA |
+| size=Large, style=Secondary, state=Hover, type=Default | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #D61C53 | #1C3FCA | #1C3FCA |
+| size=Large, style=Secondary, state=Hover, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #D61C53 | — | — |
+| size=Large, style=Secondary, state=Hover, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #D61C53 | #FFFFFF | #1C3FCA |
 | size=Large, style=Secondary, state=Hover, type=White | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #FFFFFF | #FFFFFF | #FFFFFF |
 | size=Large, style=Secondary, state=Pressed, type=Default | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #E1E9FE | #1F30AD | #1F30AD |
 | size=Large, style=Secondary, state=Pressed, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #E1E9FE | — | — |
@@ -183,41 +183,41 @@ UIButton()
 | size=Medium, style=Link, state=Pressed, type=Gradient | 99px × 20px | 0px 0px 0px 0px | 0px | 0px | 16px | — | — | — |
 | size=Medium, style=Link, state=Pressed, type=Icon | 20px × 20px | 0px 0px 0px 0px | 0px | 0px | 18px | — | #FFFFFF | — |
 | size=Medium, style=Link, state=Pressed, type=White | 99px × 20px | 0px 0px 0px 0px | 0px | 0px | 16px | — | #FFFFFF | — |
-| size=Medium, style=Primary, state=Default, type=Default | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #1C3FCA | #FFFFFF | — |
+| size=Medium, style=Primary, state=Default, type=Default | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #D61C53 | #FFFFFF | — |
 | size=Medium, style=Primary, state=Default, type=Gradient | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | — | #FFFFFF | — |
-| size=Medium, style=Primary, state=Default, type=Icon | 40px × 40px | 0px 12px 0px 12px | 0px | 12px | 18px | #1C3FCA | #FFFFFF | — |
+| size=Medium, style=Primary, state=Default, type=Icon | 40px × 40px | 0px 12px 0px 12px | 0px | 12px | 18px | #D61C53 | #FFFFFF | — |
 | size=Medium, style=Primary, state=Default, type=White | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #FFFFFF | #1C3FCA | — |
-| size=Medium, style=Primary, state=Disabled, type=Default | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #00815A | #F3F6FD | — |
+| size=Medium, style=Primary, state=Disabled, type=Default | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #1C3FCA | #F3F6FD | — |
 | size=Medium, style=Primary, state=Disabled, type=Gradient | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | — | #FFFFFF | — |
-| size=Medium, style=Primary, state=Disabled, type=Icon | 40px × 40px | 0px 12px 0px 12px | 0px | 12px | 18px | #00815A | #FFFFFF | — |
+| size=Medium, style=Primary, state=Disabled, type=Icon | 40px × 40px | 0px 12px 0px 12px | 0px | 12px | 18px | #1C3FCA | #FFFFFF | — |
 | size=Medium, style=Primary, state=Disabled, type=White | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #FFFFFF | #9CB4F7 | — |
-| size=Medium, style=Primary, state=Focus, type=Default | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #1C3FCA | #FFFFFF | — |
+| size=Medium, style=Primary, state=Focus, type=Default | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #D61C53 | #FFFFFF | — |
 | size=Medium, style=Primary, state=Focus, type=Gradient | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | — | #FFFFFF | — |
-| size=Medium, style=Primary, state=Focus, type=Icon | 40px × 40px | 0px 12px 0px 12px | 0px | 12px | 18px | #1C3FCA | #FFFFFF | — |
+| size=Medium, style=Primary, state=Focus, type=Icon | 40px × 40px | 0px 12px 0px 12px | 0px | 12px | 18px | #D61C53 | #FFFFFF | — |
 | size=Medium, style=Primary, state=Focus, type=White | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #FFFFFF | #1C3FCA | — |
 | size=Medium, style=Primary, state=Hover, type=Default | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #D61C53 | #FFFFFF | — |
 | size=Medium, style=Primary, state=Hover, type=Gradient | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | — | #FFFFFF | — |
 | size=Medium, style=Primary, state=Hover, type=Icon | 40px × 40px | 0px 12px 0px 12px | 0px | 12px | 18px | #D61C53 | #FFFFFF | — |
 | size=Medium, style=Primary, state=Hover, type=White | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #FFFFFF | #1C3FCA | — |
-| size=Medium, style=Primary, state=Pressed, type=Default | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #00815A | #FFFFFF | — |
+| size=Medium, style=Primary, state=Pressed, type=Default | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #111111 | #FFFFFF | — |
 | size=Medium, style=Primary, state=Pressed, type=Gradient | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | — | #FFFFFF | — |
-| size=Medium, style=Primary, state=Pressed, type=Icon | 40px × 40px | 0px 12px 0px 12px | 0px | 12px | 18px | #00815A | #FFFFFF | — |
+| size=Medium, style=Primary, state=Pressed, type=Icon | 40px × 40px | 0px 12px 0px 12px | 0px | 12px | 18px | #111111 | #FFFFFF | — |
 | size=Medium, style=Primary, state=Pressed, type=White | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #FFFFFF | #1C3FCA | — |
-| size=Medium, style=Secondary, state=Default, type=Default | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #00815A | #1C3FCA | #1C3FCA |
-| size=Medium, style=Secondary, state=Default, type=Gradient | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #00815A | — | — |
-| size=Medium, style=Secondary, state=Default, type=Icon | 40px × 40px | 0px 12px 0px 12px | 0px | 12px | 18px | #00815A | #FFFFFF | #1C3FCA |
+| size=Medium, style=Secondary, state=Default, type=Default | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #B65805 | #1C3FCA | #1C3FCA |
+| size=Medium, style=Secondary, state=Default, type=Gradient | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #B65805 | — | — |
+| size=Medium, style=Secondary, state=Default, type=Icon | 40px × 40px | 0px 12px 0px 12px | 0px | 12px | 18px | #B65805 | #FFFFFF | #1C3FCA |
 | size=Medium, style=Secondary, state=Default, type=White | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #FFFFFF | #FFFFFF | #FFFFFF |
 | size=Medium, style=Secondary, state=Disabled, type=Default | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #FFFFFF | #9CB4F7 | #9CB4F7 |
 | size=Medium, style=Secondary, state=Disabled, type=Gradient | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #FFFFFF | — | — |
 | size=Medium, style=Secondary, state=Disabled, type=Icon | 40px × 40px | 0px 12px 0px 12px | 0px | 12px | 18px | #FFFFFF | #FFFFFF | #9CB4F7 |
 | size=Medium, style=Secondary, state=Disabled, type=White | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #FFFFFF | #FFFFFF | #FFFFFF |
-| size=Medium, style=Secondary, state=Focus, type=Default | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #00815A | #1C3FCA | #1C3FCA |
-| size=Medium, style=Secondary, state=Focus, type=Gradient | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #00815A | — | — |
-| size=Medium, style=Secondary, state=Focus, type=Icon | 40px × 40px | 0px 12px 0px 12px | 0px | 12px | 18px | #00815A | #FFFFFF | #1C3FCA |
+| size=Medium, style=Secondary, state=Focus, type=Default | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #B65805 | #1C3FCA | #1C3FCA |
+| size=Medium, style=Secondary, state=Focus, type=Gradient | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #B65805 | — | — |
+| size=Medium, style=Secondary, state=Focus, type=Icon | 40px × 40px | 0px 12px 0px 12px | 0px | 12px | 18px | #B65805 | #FFFFFF | #1C3FCA |
 | size=Medium, style=Secondary, state=Focus, type=White | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #FFFFFF | #FFFFFF | #FFFFFF |
-| size=Medium, style=Secondary, state=Hover, type=Default | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #00815A | #1C3FCA | #1C3FCA |
-| size=Medium, style=Secondary, state=Hover, type=Gradient | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #00815A | — | — |
-| size=Medium, style=Secondary, state=Hover, type=Icon | 40px × 40px | 0px 12px 0px 12px | 0px | 12px | 18px | #00815A | #FFFFFF | #1C3FCA |
+| size=Medium, style=Secondary, state=Hover, type=Default | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #D61C53 | #1C3FCA | #1C3FCA |
+| size=Medium, style=Secondary, state=Hover, type=Gradient | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #D61C53 | — | — |
+| size=Medium, style=Secondary, state=Hover, type=Icon | 40px × 40px | 0px 12px 0px 12px | 0px | 12px | 18px | #D61C53 | #FFFFFF | #1C3FCA |
 | size=Medium, style=Secondary, state=Hover, type=White | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #FFFFFF | #FFFFFF | #FFFFFF |
 | size=Medium, style=Secondary, state=Pressed, type=Default | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #E1E9FE | #1F30AD | #1F30AD |
 | size=Medium, style=Secondary, state=Pressed, type=Gradient | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #E1E9FE | — | — |
@@ -263,41 +263,41 @@ UIButton()
 | size=Small, style=Link, state=Pressed, type=Gradient | 93px × 20px | 0px 0px 0px 0px | 0px | 0px | 14px | — | — | — |
 | size=Small, style=Link, state=Pressed, type=Icon | 20px × 20px | 0px 0px 0px 0px | 0px | 8px | 18px | — | #FFFFFF | — |
 | size=Small, style=Link, state=Pressed, type=White | 93px × 20px | 0px 0px 0px 0px | 0px | 0px | 14px | — | #FFFFFF | — |
-| size=Small, style=Primary, state=Default, type=Default | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #1C3FCA | #FFFFFF | — |
+| size=Small, style=Primary, state=Default, type=Default | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #D61C53 | #FFFFFF | — |
 | size=Small, style=Primary, state=Default, type=Gradient | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | — | #FFFFFF | — |
-| size=Small, style=Primary, state=Default, type=Icon | 36px × 36px | 0px 8px 0px 8px | 0px | 8px | 18px | #1C3FCA | #FFFFFF | — |
+| size=Small, style=Primary, state=Default, type=Icon | 36px × 36px | 0px 8px 0px 8px | 0px | 8px | 18px | #D61C53 | #FFFFFF | — |
 | size=Small, style=Primary, state=Default, type=White | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #FFFFFF | #1C3FCA | — |
-| size=Small, style=Primary, state=Disabled, type=Default | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #00815A | #F3F6FD | — |
+| size=Small, style=Primary, state=Disabled, type=Default | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #1C3FCA | #F3F6FD | — |
 | size=Small, style=Primary, state=Disabled, type=Gradient | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | — | #FFFFFF | — |
-| size=Small, style=Primary, state=Disabled, type=Icon | 36px × 36px | 0px 8px 0px 8px | 0px | 8px | 18px | #00815A | #FFFFFF | — |
+| size=Small, style=Primary, state=Disabled, type=Icon | 36px × 36px | 0px 8px 0px 8px | 0px | 8px | 18px | #1C3FCA | #FFFFFF | — |
 | size=Small, style=Primary, state=Disabled, type=White | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #FFFFFF | #9CB4F7 | — |
-| size=Small, style=Primary, state=Focus, type=Default | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #1C3FCA | #FFFFFF | — |
+| size=Small, style=Primary, state=Focus, type=Default | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #D61C53 | #FFFFFF | — |
 | size=Small, style=Primary, state=Focus, type=Gradient | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | — | #FFFFFF | — |
-| size=Small, style=Primary, state=Focus, type=Icon | 36px × 36px | 0px 8px 0px 8px | 0px | 8px | 18px | #1C3FCA | #FFFFFF | — |
+| size=Small, style=Primary, state=Focus, type=Icon | 36px × 36px | 0px 8px 0px 8px | 0px | 8px | 18px | #D61C53 | #FFFFFF | — |
 | size=Small, style=Primary, state=Focus, type=White | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #FFFFFF | #1C3FCA | — |
 | size=Small, style=Primary, state=Hover, type=Default | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #D61C53 | #FFFFFF | — |
 | size=Small, style=Primary, state=Hover, type=Gradient | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | — | #FFFFFF | — |
 | size=Small, style=Primary, state=Hover, type=Icon | 36px × 36px | 0px 8px 0px 8px | 0px | 8px | 18px | #D61C53 | #FFFFFF | — |
 | size=Small, style=Primary, state=Hover, type=White | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #FFFFFF | #1C3FCA | — |
-| size=Small, style=Primary, state=Pressed, type=Default | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #00815A | #FFFFFF | — |
+| size=Small, style=Primary, state=Pressed, type=Default | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #111111 | #FFFFFF | — |
 | size=Small, style=Primary, state=Pressed, type=Gradient | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | — | #FFFFFF | — |
-| size=Small, style=Primary, state=Pressed, type=Icon | 36px × 36px | 0px 8px 0px 8px | 0px | 8px | 18px | #00815A | #FFFFFF | — |
+| size=Small, style=Primary, state=Pressed, type=Icon | 36px × 36px | 0px 8px 0px 8px | 0px | 8px | 18px | #111111 | #FFFFFF | — |
 | size=Small, style=Primary, state=Pressed, type=White | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #FFFFFF | #1C3FCA | — |
-| size=Small, style=Secondary, state=Default, type=Default | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #00815A | #1C3FCA | #1C3FCA |
-| size=Small, style=Secondary, state=Default, type=Gradient | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #00815A | — | — |
-| size=Small, style=Secondary, state=Default, type=Icon | 36px × 36px | 0px 8px 0px 8px | 0px | 8px | 18px | #00815A | #FFFFFF | #1C3FCA |
+| size=Small, style=Secondary, state=Default, type=Default | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #B65805 | #1C3FCA | #1C3FCA |
+| size=Small, style=Secondary, state=Default, type=Gradient | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #B65805 | — | — |
+| size=Small, style=Secondary, state=Default, type=Icon | 36px × 36px | 0px 8px 0px 8px | 0px | 8px | 18px | #B65805 | #FFFFFF | #1C3FCA |
 | size=Small, style=Secondary, state=Default, type=White | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #FFFFFF | #FFFFFF | #FFFFFF |
 | size=Small, style=Secondary, state=Disabled, type=Default | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #FFFFFF | #9CB4F7 | #9CB4F7 |
 | size=Small, style=Secondary, state=Disabled, type=Gradient | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #FFFFFF | — | — |
 | size=Small, style=Secondary, state=Disabled, type=Icon | 36px × 36px | 0px 8px 0px 8px | 0px | 8px | 18px | #FFFFFF | #FFFFFF | #9CB4F7 |
 | size=Small, style=Secondary, state=Disabled, type=White | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #FFFFFF | #FFFFFF | #FFFFFF |
-| size=Small, style=Secondary, state=Focus, type=Default | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #00815A | #1C3FCA | #1C3FCA |
-| size=Small, style=Secondary, state=Focus, type=Gradient | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #00815A | — | — |
-| size=Small, style=Secondary, state=Focus, type=Icon | 36px × 36px | 0px 8px 0px 8px | 0px | 8px | 18px | #00815A | #FFFFFF | #1C3FCA |
+| size=Small, style=Secondary, state=Focus, type=Default | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #B65805 | #1C3FCA | #1C3FCA |
+| size=Small, style=Secondary, state=Focus, type=Gradient | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #B65805 | — | — |
+| size=Small, style=Secondary, state=Focus, type=Icon | 36px × 36px | 0px 8px 0px 8px | 0px | 8px | 18px | #B65805 | #FFFFFF | #1C3FCA |
 | size=Small, style=Secondary, state=Focus, type=White | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #FFFFFF | #FFFFFF | #FFFFFF |
-| size=Small, style=Secondary, state=Hover, type=Default | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #00815A | #1C3FCA | #1C3FCA |
-| size=Small, style=Secondary, state=Hover, type=Gradient | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #00815A | — | — |
-| size=Small, style=Secondary, state=Hover, type=Icon | 36px × 36px | 0px 8px 0px 8px | 0px | 8px | 18px | #00815A | #FFFFFF | #1C3FCA |
+| size=Small, style=Secondary, state=Hover, type=Default | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #D61C53 | #1C3FCA | #1C3FCA |
+| size=Small, style=Secondary, state=Hover, type=Gradient | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #D61C53 | — | — |
+| size=Small, style=Secondary, state=Hover, type=Icon | 36px × 36px | 0px 8px 0px 8px | 0px | 8px | 18px | #D61C53 | #FFFFFF | #1C3FCA |
 | size=Small, style=Secondary, state=Hover, type=White | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #FFFFFF | #FFFFFF | #FFFFFF |
 | size=Small, style=Secondary, state=Pressed, type=Default | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #E1E9FE | #1F30AD | #1F30AD |
 | size=Small, style=Secondary, state=Pressed, type=Gradient | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px | #E1E9FE | — | — |
@@ -343,41 +343,41 @@ UIButton()
 | size=Xsmall, style=Link, state=Pressed, type=Gradient | 79px × 16px | 0px 0px 0px 0px | 0px | 0px | 12px | — | — | — |
 | size=Xsmall, style=Link, state=Pressed, type=Icon | 16px × 16px | 0px 0px 0px 0px | 0px | 0px | 18px | — | #FFFFFF | — |
 | size=Xsmall, style=Link, state=Pressed, type=White | 79px × 16px | 0px 0px 0px 0px | 0px | 0px | 12px | — | #FFFFFF | — |
-| size=Xsmall, style=Primary, state=Default, type=Default | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #1C3FCA | #FFFFFF | — |
+| size=Xsmall, style=Primary, state=Default, type=Default | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #D61C53 | #FFFFFF | — |
 | size=Xsmall, style=Primary, state=Default, type=Gradient | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | — | #FFFFFF | — |
-| size=Xsmall, style=Primary, state=Default, type=Icon | 28px × 28px | 0px 8px 0px 8px | 0px | 8px | 18px | #1C3FCA | #FFFFFF | — |
+| size=Xsmall, style=Primary, state=Default, type=Icon | 28px × 28px | 0px 8px 0px 8px | 0px | 8px | 18px | #D61C53 | #FFFFFF | — |
 | size=Xsmall, style=Primary, state=Default, type=White | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #FFFFFF | #1C3FCA | — |
-| size=Xsmall, style=Primary, state=Disabled, type=Default | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #00815A | #F3F6FD | — |
+| size=Xsmall, style=Primary, state=Disabled, type=Default | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #1C3FCA | #F3F6FD | — |
 | size=Xsmall, style=Primary, state=Disabled, type=Gradient | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | — | #FFFFFF | — |
-| size=Xsmall, style=Primary, state=Disabled, type=Icon | 28px × 28px | 0px 8px 0px 8px | 0px | 8px | 18px | #00815A | #FFFFFF | — |
+| size=Xsmall, style=Primary, state=Disabled, type=Icon | 28px × 28px | 0px 8px 0px 8px | 0px | 8px | 18px | #1C3FCA | #FFFFFF | — |
 | size=Xsmall, style=Primary, state=Disabled, type=White | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #FFFFFF | #9CB4F7 | — |
-| size=Xsmall, style=Primary, state=Focus, type=Default | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #1C3FCA | #FFFFFF | — |
+| size=Xsmall, style=Primary, state=Focus, type=Default | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #D61C53 | #FFFFFF | — |
 | size=Xsmall, style=Primary, state=Focus, type=Gradient | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | — | #FFFFFF | — |
-| size=Xsmall, style=Primary, state=Focus, type=Icon | 28px × 28px | 0px 8px 0px 8px | 0px | 8px | 18px | #1C3FCA | #FFFFFF | — |
+| size=Xsmall, style=Primary, state=Focus, type=Icon | 28px × 28px | 0px 8px 0px 8px | 0px | 8px | 18px | #D61C53 | #FFFFFF | — |
 | size=Xsmall, style=Primary, state=Focus, type=White | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #FFFFFF | #1C3FCA | — |
 | size=Xsmall, style=Primary, state=Hover, type=Default | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #D61C53 | #FFFFFF | — |
 | size=Xsmall, style=Primary, state=Hover, type=Gradient | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | — | #FFFFFF | — |
 | size=Xsmall, style=Primary, state=Hover, type=Icon | 28px × 28px | 0px 8px 0px 8px | 0px | 8px | 18px | #D61C53 | #FFFFFF | — |
 | size=Xsmall, style=Primary, state=Hover, type=White | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #FFFFFF | #1C3FCA | — |
-| size=Xsmall, style=Primary, state=Pressed, type=Default | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #00815A | #FFFFFF | — |
+| size=Xsmall, style=Primary, state=Pressed, type=Default | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #111111 | #FFFFFF | — |
 | size=Xsmall, style=Primary, state=Pressed, type=Gradient | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | — | #FFFFFF | — |
-| size=Xsmall, style=Primary, state=Pressed, type=Icon | 28px × 28px | 0px 8px 0px 8px | 0px | 8px | 18px | #00815A | #FFFFFF | — |
+| size=Xsmall, style=Primary, state=Pressed, type=Icon | 28px × 28px | 0px 8px 0px 8px | 0px | 8px | 18px | #111111 | #FFFFFF | — |
 | size=Xsmall, style=Primary, state=Pressed, type=White | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #FFFFFF | #1C3FCA | — |
-| size=Xsmall, style=Secondary, state=Default, type=Default | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #00815A | #1C3FCA | #1C3FCA |
-| size=Xsmall, style=Secondary, state=Default, type=Gradient | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #00815A | — | — |
-| size=Xsmall, style=Secondary, state=Default, type=Icon | 28px × 28px | 0px 8px 0px 8px | 0px | 8px | 18px | #00815A | #FFFFFF | #1C3FCA |
+| size=Xsmall, style=Secondary, state=Default, type=Default | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #B65805 | #1C3FCA | #1C3FCA |
+| size=Xsmall, style=Secondary, state=Default, type=Gradient | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #B65805 | — | — |
+| size=Xsmall, style=Secondary, state=Default, type=Icon | 28px × 28px | 0px 8px 0px 8px | 0px | 8px | 18px | #B65805 | #FFFFFF | #1C3FCA |
 | size=Xsmall, style=Secondary, state=Default, type=White | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #FFFFFF | #FFFFFF | #FFFFFF |
 | size=Xsmall, style=Secondary, state=Disabled, type=Default | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #FFFFFF | #9CB4F7 | #9CB4F7 |
 | size=Xsmall, style=Secondary, state=Disabled, type=Gradient | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #FFFFFF | — | — |
 | size=Xsmall, style=Secondary, state=Disabled, type=Icon | 28px × 28px | 0px 8px 0px 8px | 0px | 8px | 18px | #FFFFFF | #FFFFFF | #9CB4F7 |
 | size=Xsmall, style=Secondary, state=Disabled, type=White | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #FFFFFF | #FFFFFF | #FFFFFF |
-| size=Xsmall, style=Secondary, state=Focus, type=Default | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #00815A | #1C3FCA | #1C3FCA |
-| size=Xsmall, style=Secondary, state=Focus, type=Gradient | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #00815A | — | — |
-| size=Xsmall, style=Secondary, state=Focus, type=Icon | 28px × 28px | 0px 8px 0px 8px | 0px | 8px | 18px | #00815A | #FFFFFF | #1C3FCA |
+| size=Xsmall, style=Secondary, state=Focus, type=Default | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #B65805 | #1C3FCA | #1C3FCA |
+| size=Xsmall, style=Secondary, state=Focus, type=Gradient | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #B65805 | — | — |
+| size=Xsmall, style=Secondary, state=Focus, type=Icon | 28px × 28px | 0px 8px 0px 8px | 0px | 8px | 18px | #B65805 | #FFFFFF | #1C3FCA |
 | size=Xsmall, style=Secondary, state=Focus, type=White | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #FFFFFF | #FFFFFF | #FFFFFF |
-| size=Xsmall, style=Secondary, state=Hover, type=Default | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #00815A | #1C3FCA | #1C3FCA |
-| size=Xsmall, style=Secondary, state=Hover, type=Gradient | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #00815A | — | — |
-| size=Xsmall, style=Secondary, state=Hover, type=Icon | 28px × 28px | 0px 8px 0px 8px | 0px | 8px | 18px | #00815A | #FFFFFF | #1C3FCA |
+| size=Xsmall, style=Secondary, state=Hover, type=Default | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #D61C53 | #1C3FCA | #1C3FCA |
+| size=Xsmall, style=Secondary, state=Hover, type=Gradient | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #D61C53 | — | — |
+| size=Xsmall, style=Secondary, state=Hover, type=Icon | 28px × 28px | 0px 8px 0px 8px | 0px | 8px | 18px | #D61C53 | #FFFFFF | #1C3FCA |
 | size=Xsmall, style=Secondary, state=Hover, type=White | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #FFFFFF | #FFFFFF | #FFFFFF |
 | size=Xsmall, style=Secondary, state=Pressed, type=Default | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #E1E9FE | #1F30AD | #1F30AD |
 | size=Xsmall, style=Secondary, state=Pressed, type=Gradient | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px | #E1E9FE | — | — |
@@ -407,9 +407,92 @@ UIButton()
 ## Figma Changelog & Diff Status
 
 > [!IMPORTANT]
-> **78 change(s) detected** in the latest Figma sync (2026-11-19T08:52:26.612Z).
+> **78 change(s) detected** in the latest Figma sync (2026-11-19T09:12:47.606Z).
 
 ### Changes in latest sync
+
+- Base Width × Height: `194px × 72px` → `154px × 48px`
+- Base Text color: `#FFFFFF` → `#1C3FCA`
+- Base Border color: `#FFFFFF` → `—`
+- Variant `size=Large, style=Primary, state=Default, type=Default` — Width × Height: `194px × 72px` → `154px × 48px`
+- Variant `size=Large, style=Primary, state=Default, type=Default` — Text color: `#FFFFFF` → `#1C3FCA`
+- Variant `size=Large, style=Primary, state=Default, type=Default` — Border color: `#FFFFFF` → `—`
+- Variant `size=Large, style=Primary, state=Focus, type=Default` — Width × Height: `195px × 72px` → `154px × 48px`
+- Variant `size=Large, style=Primary, state=Focus, type=Default` — Padding: `0px 40px 0px 40px` → `0px 20px 0px 20px`
+- Variant `size=Large, style=Primary, state=Focus, type=Default` — Background: `#C7B9FF` → `#D61C53`
+- Variant `size=Large, style=Primary, state=Focus, type=Default` — Border color: `#FFFFFF` → `—`
+- Variant `size=Large, style=Primary, state=Default, type=Gradient` — Width × Height: `194px × 72px` → `154px × 48px`
+- Variant `size=Large, style=Primary, state=Default, type=Gradient` — Padding: `0px 40px 0px 40px` → `0px 20px 0px 20px`
+- Variant `size=Large, style=Primary, state=Default, type=Icon` — Background: `#1C3FCA` → `#D61C53`
+- Variant `size=Large, style=Primary, state=Focus, type=Icon` — Background: `#1C3FCA` → `#D61C53`
+- Variant `size=Medium, style=Primary, state=Default, type=Icon` — Background: `#1C3FCA` → `#D61C53`
+- Variant `size=Medium, style=Primary, state=Focus, type=Icon` — Background: `#1C3FCA` → `#D61C53`
+- Variant `size=Small, style=Primary, state=Default, type=Icon` — Background: `#1C3FCA` → `#D61C53`
+- Variant `size=Small, style=Primary, state=Focus, type=Icon` — Background: `#1C3FCA` → `#D61C53`
+- Variant `size=Xsmall, style=Primary, state=Default, type=Icon` — Background: `#1C3FCA` → `#D61C53`
+- Variant `size=Xsmall, style=Primary, state=Focus, type=Icon` — Background: `#1C3FCA` → `#D61C53`
+- Variant `size=Medium, style=Primary, state=Pressed, type=Icon` — Background: `#00815A` → `#111111`
+- Variant `size=Small, style=Primary, state=Pressed, type=Icon` — Background: `#00815A` → `#111111`
+- Variant `size=Xsmall, style=Primary, state=Pressed, type=Icon` — Background: `#00815A` → `#111111`
+- Variant `size=Medium, style=Primary, state=Disabled, type=Icon` — Background: `#00815A` → `#1C3FCA`
+- Variant `size=Small, style=Primary, state=Disabled, type=Icon` — Background: `#00815A` → `#1C3FCA`
+- Variant `size=Xsmall, style=Primary, state=Disabled, type=Icon` — Background: `#00815A` → `#1C3FCA`
+- Variant `size=Large, style=Primary, state=Pressed, type=Icon` — Background: `#00815A` → `#111111`
+- Variant `size=Large, style=Primary, state=Disabled, type=Icon` — Background: `#00815A` → `#1C3FCA`
+- Variant `size=Large, style=Secondary, state=Default, type=Icon` — Background: `#00815A` → `#B65805`
+- Variant `size=Large, style=Secondary, state=Focus, type=Icon` — Background: `#00815A` → `#B65805`
+- Variant `size=Medium, style=Secondary, state=Default, type=Icon` — Background: `#00815A` → `#B65805`
+- Variant `size=Medium, style=Secondary, state=Focus, type=Icon` — Background: `#00815A` → `#B65805`
+- Variant `size=Small, style=Secondary, state=Default, type=Icon` — Background: `#00815A` → `#B65805`
+- Variant `size=Small, style=Secondary, state=Focus, type=Icon` — Background: `#00815A` → `#B65805`
+- Variant `size=Xsmall, style=Secondary, state=Default, type=Icon` — Background: `#00815A` → `#B65805`
+- Variant `size=Xsmall, style=Secondary, state=Focus, type=Icon` — Background: `#00815A` → `#B65805`
+- Variant `size=Medium, style=Secondary, state=Hover, type=Icon` — Background: `#00815A` → `#D61C53`
+- Variant `size=Small, style=Secondary, state=Hover, type=Icon` — Background: `#00815A` → `#D61C53`
+- Variant `size=Xsmall, style=Secondary, state=Hover, type=Icon` — Background: `#00815A` → `#D61C53`
+- Variant `size=Large, style=Secondary, state=Hover, type=Icon` — Background: `#00815A` → `#D61C53`
+- Variant `size=Large, style=Primary, state=Pressed, type=Default` — Background: `#00815A` → `#111111`
+- Variant `size=Large, style=Primary, state=Disabled, type=Default` — Background: `#00815A` → `#1C3FCA`
+- Variant `size=Medium, style=Primary, state=Default, type=Default` — Background: `#1C3FCA` → `#D61C53`
+- Variant `size=Medium, style=Primary, state=Focus, type=Default` — Background: `#1C3FCA` → `#D61C53`
+- Variant `size=Medium, style=Primary, state=Pressed, type=Default` — Background: `#00815A` → `#111111`
+- Variant `size=Medium, style=Primary, state=Disabled, type=Default` — Background: `#00815A` → `#1C3FCA`
+- Variant `size=Small, style=Primary, state=Default, type=Default` — Background: `#1C3FCA` → `#D61C53`
+- Variant `size=Small, style=Primary, state=Focus, type=Default` — Background: `#1C3FCA` → `#D61C53`
+- Variant `size=Small, style=Primary, state=Pressed, type=Default` — Background: `#00815A` → `#111111`
+- Variant `size=Small, style=Primary, state=Disabled, type=Default` — Background: `#00815A` → `#1C3FCA`
+- Variant `size=Xsmall, style=Primary, state=Default, type=Default` — Background: `#1C3FCA` → `#D61C53`
+- Variant `size=Xsmall, style=Primary, state=Focus, type=Default` — Background: `#1C3FCA` → `#D61C53`
+- Variant `size=Xsmall, style=Primary, state=Pressed, type=Default` — Background: `#00815A` → `#111111`
+- Variant `size=Xsmall, style=Primary, state=Disabled, type=Default` — Background: `#00815A` → `#1C3FCA`
+- Variant `size=Large, style=Secondary, state=Default, type=Default` — Background: `#00815A` → `#B65805`
+- Variant `size=Large, style=Secondary, state=Focus, type=Default` — Background: `#00815A` → `#B65805`
+- Variant `size=Large, style=Secondary, state=Default, type=Gradient` — Background: `#00815A` → `#B65805`
+- Variant `size=Large, style=Secondary, state=Focus, type=Gradient` — Background: `#00815A` → `#B65805`
+- Variant `size=Large, style=Secondary, state=Hover, type=Gradient` — Background: `#00815A` → `#D61C53`
+- Variant `size=Large, style=Secondary, state=Hover, type=Default` — Background: `#00815A` → `#D61C53`
+- Variant `size=Medium, style=Secondary, state=Default, type=Default` — Background: `#00815A` → `#B65805`
+- Variant `size=Medium, style=Secondary, state=Default, type=Gradient` — Background: `#00815A` → `#B65805`
+- Variant `size=Medium, style=Secondary, state=Focus, type=Gradient` — Background: `#00815A` → `#B65805`
+- Variant `size=Medium, style=Secondary, state=Hover, type=Gradient` — Background: `#00815A` → `#D61C53`
+- Variant `size=Medium, style=Secondary, state=Focus, type=Default` — Background: `#00815A` → `#B65805`
+- Variant `size=Medium, style=Secondary, state=Hover, type=Default` — Background: `#00815A` → `#D61C53`
+- Variant `size=Small, style=Secondary, state=Default, type=Default` — Background: `#00815A` → `#B65805`
+- Variant `size=Small, style=Secondary, state=Default, type=Gradient` — Background: `#00815A` → `#B65805`
+- Variant `size=Small, style=Secondary, state=Focus, type=Gradient` — Background: `#00815A` → `#B65805`
+- Variant `size=Small, style=Secondary, state=Hover, type=Gradient` — Background: `#00815A` → `#D61C53`
+- Variant `size=Small, style=Secondary, state=Focus, type=Default` — Background: `#00815A` → `#B65805`
+- Variant `size=Small, style=Secondary, state=Hover, type=Default` — Background: `#00815A` → `#D61C53`
+- Variant `size=Xsmall, style=Secondary, state=Default, type=Default` — Background: `#00815A` → `#B65805`
+- Variant `size=Xsmall, style=Secondary, state=Default, type=Gradient` — Background: `#00815A` → `#B65805`
+- Variant `size=Xsmall, style=Secondary, state=Focus, type=Gradient` — Background: `#00815A` → `#B65805`
+- Variant `size=Xsmall, style=Secondary, state=Hover, type=Gradient` — Background: `#00815A` → `#D61C53`
+- Variant `size=Xsmall, style=Secondary, state=Focus, type=Default` — Background: `#00815A` → `#B65805`
+- Variant `size=Xsmall, style=Secondary, state=Hover, type=Default` — Background: `#00815A` → `#D61C53`
+
+### Previous changes
+
+**2026-11-19T08:52:26.612Z**
 
 - Base Width × Height: `154px × 48px` → `194px × 72px`
 - Base Text color: `#1C3FCA` → `#FFFFFF`
@@ -489,8 +572,6 @@ UIButton()
 - Variant `size=Xsmall, style=Secondary, state=Hover, type=Gradient` — Background: `#D61C53` → `#00815A`
 - Variant `size=Xsmall, style=Secondary, state=Focus, type=Default` — Background: `#B65805` → `#00815A`
 - Variant `size=Xsmall, style=Secondary, state=Hover, type=Default` — Background: `#D61C53` → `#00815A`
-
-### Previous changes
 
 **2026-11-17T10:06:02.684Z**
 
@@ -895,88 +976,6 @@ UIButton()
 - Variant `size=Large, style=Primary, state=Focus, type=Default` — Padding: `0px 20px 0px 20px` → `0px 40px 0px 40px`
 - Variant `size=Large, style=Primary, state=Focus, type=Default` — Background: `#1C3FCA` → `#C7B9FF`
 - Variant `size=Large, style=Primary, state=Focus, type=Default` — Border color: `—` → `#FFFFFF`
-
-**2026-11-17T07:25:38.546Z**
-
-- Base Background: `#D61C53` → `#C7B9FF`
-- Base Text color: `#FFFFFF` → `#1C3FCA`
-- Variant `size=Large, style=Primary, state=Default, type=Default` — Background: `#D61C53` → `#C7B9FF`
-- Variant `size=Large, style=Primary, state=Default, type=Default` — Text color: `#FFFFFF` → `#1C3FCA`
-- Variant `size=Large, style=Primary, state=Focus, type=Default` — Background: `#F2B102` → `#1C3FCA`
-- Variant `size=Large, style=Primary, state=Default, type=Icon` — Background: `#F2B102` → `#1C3FCA`
-- Variant `size=Large, style=Primary, state=Focus, type=Icon` — Background: `#F2B102` → `#1C3FCA`
-- Variant `size=Medium, style=Primary, state=Default, type=Icon` — Background: `#F2B102` → `#1C3FCA`
-- Variant `size=Medium, style=Primary, state=Focus, type=Icon` — Background: `#F2B102` → `#1C3FCA`
-- Variant `size=Small, style=Primary, state=Default, type=Icon` — Background: `#F2B102` → `#1C3FCA`
-- Variant `size=Small, style=Primary, state=Focus, type=Icon` — Background: `#F2B102` → `#1C3FCA`
-- Variant `size=Xsmall, style=Primary, state=Default, type=Icon` — Background: `#F2B102` → `#1C3FCA`
-- Variant `size=Xsmall, style=Primary, state=Focus, type=Icon` — Background: `#F2B102` → `#1C3FCA`
-- Variant `size=Medium, style=Primary, state=Hover, type=Icon` — Background: `#B65805` → `#D61C53`
-- Variant `size=Small, style=Primary, state=Hover, type=Icon` — Background: `#B65805` → `#D61C53`
-- Variant `size=Xsmall, style=Primary, state=Hover, type=Icon` — Background: `#B65805` → `#D61C53`
-- Variant `size=Medium, style=Primary, state=Pressed, type=Icon` — Background: `#1F30AD` → `#00815A`
-- Variant `size=Small, style=Primary, state=Pressed, type=Icon` — Background: `#1F30AD` → `#00815A`
-- Variant `size=Xsmall, style=Primary, state=Pressed, type=Icon` — Background: `#1F30AD` → `#00815A`
-- Variant `size=Medium, style=Primary, state=Disabled, type=Icon` — Background: `#9CB4F7` → `#00815A`
-- Variant `size=Small, style=Primary, state=Disabled, type=Icon` — Background: `#9CB4F7` → `#00815A`
-- Variant `size=Xsmall, style=Primary, state=Disabled, type=Icon` — Background: `#9CB4F7` → `#00815A`
-- Variant `size=Large, style=Primary, state=Hover, type=Icon` — Background: `#B65805` → `#D61C53`
-- Variant `size=Large, style=Primary, state=Pressed, type=Icon` — Background: `#1F30AD` → `#00815A`
-- Variant `size=Large, style=Primary, state=Disabled, type=Icon` — Background: `#9CB4F7` → `#00815A`
-- Variant `size=Large, style=Secondary, state=Default, type=Icon` — Background: `#FFFFFF` → `#00815A`
-- Variant `size=Large, style=Secondary, state=Focus, type=Icon` — Background: `#FFFFFF` → `#00815A`
-- Variant `size=Medium, style=Secondary, state=Default, type=Icon` — Background: `#FFFFFF` → `#00815A`
-- Variant `size=Medium, style=Secondary, state=Focus, type=Icon` — Background: `#FFFFFF` → `#00815A`
-- Variant `size=Small, style=Secondary, state=Default, type=Icon` — Background: `#FFFFFF` → `#00815A`
-- Variant `size=Small, style=Secondary, state=Focus, type=Icon` — Background: `#FFFFFF` → `#00815A`
-- Variant `size=Xsmall, style=Secondary, state=Default, type=Icon` — Background: `#FFFFFF` → `#00815A`
-- Variant `size=Xsmall, style=Secondary, state=Focus, type=Icon` — Background: `#FFFFFF` → `#00815A`
-- Variant `size=Medium, style=Secondary, state=Hover, type=Icon` — Background: `#F3F6FD` → `#00815A`
-- Variant `size=Small, style=Secondary, state=Hover, type=Icon` — Background: `#F3F6FD` → `#00815A`
-- Variant `size=Xsmall, style=Secondary, state=Hover, type=Icon` — Background: `#F3F6FD` → `#00815A`
-- Variant `size=Large, style=Secondary, state=Hover, type=Icon` — Background: `#F3F6FD` → `#00815A`
-- Variant `size=Large, style=Primary, state=Hover, type=Default` — Background: `#B65805` → `#D61C53`
-- Variant `size=Large, style=Primary, state=Pressed, type=Default` — Background: `#1F30AD` → `#00815A`
-- Variant `size=Large, style=Primary, state=Disabled, type=Default` — Background: `#9CB4F7` → `#00815A`
-- Variant `size=Medium, style=Primary, state=Default, type=Default` — Background: `#F2B102` → `#1C3FCA`
-- Variant `size=Medium, style=Primary, state=Focus, type=Default` — Background: `#F2B102` → `#1C3FCA`
-- Variant `size=Medium, style=Primary, state=Hover, type=Default` — Background: `#B65805` → `#D61C53`
-- Variant `size=Medium, style=Primary, state=Pressed, type=Default` — Background: `#1F30AD` → `#00815A`
-- Variant `size=Medium, style=Primary, state=Disabled, type=Default` — Background: `#9CB4F7` → `#00815A`
-- Variant `size=Small, style=Primary, state=Default, type=Default` — Background: `#F2B102` → `#1C3FCA`
-- Variant `size=Small, style=Primary, state=Focus, type=Default` — Background: `#F2B102` → `#1C3FCA`
-- Variant `size=Small, style=Primary, state=Hover, type=Default` — Background: `#B65805` → `#D61C53`
-- Variant `size=Small, style=Primary, state=Pressed, type=Default` — Background: `#1F30AD` → `#00815A`
-- Variant `size=Small, style=Primary, state=Disabled, type=Default` — Background: `#9CB4F7` → `#00815A`
-- Variant `size=Xsmall, style=Primary, state=Default, type=Default` — Background: `#F2B102` → `#1C3FCA`
-- Variant `size=Xsmall, style=Primary, state=Focus, type=Default` — Background: `#F2B102` → `#1C3FCA`
-- Variant `size=Xsmall, style=Primary, state=Hover, type=Default` — Background: `#B65805` → `#D61C53`
-- Variant `size=Xsmall, style=Primary, state=Pressed, type=Default` — Background: `#1F30AD` → `#00815A`
-- Variant `size=Xsmall, style=Primary, state=Disabled, type=Default` — Background: `#9CB4F7` → `#00815A`
-- Variant `size=Large, style=Secondary, state=Default, type=Default` — Background: `#FFFFFF` → `#00815A`
-- Variant `size=Large, style=Secondary, state=Focus, type=Default` — Background: `#FFFFFF` → `#00815A`
-- Variant `size=Large, style=Secondary, state=Default, type=Gradient` — Background: `#FFFFFF` → `#00815A`
-- Variant `size=Large, style=Secondary, state=Focus, type=Gradient` — Background: `#FFFFFF` → `#00815A`
-- Variant `size=Large, style=Secondary, state=Hover, type=Gradient` — Background: `#F3F6FD` → `#00815A`
-- Variant `size=Large, style=Secondary, state=Hover, type=Default` — Background: `#F3F6FD` → `#00815A`
-- Variant `size=Medium, style=Secondary, state=Default, type=Default` — Background: `#FFFFFF` → `#00815A`
-- Variant `size=Medium, style=Secondary, state=Default, type=Gradient` — Background: `#FFFFFF` → `#00815A`
-- Variant `size=Medium, style=Secondary, state=Focus, type=Gradient` — Background: `#FFFFFF` → `#00815A`
-- Variant `size=Medium, style=Secondary, state=Hover, type=Gradient` — Background: `#F3F6FD` → `#00815A`
-- Variant `size=Medium, style=Secondary, state=Focus, type=Default` — Background: `#FFFFFF` → `#00815A`
-- Variant `size=Medium, style=Secondary, state=Hover, type=Default` — Background: `#F3F6FD` → `#00815A`
-- Variant `size=Small, style=Secondary, state=Default, type=Default` — Background: `#FFFFFF` → `#00815A`
-- Variant `size=Small, style=Secondary, state=Default, type=Gradient` — Background: `#FFFFFF` → `#00815A`
-- Variant `size=Small, style=Secondary, state=Focus, type=Gradient` — Background: `#FFFFFF` → `#00815A`
-- Variant `size=Small, style=Secondary, state=Hover, type=Gradient` — Background: `#F3F6FD` → `#00815A`
-- Variant `size=Small, style=Secondary, state=Focus, type=Default` — Background: `#FFFFFF` → `#00815A`
-- Variant `size=Small, style=Secondary, state=Hover, type=Default` — Background: `#F3F6FD` → `#00815A`
-- Variant `size=Xsmall, style=Secondary, state=Default, type=Default` — Background: `#FFFFFF` → `#00815A`
-- Variant `size=Xsmall, style=Secondary, state=Default, type=Gradient` — Background: `#FFFFFF` → `#00815A`
-- Variant `size=Xsmall, style=Secondary, state=Focus, type=Gradient` — Background: `#FFFFFF` → `#00815A`
-- Variant `size=Xsmall, style=Secondary, state=Hover, type=Gradient` — Background: `#F3F6FD` → `#00815A`
-- Variant `size=Xsmall, style=Secondary, state=Focus, type=Default` — Background: `#FFFFFF` → `#00815A`
-- Variant `size=Xsmall, style=Secondary, state=Hover, type=Default` — Background: `#F3F6FD` → `#00815A`
 
 ## Code files
 

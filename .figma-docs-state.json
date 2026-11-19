@@ -4,6 +4,89 @@
     "baselineAt": "2026-11-09T07:52:17.559Z",
     "history": [
       {
+        "at": "2026-11-19T09:12:47.606Z",
+        "changes": [
+          "Base Width × Height: `194px × 72px` → `154px × 48px`",
+          "Base Text color: `#FFFFFF` → `#1C3FCA`",
+          "Base Border color: `#FFFFFF` → `—`",
+          "Variant `size=Large, style=Primary, state=Default, type=Default` — Width × Height: `194px × 72px` → `154px × 48px`",
+          "Variant `size=Large, style=Primary, state=Default, type=Default` — Text color: `#FFFFFF` → `#1C3FCA`",
+          "Variant `size=Large, style=Primary, state=Default, type=Default` — Border color: `#FFFFFF` → `—`",
+          "Variant `size=Large, style=Primary, state=Focus, type=Default` — Width × Height: `195px × 72px` → `154px × 48px`",
+          "Variant `size=Large, style=Primary, state=Focus, type=Default` — Padding: `0px 40px 0px 40px` → `0px 20px 0px 20px`",
+          "Variant `size=Large, style=Primary, state=Focus, type=Default` — Background: `#C7B9FF` → `#D61C53`",
+          "Variant `size=Large, style=Primary, state=Focus, type=Default` — Border color: `#FFFFFF` → `—`",
+          "Variant `size=Large, style=Primary, state=Default, type=Gradient` — Width × Height: `194px × 72px` → `154px × 48px`",
+          "Variant `size=Large, style=Primary, state=Default, type=Gradient` — Padding: `0px 40px 0px 40px` → `0px 20px 0px 20px`",
+          "Variant `size=Large, style=Primary, state=Default, type=Icon` — Background: `#1C3FCA` → `#D61C53`",
+          "Variant `size=Large, style=Primary, state=Focus, type=Icon` — Background: `#1C3FCA` → `#D61C53`",
+          "Variant `size=Medium, style=Primary, state=Default, type=Icon` — Background: `#1C3FCA` → `#D61C53`",
+          "Variant `size=Medium, style=Primary, state=Focus, type=Icon` — Background: `#1C3FCA` → `#D61C53`",
+          "Variant `size=Small, style=Primary, state=Default, type=Icon` — Background: `#1C3FCA` → `#D61C53`",
+          "Variant `size=Small, style=Primary, state=Focus, type=Icon` — Background: `#1C3FCA` → `#D61C53`",
+          "Variant `size=Xsmall, style=Primary, state=Default, type=Icon` — Background: `#1C3FCA` → `#D61C53`",
+          "Variant `size=Xsmall, style=Primary, state=Focus, type=Icon` — Background: `#1C3FCA` → `#D61C53`",
+          "Variant `size=Medium, style=Primary, state=Pressed, type=Icon` — Background: `#00815A` → `#111111`",
+          "Variant `size=Small, style=Primary, state=Pressed, type=Icon` — Background: `#00815A` → `#111111`",
+          "Variant `size=Xsmall, style=Primary, state=Pressed, type=Icon` — Background: `#00815A` → `#111111`",
+          "Variant `size=Medium, style=Primary, state=Disabled, type=Icon` — Background: `#00815A` → `#1C3FCA`",
+          "Variant `size=Small, style=Primary, state=Disabled, type=Icon` — Background: `#00815A` → `#1C3FCA`",
+          "Variant `size=Xsmall, style=Primary, state=Disabled, type=Icon` — Background: `#00815A` → `#1C3FCA`",
+          "Variant `size=Large, style=Primary, state=Pressed, type=Icon` — Background: `#00815A` → `#111111`",
+          "Variant `size=Large, style=Primary, state=Disabled, type=Icon` — Background: `#00815A` → `#1C3FCA`",
+          "Variant `size=Large, style=Secondary, state=Default, type=Icon` — Background: `#00815A` → `#B65805`",
+          "Variant `size=Large, style=Secondary, state=Focus, type=Icon` — Background: `#00815A` → `#B65805`",
+          "Variant `size=Medium, style=Secondary, state=Default, type=Icon` — Background: `#00815A` → `#B65805`",
+          "Variant `size=Medium, style=Secondary, state=Focus, type=Icon` — Background: `#00815A` → `#B65805`",
+          "Variant `size=Small, style=Secondary, state=Default, type=Icon` — Background: `#00815A` → `#B65805`",
+          "Variant `size=Small, style=Secondary, state=Focus, type=Icon` — Background: `#00815A` → `#B65805`",
+          "Variant `size=Xsmall, style=Secondary, state=Default, type=Icon` — Background: `#00815A` → `#B65805`",
+          "Variant `size=Xsmall, style=Secondary, state=Focus, type=Icon` — Background: `#00815A` → `#B65805`",
+          "Variant `size=Medium, style=Secondary, state=Hover, type=Icon` — Background: `#00815A` → `#D61C53`",
+          "Variant `size=Small, style=Secondary, state=Hover, type=Icon` — Background: `#00815A` → `#D61C53`",
+          "Variant `size=Xsmall, style=Secondary, state=Hover, type=Icon` — Background: `#00815A` → `#D61C53`",
+          "Variant `size=Large, style=Secondary, state=Hover, type=Icon` — Background: `#00815A` → `#D61C53`",
+          "Variant `size=Large, style=Primary, state=Pressed, type=Default` — Background: `#00815A` → `#111111`",
+          "Variant `size=Large, style=Primary, state=Disabled, type=Default` — Background: `#00815A` → `#1C3FCA`",
+          "Variant `size=Medium, style=Primary, state=Default, type=Default` — Background: `#1C3FCA` → `#D61C53`",
+          "Variant `size=Medium, style=Primary, state=Focus, type=Default` — Background: `#1C3FCA` → `#D61C53`",
+          "Variant `size=Medium, style=Primary, state=Pressed, type=Default` — Background: `#00815A` → `#111111`",
+          "Variant `size=Medium, style=Primary, state=Disabled, type=Default` — Background: `#00815A` → `#1C3FCA`",
+          "Variant `size=Small, style=Primary, state=Default, type=Default` — Background: `#1C3FCA` → `#D61C53`",
+          "Variant `size=Small, style=Primary, state=Focus, type=Default` — Background: `#1C3FCA` → `#D61C53`",
+          "Variant `size=Small, style=Primary, state=Pressed, type=Default` — Background: `#00815A` → `#111111`",
+          "Variant `size=Small, style=Primary, state=Disabled, type=Default` — Background: `#00815A` → `#1C3FCA`",
+          "Variant `size=Xsmall, style=Primary, state=Default, type=Default` — Background: `#1C3FCA` → `#D61C53`",
+          "Variant `size=Xsmall, style=Primary, state=Focus, type=Default` — Background: `#1C3FCA` → `#D61C53`",
+          "Variant `size=Xsmall, style=Primary, state=Pressed, type=Default` — Background: `#00815A` → `#111111`",
+          "Variant `size=Xsmall, style=Primary, state=Disabled, type=Default` — Background: `#00815A` → `#1C3FCA`",
+          "Variant `size=Large, style=Secondary, state=Default, type=Default` — Background: `#00815A` → `#B65805`",
+          "Variant `size=Large, style=Secondary, state=Focus, type=Default` — Background: `#00815A` → `#B65805`",
+          "Variant `size=Large, style=Secondary, state=Default, type=Gradient` — Background: `#00815A` → `#B65805`",
+          "Variant `size=Large, style=Secondary, state=Focus, type=Gradient` — Background: `#00815A` → `#B65805`",
+          "Variant `size=Large, style=Secondary, state=Hover, type=Gradient` — Background: `#00815A` → `#D61C53`",
+          "Variant `size=Large, style=Secondary, state=Hover, type=Default` — Background: `#00815A` → `#D61C53`",
+          "Variant `size=Medium, style=Secondary, state=Default, type=Default` — Background: `#00815A` → `#B65805`",
+          "Variant `size=Medium, style=Secondary, state=Default, type=Gradient` — Background: `#00815A` → `#B65805`",
+          "Variant `size=Medium, style=Secondary, state=Focus, type=Gradient` — Background: `#00815A` → `#B65805`",
+          "Variant `size=Medium, style=Secondary, state=Hover, type=Gradient` — Background: `#00815A` → `#D61C53`",
+          "Variant `size=Medium, style=Secondary, state=Focus, type=Default` — Background: `#00815A` → `#B65805`",
+          "Variant `size=Medium, style=Secondary, state=Hover, type=Default` — Background: `#00815A` → `#D61C53`",
+          "Variant `size=Small, style=Secondary, state=Default, type=Default` — Background: `#00815A` → `#B65805`",
+          "Variant `size=Small, style=Secondary, state=Default, type=Gradient` — Background: `#00815A` → `#B65805`",
+          "Variant `size=Small, style=Secondary, state=Focus, type=Gradient` — Background: `#00815A` → `#B65805`",
+          "Variant `size=Small, style=Secondary, state=Hover, type=Gradient` — Background: `#00815A` → `#D61C53`",
+          "Variant `size=Small, style=Secondary, state=Focus, type=Default` — Background: `#00815A` → `#B65805`",
+          "Variant `size=Small, style=Secondary, state=Hover, type=Default` — Background: `#00815A` → `#D61C53`",
+          "Variant `size=Xsmall, style=Secondary, state=Default, type=Default` — Background: `#00815A` → `#B65805`",
+          "Variant `size=Xsmall, style=Secondary, state=Default, type=Gradient` — Background: `#00815A` → `#B65805`",
+          "Variant `size=Xsmall, style=Secondary, state=Focus, type=Gradient` — Background: `#00815A` → `#B65805`",
+          "Variant `size=Xsmall, style=Secondary, state=Hover, type=Gradient` — Background: `#00815A` → `#D61C53`",
+          "Variant `size=Xsmall, style=Secondary, state=Focus, type=Default` — Background: `#00815A` → `#B65805`",
+          "Variant `size=Xsmall, style=Secondary, state=Hover, type=Default` — Background: `#00815A` → `#D61C53`"
+        ]
+      },
+      {
         "at": "2026-11-19T08:52:26.612Z",
         "changes": [
           "Base Width × Height: `154px × 48px` → `194px × 72px`",
@@ -505,90 +588,6 @@
           "Variant `size=Large, style=Primary, state=Focus, type=Default` — Background: `#1C3FCA` → `#C7B9FF`",
           "Variant `size=Large, style=Primary, state=Focus, type=Default` — Border color: `—` → `#FFFFFF`"
         ]
-      },
-      {
-        "at": "2026-11-17T07:25:38.546Z",
-        "changes": [
-          "Base Background: `#D61C53` → `#C7B9FF`",
-          "Base Text color: `#FFFFFF` → `#1C3FCA`",
-          "Variant `size=Large, style=Primary, state=Default, type=Default` — Background: `#D61C53` → `#C7B9FF`",
-          "Variant `size=Large, style=Primary, state=Default, type=Default` — Text color: `#FFFFFF` → `#1C3FCA`",
-          "Variant `size=Large, style=Primary, state=Focus, type=Default` — Background: `#F2B102` → `#1C3FCA`",
-          "Variant `size=Large, style=Primary, state=Default, type=Icon` — Background: `#F2B102` → `#1C3FCA`",
-          "Variant `size=Large, style=Primary, state=Focus, type=Icon` — Background: `#F2B102` → `#1C3FCA`",
-          "Variant `size=Medium, style=Primary, state=Default, type=Icon` — Background: `#F2B102` → `#1C3FCA`",
-          "Variant `size=Medium, style=Primary, state=Focus, type=Icon` — Background: `#F2B102` → `#1C3FCA`",
-          "Variant `size=Small, style=Primary, state=Default, type=Icon` — Background: `#F2B102` → `#1C3FCA`",
-          "Variant `size=Small, style=Primary, state=Focus, type=Icon` — Background: `#F2B102` → `#1C3FCA`",
-          "Variant `size=Xsmall, style=Primary, state=Default, type=Icon` — Background: `#F2B102` → `#1C3FCA`",
-          "Variant `size=Xsmall, style=Primary, state=Focus, type=Icon` — Background: `#F2B102` → `#1C3FCA`",
-          "Variant `size=Medium, style=Primary, state=Hover, type=Icon` — Background: `#B65805` → `#D61C53`",
-          "Variant `size=Small, style=Primary, state=Hover, type=Icon` — Background: `#B65805` → `#D61C53`",
-          "Variant `size=Xsmall, style=Primary, state=Hover, type=Icon` — Background: `#B65805` → `#D61C53`",
-          "Variant `size=Medium, style=Primary, state=Pressed, type=Icon` — Background: `#1F30AD` → `#00815A`",
-          "Variant `size=Small, style=Primary, state=Pressed, type=Icon` — Background: `#1F30AD` → `#00815A`",
-          "Variant `size=Xsmall, style=Primary, state=Pressed, type=Icon` — Background: `#1F30AD` → `#00815A`",
-          "Variant `size=Medium, style=Primary, state=Disabled, type=Icon` — Background: `#9CB4F7` → `#00815A`",
-          "Variant `size=Small, style=Primary, state=Disabled, type=Icon` — Background: `#9CB4F7` → `#00815A`",
-          "Variant `size=Xsmall, style=Primary, state=Disabled, type=Icon` — Background: `#9CB4F7` → `#00815A`",
-          "Variant `size=Large, style=Primary, state=Hover, type=Icon` — Background: `#B65805` → `#D61C53`",
-          "Variant `size=Large, style=Primary, state=Pressed, type=Icon` — Background: `#1F30AD` → `#00815A`",
-          "Variant `size=Large, style=Primary, state=Disabled, type=Icon` — Background: `#9CB4F7` → `#00815A`",
-          "Variant `size=Large, style=Secondary, state=Default, type=Icon` — Background: `#FFFFFF` → `#00815A`",
-          "Variant `size=Large, style=Secondary, state=Focus, type=Icon` — Background: `#FFFFFF` → `#00815A`",
-          "Variant `size=Medium, style=Secondary, state=Default, type=Icon` — Background: `#FFFFFF` → `#00815A`",
-          "Variant `size=Medium, style=Secondary, state=Focus, type=Icon` — Background: `#FFFFFF` → `#00815A`",
-          "Variant `size=Small, style=Secondary, state=Default, type=Icon` — Background: `#FFFFFF` → `#00815A`",
-          "Variant `size=Small, style=Secondary, state=Focus, type=Icon` — Background: `#FFFFFF` → `#00815A`",
-          "Variant `size=Xsmall, style=Secondary, state=Default, type=Icon` — Background: `#FFFFFF` → `#00815A`",
-          "Variant `size=Xsmall, style=Secondary, state=Focus, type=Icon` — Background: `#FFFFFF` → `#00815A`",
-          "Variant `size=Medium, style=Secondary, state=Hover, type=Icon` — Background: `#F3F6FD` → `#00815A`",
-          "Variant `size=Small, style=Secondary, state=Hover, type=Icon` — Background: `#F3F6FD` → `#00815A`",
-          "Variant `size=Xsmall, style=Secondary, state=Hover, type=Icon` — Background: `#F3F6FD` → `#00815A`",
-          "Variant `size=Large, style=Secondary, state=Hover, type=Icon` — Background: `#F3F6FD` → `#00815A`",
-          "Variant `size=Large, style=Primary, state=Hover, type=Default` — Background: `#B65805` → `#D61C53`",
-          "Variant `size=Large, style=Primary, state=Pressed, type=Default` — Background: `#1F30AD` → `#00815A`",
-          "Variant `size=Large, style=Primary, state=Disabled, type=Default` — Background: `#9CB4F7` → `#00815A`",
-          "Variant `size=Medium, style=Primary, state=Default, type=Default` — Background: `#F2B102` → `#1C3FCA`",
-          "Variant `size=Medium, style=Primary, state=Focus, type=Default` — Background: `#F2B102` → `#1C3FCA`",
-          "Variant `size=Medium, style=Primary, state=Hover, type=Default` — Background: `#B65805` → `#D61C53`",
-          "Variant `size=Medium, style=Primary, state=Pressed, type=Default` — Background: `#1F30AD` → `#00815A`",
-          "Variant `size=Medium, style=Primary, state=Disabled, type=Default` — Background: `#9CB4F7` → `#00815A`",
-          "Variant `size=Small, style=Primary, state=Default, type=Default` — Background: `#F2B102` → `#1C3FCA`",
-          "Variant `size=Small, style=Primary, state=Focus, type=Default` — Background: `#F2B102` → `#1C3FCA`",
-          "Variant `size=Small, style=Primary, state=Hover, type=Default` — Background: `#B65805` → `#D61C53`",
-          "Variant `size=Small, style=Primary, state=Pressed, type=Default` — Background: `#1F30AD` → `#00815A`",
-          "Variant `size=Small, style=Primary, state=Disabled, type=Default` — Background: `#9CB4F7` → `#00815A`",
-          "Variant `size=Xsmall, style=Primary, state=Default, type=Default` — Background: `#F2B102` → `#1C3FCA`",
-          "Variant `size=Xsmall, style=Primary, state=Focus, type=Default` — Background: `#F2B102` → `#1C3FCA`",
-          "Variant `size=Xsmall, style=Primary, state=Hover, type=Default` — Background: `#B65805` → `#D61C53`",
-          "Variant `size=Xsmall, style=Primary, state=Pressed, type=Default` — Background: `#1F30AD` → `#00815A`",
-          "Variant `size=Xsmall, style=Primary, state=Disabled, type=Default` — Background: `#9CB4F7` → `#00815A`",
-          "Variant `size=Large, style=Secondary, state=Default, type=Default` — Background: `#FFFFFF` → `#00815A`",
-          "Variant `size=Large, style=Secondary, state=Focus, type=Default` — Background: `#FFFFFF` → `#00815A`",
-          "Variant `size=Large, style=Secondary, state=Default, type=Gradient` — Background: `#FFFFFF` → `#00815A`",
-          "Variant `size=Large, style=Secondary, state=Focus, type=Gradient` — Background: `#FFFFFF` → `#00815A`",
-          "Variant `size=Large, style=Secondary, state=Hover, type=Gradient` — Background: `#F3F6FD` → `#00815A`",
-          "Variant `size=Large, style=Secondary, state=Hover, type=Default` — Background: `#F3F6FD` → `#00815A`",
-          "Variant `size=Medium, style=Secondary, state=Default, type=Default` — Background: `#FFFFFF` → `#00815A`",
-          "Variant `size=Medium, style=Secondary, state=Default, type=Gradient` — Background: `#FFFFFF` → `#00815A`",
-          "Variant `size=Medium, style=Secondary, state=Focus, type=Gradient` — Background: `#FFFFFF` → `#00815A`",
-          "Variant `size=Medium, style=Secondary, state=Hover, type=Gradient` — Background: `#F3F6FD` → `#00815A`",
-          "Variant `size=Medium, style=Secondary, state=Focus, type=Default` — Background: `#FFFFFF` → `#00815A`",
-          "Variant `size=Medium, style=Secondary, state=Hover, type=Default` — Background: `#F3F6FD` → `#00815A`",
-          "Variant `size=Small, style=Secondary, state=Default, type=Default` — Background: `#FFFFFF` → `#00815A`",
-          "Variant `size=Small, style=Secondary, state=Default, type=Gradient` — Background: `#FFFFFF` → `#00815A`",
-          "Variant `size=Small, style=Secondary, state=Focus, type=Gradient` — Background: `#FFFFFF` → `#00815A`",
-          "Variant `size=Small, style=Secondary, state=Hover, type=Gradient` — Background: `#F3F6FD` → `#00815A`",
-          "Variant `size=Small, style=Secondary, state=Focus, type=Default` — Background: `#FFFFFF` → `#00815A`",
-          "Variant `size=Small, style=Secondary, state=Hover, type=Default` — Background: `#F3F6FD` → `#00815A`",
-          "Variant `size=Xsmall, style=Secondary, state=Default, type=Default` — Background: `#FFFFFF` → `#00815A`",
-          "Variant `size=Xsmall, style=Secondary, state=Default, type=Gradient` — Background: `#FFFFFF` → `#00815A`",
-          "Variant `size=Xsmall, style=Secondary, state=Focus, type=Gradient` — Background: `#FFFFFF` → `#00815A`",
-          "Variant `size=Xsmall, style=Secondary, state=Hover, type=Gradient` — Background: `#F3F6FD` → `#00815A`",
-          "Variant `size=Xsmall, style=Secondary, state=Focus, type=Default` — Background: `#FFFFFF` → `#00815A`",
-          "Variant `size=Xsmall, style=Secondary, state=Hover, type=Default` — Background: `#F3F6FD` → `#00815A`"
-        ]
       }
     ],
     "snapshot": {
@@ -654,43 +653,43 @@
         }
       },
       "base": {
-        "size": "194px × 72px",
+        "size": "154px × 48px",
         "padding": "0px 40px 0px 40px",
         "gap": "0px",
         "radius": "12px",
         "fontSize": "18px",
         "lineHeight": null,
         "background": "#C7B9FF",
-        "textColor": "#FFFFFF",
-        "border": "#FFFFFF",
+        "textColor": "#1C3FCA",
+        "border": null,
         "layoutMode": "HORIZONTAL"
       },
       "variants": {
         "size=Large, style=Primary, state=Default, type=Default": {
-          "size": "194px × 72px",
+          "size": "154px × 48px",
           "padding": "0px 40px 0px 40px",
           "gap": "0px",
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
           "background": "#C7B9FF",
-          "textColor": "#FFFFFF",
-          "border": "#FFFFFF"
+          "textColor": "#1C3FCA",
+          "border": null
         },
         "size=Large, style=Primary, state=Focus, type=Default": {
-          "size": "195px × 72px",
-          "padding": "0px 40px 0px 40px",
+          "size": "154px × 48px",
+          "padding": "0px 20px 0px 20px",
           "gap": "0px",
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#C7B9FF",
+          "background": "#D61C53",
           "textColor": "#FFFFFF",
-          "border": "#FFFFFF"
+          "border": null
         },
         "size=Large, style=Primary, state=Default, type=Gradient": {
-          "size": "194px × 72px",
-          "padding": "0px 40px 0px 40px",
+          "size": "154px × 48px",
+          "padding": "0px 20px 0px 20px",
           "gap": "0px",
           "radius": "12px",
           "fontSize": "18px",
@@ -959,7 +958,7 @@
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#1C3FCA",
+          "background": "#D61C53",
           "textColor": "#FFFFFF",
           "border": null
         },
@@ -970,7 +969,7 @@
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#1C3FCA",
+          "background": "#D61C53",
           "textColor": "#FFFFFF",
           "border": null
         },
@@ -981,7 +980,7 @@
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#1C3FCA",
+          "background": "#D61C53",
           "textColor": "#FFFFFF",
           "border": null
         },
@@ -992,7 +991,7 @@
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#1C3FCA",
+          "background": "#D61C53",
           "textColor": "#FFFFFF",
           "border": null
         },
@@ -1003,7 +1002,7 @@
           "radius": "8px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#1C3FCA",
+          "background": "#D61C53",
           "textColor": "#FFFFFF",
           "border": null
         },
@@ -1014,7 +1013,7 @@
           "radius": "8px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#1C3FCA",
+          "background": "#D61C53",
           "textColor": "#FFFFFF",
           "border": null
         },
@@ -1025,7 +1024,7 @@
           "radius": "8px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#1C3FCA",
+          "background": "#D61C53",
           "textColor": "#FFFFFF",
           "border": null
         },
@@ -1036,7 +1035,7 @@
           "radius": "8px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#1C3FCA",
+          "background": "#D61C53",
           "textColor": "#FFFFFF",
           "border": null
         },
@@ -1080,7 +1079,7 @@
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#00815A",
+          "background": "#111111",
           "textColor": "#FFFFFF",
           "border": null
         },
@@ -1091,7 +1090,7 @@
           "radius": "8px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#00815A",
+          "background": "#111111",
           "textColor": "#FFFFFF",
           "border": null
         },
@@ -1102,7 +1101,7 @@
           "radius": "8px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#00815A",
+          "background": "#111111",
           "textColor": "#FFFFFF",
           "border": null
         },
@@ -1113,7 +1112,7 @@
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#00815A",
+          "background": "#1C3FCA",
           "textColor": "#FFFFFF",
           "border": null
         },
@@ -1124,7 +1123,7 @@
           "radius": "8px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#00815A",
+          "background": "#1C3FCA",
           "textColor": "#FFFFFF",
           "border": null
         },
@@ -1135,7 +1134,7 @@
           "radius": "8px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#00815A",
+          "background": "#1C3FCA",
           "textColor": "#FFFFFF",
           "border": null
         },
@@ -1157,7 +1156,7 @@
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#00815A",
+          "background": "#111111",
           "textColor": "#FFFFFF",
           "border": null
         },
@@ -1168,7 +1167,7 @@
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#00815A",
+          "background": "#1C3FCA",
           "textColor": "#FFFFFF",
           "border": null
         },
@@ -1179,7 +1178,7 @@
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#00815A",
+          "background": "#B65805",
           "textColor": "#FFFFFF",
           "border": "#1C3FCA"
         },
@@ -1190,7 +1189,7 @@
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#00815A",
+          "background": "#B65805",
           "textColor": "#FFFFFF",
           "border": "#1C3FCA"
         },
@@ -1245,7 +1244,7 @@
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#00815A",
+          "background": "#B65805",
           "textColor": "#FFFFFF",
           "border": "#1C3FCA"
         },
@@ -1256,7 +1255,7 @@
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#00815A",
+          "background": "#B65805",
           "textColor": "#FFFFFF",
           "border": "#1C3FCA"
         },
@@ -1311,7 +1310,7 @@
           "radius": "8px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#00815A",
+          "background": "#B65805",
           "textColor": "#FFFFFF",
           "border": "#1C3FCA"
         },
@@ -1322,7 +1321,7 @@
           "radius": "8px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#00815A",
+          "background": "#B65805",
           "textColor": "#FFFFFF",
           "border": "#1C3FCA"
         },
@@ -1377,7 +1376,7 @@
           "radius": "8px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#00815A",
+          "background": "#B65805",
           "textColor": "#FFFFFF",
           "border": "#1C3FCA"
         },
@@ -1388,7 +1387,7 @@
           "radius": "8px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#00815A",
+          "background": "#B65805",
           "textColor": "#FFFFFF",
           "border": "#1C3FCA"
         },
@@ -1443,7 +1442,7 @@
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#00815A",
+          "background": "#D61C53",
           "textColor": "#FFFFFF",
           "border": "#1C3FCA"
         },
@@ -1476,7 +1475,7 @@
           "radius": "8px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#00815A",
+          "background": "#D61C53",
           "textColor": "#FFFFFF",
           "border": "#1C3FCA"
         },
@@ -1509,7 +1508,7 @@
           "radius": "8px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#00815A",
+          "background": "#D61C53",
           "textColor": "#FFFFFF",
           "border": "#1C3FCA"
         },
@@ -1740,7 +1739,7 @@
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#00815A",
+          "background": "#D61C53",
           "textColor": "#FFFFFF",
           "border": "#1C3FCA"
         },
@@ -1850,7 +1849,7 @@
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#00815A",
+          "background": "#111111",
           "textColor": "#FFFFFF",
           "border": null
         },
@@ -1861,7 +1860,7 @@
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#00815A",
+          "background": "#1C3FCA",
           "textColor": "#F3F6FD",
           "border": null
         },
@@ -1872,7 +1871,7 @@
           "radius": "12px",
           "fontSize": "16px",
           "lineHeight": "20px",
-          "background": "#1C3FCA",
+          "background": "#D61C53",
           "textColor": "#FFFFFF",
           "border": null
         },
@@ -1938,7 +1937,7 @@
           "radius": "12px",
           "fontSize": "16px",
           "lineHeight": "20px",
-          "background": "#1C3FCA",
+          "background": "#D61C53",
           "textColor": "#FFFFFF",
           "border": null
         },
@@ -1960,7 +1959,7 @@
           "radius": "12px",
           "fontSize": "16px",
           "lineHeight": "20px",
-          "background": "#00815A",
+          "background": "#111111",
           "textColor": "#FFFFFF",
           "border": null
         },
@@ -1971,7 +1970,7 @@
           "radius": "12px",
           "fontSize": "16px",
           "lineHeight": "20px",
-          "background": "#00815A",
+          "background": "#1C3FCA",
           "textColor": "#F3F6FD",
           "border": null
         },
@@ -1982,7 +1981,7 @@
           "radius": "8px",
           "fontSize": "14px",
           "lineHeight": "18px",
-          "background": "#1C3FCA",
+          "background": "#D61C53",
           "textColor": "#FFFFFF",
           "border": null
         },
@@ -2048,7 +2047,7 @@
           "radius": "8px",
           "fontSize": "14px",
           "lineHeight": "18px",
-          "background": "#1C3FCA",
+          "background": "#D61C53",
           "textColor": "#FFFFFF",
           "border": null
         },
@@ -2070,7 +2069,7 @@
           "radius": "8px",
           "fontSize": "14px",
           "lineHeight": "18px",
-          "background": "#00815A",
+          "background": "#111111",
           "textColor": "#FFFFFF",
           "border": null
         },
@@ -2081,7 +2080,7 @@
           "radius": "8px",
           "fontSize": "14px",
           "lineHeight": "18px",
-          "background": "#00815A",
+          "background": "#1C3FCA",
           "textColor": "#F3F6FD",
           "border": null
         },
@@ -2092,7 +2091,7 @@
           "radius": "8px",
           "fontSize": "12px",
           "lineHeight": "16px",
-          "background": "#1C3FCA",
+          "background": "#D61C53",
           "textColor": "#FFFFFF",
           "border": null
         },
@@ -2158,7 +2157,7 @@
           "radius": "8px",
           "fontSize": "12px",
           "lineHeight": "16px",
-          "background": "#1C3FCA",
+          "background": "#D61C53",
           "textColor": "#FFFFFF",
           "border": null
         },
@@ -2180,7 +2179,7 @@
           "radius": "8px",
           "fontSize": "12px",
           "lineHeight": "16px",
-          "background": "#00815A",
+          "background": "#111111",
           "textColor": "#FFFFFF",
           "border": null
         },
@@ -2191,7 +2190,7 @@
           "radius": "8px",
           "fontSize": "12px",
           "lineHeight": "16px",
-          "background": "#00815A",
+          "background": "#1C3FCA",
           "textColor": "#F3F6FD",
           "border": null
         },
@@ -2202,7 +2201,7 @@
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#00815A",
+          "background": "#B65805",
           "textColor": "#1C3FCA",
           "border": "#1C3FCA"
         },
@@ -2213,7 +2212,7 @@
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#00815A",
+          "background": "#B65805",
           "textColor": "#1C3FCA",
           "border": "#1C3FCA"
         },
@@ -2224,7 +2223,7 @@
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#00815A",
+          "background": "#B65805",
           "textColor": null,
           "border": null
         },
@@ -2235,7 +2234,7 @@
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#00815A",
+          "background": "#B65805",
           "textColor": null,
           "border": null
         },
@@ -2851,7 +2850,7 @@
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#00815A",
+          "background": "#D61C53",
           "textColor": null,
           "border": null
         },
@@ -3049,7 +3048,7 @@
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#00815A",
+          "background": "#D61C53",
           "textColor": "#1C3FCA",
           "border": "#1C3FCA"
         },
@@ -3082,7 +3081,7 @@
           "radius": "12px",
           "fontSize": "16px",
           "lineHeight": "20px",
-          "background": "#00815A",
+          "background": "#B65805",
           "textColor": "#1C3FCA",
           "border": "#1C3FCA"
         },
@@ -3093,7 +3092,7 @@
           "radius": "12px",
           "fontSize": "16px",
           "lineHeight": "20px",
-          "background": "#00815A",
+          "background": "#B65805",
           "textColor": null,
           "border": null
         },
@@ -3104,7 +3103,7 @@
           "radius": "12px",
           "fontSize": "16px",
           "lineHeight": "20px",
-          "background": "#00815A",
+          "background": "#B65805",
           "textColor": null,
           "border": null
         },
@@ -3115,7 +3114,7 @@
           "radius": "12px",
           "fontSize": "16px",
           "lineHeight": "20px",
-          "background": "#00815A",
+          "background": "#D61C53",
           "textColor": null,
           "border": null
         },
@@ -3148,7 +3147,7 @@
           "radius": "12px",
           "fontSize": "16px",
           "lineHeight": "20px",
-          "background": "#00815A",
+          "background": "#B65805",
           "textColor": "#1C3FCA",
           "border": "#1C3FCA"
         },
@@ -3159,7 +3158,7 @@
           "radius": "12px",
           "fontSize": "16px",
           "lineHeight": "20px",
-          "background": "#00815A",
+          "background": "#D61C53",
           "textColor": "#1C3FCA",
           "border": "#1C3FCA"
         },
@@ -3192,7 +3191,7 @@
           "radius": "8px",
           "fontSize": "14px",
           "lineHeight": "18px",
-          "background": "#00815A",
+          "background": "#B65805",
           "textColor": "#1C3FCA",
           "border": "#1C3FCA"
         },
@@ -3203,7 +3202,7 @@
           "radius": "8px",
           "fontSize": "14px",
           "lineHeight": "18px",
-          "background": "#00815A",
+          "background": "#B65805",
           "textColor": null,
           "border": null
         },
@@ -3214,7 +3213,7 @@
           "radius": "8px",
           "fontSize": "14px",
           "lineHeight": "18px",
-          "background": "#00815A",
+          "background": "#B65805",
           "textColor": null,
           "border": null
         },
@@ -3225,7 +3224,7 @@
           "radius": "8px",
           "fontSize": "14px",
           "lineHeight": "18px",
-          "background": "#00815A",
+          "background": "#D61C53",
           "textColor": null,
           "border": null
         },
@@ -3258,7 +3257,7 @@
           "radius": "8px",
           "fontSize": "14px",
           "lineHeight": "18px",
-          "background": "#00815A",
+          "background": "#B65805",
           "textColor": "#1C3FCA",
           "border": "#1C3FCA"
         },
@@ -3269,7 +3268,7 @@
           "radius": "8px",
           "fontSize": "14px",
           "lineHeight": "18px",
-          "background": "#00815A",
+          "background": "#D61C53",
           "textColor": "#1C3FCA",
           "border": "#1C3FCA"
         },
@@ -3302,7 +3301,7 @@
           "radius": "8px",
           "fontSize": "12px",
           "lineHeight": "16px",
-          "background": "#00815A",
+          "background": "#B65805",
           "textColor": "#1C3FCA",
           "border": "#1C3FCA"
         },
@@ -3313,7 +3312,7 @@
           "radius": "8px",
           "fontSize": "12px",
           "lineHeight": "16px",
-          "background": "#00815A",
+          "background": "#B65805",
           "textColor": null,
           "border": null
         },
@@ -3324,7 +3323,7 @@
           "radius": "8px",
           "fontSize": "12px",
           "lineHeight": "16px",
-          "background": "#00815A",
+          "background": "#B65805",
           "textColor": null,
           "border": null
         },
@@ -3335,7 +3334,7 @@
           "radius": "8px",
           "fontSize": "12px",
           "lineHeight": "16px",
-          "background": "#00815A",
+          "background": "#D61C53",
           "textColor": null,
           "border": null
         },
@@ -3368,7 +3367,7 @@
           "radius": "8px",
           "fontSize": "12px",
           "lineHeight": "16px",
-          "background": "#00815A",
+          "background": "#B65805",
           "textColor": "#1C3FCA",
           "border": "#1C3FCA"
         },
@@ -3379,7 +3378,7 @@
           "radius": "8px",
           "fontSize": "12px",
           "lineHeight": "16px",
-          "background": "#00815A",
+          "background": "#D61C53",
           "textColor": "#1C3FCA",
           "border": "#1C3FCA"
         },
@@ -14895,6 +14894,235 @@
         "layoutMode": "HORIZONTAL"
       },
       "variants": {}
+    }
+  },
+  "input-area": {
+    "status": "baseline",
+    "baselineAt": "2026-11-19T09:12:47.802Z",
+    "history": [],
+    "snapshot": {
+      "name": "Input-Area",
+      "description": "",
+      "textContent": "Label",
+      "properties": {
+        "helperText": {
+          "type": "BOOLEAN",
+          "defaultValue": "true",
+          "options": []
+        },
+        "states": {
+          "type": "VARIANT",
+          "defaultValue": "Inactive",
+          "options": [
+            "Inactive",
+            "Focus",
+            "Active",
+            "Disabled",
+            "Error",
+            "Success",
+            "Loading",
+            "Read Only"
+          ]
+        },
+        "size": {
+          "type": "VARIANT",
+          "defaultValue": "Small",
+          "options": [
+            "Small",
+            "Medium"
+          ]
+        }
+      },
+      "base": {
+        "size": "320px × 174px",
+        "padding": "0px 0px 0px 0px",
+        "gap": "8px",
+        "radius": "0px",
+        "fontSize": "14px",
+        "lineHeight": null,
+        "background": null,
+        "textColor": "#444444",
+        "border": null,
+        "layoutMode": "VERTICAL"
+      },
+      "variants": {
+        "states=Inactive, size=Small": {
+          "size": "320px × 174px",
+          "padding": "0px 0px 0px 0px",
+          "gap": "8px",
+          "radius": "0px",
+          "fontSize": "14px",
+          "lineHeight": "18px",
+          "background": null,
+          "textColor": "#444444",
+          "border": null
+        },
+        "states=Active, size=Small": {
+          "size": "320px × 174px",
+          "padding": "0px 0px 0px 0px",
+          "gap": "8px",
+          "radius": "0px",
+          "fontSize": "14px",
+          "lineHeight": "18px",
+          "background": null,
+          "textColor": "#111111",
+          "border": null
+        },
+        "states=Loading, size=Small": {
+          "size": "320px × 174px",
+          "padding": "0px 0px 0px 0px",
+          "gap": "8px",
+          "radius": "0px",
+          "fontSize": "14px",
+          "lineHeight": "18px",
+          "background": null,
+          "textColor": "#444444",
+          "border": null
+        },
+        "states=Inactive, size=Medium": {
+          "size": "360px × 230px",
+          "padding": "0px 0px 0px 0px",
+          "gap": "12px",
+          "radius": "0px",
+          "fontSize": "16px",
+          "lineHeight": "24px",
+          "background": null,
+          "textColor": "#5C6172",
+          "border": null
+        },
+        "states=Active, size=Medium": {
+          "size": "360px × 230px",
+          "padding": "0px 0px 0px 0px",
+          "gap": "12px",
+          "radius": "0px",
+          "fontSize": "16px",
+          "lineHeight": "24px",
+          "background": null,
+          "textColor": "#111111",
+          "border": null
+        },
+        "states=Loading, size=Medium": {
+          "size": "360px × 230px",
+          "padding": "0px 0px 0px 0px",
+          "gap": "12px",
+          "radius": "0px",
+          "fontSize": "16px",
+          "lineHeight": "24px",
+          "background": null,
+          "textColor": "#444444",
+          "border": null
+        },
+        "states=Disabled, size=Medium": {
+          "size": "360px × 40px",
+          "padding": "0px 16px 0px 16px",
+          "gap": "0px",
+          "radius": "12px",
+          "fontSize": "16px",
+          "lineHeight": "24px",
+          "background": null,
+          "textColor": "#D9D9D9",
+          "border": null
+        },
+        "states=Focus, size=Medium": {
+          "size": "360px × 230px",
+          "padding": "0px 0px 0px 0px",
+          "gap": "12px",
+          "radius": "0px",
+          "fontSize": "14px",
+          "lineHeight": "24px",
+          "background": null,
+          "textColor": "#111111",
+          "border": null
+        },
+        "states=Error, size=Medium": {
+          "size": "360px × 230px",
+          "padding": "0px 0px 0px 0px",
+          "gap": "12px",
+          "radius": "0px",
+          "fontSize": "14px",
+          "lineHeight": "24px",
+          "background": null,
+          "textColor": "#111111",
+          "border": null
+        },
+        "states=Success, size=Medium": {
+          "size": "360px × 230px",
+          "padding": "0px 0px 0px 0px",
+          "gap": "12px",
+          "radius": "0px",
+          "fontSize": "14px",
+          "lineHeight": "24px",
+          "background": null,
+          "textColor": "#111111",
+          "border": null
+        },
+        "states=Focus, size=Small": {
+          "size": "320px × 174px",
+          "padding": "0px 0px 0px 0px",
+          "gap": "8px",
+          "radius": "0px",
+          "fontSize": "14px",
+          "lineHeight": "18px",
+          "background": null,
+          "textColor": "#111111",
+          "border": null
+        },
+        "states=Disabled, size=Small": {
+          "size": "320px × 174px",
+          "padding": "0px 0px 0px 0px",
+          "gap": "8px",
+          "radius": "0px",
+          "fontSize": "14px",
+          "lineHeight": "18px",
+          "background": null,
+          "textColor": "#D9D9D9",
+          "border": null
+        },
+        "states=Error, size=Small": {
+          "size": "320px × 174px",
+          "padding": "0px 0px 0px 0px",
+          "gap": "8px",
+          "radius": "0px",
+          "fontSize": "14px",
+          "lineHeight": "18px",
+          "background": null,
+          "textColor": "#111111",
+          "border": null
+        },
+        "states=Success, size=Small": {
+          "size": "320px × 174px",
+          "padding": "0px 0px 0px 0px",
+          "gap": "8px",
+          "radius": "0px",
+          "fontSize": "14px",
+          "lineHeight": "18px",
+          "background": null,
+          "textColor": "#111111",
+          "border": null
+        },
+        "states=Read Only, size=Small": {
+          "size": "320px × 36px",
+          "padding": "0px 0px 0px 0px",
+          "gap": "8px",
+          "radius": "0px",
+          "fontSize": "14px",
+          "lineHeight": "18px",
+          "background": null,
+          "textColor": "#111111",
+          "border": null
+        },
+        "states=Read Only, size=Medium": {
+          "size": "360px × 44px",
+          "padding": "0px 0px 0px 0px",
+          "gap": "8px",
+          "radius": "0px",
+          "fontSize": "14px",
+          "lineHeight": "18px",
+          "background": null,
+          "textColor": "#111111",
+          "border": null
+        }
+      }
     }
   }
 }
