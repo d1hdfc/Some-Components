@@ -35,12 +35,12 @@ const PROJECT_REGISTRY = [
     repoName: 'd1hdfc/Some-Components'
   },
   {
-    id: 'Some-Components',
+    id: 'ui-components',
     fileKey: 'CXxUbHl3oMzt9Bzv3SKv75',
     namePattern: /ui[\s-_]*components|foundations/i,
-    projectDir: 'D:\\HDFC\\Some Components',
-    repoUrl: 'https://github.com/d1hdfc/Some-Components.git',
-    repoName: 'd1hdfc/Some-Components'
+    projectDir: 'D:\\HDFC\\UI Components',
+    repoUrl: 'https://github.com/d1hdfc/UI-Components.git',
+    repoName: 'd1hdfc/UI-Components'
   }
 ];
 
@@ -1236,8 +1236,19 @@ function handleSocketMessage(socket, rawMessage) {
       return;
     }
 
-    // 3. Direct On-Demand Sync (Fallback if called directly)
+    // 3. Direct On-Demand Sync (Ignore any legacy unconfirmed background watcher payloads)
     if (payload?.event === 'FIGMA_LIVE_SYNC_PAYLOAD' || payload?.event === 'FIGMA_TO_GITHUB_SYNC') {
+      const legacyAutoReasons = new Set([
+        'documentchange',
+        'canvas-poll',
+        'variables-poll',
+        'selectionchange',
+        'currentpagechange',
+        'auto-connect'
+      ]);
+      if (payload.reason && legacyAutoReasons.has(payload.reason)) {
+        return;
+      }
       const project = resolveProjectContext(payload);
       const isGithubPushRequest = Boolean(
         payload.event === 'FIGMA_TO_GITHUB_SYNC' ||

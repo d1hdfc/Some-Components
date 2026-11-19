@@ -1,4 +1,4 @@
-﻿import { createElement, useState } from 'react';
+import { createElement, useState } from 'react';
 import type { ComponentDocumentation } from './componentRegistry';
 import {
   getComponentChangelogStatus,
