@@ -2,31 +2,86 @@
 
 :root,
 [data-theme='light'] {
-  --portal-bg: #f8fafc;
-  --portal-surface: #ffffff;
-  --portal-surface-elevated: #ffffff;
-  --portal-surface-subtle: #f1f5f9;
-  --portal-border: #dfe3eb;
-  --portal-text: #0f172a;
-  --portal-text-secondary: #475569;
-  --portal-text-muted: #64748b;
-  --portal-accent: #1245c8;
-  --portal-accent-soft: #e9f2ff;
-  --portal-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+  /* Typography Tokens wired to src/tokens/variables/primitive-type.scss */
+  --portal-font-sans: var(--font-family-inter, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  --portal-font-mono: var(--font-family-mono, 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace);
+
+  /* Surface & Canvas Color Tokens wired to src/tokens/variables/primitives.scss & alias.scss */
+  --portal-bg: var(--surface-slate-lighter, #F9FAFF);
+  --portal-surface: var(--surface-root-light, #FFFFFF);
+  --portal-surface-elevated: var(--surface-root-light, #FFFFFF);
+  --portal-surface-subtle: var(--surface-primary-lighter, #F3F6FD);
+  --portal-surface-hover: var(--global-colors-blue-50, #F3F6FD);
+
+  /* Border Tokens */
+  --portal-border: var(--global-colors-slate-100, #E5E8F0);
+  --portal-border-strong: var(--global-colors-blue-200, #9CB4F7);
+
+  /* Text Hierarchy Tokens */
+  --portal-text: var(--global-colors-slate-900, #10182D);
+  --portal-text-secondary: var(--global-colors-slate-600, #3E4457);
+  --portal-text-muted: var(--global-colors-slate-500, #5C6172);
+
+  /* Brand & Interactive Button Accent Tokens */
+  --portal-accent: var(--surface-primary-base, #1C3FCA);
+  --portal-accent-hover: var(--surface-primary-on-light, #1F30AD);
+  --portal-accent-pressed: var(--surface-primary-dark, #112266);
+  --portal-accent-soft: var(--global-colors-blue-100, #E1E9FE);
+  --portal-accent-ring: rgba(28, 63, 202, 0.2);
+  --portal-navy: var(--global-colors-blue-700, #112266);
+  --portal-navy-hover: var(--global-colors-blue-800, #162150);
+
+  /* Semantic Status Tokens */
+  --portal-success: var(--surface-success-base, #00815A);
+  --portal-success-soft: var(--surface-success-lighter, #EFFAF2);
+  --portal-violet: var(--surface-accent-violet-base, #7454F2);
+  --portal-violet-soft: var(--surface-accent-violet-lighter, #F4F0FF);
+  --portal-warning: var(--global-colors-orange-400, #DE7313);
+  --portal-warning-soft: var(--surface-warning-lighter, #FEFAEC);
+  --portal-danger: var(--surface-error-base, #D61C53);
+  --portal-danger-soft: var(--surface-error-lighter, #FDF1F4);
+
+  /* Elevation & Radius */
+  --portal-radius-sm: var(--layout-radius-xs, 6px);
+  --portal-radius-md: var(--layout-radius-sm, 8px);
+  --portal-radius-lg: var(--layout-radius-md, 12px);
+  --portal-shadow: 0 1px 3px rgba(16, 24, 45, 0.04), 0 4px 12px rgba(28, 63, 202, 0.04);
+  --portal-shadow-hover: 0 4px 16px rgba(28, 63, 202, 0.09);
 }
 
 [data-theme='dark'] {
-  --portal-bg: #0b1120;
-  --portal-surface: #111827;
-  --portal-surface-elevated: #1e293b;
-  --portal-surface-subtle: #172033;
-  --portal-border: #283548;
-  --portal-text: #f1f5f9;
-  --portal-text-secondary: #cbd5e1;
-  --portal-text-muted: #94a3b8;
-  --portal-accent: #60a5fa;
-  --portal-accent-soft: rgba(59, 130, 246, 0.18);
-  --portal-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  --portal-bg: #0B0F1E;
+  --portal-surface: var(--global-colors-blue-900, #11162D);
+  --portal-surface-elevated: var(--global-colors-slate-800, #1B2137);
+  --portal-surface-subtle: var(--global-colors-blue-800, #162150);
+  --portal-surface-hover: #1F2B5E;
+
+  --portal-border: #263256;
+  --portal-border-strong: #3E5496;
+
+  --portal-text: var(--global-colors-blue-50, #F3F6FD);
+  --portal-text-secondary: #C4CEE5;
+  --portal-text-muted: #8E99B5;
+
+  --portal-accent: #5B82FF;
+  --portal-accent-hover: #7597FF;
+  --portal-accent-pressed: #3D66F5;
+  --portal-accent-soft: rgba(91, 130, 255, 0.18);
+  --portal-accent-ring: rgba(91, 130, 255, 0.28);
+  --portal-navy: #1E3278;
+  --portal-navy-hover: #28429C;
+
+  --portal-success: var(--global-colors-green-400, #50C898);
+  --portal-success-soft: rgba(0, 129, 90, 0.2);
+  --portal-violet: var(--global-colors-violet-300, #AD9AFC);
+  --portal-violet-soft: rgba(116, 84, 242, 0.2);
+  --portal-warning: var(--global-colors-orange-300, #F6A258);
+  --portal-warning-soft: rgba(222, 115, 19, 0.2);
+  --portal-danger: var(--global-colors-red-300, #EF7092);
+  --portal-danger-soft: rgba(214, 28, 83, 0.2);
+
+  --portal-shadow: 0 4px 18px rgba(0, 0, 0, 0.38);
+  --portal-shadow-hover: 0 6px 22px rgba(0, 0, 0, 0.5);
 }
 
 * {
@@ -37,8 +92,19 @@ body {
   margin: 0;
   color: var(--portal-text);
   background: var(--portal-bg);
-  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  font-family: var(--portal-font-sans);
+  font-size: 14px;
+  line-height: 1.55;
+  letter-spacing: -0.011em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+code,
+pre,
+kbd {
+  font-family: var(--portal-font-mono);
 }
 
 button,
@@ -62,6 +128,8 @@ select {
 
 .docs-content {
   padding-bottom: 84px !important;
+  color: var(--portal-text);
+  font-family: var(--portal-font-sans);
 }
 
 .docs-toc {
@@ -75,8 +143,10 @@ select {
   h2 {
     margin: 0 0 12px;
     color: var(--portal-text);
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
   }
 
   nav {
@@ -90,17 +160,21 @@ select {
     margin-left: -1px;
     padding: 6px 0 6px 12px;
     color: var(--portal-text-muted);
-    font-size: 12px;
+    font-size: 12.5px;
+    font-weight: 500;
     line-height: 1.4;
     text-decoration: none;
+    transition: color 0.14s ease, border-color 0.14s ease;
   }
 
   a:hover {
     color: var(--portal-accent);
+    border-left-color: var(--portal-accent);
   }
 
   .docs-toc-nested {
     padding-left: 22px;
+    font-size: 12px;
   }
 }
 
@@ -137,13 +211,18 @@ select {
   .updated-code-active-inspector-card,
   .updated-code-bundle-pill,
   .playground-panel,
-  .figma-matrix-card {
+  .figma-matrix-card,
+  .figma-matrix-group,
+  .button-playground {
     background: var(--portal-surface-elevated) !important;
     border-color: var(--portal-border) !important;
     color: var(--portal-text) !important;
   }
 
   .auto-playground-controls,
+  .playground-controls,
+  .playground-panel-header,
+  .figma-matrix-group-header,
   .example-card-heading,
   .auto-component-example-heading,
   .updated-code-plain-summary,
@@ -152,7 +231,16 @@ select {
     border-color: var(--portal-border) !important;
   }
 
+  .example-preview,
+  .playground-preview,
+  .auto-component-preview {
+    background-color: var(--portal-surface) !important;
+    border-color: var(--portal-border) !important;
+  }
+
   .auto-props-table th,
+  .api-table th,
+  .figma-matrix-table th,
   .md-table th {
     background: var(--portal-surface-subtle) !important;
     color: var(--portal-text) !important;
@@ -160,6 +248,8 @@ select {
   }
 
   .auto-props-table td,
+  .api-table td,
+  .figma-matrix-table td,
   .md-table td {
     border-color: var(--portal-border) !important;
     color: var(--portal-text-secondary) !important;

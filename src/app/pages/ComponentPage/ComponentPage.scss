@@ -1,12 +1,14 @@
 .auto-component-page {
-  padding: 32px 40px 60px;
-  max-width: 900px;
+  padding: 32px 48px 84px;
+  max-width: 1160px;
+  font-family: var(--portal-font-sans);
 
   code {
     border-radius: 4px;
     padding: 2px 6px;
-    background: #f1f2f4;
-    color: #172b4d;
+    background: var(--portal-surface-subtle);
+    color: var(--portal-accent);
+    font-family: var(--portal-font-mono);
     font-size: 0.88em;
   }
 }
@@ -15,25 +17,25 @@
 .docs-breadcrumbs {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   margin-bottom: 20px;
-  color: #626f86;
-  font-size: 12px;
+  color: var(--portal-text-muted);
+  font-size: 12.5px;
 
   a {
-    color: #0c66e4;
+    color: var(--portal-accent);
     text-decoration: none;
     &:hover { text-decoration: underline; }
   }
 
-  strong { color: #172b4d; }
+  strong { color: var(--portal-text); }
 }
 
 /* ── Page Header ────────────────────────────────── */
 .docs-heading {
   margin-bottom: 32px;
   padding-bottom: 0;
-  border-bottom: 2px solid #dfe1e6;
+  border-bottom: 2px solid var(--portal-border);
 }
 
 .docs-heading-inner {
@@ -45,23 +47,23 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  border: 1px solid #dfe1e6;
-  border-radius: 10px;
-  padding: 3px 9px;
+  border: 1px solid var(--portal-border);
+  border-radius: 999px;
+  padding: 3px 10px;
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   white-space: nowrap;
 
   &--clean {
-    border-color: #cce0ff;
-    background: #e9f2ff;
-    color: #0055cc;
+    border-color: rgba(28, 63, 202, 0.25);
+    background: var(--portal-accent-soft);
+    color: var(--portal-accent);
   }
 
   &--updated {
-    border-color: #dfd8fd;
-    background: #f3f0ff;
-    color: #5e4db2;
+    border-color: rgba(116, 84, 242, 0.28);
+    background: var(--portal-violet-soft);
+    color: var(--portal-violet);
   }
 }
 
@@ -78,7 +80,7 @@
   border-bottom: 2px solid transparent;
   padding: 10px 16px;
   background: transparent;
-  color: #44546f;
+  color: var(--portal-text-secondary);
   cursor: pointer;
   font-size: 13.5px;
   font-weight: 500;
@@ -86,13 +88,13 @@
   transition: color 0.12s, border-color 0.12s, background 0.12s;
 
   &:hover {
-    color: #0c66e4;
-    background: #f7f8fa;
+    color: var(--portal-accent);
+    background: var(--portal-surface-subtle);
   }
 
   &--active {
-    border-bottom-color: #0c66e4;
-    color: #0c66e4;
+    border-bottom-color: var(--portal-accent);
+    color: var(--portal-accent);
     font-weight: 600;
   }
 }

@@ -357,17 +357,19 @@
 }
 
 .portal-sync-btn-yes {
-  background: #117a37;
-  color: #ffffff;
+  background: var(--portal-accent, #1C3FCA);
+  color: var(--surface-static-white, #ffffff);
   border: none;
-  border-radius: 7px;
-  padding: 8px 18px;
+  border-radius: var(--portal-radius-md, 8px);
+  padding: 9px 18px;
   font-size: 13px;
   font-weight: 700;
   cursor: pointer;
+  box-shadow: 0 2px 6px rgba(28, 63, 202, 0.25);
+  transition: all 0.15s ease;
 
   &:hover:not(:disabled) {
-    background: #0d622c;
+    background: var(--portal-accent-hover, #1F30AD);
   }
 
   &:disabled {
