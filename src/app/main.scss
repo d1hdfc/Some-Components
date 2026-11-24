@@ -55,9 +55,13 @@ select {
 
 .docs-layout {
   display: grid;
-  grid-template-columns: 256px minmax(0, 1fr) 196px;
+  grid-template-columns: 268px minmax(0, 1fr) 196px;
   align-items: start;
   min-height: calc(100vh - 58px);
+}
+
+.docs-content {
+  padding-bottom: 84px !important;
 }
 
 .docs-toc {

@@ -12,7 +12,6 @@ interface HeaderPageProps {
 
 export function HeaderPage({
   syncStatus,
-  currentPage,
   onNav,
   theme = 'light',
   onToggleTheme,
@@ -50,94 +49,67 @@ export function HeaderPage({
 
   return (
     <header className="docs-topbar">
-      <a
-        className="docs-brand"
-        href="#button"
-        aria-label="HDFC design system home"
-        onClick={() => onNav('button')}
-      >
-        <span className="docs-brand-mark">H</span>
-        <span className="docs-brand-text">
-          HDFC <strong>Some Components</strong>
-        </span>
-        <span className="docs-version-badge">v0.1.0 · Enterprise Portal</span>
-      </a>
-
-      <nav className="docs-topbar-nav" aria-label="Main navigation">
+      {/* Left: Brand Identity + Version Pill + External Icon Links */}
+      <div className="docs-topbar-left">
         <a
+          className="docs-brand"
           href="#button"
-          className={
-            currentPage !== 'installation' && currentPage !== 'updated-code'
-              ? 'docs-topbar-nav-active'
-              : ''
-          }
+          aria-label="HDFC design system home"
           onClick={() => onNav('button')}
         >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <rect x="3" y="3" width="7" height="7" rx="1" />
-            <rect x="14" y="3" width="7" height="7" rx="1" />
-            <rect x="14" y="14" width="7" height="7" rx="1" />
-            <rect x="3" y="14" width="7" height="7" rx="1" />
-          </svg>
-          <span>Components</span>
+          <span className="docs-brand-mark">H</span>
+          <span className="docs-brand-text">
+            HDFC <strong>Some Components</strong>
+          </span>
         </a>
-        <a
-          href="#updated-code"
-          className={currentPage === 'updated-code' ? 'docs-topbar-nav-active' : ''}
-          onClick={() => onNav('updated-code')}
-        >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <polyline points="16 18 22 12 16 6" />
-            <polyline points="8 6 2 12 8 18" />
-          </svg>
-          <span>Updated Code</span>
-        </a>
-        <a
-          href="https://www.figma.com/design/NhsXzdYzA1O9TPQlRL3wC4/Some-Components?node-id=2617-4609"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-            <polyline points="15 3 21 3 21 9" />
-            <line x1="10" y1="14" x2="21" y2="3" />
-          </svg>
-          <span>Figma File</span>
-        </a>
-        <a
-          href="https://github.com/d1hdfc/Some-Components"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-          </svg>
-          <span>GitHub</span>
-        </a>
-      </nav>
 
+        <span className="docs-version-badge">v0.1.0</span>
+
+        <div className="docs-topbar-divider" aria-hidden="true" />
+
+        <div className="docs-topbar-ext-links" aria-label="External resources">
+          <a
+            href="https://www.figma.com/design/NhsXzdYzA1O9TPQlRL3wC4/Some-Components?node-id=2617-4609"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="docs-ext-icon-link"
+            title="Open Figma Design File"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z" />
+              <path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z" />
+              <path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z" />
+              <path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z" />
+              <path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z" />
+            </svg>
+            <span>Figma</span>
+            <svg className="docs-ext-arrow" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+              <line x1="7" y1="17" x2="17" y2="7" />
+              <polyline points="7 7 17 7 17 17" />
+            </svg>
+          </a>
+
+          <a
+            href="https://github.com/d1hdfc/Some-Components"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="docs-ext-icon-link"
+            title="Open GitHub Repository"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+            </svg>
+            <span>GitHub</span>
+            <svg className="docs-ext-arrow" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+              <line x1="7" y1="17" x2="17" y2="7" />
+              <polyline points="7 7 17 7 17 17" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      {/* Right: Live Bridge Status Pill, Sync Action Buttons, Dark/Light Theme Toggle */}
       <div className="docs-topbar-actions">
-        {onRequestPreSync && (
-          <div className="docs-topbar-sync-triggers">
-            <button
-              type="button"
-              className="docs-topbar-sync-btn"
-              onClick={() => onRequestPreSync('figma-to-code')}
-              title="Scan Figma changes & confirm with Allow"
-            >
-              Figma ➔ Code
-            </button>
-            <button
-              type="button"
-              className="docs-topbar-sync-btn docs-topbar-sync-btn--primary"
-              onClick={() => onRequestPreSync('code-to-figma')}
-              title="Scan Code changes & confirm with Allow"
-            >
-              Code ➔ Figma
-            </button>
-          </div>
-        )}
-
         <div
           className={`docs-sync-badge ${syncClass}`}
           title={`Figma On-Demand Sync WebSocket (ws://localhost:3055) — ${syncLabel}`}
@@ -148,6 +120,37 @@ export function HeaderPage({
           <span className="docs-sync-status-text">{syncLabel}</span>
           <code className="docs-sync-endpoint">ws://localhost:3055</code>
         </div>
+
+        {onRequestPreSync && (
+          <div className="docs-topbar-sync-triggers">
+            <button
+              type="button"
+              className="docs-topbar-sync-btn"
+              onClick={() => onRequestPreSync('figma-to-code')}
+              title="Scan Figma changes & confirm with Allow"
+            >
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              <span>Figma → Code</span>
+            </button>
+            <button
+              type="button"
+              className="docs-topbar-sync-btn docs-topbar-sync-btn--primary"
+              onClick={() => onRequestPreSync('code-to-figma')}
+              title="Scan Code changes & confirm with Allow"
+            >
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="17 8 12 3 7 8" />
+                <line x1="12" y1="3" x2="12" y2="15" />
+              </svg>
+              <span>Code → Figma</span>
+            </button>
+          </div>
+        )}
 
         {onToggleTheme && (
           <button

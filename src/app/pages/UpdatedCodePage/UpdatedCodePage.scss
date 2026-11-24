@@ -1,7 +1,8 @@
 .updated-code-page {
   display: block;
-  color: var(--text-strong);
+  color: var(--portal-text, var(--text-strong));
   font-family: var(--font-family-inter);
+  padding-bottom: 80px;
 }
 
 .updated-code-hero {
@@ -20,7 +21,7 @@
 
 .updated-code-action-btn {
   padding: 9px 14px;
-  border-radius: 7px;
+  border-radius: 8px;
   font-size: 12.5px;
   font-weight: 700;
   cursor: pointer;
@@ -43,48 +44,73 @@
 
 .updated-code-kpi-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
   margin-top: 20px;
 }
 
 .updated-code-kpi-card {
-  background: #ffffff;
-  border: 1px solid #dfe3eb;
-  border-radius: 10px;
-  padding: 14px 16px;
+  background: var(--portal-surface-elevated, #ffffff);
+  border: 1px solid var(--portal-border, #dfe3eb);
+  border-top: 3px solid #4f46e5;
+  border-radius: 12px;
+  padding: 16px 18px;
   display: flex;
   flex-direction: column;
   gap: 4px;
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+  box-shadow: var(--portal-shadow, 0 1px 3px rgba(15, 23, 42, 0.04));
 
   span {
     font-size: 12px;
-    color: #64748b;
-    font-weight: 600;
+    color: var(--portal-text-muted, #64748b);
+    font-weight: 700;
   }
 
   strong {
     font-size: 24px;
-    color: #0f172a;
+    color: var(--portal-text, #0f172a);
     line-height: 1.15;
   }
 
   small {
     font-size: 11.5px;
-    color: #64748b;
+    color: var(--portal-text-secondary, #64748b);
   }
 
-  &--added strong {
-    color: #16a34a;
+  &--added {
+    border-top-color: #10b981;
+
+    strong {
+      color: #16a34a;
+    }
   }
 
-  &--updated strong {
-    color: #2563eb;
+  &--updated {
+    border-top-color: #2563eb;
+
+    strong {
+      color: #2563eb;
+    }
   }
 
-  &--deleted strong {
-    color: #dc2626;
+  &--deleted {
+    border-top-color: #ef4444;
+
+    strong {
+      color: #dc2626;
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .updated-code-kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .updated-code-kpi-grid {
+    grid-template-columns: 1fr;
   }
 }
 

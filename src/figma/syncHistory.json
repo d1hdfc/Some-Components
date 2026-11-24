@@ -1,6 +1,58 @@
 {
-  "lastUpdated": "2026-11-19T11:53:14.138Z",
+  "lastUpdated": "2026-11-24T07:31:32.792Z",
   "entries": [
+    {
+      "id": "c2f-added-button-copy-1795505492790",
+      "timestamp": "2026-11-24T07:31:32.131Z",
+      "direction": "code-to-figma",
+      "action": "added",
+      "slug": "button-copy",
+      "componentName": "ButtonCopy",
+      "pageName": "ButtonCopyPage",
+      "summary": "button-copy: create new component \"ButtonCopy\" on Figma canvas from local code (src/components/button-copy/ & ButtonCopyPage)",
+      "details": [
+        "Create \"ButtonCopy\" component on Figma canvas with styles from src/components/button-copy/button-copy.scss",
+        "Sync 5-file bundle (button-copy.tsx, .types.ts, .scss, .dart, .md) & portal page ButtonCopyPage"
+      ],
+      "files": [
+        {
+          "path": "src/components/button-copy/button-copy.tsx",
+          "ext": "tsx",
+          "action": "added",
+          "diff": "+ import React from 'react';\n+ import type { ButtonCopyProps, ButtonCopyVisualType } from './button-copy.types';\n+ const chevronLeft =\n+   'data:image/svg+xml;utf8,%3Csvg%20preserveAspectRatio%3D%22none%22%20overflow%3D%22visible%22%20style%3D%22display%3A%20block%3B%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%20%3Cg%20id%3D%22Icon%2FArrow%2FChevron%20Left%22%3E%20%3Cpath%20id%3D%221%22%20d%3D%22M15.0191%203.5507C15.3119%203.25786%2015.7868%203.25797%2016.0797%203.5507C16.3726%203.84359%2016.3726%204.31835%2016.0797%204.61125L9.55964%2011.1313C9.08289%2011.6082%209.0831%2012.3929%209.55964%2012.87L16.0797%2019.3901C16.3725%2019.6829%2016.3724%2020.1577%2016.0797%2020.4506C15.7868%2020.7435%2015.312%2020.7435%2015.0191%2020.4506L8.49909%2013.9306C7.43677%2012.8677%207.43655%2011.1335%208.49909%2010.0707L15.0191%203.5507Z%22%20fill%3D%22white%22%2F%3E%20%3C%2Fg%3E%20%3C%2Fsvg%3E';\n+ const chevronRight =\n+   'data:image/svg+xml;utf8,%3Csvg%20preserveAspectRatio%3D%22none%22%20overflow%3D%22visible%22%20style%3D%22display%3A%20block%3B%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%20%3Cg%20id%3D%22Icon%2FArrow%2FChevron%20Right%22%3E%20%3Cpath%20id%3D%221%22%20d%3D%22M7.92187%203.55078C8.21477%203.25789%208.68953%203.25789%208.98242%203.55078L15.5024%2010.0708C16.5652%2011.1336%2016.565%2012.8677%2015.5024%2013.9307L8.98242%2020.4507C8.68953%2020.7436%208.21477%2020.7436%207.92187%2020.4507C7.6293%2020.1578%207.62909%2019.6829%207.92187%2019.3901L14.4419%2012.8701C14.9187%2012.393%2014.9189%2011.6083%2014.4419%2011.1313L7.92187%204.61133C7.62898%204.31844%207.62898%203.84367%207.92187%203.55078Z%22%20fill%3D%22white%22%2F%3E%20%3C%2Fg%3E%20%3C%2Fsvg%3E';\n+ const cx = (...parts: Array<string | false | undefined>) => parts.filter(Boolean).join(' ');\n+ const VISUAL_TYPES = new Set<ButtonCopyVisualType>(['default', 'icon', 'gradient', 'white']);\n+ const renderIcon = (\n+   icon: boolean | React.ReactNode,\n+   direction: 'left' | 'right'\n+ ) => {\n+   if (!icon) return null;\n+   const maskImage = `url(\"${direction === 'left' ? chevronLeft : chevronRight}\")`;"
+        },
+        {
+          "path": "src/components/button-copy/button-copy.types.ts",
+          "ext": "ts",
+          "action": "added",
+          "diff": "+ import React from 'react';\n+ export type ButtonCopySize = 'xsmall' | 'small' | 'medium' | 'large';\n+ export type ButtonCopyVariant = 'primary' | 'secondary' | 'tertiary' | 'link';\n+ export type ButtonCopyState = 'default' | 'hover' | 'pressed' | 'disabled' | 'focus';\n+ export type ButtonCopyVisualType = 'default' | 'icon' | 'gradient' | 'white';\n+ export interface ButtonCopyProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'type'> {\n+   children?: React.ReactNode;\n+   size?: ButtonCopySize;\n+   variant?: ButtonCopyVariant;\n+   state?: ButtonCopyState;\n+   type?: ButtonCopyVisualType | 'button' | 'submit' | 'reset';\n+   buttonType?: ButtonCopyVisualType;\n+   leftIcon?: boolean | React.ReactNode;\n+   rightIcon?: boolean | React.ReactNode;"
+        },
+        {
+          "path": "src/components/button-copy/button-copy.scss",
+          "ext": "scss",
+          "action": "added",
+          "diff": "+ @use 'sass:map';\n+ $button-sizes: (\n+   large: (\n+     height: var(--button-size-large-height),\n+     padding: var(--button-size-large-padding-x),\n+     radius: var(--button-size-large-radius),\n+     gap: var(--button-size-large-gap),\n+     font-size: var(--button-size-large-font-size),\n+     icon-size: var(--button-size-large-icon-size)\n+   ),\n+   medium: (\n+     height: var(--button-size-medium-height),\n+     padding: var(--button-size-medium-padding-x),\n+     radius: var(--button-size-medium-radius),"
+        },
+        {
+          "path": "src/components/button-copy/button-copy.dart",
+          "ext": "dart",
+          "action": "added",
+          "diff": "+ import 'package:flutter/material.dart';\n+ enum UIButtonVariant { primary, secondary, tertiary, outlined, link, default, white, gradient, icon }\n+ enum UIButtonSize { small, medium, large, xsmall }\n+ /// Auto-generated Flutter widget for [Button] from Figma.\n+ class UIButtonCopy extends StatelessWidget {\n+   final String label;\n+   final Widget? child;\n+   final VoidCallback? onPressed;\n+   final UIButtonVariant variant;\n+   final UIButtonSize size;\n+   final bool isDisabled;\n+   final bool isLoading;\n+   final bool isFullWidth;\n+   final Widget? leadingIcon;"
+        },
+        {
+          "path": "src/components/button-copy/button-copy.md",
+          "ext": "md",
+          "action": "added",
+          "diff": "+ <!-- Generated by scripts/docs-generator.cjs. Manual edits are overwritten on the next Figma sync. -->\n+ <!-- docs-source: figma -->\n+ # Button\n+ _No description set in Figma._\n+ > Last updated: 2026-11-19T11:53:13.696Z\n+ ## Overview\n+ | Field | Value |\n+ | --- | --- |\n+ | Figma name | Button |\n+ | Node ID | 8024:1408 |\n+ | Node type | COMPONENT_SET |\n+ | Figma page | Button |\n+ | Variants | 320 |\n+ | Code folder | `src/components/button/` |"
+        },
+        {
+          "path": "src/app/pages/ButtonCopyPage/ButtonCopyPage.tsx",
+          "ext": "tsx",
+          "action": "added",
+          "diff": "+ // Generated by scripts/code-generator.cjs.\n+ import { componentDocumentation } from '../ComponentPage/componentRegistry';\n+ import { ComponentPage } from '../ComponentPage/ComponentPage';\n+ import './ButtonCopyPage.scss';\n+ export const componentSlug = \"button-copy\";\n+ export function ButtonCopyPage() {\n+   const component = componentDocumentation.find((entry) => entry.slug === componentSlug);\n+   return component ? <ComponentPage component={component} /> : null;\n+ }\n+ export default ButtonCopyPage;"
+        }
+      ]
+    },
     {
       "id": "sync-tokens-1795089187332",
       "timestamp": "2026-11-19T11:53:07.125Z",
