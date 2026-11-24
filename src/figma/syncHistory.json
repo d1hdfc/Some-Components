@@ -1,6 +1,436 @@
 {
-  "lastUpdated": "2026-11-24T07:31:32.792Z",
+  "lastUpdated": "2026-11-24T11:58:19.708Z",
   "entries": [
+    {
+      "id": "c2f-del-button-2-1795521496147",
+      "timestamp": "2026-11-24T11:58:15.868Z",
+      "direction": "code-to-figma",
+      "action": "deleted",
+      "slug": "button-2",
+      "componentName": "Button 2",
+      "pageName": "Button2Page",
+      "summary": "button-2: remove from Figma canvas (page \"Button 2\") because it was deleted in local code",
+      "details": [
+        "Remove \"Button 2\" component/frame & page \"Button 2\" from Figma canvas",
+        "Clean up any remaining references in src/components/index.ts & src/app/pages/Button2Page"
+      ],
+      "files": [
+        {
+          "path": "src/components/button-2/button-2.tsx",
+          "ext": "tsx",
+          "action": "deleted",
+          "diff": "- // Generated from Figma by scripts/code-generator.cjs.\n- import React from 'react';\n- import type { Button2Props } from './button-2.types';\n- import './button-2.scss';\n- const cx = (...parts: Array<string | false | undefined>) => parts.filter(Boolean).join(' ');\n- export const Button2: React.FC<Button2Props> = ({\n-   children = 'Button',\n-   size = 'medium',\n-   variant = 'primary',\n-   disabled = false,"
+        },
+        {
+          "path": "src/components/button-2/button-2.types.ts",
+          "ext": "ts",
+          "action": "deleted",
+          "diff": "- // Generated from Figma by scripts/code-generator.cjs.\n- import type React from 'react';\n- export type Button2Variant = 'primary' | 'secondary' | 'tertiary' | 'link' | 'default' | 'icon' | 'gradient' | 'white';\n- export type Button2Size = 'large' | 'medium' | 'small' | 'xsmall';\n- export interface Button2Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {\n-   children?: React.ReactNode;\n-   variant?: Button2Variant;\n-   size?: Button2Size;\n-   disabled?: boolean;\n-   loading?: boolean;"
+        },
+        {
+          "path": "src/components/button-2/button-2.scss",
+          "ext": "scss",
+          "action": "deleted",
+          "diff": "- @use 'sass:map';\n- $button-2-sizes: (\n-   small: (\n-     height: var(--button-size-small-height),\n-     padding: var(--button-size-small-padding-x),\n-     radius: var(--button-size-small-radius),\n-     gap: var(--button-size-small-gap),\n-     font-size: var(--button-size-small-font-size),\n-     line-height: var(--font-line-height-paragraph-xsm)\n-   ),"
+        },
+        {
+          "path": "src/components/button-2/button-2.dart",
+          "ext": "dart",
+          "action": "deleted",
+          "diff": "- import 'package:flutter/material.dart';\n- enum UIButton2Variant { primary, secondary, tertiary, link, default, icon, gradient, white }\n- enum UIButton2Size { large, medium, small, xsmall }\n- /// Auto-generated Flutter widget for [Button2] from Figma.\n- class UIButton2 extends StatelessWidget {\n-   final String label;\n-   final Widget? child;\n-   final VoidCallback? onPressed;\n-   final UIButton2Variant variant;\n-   final UIButton2Size size;"
+        }
+      ]
+    },
+    {
+      "id": "c2f-del-button-copy-1795521496656",
+      "timestamp": "2026-11-24T11:58:15.868Z",
+      "direction": "code-to-figma",
+      "action": "deleted",
+      "slug": "button-copy",
+      "componentName": "ButtonCopy",
+      "pageName": "ButtonCopyPage",
+      "summary": "button-copy: remove from Figma canvas (page \"ButtonCopy\") because it was deleted in local code",
+      "details": [
+        "Remove \"ButtonCopy\" component/frame & page \"ButtonCopy\" from Figma canvas",
+        "Clean up any remaining references in src/components/index.ts & src/app/pages/ButtonCopyPage"
+      ],
+      "files": [
+        {
+          "path": "src/components/button-copy/button-copy.tsx",
+          "ext": "tsx",
+          "action": "deleted",
+          "diff": "- import React from 'react';\n- import type { ButtonCopyProps, ButtonCopyVisualType } from './button-copy.types';\n- const chevronLeft =\n-   'data:image/svg+xml;utf8,%3Csvg%20preserveAspectRatio%3D%22none%22%20overflow%3D%22visible%22%20style%3D%22display%3A%20block%3B%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%20%3Cg%20id%3D%22Icon%2FArrow%2FChevron%20Left%22%3E%20%3Cpath%20id%3D%221%22%20d%3D%22M15.0191%203.5507C15.3119%203.25786%2015.7868%203.25797%2016.0797%203.5507C16.3726%203.84359%2016.3726%204.31835%2016.0797%204.61125L9.55964%2011.1313C9.08289%2011.6082%209.0831%2012.3929%209.55964%2012.87L16.0797%2019.3901C16.3725%2019.6829%2016.3724%2020.1577%2016.0797%2020.4506C15.7868%2020.7435%2015.312%2020.7435%2015.0191%2020.4506L8.49909%2013.9306C7.43677%2012.8677%207.43655%2011.1335%208.49909%2010.0707L15.0191%203.5507Z%22%20fill%3D%22white%22%2F%3E%20%3C%2Fg%3E%20%3C%2Fsvg%3E';\n- const chevronRight =\n-   'data:image/svg+xml;utf8,%3Csvg%20preserveAspectRatio%3D%22none%22%20overflow%3D%22visible%22%20style%3D%22display%3A%20block%3B%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%20%3Cg%20id%3D%22Icon%2FArrow%2FChevron%20Right%22%3E%20%3Cpath%20id%3D%221%22%20d%3D%22M7.92187%203.55078C8.21477%203.25789%208.68953%203.25789%208.98242%203.55078L15.5024%2010.0708C16.5652%2011.1336%2016.565%2012.8677%2015.5024%2013.9307L8.98242%2020.4507C8.68953%2020.7436%208.21477%2020.7436%207.92187%2020.4507C7.6293%2020.1578%207.62909%2019.6829%207.92187%2019.3901L14.4419%2012.8701C14.9187%2012.393%2014.9189%2011.6083%2014.4419%2011.1313L7.92187%204.61133C7.62898%204.31844%207.62898%203.84367%207.92187%203.55078Z%22%20fill%3D%22white%22%2F%3E%20%3C%2Fg%3E%20%3C%2Fsvg%3E';\n- const cx = (...parts: Array<string | false | undefined>) => parts.filter(Boolean).join(' ');\n- const VISUAL_TYPES = new Set<ButtonCopyVisualType>(['default', 'icon', 'gradient', 'white']);\n- const renderIcon = (\n-   icon: boolean | React.ReactNode,"
+        },
+        {
+          "path": "src/components/button-copy/button-copy.types.ts",
+          "ext": "ts",
+          "action": "deleted",
+          "diff": "- import React from 'react';\n- export type ButtonCopySize = 'xsmall' | 'small' | 'medium' | 'large';\n- export type ButtonCopyVariant = 'primary' | 'secondary' | 'tertiary' | 'link';\n- export type ButtonCopyState = 'default' | 'hover' | 'pressed' | 'disabled' | 'focus';\n- export type ButtonCopyVisualType = 'default' | 'icon' | 'gradient' | 'white';\n- export interface ButtonCopyProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'type'> {\n-   children?: React.ReactNode;\n-   size?: ButtonCopySize;\n-   variant?: ButtonCopyVariant;\n-   state?: ButtonCopyState;"
+        },
+        {
+          "path": "src/components/button-copy/button-copy.scss",
+          "ext": "scss",
+          "action": "deleted",
+          "diff": "- @use 'sass:map';\n- $button-sizes: (\n-   large: (\n-     height: var(--button-size-large-height),\n-     padding: var(--button-size-large-padding-x),\n-     radius: var(--button-size-large-radius),\n-     gap: var(--button-size-large-gap),\n-     font-size: var(--button-size-large-font-size),\n-     icon-size: var(--button-size-large-icon-size)\n-   ),"
+        },
+        {
+          "path": "src/components/button-copy/button-copy.dart",
+          "ext": "dart",
+          "action": "deleted",
+          "diff": "- import 'package:flutter/material.dart';\n- enum UIButtonVariant { primary, secondary, tertiary, outlined, link, default, white, gradient, icon }\n- enum UIButtonSize { small, medium, large, xsmall }\n- /// Auto-generated Flutter widget for [Button] from Figma.\n- class UIButtonCopy extends StatelessWidget {\n-   final String label;\n-   final Widget? child;\n-   final VoidCallback? onPressed;\n-   final UIButtonVariant variant;\n-   final UIButtonSize size;"
+        }
+      ]
+    },
+    {
+      "id": "c2f-updated-button-1795521499706",
+      "timestamp": "2026-11-24T11:58:15.868Z",
+      "direction": "code-to-figma",
+      "action": "updated",
+      "slug": "button",
+      "componentName": "Button",
+      "pageName": "ButtonPage",
+      "summary": "button: update medium height (40px → 230px); medium padding (16px → 0px) (+7 more) on Figma canvas",
+      "details": [
+        "medium height (40px → 230px)",
+        "medium padding (16px → 0px)",
+        "medium corner radius (12px → 0px)",
+        "medium gap (0px → 12px)",
+        "small height (36px → 174px)",
+        "small padding (12px → 0px)",
+        "small corner radius (8px → 0px)",
+        "small gap (0px → 8px)",
+        "xsmall gap (0px → 2px)"
+      ],
+      "files": [
+        {
+          "path": "src/components/button/button.md",
+          "ext": "md",
+          "action": "updated",
+          "diff": "+ <!-- Generated by scripts/docs-generator.cjs. Manual edits are overwritten on the next Figma sync. -->\n+ <!-- docs-source: figma -->\n+ # Button\n+ _No description set in Figma._\n+ > Last updated: 2026-11-19T11:53:13.696Z\n+ ## Overview\n+ | Field | Value |\n+ | --- | --- |\n+ | Figma name | Button |\n+ | Node ID | 8024:1408 |\n+ | Node type | COMPONENT_SET |\n+ | Figma page | Button |\n+ | Variants | 320 |\n+ | Code folder | `src/components/button/` |\n+ ## Text elements\n+ | Element | Default text |"
+        },
+        {
+          "path": "src/app/pages/ButtonPage/ButtonPage.tsx",
+          "ext": "tsx",
+          "action": "updated",
+          "diff": "+ import { useEffect, useRef, useState, type ReactNode } from 'react';\n+ import { Button as ButtonComponent } from '../../../components';\n+ import type {\n+   ButtonSize,\n+   ButtonState,\n+   ButtonVariant,\n+   ButtonVisualType\n+ } from '../../../components/button/button.types';\n+ import './ButtonPage.scss';\n+ import { ComponentMarkdownSection } from '../../components/MarkdownView';\n+ import { RecentUpdatesBanner } from '../../components/RecentUpdatesBanner';\n+ import { ProjectOverviewDashboard } from '../../components/ProjectOverviewDashboard';\n+ import type { SyncHistoryEntry, SyncStatus } from '../../hooks/useSyncWebSocket';\n+ const buttonSourceUrl = 'https://github.com/d1hdfc/Some-Components/tree/main/src/components/button';\n+ const installCode = `npm install @d1hdfc/Some-Components@main`;\n+ const importCode = `import { Button } from '@d1hdfc/Some-Components';"
+        }
+      ]
+    },
+    {
+      "id": "sync-tokens-1795516933168",
+      "timestamp": "2026-11-24T10:42:13.027Z",
+      "direction": "figma-to-code",
+      "action": "updated",
+      "slug": "tokens",
+      "componentName": "Design Tokens",
+      "pageName": "semantics.scss",
+      "summary": "tokens: updated --button-size-xsmall-gap (var(--global-scale-0) → var(--layout-spacing-2xs)), --button-size-small-gap (var(--global-scale-0) → var(--layout-spacing-2xs)), --button-size-medium-gap (var(--global-scale-0) → var(--layout-spacing-xs)) (+3 more)",
+      "details": [
+        "--button-size-xsmall-gap (var(--global-scale-0) → var(--layout-spacing-2xs))",
+        "--button-size-small-gap (var(--global-scale-0) → var(--layout-spacing-2xs))",
+        "--button-size-medium-gap (var(--global-scale-0) → var(--layout-spacing-xs))",
+        "--button-size-large-padding-x (var(--layout-spacing-5xl) → var(--layout-spacing-xl))",
+        "--button-size-large-gap (var(--global-scale-0) → var(--layout-spacing-xs))",
+        "--button-primary-background-color-default (var(--global-colors-violet-200) → var(--surface-static-error))"
+      ],
+      "files": [
+        {
+          "path": "src/tokens/variables/semantics.scss",
+          "ext": "scss",
+          "action": "updated",
+          "diff": "+ --button-size-xsmall-gap (var(--global-scale-0) → var(--layout-spacing-2xs))\n+ --button-size-small-gap (var(--global-scale-0) → var(--layout-spacing-2xs))\n+ --button-size-medium-gap (var(--global-scale-0) → var(--layout-spacing-xs))\n+ --button-size-large-padding-x (var(--layout-spacing-5xl) → var(--layout-spacing-xl))\n+ --button-size-large-gap (var(--global-scale-0) → var(--layout-spacing-xs))\n+ --button-primary-background-color-default (var(--global-colors-violet-200) → var(--surface-static-error))"
+        }
+      ]
+    },
+    {
+      "id": "sync-add-button-2-1795516938382",
+      "timestamp": "2026-11-24T10:42:13.027Z",
+      "direction": "figma-to-code",
+      "action": "added",
+      "slug": "button-2",
+      "componentName": "Button2",
+      "pageName": "Button2Page",
+      "summary": "button-2: scaffold 5-file bundle in src/components/button-2/ & register Button2Page in portal sidebar",
+      "details": [
+        "Create src/components/button-2/button-2.tsx, .types.ts, .scss, .dart, .md",
+        "Create src/app/pages/Button2Page/Button2Page.tsx, .ts, .scss & register route #button-2"
+      ],
+      "files": [
+        {
+          "path": "src/components/button-2/button-2.tsx",
+          "ext": "tsx",
+          "action": "added",
+          "diff": "+ // Generated from Figma by scripts/code-generator.cjs.\n+ import React from 'react';\n+ import type { Button2Props } from './button-2.types';\n+ import './button-2.scss';\n+ const cx = (...parts: Array<string | false | undefined>) => parts.filter(Boolean).join(' ');\n+ export const Button2: React.FC<Button2Props> = ({\n+   children = 'Button',\n+   size = 'medium',\n+   variant = 'primary',\n+   disabled = false,\n+   loading = false,\n+   fullWidth = false,\n+   className,\n+   ...rest"
+        },
+        {
+          "path": "src/components/button-2/button-2.types.ts",
+          "ext": "ts",
+          "action": "added",
+          "diff": "+ // Generated from Figma by scripts/code-generator.cjs.\n+ import type React from 'react';\n+ export type Button2Variant = 'primary' | 'secondary' | 'tertiary' | 'link' | 'default' | 'icon' | 'gradient' | 'white';\n+ export type Button2Size = 'large' | 'medium' | 'small' | 'xsmall';\n+ export interface Button2Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {\n+   children?: React.ReactNode;\n+   variant?: Button2Variant;\n+   size?: Button2Size;\n+   disabled?: boolean;\n+   loading?: boolean;\n+   fullWidth?: boolean;\n+   className?: string;\n+ }"
+        },
+        {
+          "path": "src/components/button-2/button-2.scss",
+          "ext": "scss",
+          "action": "added",
+          "diff": "+ @use 'sass:map';\n+ $button-2-sizes: (\n+   small: (\n+     height: var(--button-size-small-height),\n+     padding: var(--button-size-small-padding-x),\n+     radius: var(--button-size-small-radius),\n+     gap: var(--button-size-small-gap),\n+     font-size: var(--button-size-small-font-size),\n+     line-height: var(--font-line-height-paragraph-xsm)\n+   ),\n+   medium: (\n+     height: var(--button-size-medium-height),\n+     padding: var(--button-size-medium-padding-x),\n+     radius: var(--button-size-medium-radius),"
+        },
+        {
+          "path": "src/components/button-2/button-2.dart",
+          "ext": "dart",
+          "action": "added",
+          "diff": "+ import 'package:flutter/material.dart';\n+ enum UIButton2Variant { primary, secondary, tertiary, link, default, icon, gradient, white }\n+ enum UIButton2Size { large, medium, small, xsmall }\n+ /// Auto-generated Flutter widget for [Button2] from Figma.\n+ class UIButton2 extends StatelessWidget {\n+   final String label;\n+   final Widget? child;\n+   final VoidCallback? onPressed;\n+   final UIButton2Variant variant;\n+   final UIButton2Size size;\n+   final bool isDisabled;\n+   final bool isLoading;\n+   final bool isFullWidth;\n+   final Widget? leadingIcon;"
+        },
+        {
+          "path": "src/components/button-2/button-2.md",
+          "ext": "md",
+          "action": "added",
+          "diff": "+ <!-- Generated by scripts/docs-generator.cjs. Manual edits are overwritten on the next Figma sync. -->\n+ <!-- docs-source: figma -->\n+ # Button2\n+ _No description set in Figma._\n+ > Last updated: 2026-11-24T10:42:13.239Z\n+ ## Overview\n+ | Field | Value |\n+ | --- | --- |\n+ | Figma name | Button 2 |\n+ | Node ID | 8115:4517 |\n+ | Node type | COMPONENT_SET |\n+ | Figma page | Button 2 |\n+ | Variants | 320 |\n+ | Code folder | `src/components/button-2/` |"
+        },
+        {
+          "path": "src/app/pages/Button2Page/Button2Page.tsx",
+          "ext": "tsx",
+          "action": "added",
+          "diff": "+ // Generated by scripts/code-generator.cjs.\n+ import { componentDocumentation } from '../ComponentPage/componentRegistry';\n+ import { ComponentPage } from '../ComponentPage/ComponentPage';\n+ import './Button2Page.scss';\n+ export const componentSlug = \"button-2\";\n+ export function Button2Page() {\n+   const component = componentDocumentation.find((entry) => entry.slug === componentSlug);\n+   return component ? <ComponentPage component={component} /> : null;\n+ }\n+ export default Button2Page;"
+        }
+      ]
+    },
+    {
+      "id": "sync-upd-input-area-1795516939830",
+      "timestamp": "2026-11-24T10:42:13.027Z",
+      "direction": "figma-to-code",
+      "action": "updated",
+      "slug": "input-area",
+      "componentName": "InputArea",
+      "pageName": "InputAreaPage",
+      "summary": "input-area: updated small height (36px → 174px); small horizontal padding (12px → 0px) (+6 more)",
+      "details": [
+        "small height (36px → 174px)",
+        "small horizontal padding (12px → 0px)",
+        "small corner radius (8px → 0px)",
+        "small gap (0px → 8px)",
+        "medium height (40px → 230px)",
+        "medium horizontal padding (16px → 0px)",
+        "medium corner radius (12px → 0px)",
+        "medium gap (0px → 12px)"
+      ],
+      "files": []
+    },
+    {
+      "id": "sync-tokens-1795515934471",
+      "timestamp": "2026-11-24T10:25:34.227Z",
+      "direction": "figma-to-code",
+      "action": "updated",
+      "slug": "tokens",
+      "componentName": "Design Tokens",
+      "pageName": "semantics.scss",
+      "summary": "tokens: updated --button-size-small-height (var(--global-scale-2175) → var(--layout-size-4xl)), --button-size-medium-height (var(--global-scale-2875) → var(--layout-size-5xl)), --button-size-small-padding-x (var(--global-scale-0) → var(--layout-spacing-md)) (+8 more)",
+      "details": [
+        "--button-size-small-height (var(--global-scale-2175) → var(--layout-size-4xl))",
+        "--button-size-medium-height (var(--global-scale-2875) → var(--layout-size-5xl))",
+        "--button-size-small-padding-x (var(--global-scale-0) → var(--layout-spacing-md))",
+        "--button-size-small-radius (var(--layout-radius-3xs) → var(--layout-radius-sm))",
+        "--button-size-small-gap (var(--layout-spacing-sm) → var(--layout-spacing-2xs))",
+        "--button-size-medium-padding-x (var(--global-scale-0) → var(--layout-spacing-lg))",
+        "--button-size-medium-radius (var(--layout-radius-3xs) → var(--layout-radius-md))",
+        "--button-size-medium-gap (var(--layout-spacing-md) → var(--layout-spacing-xs))",
+        "--button-size-large-padding-x (var(--layout-spacing-5xl) → var(--layout-spacing-xl))",
+        "--button-size-large-gap (var(--global-scale-0) → var(--layout-spacing-xs))",
+        "--button-primary-background-color-default (var(--global-colors-violet-200) → var(--surface-static-error))"
+      ],
+      "files": [
+        {
+          "path": "src/tokens/variables/semantics.scss",
+          "ext": "scss",
+          "action": "updated",
+          "diff": "+ --button-size-small-height (var(--global-scale-2175) → var(--layout-size-4xl))\n+ --button-size-medium-height (var(--global-scale-2875) → var(--layout-size-5xl))\n+ --button-size-small-padding-x (var(--global-scale-0) → var(--layout-spacing-md))\n+ --button-size-small-radius (var(--layout-radius-3xs) → var(--layout-radius-sm))\n+ --button-size-small-gap (var(--layout-spacing-sm) → var(--layout-spacing-2xs))\n+ --button-size-medium-padding-x (var(--global-scale-0) → var(--layout-spacing-lg))\n+ --button-size-medium-radius (var(--layout-radius-3xs) → var(--layout-radius-md))\n+ --button-size-medium-gap (var(--layout-spacing-md) → var(--layout-spacing-xs))\n+ --button-size-large-padding-x (var(--layout-spacing-5xl) → var(--layout-spacing-xl))\n+ --button-size-large-gap (var(--global-scale-0) → var(--layout-spacing-xs))"
+        }
+      ]
+    },
+    {
+      "id": "sync-upd-button-1795515939653",
+      "timestamp": "2026-11-24T10:25:34.227Z",
+      "direction": "figma-to-code",
+      "action": "updated",
+      "slug": "button",
+      "componentName": "Button",
+      "pageName": "ButtonPage",
+      "summary": "button: updated medium height (230px → 40px); medium horizontal padding (0px → 16px) (+7 more)",
+      "details": [
+        "medium height (230px → 40px)",
+        "medium horizontal padding (0px → 16px)",
+        "medium corner radius (0px → 12px)",
+        "medium gap (12px → 0px)",
+        "small height (174px → 36px)",
+        "small horizontal padding (0px → 12px)",
+        "small corner radius (0px → 8px)",
+        "small gap (8px → 0px)",
+        "xsmall gap (2px → 0px)",
+        "large horizontal padding (20px → 40px)",
+        "large gap (4px → 0px)",
+        "primary background color (#D61C53 → #C7B9FF)",
+        "medium gap (4px → 0px)",
+        "small gap (2px → 0px)"
+      ],
+      "files": []
+    },
+    {
+      "id": "sync-del-button-2-1795515940469",
+      "timestamp": "2026-11-24T10:25:34.227Z",
+      "direction": "figma-to-code",
+      "action": "deleted",
+      "slug": "button-2",
+      "componentName": "Button2",
+      "pageName": "Button2Page",
+      "summary": "button-2: remove src/components/button-2/ & Button2Page because it was deleted in Figma",
+      "details": [
+        "Removed folder src/components/button-2/ and cleaned export in src/components/index.ts",
+        "Removed portal page src/app/pages/Button2Page/"
+      ],
+      "files": [
+        {
+          "path": "src/components/button-2/button-2.tsx",
+          "ext": "tsx",
+          "action": "deleted",
+          "diff": "- // Generated from Figma by scripts/code-generator.cjs.\n- import React from 'react';\n- import type { Button2Props } from './button-2.types';\n- import './button-2.scss';\n- const cx = (...parts: Array<string | false | undefined>) => parts.filter(Boolean).join(' ');\n- export const Button2: React.FC<Button2Props> = ({\n-   children = 'Button',\n-   size = 'medium',\n-   variant = 'primary',\n-   disabled = false,\n-   loading = false,\n-   fullWidth = false,\n-   className,\n-   ...rest"
+        },
+        {
+          "path": "src/components/button-2/button-2.types.ts",
+          "ext": "ts",
+          "action": "deleted",
+          "diff": "- // Generated from Figma by scripts/code-generator.cjs.\n- import type React from 'react';\n- export type Button2Variant = 'primary' | 'secondary' | 'tertiary' | 'link' | 'default' | 'icon' | 'gradient' | 'white';\n- export type Button2Size = 'large' | 'medium' | 'small' | 'xsmall';\n- export interface Button2Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {\n-   children?: React.ReactNode;\n-   variant?: Button2Variant;\n-   size?: Button2Size;\n-   disabled?: boolean;\n-   loading?: boolean;\n-   fullWidth?: boolean;\n-   className?: string;\n- }"
+        },
+        {
+          "path": "src/components/button-2/button-2.scss",
+          "ext": "scss",
+          "action": "deleted",
+          "diff": "- @use 'sass:map';\n- $button-2-sizes: (\n-   small: (\n-     height: var(--button-size-small-height),\n-     padding: var(--button-size-small-padding-x),\n-     radius: var(--button-size-small-radius),\n-     gap: var(--button-size-small-gap),\n-     font-size: var(--button-size-small-font-size),\n-     line-height: var(--font-line-height-paragraph-xsm)\n-   ),\n-   medium: (\n-     height: var(--button-size-medium-height),\n-     padding: var(--button-size-medium-padding-x),\n-     radius: var(--button-size-medium-radius),"
+        },
+        {
+          "path": "src/components/button-2/button-2.dart",
+          "ext": "dart",
+          "action": "deleted",
+          "diff": "- import 'package:flutter/material.dart';\n- enum UIButton2Variant { primary, secondary, tertiary, link, default, icon, gradient, white }\n- enum UIButton2Size { large, medium, small, xsmall }\n- /// Auto-generated Flutter widget for [Button2] from Figma.\n- class UIButton2 extends StatelessWidget {\n-   final String label;\n-   final Widget? child;\n-   final VoidCallback? onPressed;\n-   final UIButton2Variant variant;\n-   final UIButton2Size size;\n-   final bool isDisabled;\n-   final bool isLoading;\n-   final bool isFullWidth;\n-   final Widget? leadingIcon;"
+        },
+        {
+          "path": "src/components/button-2/button-2.md",
+          "ext": "md",
+          "action": "deleted",
+          "diff": "- <!-- Generated by scripts/docs-generator.cjs. Manual edits are overwritten on the next Figma sync. -->\n- <!-- docs-source: figma -->\n- # Button2\n- _No description set in Figma._\n- > Last updated: 2026-11-24T10:19:50.519Z\n- ## Overview\n- | Field | Value |\n- | --- | --- |\n- | Figma name | Button 2 |\n- | Node ID | 8111:1334 |\n- | Node type | COMPONENT_SET |\n- | Figma page | Button 2 |\n- | Variants | 320 |\n- | Code folder | `src/components/button-2/` |"
+        },
+        {
+          "path": "src/app/pages/Button2Page/Button2Page.tsx",
+          "ext": "tsx",
+          "action": "deleted",
+          "diff": "- // Generated by scripts/code-generator.cjs.\n- import { componentDocumentation } from '../ComponentPage/componentRegistry';\n- import { ComponentPage } from '../ComponentPage/ComponentPage';\n- import './Button2Page.scss';\n- export const componentSlug = \"button-2\";\n- export function Button2Page() {\n-   const component = componentDocumentation.find((entry) => entry.slug === componentSlug);\n-   return component ? <ComponentPage component={component} /> : null;\n- }\n- export default Button2Page;"
+        }
+      ]
+    },
+    {
+      "id": "sync-tokens-1795515590367",
+      "timestamp": "2026-11-24T10:19:49.961Z",
+      "direction": "figma-to-code",
+      "action": "updated",
+      "slug": "tokens",
+      "componentName": "Design Tokens",
+      "pageName": "semantics.scss",
+      "summary": "tokens: updated --button-size-xsmall-gap (var(--global-scale-0) → var(--layout-spacing-2xs)), --button-size-small-gap (var(--global-scale-0) → var(--layout-spacing-2xs)), --button-size-medium-gap (var(--global-scale-0) → var(--layout-spacing-xs)) (+3 more)",
+      "details": [
+        "--button-size-xsmall-gap (var(--global-scale-0) → var(--layout-spacing-2xs))",
+        "--button-size-small-gap (var(--global-scale-0) → var(--layout-spacing-2xs))",
+        "--button-size-medium-gap (var(--global-scale-0) → var(--layout-spacing-xs))",
+        "--button-size-large-padding-x (var(--layout-spacing-5xl) → var(--layout-spacing-xl))",
+        "--button-size-large-gap (var(--global-scale-0) → var(--layout-spacing-xs))",
+        "--button-primary-background-color-default (var(--global-colors-violet-200) → var(--surface-static-error))"
+      ],
+      "files": [
+        {
+          "path": "src/tokens/variables/semantics.scss",
+          "ext": "scss",
+          "action": "updated",
+          "diff": "+ --button-size-xsmall-gap (var(--global-scale-0) → var(--layout-spacing-2xs))\n+ --button-size-small-gap (var(--global-scale-0) → var(--layout-spacing-2xs))\n+ --button-size-medium-gap (var(--global-scale-0) → var(--layout-spacing-xs))\n+ --button-size-large-padding-x (var(--layout-spacing-5xl) → var(--layout-spacing-xl))\n+ --button-size-large-gap (var(--global-scale-0) → var(--layout-spacing-xs))\n+ --button-primary-background-color-default (var(--global-colors-violet-200) → var(--surface-static-error))"
+        }
+      ]
+    },
+    {
+      "id": "sync-add-button-2-1795515596042",
+      "timestamp": "2026-11-24T10:19:49.961Z",
+      "direction": "figma-to-code",
+      "action": "added",
+      "slug": "button-2",
+      "componentName": "Button2",
+      "pageName": "Button2Page",
+      "summary": "button-2: scaffold 5-file bundle in src/components/button-2/ & register Button2Page in portal sidebar",
+      "details": [
+        "Create src/components/button-2/button-2.tsx, .types.ts, .scss, .dart, .md",
+        "Create src/app/pages/Button2Page/Button2Page.tsx, .ts, .scss & register route #button-2"
+      ],
+      "files": [
+        {
+          "path": "src/components/button-2/button-2.tsx",
+          "ext": "tsx",
+          "action": "added",
+          "diff": "+ // Generated from Figma by scripts/code-generator.cjs.\n+ import React from 'react';\n+ import type { Button2Props } from './button-2.types';\n+ import './button-2.scss';\n+ const cx = (...parts: Array<string | false | undefined>) => parts.filter(Boolean).join(' ');\n+ export const Button2: React.FC<Button2Props> = ({\n+   children = 'Button',\n+   size = 'medium',\n+   variant = 'primary',\n+   disabled = false,\n+   loading = false,\n+   fullWidth = false,\n+   className,\n+   ...rest"
+        },
+        {
+          "path": "src/components/button-2/button-2.types.ts",
+          "ext": "ts",
+          "action": "added",
+          "diff": "+ // Generated from Figma by scripts/code-generator.cjs.\n+ import type React from 'react';\n+ export type Button2Variant = 'primary' | 'secondary' | 'tertiary' | 'link' | 'default' | 'icon' | 'gradient' | 'white';\n+ export type Button2Size = 'large' | 'medium' | 'small' | 'xsmall';\n+ export interface Button2Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {\n+   children?: React.ReactNode;\n+   variant?: Button2Variant;\n+   size?: Button2Size;\n+   disabled?: boolean;\n+   loading?: boolean;\n+   fullWidth?: boolean;\n+   className?: string;\n+ }"
+        },
+        {
+          "path": "src/components/button-2/button-2.scss",
+          "ext": "scss",
+          "action": "added",
+          "diff": "+ @use 'sass:map';\n+ $button-2-sizes: (\n+   small: (\n+     height: var(--button-size-small-height),\n+     padding: var(--button-size-small-padding-x),\n+     radius: var(--button-size-small-radius),\n+     gap: var(--button-size-small-gap),\n+     font-size: var(--button-size-small-font-size),\n+     line-height: var(--font-line-height-paragraph-xsm)\n+   ),\n+   medium: (\n+     height: var(--button-size-medium-height),\n+     padding: var(--button-size-medium-padding-x),\n+     radius: var(--button-size-medium-radius),"
+        },
+        {
+          "path": "src/components/button-2/button-2.dart",
+          "ext": "dart",
+          "action": "added",
+          "diff": "+ import 'package:flutter/material.dart';\n+ enum UIButton2Variant { primary, secondary, tertiary, link, default, icon, gradient, white }\n+ enum UIButton2Size { large, medium, small, xsmall }\n+ /// Auto-generated Flutter widget for [Button2] from Figma.\n+ class UIButton2 extends StatelessWidget {\n+   final String label;\n+   final Widget? child;\n+   final VoidCallback? onPressed;\n+   final UIButton2Variant variant;\n+   final UIButton2Size size;\n+   final bool isDisabled;\n+   final bool isLoading;\n+   final bool isFullWidth;\n+   final Widget? leadingIcon;"
+        },
+        {
+          "path": "src/components/button-2/button-2.md",
+          "ext": "md",
+          "action": "added",
+          "diff": "+ <!-- Generated by scripts/docs-generator.cjs. Manual edits are overwritten on the next Figma sync. -->\n+ <!-- docs-source: figma -->\n+ # Button2\n+ _No description set in Figma._\n+ > Last updated: 2026-11-24T10:19:50.519Z\n+ ## Overview\n+ | Field | Value |\n+ | --- | --- |\n+ | Figma name | Button 2 |\n+ | Node ID | 8111:1334 |\n+ | Node type | COMPONENT_SET |\n+ | Figma page | Button 2 |\n+ | Variants | 320 |\n+ | Code folder | `src/components/button-2/` |"
+        },
+        {
+          "path": "src/app/pages/Button2Page/Button2Page.tsx",
+          "ext": "tsx",
+          "action": "added",
+          "diff": "+ // Generated by scripts/code-generator.cjs.\n+ import { componentDocumentation } from '../ComponentPage/componentRegistry';\n+ import { ComponentPage } from '../ComponentPage/ComponentPage';\n+ import './Button2Page.scss';\n+ export const componentSlug = \"button-2\";\n+ export function Button2Page() {\n+   const component = componentDocumentation.find((entry) => entry.slug === componentSlug);\n+   return component ? <ComponentPage component={component} /> : null;\n+ }\n+ export default Button2Page;"
+        }
+      ]
+    },
+    {
+      "id": "sync-upd-input-area-1795515598229",
+      "timestamp": "2026-11-24T10:19:49.961Z",
+      "direction": "figma-to-code",
+      "action": "updated",
+      "slug": "input-area",
+      "componentName": "InputArea",
+      "pageName": "InputAreaPage",
+      "summary": "input-area: updated small height (36px → 174px); small horizontal padding (12px → 0px) (+6 more)",
+      "details": [
+        "small height (36px → 174px)",
+        "small horizontal padding (12px → 0px)",
+        "small corner radius (8px → 0px)",
+        "small gap (0px → 8px)",
+        "medium height (40px → 230px)",
+        "medium horizontal padding (16px → 0px)",
+        "medium corner radius (12px → 0px)",
+        "medium gap (0px → 12px)"
+      ],
+      "files": [
+        {
+          "path": "src/components/input-area/input-area.md",
+          "ext": "md",
+          "action": "updated",
+          "diff": "- > [!NOTE]\n- > **Nothing to change** — first Figma sync captured the baseline snapshot (2026-11-19T09:12:47.802Z).\n+ > [!TIP]\n+ > **Nothing changed** — the latest Figma sync matches the previous snapshot."
+        }
+      ]
+    },
     {
       "id": "c2f-added-button-copy-1795505492790",
       "timestamp": "2026-11-24T07:31:32.131Z",

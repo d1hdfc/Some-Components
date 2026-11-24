@@ -5,7 +5,7 @@
 
 _No description set in Figma._
 
-> Last updated: 2026-11-19T09:12:47.839Z
+> Last updated: 2026-11-24T10:19:58.210Z
 
 ## Overview
 
@@ -95,8 +95,8 @@ UIInputArea()
 
 ## Figma Changelog & Diff Status
 
-> [!NOTE]
-> **Nothing to change** — first Figma sync captured the baseline snapshot (2026-11-19T09:12:47.802Z).
+> [!TIP]
+> **Nothing changed** — the latest Figma sync matches the previous snapshot.
 
 ## Code files
 
