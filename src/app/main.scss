@@ -6,47 +6,47 @@
   --portal-font-sans: var(--font-family-inter, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
   --portal-font-mono: var(--font-family-mono, 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace);
 
-  /* Surface & Canvas Color Tokens wired to src/tokens/variables/primitives.scss & alias.scss */
-  --portal-bg: var(--surface-slate-lighter, #F9FAFF);
-  --portal-surface: var(--surface-root-light, #FFFFFF);
-  --portal-surface-elevated: var(--surface-root-light, #FFFFFF);
-  --portal-surface-subtle: var(--surface-primary-lighter, #F3F6FD);
-  --portal-surface-hover: var(--global-colors-blue-50, #F3F6FD);
+  /* Surface & Canvas Color Tokens matching reference UI screenshots */
+  --portal-bg: #F8FAFC;
+  --portal-surface: #FFFFFF;
+  --portal-surface-elevated: #FFFFFF;
+  --portal-surface-subtle: #F1F5F9;
+  --portal-surface-hover: #EEF2FF;
 
   /* Border Tokens */
-  --portal-border: var(--global-colors-slate-100, #E5E8F0);
-  --portal-border-strong: var(--global-colors-blue-200, #9CB4F7);
+  --portal-border: #E2E8F0;
+  --portal-border-strong: #CBD5E1;
 
   /* Text Hierarchy Tokens */
-  --portal-text: var(--global-colors-slate-900, #10182D);
-  --portal-text-secondary: var(--global-colors-slate-600, #3E4457);
-  --portal-text-muted: var(--global-colors-slate-500, #5C6172);
+  --portal-text: #0F172A;
+  --portal-text-secondary: #475569;
+  --portal-text-muted: #94A3B8;
 
   /* Brand & Interactive Button Accent Tokens */
-  --portal-accent: var(--surface-primary-base, #1C3FCA);
-  --portal-accent-hover: var(--surface-primary-on-light, #1F30AD);
-  --portal-accent-pressed: var(--surface-primary-dark, #112266);
-  --portal-accent-soft: var(--global-colors-blue-100, #E1E9FE);
-  --portal-accent-ring: rgba(28, 63, 202, 0.2);
-  --portal-navy: var(--global-colors-blue-700, #112266);
-  --portal-navy-hover: var(--global-colors-blue-800, #162150);
+  --portal-accent: #2546F0;
+  --portal-accent-hover: #1D3AE0;
+  --portal-accent-pressed: #172FB8;
+  --portal-accent-soft: #EEF2FF;
+  --portal-accent-ring: rgba(37, 70, 240, 0.18);
+  --portal-navy: #0F172A;
+  --portal-navy-hover: #1E293B;
 
   /* Semantic Status Tokens */
-  --portal-success: var(--surface-success-base, #00815A);
-  --portal-success-soft: var(--surface-success-lighter, #EFFAF2);
-  --portal-violet: var(--surface-accent-violet-base, #7454F2);
-  --portal-violet-soft: var(--surface-accent-violet-lighter, #F4F0FF);
-  --portal-warning: var(--global-colors-orange-400, #DE7313);
-  --portal-warning-soft: var(--surface-warning-lighter, #FEFAEC);
-  --portal-danger: var(--surface-error-base, #D61C53);
-  --portal-danger-soft: var(--surface-error-lighter, #FDF1F4);
+  --portal-success: #059669;
+  --portal-success-soft: #ECFDF5;
+  --portal-violet: #7C3AED;
+  --portal-violet-soft: #F3E8FF;
+  --portal-warning: #D97706;
+  --portal-warning-soft: #FEF3C7;
+  --portal-danger: #DC2626;
+  --portal-danger-soft: #FEF2F2;
 
   /* Elevation & Radius */
-  --portal-radius-sm: var(--layout-radius-xs, 6px);
-  --portal-radius-md: var(--layout-radius-sm, 8px);
-  --portal-radius-lg: var(--layout-radius-md, 12px);
-  --portal-shadow: 0 1px 3px rgba(16, 24, 45, 0.04), 0 4px 12px rgba(28, 63, 202, 0.04);
-  --portal-shadow-hover: 0 4px 16px rgba(28, 63, 202, 0.09);
+  --portal-radius-sm: 6px;
+  --portal-radius-md: 8px;
+  --portal-radius-lg: 14px;
+  --portal-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+  --portal-shadow-hover: 0 4px 12px rgba(15, 23, 42, 0.06);
 }
 
 [data-theme='dark'] {
@@ -121,61 +121,17 @@ select {
 
 .docs-layout {
   display: grid;
-  grid-template-columns: 268px minmax(0, 1fr) 196px;
+  grid-template-columns: 260px minmax(0, 1fr);
   align-items: start;
   min-height: calc(100vh - 58px);
 }
 
 .docs-content {
-  padding-bottom: 84px !important;
+  width: 100%;
+  max-width: 100% !important;
+  padding: 24px 32px 84px !important;
   color: var(--portal-text);
   font-family: var(--portal-font-sans);
-}
-
-.docs-toc {
-  position: sticky;
-  top: 82px;
-  max-height: calc(100vh - 96px);
-  overflow-y: auto;
-  margin-top: 38px;
-  padding: 0 20px 20px 0;
-
-  h2 {
-    margin: 0 0 12px;
-    color: var(--portal-text);
-    font-size: 11.5px;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
-
-  nav {
-    display: grid;
-    gap: 3px;
-    border-left: 1px solid var(--portal-border);
-  }
-
-  a {
-    border-left: 2px solid transparent;
-    margin-left: -1px;
-    padding: 6px 0 6px 12px;
-    color: var(--portal-text-muted);
-    font-size: 12.5px;
-    font-weight: 500;
-    line-height: 1.4;
-    text-decoration: none;
-    transition: color 0.14s ease, border-color 0.14s ease;
-  }
-
-  a:hover {
-    color: var(--portal-accent);
-    border-left-color: var(--portal-accent);
-  }
-
-  .docs-toc-nested {
-    padding-left: 22px;
-    font-size: 12px;
-  }
 }
 
 /* Global Dark Mode Surfaces for Docs Pages & Cards */

@@ -37,35 +37,25 @@ function renderCategoryIcon(cat: string) {
   switch (cat) {
     case 'Form Controls':
       return (
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <rect x="3" y="5" width="18" height="14" rx="2" />
-          <line x1="7" y1="12" x2="17" y2="12" />
-        </svg>
-      );
-    case 'Indicators':
-      return (
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <circle cx="12" cy="12" r="9" />
-          <polyline points="12 7 12 12 15 15" />
-        </svg>
-      );
-    case 'Navigation':
-      return (
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <polygon points="3 11 22 2 13 21 11 13 3 11" />
-        </svg>
-      );
-    case 'Overlays':
-      return (
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <rect x="2" y="4" width="20" height="16" rx="2" />
-          <line x1="2" y1="10" x2="22" y2="10" />
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="4" y1="21" x2="4" y2="14" />
+          <line x1="4" y1="10" x2="4" y2="3" />
+          <line x1="12" y1="21" x2="12" y2="12" />
+          <line x1="12" y1="8" x2="12" y2="3" />
+          <line x1="20" y1="21" x2="20" y2="16" />
+          <line x1="20" y1="12" x2="20" y2="3" />
+          <line x1="1" y1="14" x2="7" y2="14" />
+          <line x1="9" y1="8" x2="15" y2="8" />
+          <line x1="17" y1="16" x2="23" y2="16" />
         </svg>
       );
     default:
       return (
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="3" width="7" height="7" rx="1" />
+          <rect x="14" y="3" width="7" height="7" rx="1" />
+          <rect x="14" y="14" width="7" height="7" rx="1" />
+          <rect x="3" y="14" width="7" height="7" rx="1" />
         </svg>
       );
   }
@@ -97,7 +87,7 @@ interface SidebarPageProps {
   updatesCount?: number;
 }
 
-export function SidebarPage({ currentPage, syncStatus, updatesCount = 0 }: SidebarPageProps) {
+export function SidebarPage({ currentPage, updatesCount = 0 }: SidebarPageProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [collapsed, setCollapsed] = useState<Record<string, boolean>>({});
   const searchRef = useRef<HTMLInputElement>(null);
@@ -148,7 +138,7 @@ export function SidebarPage({ currentPage, syncStatus, updatesCount = 0 }: Sideb
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            strokeWidth="2.2"
+            strokeWidth="2"
           >
             <circle cx="11" cy="11" r="8" />
             <line x1="21" y1="21" x2="16.65" y2="16.65" />
@@ -173,15 +163,13 @@ export function SidebarPage({ currentPage, syncStatus, updatesCount = 0 }: Sideb
           className={`docs-nav-overview-item${currentPage === 'button' ? ' docs-nav-active' : ''}`}
         >
           <span className="docs-nav-link-inner">
-            <span className="docs-nav-icon-box docs-nav-icon-box--indigo">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.1">
-                <rect x="3" y="3" width="7" height="7" rx="1.5" />
-                <rect x="14" y="3" width="7" height="7" rx="1.5" />
-                <rect x="14" y="14" width="7" height="7" rx="1.5" />
-                <rect x="3" y="14" width="7" height="7" rx="1.5" />
-              </svg>
-            </span>
-            <span>Dashboard &amp; Overview</span>
+            <svg className="docs-nav-inline-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="3" y="3" width="7" height="7" rx="1.5" />
+              <rect x="14" y="3" width="7" height="7" rx="1.5" />
+              <rect x="14" y="14" width="7" height="7" rx="1.5" />
+              <rect x="3" y="14" width="7" height="7" rx="1.5" />
+            </svg>
+            <span>Dashboard Overview</span>
           </span>
         </a>
 
@@ -190,16 +178,15 @@ export function SidebarPage({ currentPage, syncStatus, updatesCount = 0 }: Sideb
           className={`docs-nav-overview-item${currentPage === 'updated-code' ? ' docs-nav-active' : ''}`}
         >
           <span className="docs-nav-link-inner">
-            <span className="docs-nav-icon-box docs-nav-icon-box--blue">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.1">
-                <polyline points="16 18 22 12 16 6" />
-                <polyline points="8 6 2 12 8 18" />
-              </svg>
-            </span>
+            <svg className="docs-nav-inline-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+              <line x1="14" y1="4" x2="10" y2="20" />
+            </svg>
             <span>Updated Code &amp; Diffs</span>
           </span>
           {updatesCount > 0 && (
-            <span className="docs-nav-count docs-nav-count--accent">{updatesCount}</span>
+            <span className="docs-nav-count docs-nav-count--blue">{updatesCount}</span>
           )}
         </a>
 
@@ -208,18 +195,16 @@ export function SidebarPage({ currentPage, syncStatus, updatesCount = 0 }: Sideb
           className={`docs-nav-overview-item${currentPage === 'installation' ? ' docs-nav-active' : ''}`}
         >
           <span className="docs-nav-link-inner">
-            <span className="docs-nav-icon-box docs-nav-icon-box--emerald">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.1">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                <polyline points="7 10 12 15 17 10" />
-                <line x1="12" y1="15" x2="12" y2="3" />
-              </svg>
-            </span>
+            <svg className="docs-nav-inline-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="13.5" cy="6.5" r=".5" fill="currentColor" />
+              <circle cx="17.5" cy="10.5" r=".5" fill="currentColor" />
+              <circle cx="8.5" cy="7.5" r=".5" fill="currentColor" />
+              <circle cx="6.5" cy="12.5" r=".5" fill="currentColor" />
+              <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z" />
+            </svg>
             <span>Installation &amp; Tokens</span>
           </span>
         </a>
-
-        <div className="docs-nav-divider" />
 
         {isSearching ? (
           <>
@@ -231,14 +216,14 @@ export function SidebarPage({ currentPage, syncStatus, updatesCount = 0 }: Sideb
                 <a
                   key={c.slug}
                   href={`#${c.slug}`}
-                  className={`docs-nav-comp-item${currentPage === c.slug ? ' docs-nav-active' : ''}`}
+                  className={`docs-nav-comp-item${currentPage === c.slug ? ' docs-nav-comp-active' : ''}`}
                   aria-current={currentPage === c.slug ? 'page' : undefined}
                 >
                   <span className="docs-nav-link-inner">
                     <span className="docs-nav-comp-dot" />
                     <span className="docs-nav-comp-name">{c.name}</span>
                   </span>
-                  <code className="docs-nav-page-tag">{c.pageTag}</code>
+                  <span className="docs-nav-page-tag">{c.pageTag}</span>
                 </a>
               ))
             )}
@@ -258,7 +243,19 @@ export function SidebarPage({ currentPage, syncStatus, updatesCount = 0 }: Sideb
                 </span>
                 <span className="docs-nav-category-meta">
                   <span className="docs-nav-count">{items.length}</span>
-                  <span className="docs-nav-chevron">{collapsed[cat] ? '›' : '⌄'}</span>
+                  <svg
+                    className={`docs-nav-chevron${collapsed[cat] ? ' docs-nav-chevron--collapsed' : ''}`}
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
                 </span>
               </button>
               {!collapsed[cat] && (
@@ -267,14 +264,14 @@ export function SidebarPage({ currentPage, syncStatus, updatesCount = 0 }: Sideb
                     <a
                       key={c.slug}
                       href={`#${c.slug}`}
-                      className={`docs-nav-comp-item${currentPage === c.slug ? ' docs-nav-active' : ''}`}
+                      className={`docs-nav-comp-item${currentPage === c.slug ? ' docs-nav-comp-active' : ''}`}
                       aria-current={currentPage === c.slug ? 'page' : undefined}
                     >
                       <span className="docs-nav-link-inner">
                         <span className="docs-nav-comp-dot" />
                         <span className="docs-nav-comp-name">{c.name}</span>
                       </span>
-                      <code className="docs-nav-page-tag">{c.pageTag}</code>
+                      <span className="docs-nav-page-tag">{c.pageTag}</span>
                     </a>
                   ))}
                 </div>
@@ -283,21 +280,6 @@ export function SidebarPage({ currentPage, syncStatus, updatesCount = 0 }: Sideb
           ))
         )}
       </nav>
-
-      {/* Bottom Workspace Card */}
-      <div className="docs-sidebar-footer">
-        <span className="docs-sidebar-footer-mark">H</span>
-        <div className="docs-sidebar-footer-info">
-          <strong>Some Components</strong>
-          <small>
-            {allLinks.length} component{allLinks.length === 1 ? '' : 's'} · {allLinks.length + 2} pages
-          </small>
-        </div>
-        <span
-          className={`docs-sidebar-sync-dot docs-sidebar-sync-dot--${syncStatus}`}
-          title={`WebSocket Bridge: ${syncStatus}`}
-        />
-      </div>
     </aside>
   );
 }

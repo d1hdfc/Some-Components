@@ -228,10 +228,6 @@ font-size: var(${fontSizeTokenName}, ${computedMetrics.fontSize});`;
 
   return (
     <main className="docs-content" id="button">
-      <div className="docs-breadcrumbs">
-        <a href="#components">Dashboard</a><span>/</span><strong>Button</strong>
-      </div>
-
       <ProjectOverviewDashboard
         syncStatus={syncStatus}
         historyEntries={historyEntries}
