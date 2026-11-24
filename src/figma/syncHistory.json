@@ -1,6 +1,72 @@
 {
-  "lastUpdated": "2026-11-19T09:12:50.076Z",
+  "lastUpdated": "2026-11-19T11:53:14.138Z",
   "entries": [
+    {
+      "id": "sync-tokens-1795089187332",
+      "timestamp": "2026-11-19T11:53:07.125Z",
+      "direction": "figma-to-code",
+      "action": "updated",
+      "slug": "tokens",
+      "componentName": "Design Tokens",
+      "pageName": "semantics.scss",
+      "summary": "tokens: updated --button-size-small-height (var(--global-scale-2175) → var(--layout-size-4xl)), --button-size-medium-height (var(--global-scale-2875) → var(--layout-size-5xl)), --button-size-xsmall-gap (var(--global-scale-0) → var(--layout-spacing-2xs)) (+9 more)",
+      "details": [
+        "--button-size-small-height (var(--global-scale-2175) → var(--layout-size-4xl))",
+        "--button-size-medium-height (var(--global-scale-2875) → var(--layout-size-5xl))",
+        "--button-size-xsmall-gap (var(--global-scale-0) → var(--layout-spacing-2xs))",
+        "--button-size-small-padding-x (var(--global-scale-0) → var(--layout-spacing-md))",
+        "--button-size-small-radius (var(--layout-radius-3xs) → var(--layout-radius-sm))",
+        "--button-size-small-gap (var(--layout-spacing-sm) → var(--layout-spacing-2xs))",
+        "--button-size-medium-padding-x (var(--global-scale-0) → var(--layout-spacing-lg))",
+        "--button-size-medium-radius (var(--layout-radius-3xs) → var(--layout-radius-md))",
+        "--button-size-medium-gap (var(--layout-spacing-md) → var(--layout-spacing-xs))",
+        "--button-size-large-padding-x (var(--layout-spacing-5xl) → var(--layout-spacing-xl))",
+        "--button-size-large-gap (var(--global-scale-0) → var(--layout-spacing-xs))",
+        "--button-primary-background-color-default (var(--global-colors-violet-200) → var(--surface-static-error))"
+      ],
+      "files": [
+        {
+          "path": "src/tokens/variables/semantics.scss",
+          "ext": "scss",
+          "action": "updated",
+          "diff": "+ --button-size-small-height (var(--global-scale-2175) → var(--layout-size-4xl))\n+ --button-size-medium-height (var(--global-scale-2875) → var(--layout-size-5xl))\n+ --button-size-xsmall-gap (var(--global-scale-0) → var(--layout-spacing-2xs))\n+ --button-size-small-padding-x (var(--global-scale-0) → var(--layout-spacing-md))\n+ --button-size-small-radius (var(--layout-radius-3xs) → var(--layout-radius-sm))\n+ --button-size-small-gap (var(--layout-spacing-sm) → var(--layout-spacing-2xs))\n+ --button-size-medium-padding-x (var(--global-scale-0) → var(--layout-spacing-lg))\n+ --button-size-medium-radius (var(--layout-radius-3xs) → var(--layout-radius-md))\n+ --button-size-medium-gap (var(--layout-spacing-md) → var(--layout-spacing-xs))\n+ --button-size-large-padding-x (var(--layout-spacing-5xl) → var(--layout-spacing-xl))"
+        }
+      ]
+    },
+    {
+      "id": "sync-upd-button-1795089193730",
+      "timestamp": "2026-11-19T11:53:07.125Z",
+      "direction": "figma-to-code",
+      "action": "updated",
+      "slug": "button",
+      "componentName": "Button",
+      "pageName": "ButtonPage",
+      "summary": "button: updated medium height (230px → 40px); medium horizontal padding (0px → 16px) (+6 more)",
+      "details": [
+        "medium height (230px → 40px)",
+        "medium horizontal padding (0px → 16px)",
+        "medium corner radius (0px → 12px)",
+        "medium gap (12px → 0px)",
+        "small height (174px → 36px)",
+        "small horizontal padding (0px → 12px)",
+        "small corner radius (0px → 8px)",
+        "small gap (8px → 0px)",
+        "large horizontal padding (20px → 40px)",
+        "large gap (4px → 0px)",
+        "primary background color (#D61C53 → #C7B9FF)",
+        "medium gap (4px → 0px)",
+        "small gap (2px → 0px)",
+        "xsmall gap (2px → 0px)"
+      ],
+      "files": [
+        {
+          "path": "src/components/button/button.md",
+          "ext": "md",
+          "action": "updated",
+          "diff": "- > [!IMPORTANT]\n- > **78 change(s) detected** in the latest Figma sync (2026-11-19T09:12:47.606Z).\n- ### Changes in latest sync\n+ > [!TIP]\n+ > **Nothing changed** — the latest Figma sync matches the previous snapshot.\n+ **2026-11-19T09:12:47.606Z**"
+        }
+      ]
+    },
     {
       "id": "sync-tokens-1795079559707",
       "timestamp": "2026-11-19T09:12:39.473Z",

@@ -5,7 +5,7 @@
 
 _No description set in Figma._
 
-> Last updated: 2026-11-19T09:12:47.628Z
+> Last updated: 2026-11-19T11:53:13.696Z
 
 ## Overview
 
@@ -406,10 +406,12 @@ UIButton()
 
 ## Figma Changelog & Diff Status
 
-> [!IMPORTANT]
-> **78 change(s) detected** in the latest Figma sync (2026-11-19T09:12:47.606Z).
+> [!TIP]
+> **Nothing changed** — the latest Figma sync matches the previous snapshot.
 
-### Changes in latest sync
+### Previous changes
+
+**2026-11-19T09:12:47.606Z**
 
 - Base Width × Height: `194px × 72px` → `154px × 48px`
 - Base Text color: `#FFFFFF` → `#1C3FCA`
@@ -489,8 +491,6 @@ UIButton()
 - Variant `size=Xsmall, style=Secondary, state=Hover, type=Gradient` — Background: `#00815A` → `#D61C53`
 - Variant `size=Xsmall, style=Secondary, state=Focus, type=Default` — Background: `#00815A` → `#B65805`
 - Variant `size=Xsmall, style=Secondary, state=Hover, type=Default` — Background: `#00815A` → `#D61C53`
-
-### Previous changes
 
 **2026-11-19T08:52:26.612Z**
 

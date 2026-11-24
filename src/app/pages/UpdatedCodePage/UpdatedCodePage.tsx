@@ -1,11 +1,13 @@
 import { useState } from 'react';
-import type { SyncHistoryEntry } from '../../hooks/useSyncWebSocket';
+import type { SyncHistoryEntry, SyncStatus } from '../../hooks/useSyncWebSocket';
 import { componentDocumentation } from '../ComponentPage/componentRegistry';
 import { ComponentSourceInspector } from '../../components/MarkdownView';
+import { ProjectOverviewDashboard } from '../../components/ProjectOverviewDashboard';
 import './UpdatedCodePage.scss';
 
 interface UpdatedCodePageProps {
   entries: SyncHistoryEntry[];
+  syncStatus?: SyncStatus;
   onRequestPreSync?: (direction: 'figma-to-code' | 'code-to-figma' | 'figma-to-github') => void;
 }
 
@@ -49,7 +51,11 @@ function renderDiffLines(diffText: string) {
   });
 }
 
-export function UpdatedCodePage({ entries, onRequestPreSync }: UpdatedCodePageProps) {
+export function UpdatedCodePage({
+  entries,
+  syncStatus = 'connected',
+  onRequestPreSync
+}: UpdatedCodePageProps) {
   const [filter, setFilter] = useState<ActionFilter>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedInspectorId, setExpandedInspectorId] = useState<string | null>(null);
@@ -87,6 +93,12 @@ export function UpdatedCodePage({ entries, onRequestPreSync }: UpdatedCodePagePr
         <span>/</span>
         <strong>Updated Code &amp; Sync History</strong>
       </div>
+
+      <ProjectOverviewDashboard
+        syncStatus={syncStatus}
+        historyEntries={entries}
+        onRequestPreSync={onRequestPreSync}
+      />
 
       <header className="docs-heading">
         <div className="updated-code-hero">

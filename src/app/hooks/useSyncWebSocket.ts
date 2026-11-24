@@ -85,9 +85,10 @@ export function useSyncWebSocket(url = 'ws://localhost:3055') {
   );
   const [pendingModalState, setPendingModalState] = useState<{
     open: boolean;
+    scanning: boolean;
     direction: string;
     items: PendingSyncItem[];
-  }>({ open: false, direction: 'figma-to-code', items: [] });
+  }>({ open: false, scanning: false, direction: 'figma-to-code', items: [] });
 
   const wsRef = useRef<WebSocket | null>(null);
   const portalRequestedPreSyncRef = useRef(false);
@@ -136,13 +137,12 @@ export function useSyncWebSocket(url = 'ws://localhost:3055') {
               if (msg.event === 'PRE_SYNC_DIFF_RESULT' && portalRequestedPreSyncRef.current) {
                 portalRequestedPreSyncRef.current = false;
                 const items = Array.isArray(msg.pendingChanges) ? msg.pendingChanges : [];
-                if (items.length > 0) {
-                  setPendingModalState({
-                    open: true,
-                    direction: msg.direction || 'code-to-figma',
-                    items
-                  });
-                }
+                setPendingModalState({
+                  open: true,
+                  scanning: false,
+                  direction: msg.direction || 'code-to-figma',
+                  items
+                });
               }
 
               const incomingHistory = msg.historyEntries || msg.result?.historyEntries;
@@ -188,45 +188,104 @@ export function useSyncWebSocket(url = 'ws://localhost:3055') {
     };
   }, [url, fetchLatestHistory]);
 
-  const requestPreSyncFromPortal = useCallback((direction: 'figma-to-code' | 'code-to-figma' | 'figma-to-github') => {
-    if (!wsRef.current || wsRef.current.readyState !== WebSocket.OPEN) return;
-    portalRequestedPreSyncRef.current = true;
-    wsRef.current.send(
-      JSON.stringify({
-        type: 'message',
-        channel: 'figma-sync',
-        message: {
-          event: 'PORTAL_REQUEST_PRE_SYNC',
-          direction
-        }
-      })
-    );
-  }, []);
+  const requestPreSyncFromPortal = useCallback(
+    async (direction: 'figma-to-code' | 'code-to-figma' | 'figma-to-github') => {
+      // Open modal immediately in scanning state so user gets instant visual feedback
+      setPendingModalState({
+        open: true,
+        scanning: true,
+        direction,
+        items: []
+      });
 
-  const confirmSyncFromPortal = useCallback((confirmedSlugs: string[]) => {
-    if (!wsRef.current || wsRef.current.readyState !== WebSocket.OPEN) {
-      setPendingModalState((prev) => ({ ...prev, open: false }));
-      return;
-    }
-    const { direction, items } = pendingModalState;
-    setPendingModalState((prev) => ({ ...prev, open: false }));
-    wsRef.current.send(
-      JSON.stringify({
-        type: 'message',
-        channel: 'figma-sync',
-        message: {
-          event: 'CONFIRM_SYNC_EXECUTION',
-          direction,
-          pushToGithub: direction === 'figma-to-github',
-          confirmedSlugs,
-          pendingChanges: items
+      if (wsRef.current && wsRef.current.readyState === WebSocket.OPEN) {
+        portalRequestedPreSyncRef.current = true;
+        wsRef.current.send(
+          JSON.stringify({
+            type: 'message',
+            channel: 'figma-sync',
+            message: {
+              event: 'PORTAL_REQUEST_PRE_SYNC',
+              direction
+            }
+          })
+        );
+      }
+
+      // Also call HTTP fallback endpoint so the modal resolves even if WebSocket or plugin takes > 1s
+      try {
+        const res = await fetch('http://localhost:3055/api/sync/pre-check', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ direction })
+        });
+        if (res.ok) {
+          const data = await res.json();
+          setPendingModalState((prev) => {
+            if (!prev.open) return prev;
+            return {
+              open: true,
+              scanning: false,
+              direction: data.direction || direction,
+              items: Array.isArray(data.pendingChanges) ? data.pendingChanges : prev.items
+            };
+          });
+          return;
         }
-      })
-    );
-  }, [pendingModalState]);
+      } catch {
+        // Ignore HTTP error if WS handles it
+      }
+
+      setTimeout(() => {
+        setPendingModalState((prev) => (prev.scanning ? { ...prev, scanning: false } : prev));
+      }, 1500);
+    },
+    []
+  );
+
+  const confirmSyncFromPortal = useCallback(
+    async (confirmedSlugs: string[]) => {
+      const { direction, items } = pendingModalState;
+      setPendingModalState((prev) => ({ ...prev, open: false, scanning: false }));
+
+      if (wsRef.current && wsRef.current.readyState === WebSocket.OPEN) {
+        wsRef.current.send(
+          JSON.stringify({
+            type: 'message',
+            channel: 'figma-sync',
+            message: {
+              event: 'CONFIRM_SYNC_EXECUTION',
+              direction,
+              pushToGithub: direction === 'figma-to-github',
+              confirmedSlugs,
+              pendingChanges: items
+            }
+          })
+        );
+        return;
+      }
+
+      try {
+        await fetch('http://localhost:3055/api/sync/confirm', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            direction,
+            confirmedSlugs,
+            pendingChanges: items
+          })
+        });
+        fetchLatestHistory();
+      } catch {
+        // ignore
+      }
+    },
+    [pendingModalState, fetchLatestHistory]
+  );
 
   const cancelSyncFromPortal = useCallback(() => {
-    setPendingModalState((prev) => ({ ...prev, open: false }));
+    portalRequestedPreSyncRef.current = false;
+    setPendingModalState((prev) => ({ ...prev, open: false, scanning: false }));
   }, []);
 
   return {

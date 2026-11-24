@@ -9,7 +9,8 @@ import type {
 import './ButtonPage.scss';
 import { ComponentMarkdownSection } from '../../components/MarkdownView';
 import { RecentUpdatesBanner } from '../../components/RecentUpdatesBanner';
-import type { SyncHistoryEntry } from '../../hooks/useSyncWebSocket';
+import { ProjectOverviewDashboard } from '../../components/ProjectOverviewDashboard';
+import type { SyncHistoryEntry, SyncStatus } from '../../hooks/useSyncWebSocket';
 
 const buttonSourceUrl = 'https://github.com/d1hdfc/Some-Components/tree/main/src/components/button';
 const installCode = `npm install @d1hdfc/Some-Components@main`;
@@ -113,7 +114,15 @@ function CodeExample({
   );
 }
 
-export function ButtonPage({ historyEntries = [] }: { historyEntries?: SyncHistoryEntry[] }) {
+export function ButtonPage({
+  historyEntries = [],
+  syncStatus = 'connected',
+  onRequestPreSync
+}: {
+  historyEntries?: SyncHistoryEntry[];
+  syncStatus?: SyncStatus;
+  onRequestPreSync?: (direction: 'figma-to-code' | 'code-to-figma' | 'figma-to-github') => void;
+}) {
   const [playgroundVariant, setPlaygroundVariant] = useState<ButtonVariant>('primary');
   const [playgroundSize, setPlaygroundSize] = useState<ButtonSize>('large');
   const [playgroundState, setPlaygroundState] = useState<ButtonState>('default');
@@ -220,8 +229,14 @@ font-size: var(${fontSizeTokenName}, ${computedMetrics.fontSize});`;
   return (
     <main className="docs-content" id="button">
       <div className="docs-breadcrumbs">
-        <a href="#components">Components</a><span>/</span><strong>Button</strong>
+        <a href="#components">Dashboard</a><span>/</span><strong>Button</strong>
       </div>
+
+      <ProjectOverviewDashboard
+        syncStatus={syncStatus}
+        historyEntries={historyEntries}
+        onRequestPreSync={onRequestPreSync}
+      />
 
       <RecentUpdatesBanner entries={historyEntries} activeSlug="button" />
 

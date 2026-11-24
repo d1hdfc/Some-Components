@@ -34,6 +34,28 @@ export default function App() {
     cancelSyncFromPortal
   } = useSyncWebSocket();
 
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    try {
+      const saved = window.localStorage.getItem('hdfc-portal-theme');
+      return saved === 'dark' ? 'dark' : 'light';
+    } catch {
+      return 'light';
+    }
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    try {
+      window.localStorage.setItem('hdfc-portal-theme', theme);
+    } catch {
+      // ignore
+    }
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+  };
+
   const getCurrentPage = (): string => {
     const hash = window.location.hash.slice(1);
     if (hash.startsWith('installation')) return 'installation';
@@ -69,14 +91,15 @@ export default function App() {
     if (
       lastEvent.event === 'FIGMA_TO_CODE_COMPLETE' ||
       lastEvent.event === 'FIGMA_TO_GITHUB_COMPLETE' ||
-      lastEvent.event === 'CODE_TO_FIGMA_COMPLETE'
+      lastEvent.event === 'CODE_TO_FIGMA_COMPLETE' ||
+      lastEvent.event === 'LOCAL_COMPONENT_SCAFFOLDED'
     ) {
       const created = lastEvent.result?.createdCount ?? 0;
       const deleted = lastEvent.result?.deletedCount ?? 0;
-      if (created > 0 || deleted > 0) {
+      if (created > 0 || deleted > 0 || lastEvent.event === 'LOCAL_COMPONENT_SCAFFOLDED') {
         const timer = window.setTimeout(() => {
           window.location.reload();
-        }, 700);
+        }, 650);
         return () => window.clearTimeout(timer);
       }
     }
@@ -125,11 +148,14 @@ export default function App() {
         ];
 
   return (
-    <div className="docs-shell">
+    <div className="docs-shell" data-theme={theme}>
       <HeaderPage
         syncStatus={syncStatus}
         currentPage={currentPage}
         onNav={(page: string) => setCurrentPage(page)}
+        theme={theme}
+        onToggleTheme={toggleTheme}
+        onRequestPreSync={requestPreSyncFromPortal}
       />
       <div className="docs-layout" id="top">
         <SidebarPage
@@ -141,6 +167,7 @@ export default function App() {
         {isUpdatedCodePage ? (
           <UpdatedCodePage
             entries={historyEntries}
+            syncStatus={syncStatus}
             onRequestPreSync={requestPreSyncFromPortal}
           />
         ) : genericComponent ? (
@@ -150,7 +177,11 @@ export default function App() {
             <ComponentPage component={genericComponent} historyEntries={historyEntries} />
           )
         ) : (
-          <ButtonPage historyEntries={historyEntries} />
+          <ButtonPage
+            historyEntries={historyEntries}
+            syncStatus={syncStatus}
+            onRequestPreSync={requestPreSyncFromPortal}
+          />
         )}
 
         <aside className="docs-toc" aria-label="On this page">
@@ -171,6 +202,7 @@ export default function App() {
 
       <SyncConfirmModal
         open={pendingModalState.open}
+        scanning={pendingModalState.scanning}
         direction={pendingModalState.direction}
         items={pendingModalState.items}
         onConfirm={confirmSyncFromPortal}

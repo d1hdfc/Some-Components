@@ -947,7 +947,8 @@ function normalizeSingleComponentFolder(rawFolderName) {
     for (const rf of fs.readdirSync(rawDirPath)) {
       const ext = rf.endsWith('.types.ts') ? '.types.ts' : path.extname(rf);
       if (['.tsx', '.types.ts', '.scss', '.dart', '.md'].includes(ext)) {
-        const destFile = path.join(folderPath, `${folder}${ext}`);
+        // Keep original filename during move so the symbol/import rewrite pass below sees oldStem
+        const destFile = path.join(folderPath, rf);
         fs.copyFileSync(path.join(rawDirPath, rf), destFile);
       }
     }
@@ -957,16 +958,31 @@ function normalizeSingleComponentFolder(rawFolderName) {
   if (!fs.existsSync(folderPath)) return null;
 
   // Rename any inner files whose base name doesn't match the folder (e.g. copied button.tsx inside button-copy)
+  // AND rewrite any internal symbol/import references even if the file was already renamed
   for (const rf of fs.readdirSync(folderPath)) {
     const ext = rf.endsWith('.types.ts') ? '.types.ts' : path.extname(rf);
     if (!['.tsx', '.types.ts', '.scss', '.dart', '.md'].includes(ext)) continue;
     const expectedName = `${folder}${ext}`;
-    if (rf.toLowerCase() !== expectedName.toLowerCase()) {
-      const srcFile = path.join(folderPath, rf);
-      const dstFile = path.join(folderPath, expectedName);
-      const oldStem = rf.slice(0, rf.length - ext.length);
-      const oldPascal = toPascalCase(oldStem);
-      let fileText = fs.readFileSync(srcFile, 'utf8');
+    const srcFile = path.join(folderPath, rf);
+    const dstFile = path.join(folderPath, expectedName);
+    let oldStem = rf.slice(0, rf.length - ext.length);
+    let fileText = fs.readFileSync(srcFile, 'utf8');
+
+    // Detect if the file inside was copied from another component (e.g. './button.types' inside button-copy.tsx)
+    if (oldStem.toLowerCase() === folder.toLowerCase() && (ext === '.tsx' || ext === '.types.ts')) {
+      const importMatch = fileText.match(/from\s+['"]\.\/([a-z0-9-]+)\.types['"]/i);
+      if (importMatch && importMatch[1].toLowerCase() !== folder.toLowerCase()) {
+        oldStem = importMatch[1];
+      } else {
+        const exportMatch = fileText.match(/export\s+(?:const|function)\s+([A-Z][A-Za-z0-9_]*)\b/);
+        if (exportMatch && exportMatch[1] !== pascalName) {
+          oldStem = toKebabCase(exportMatch[1]);
+        }
+      }
+    }
+
+    const oldPascal = toPascalCase(oldStem);
+    if (rf.toLowerCase() !== expectedName.toLowerCase() || oldPascal !== pascalName) {
       if (ext === '.tsx' || ext === '.types.ts') {
         fileText = fileText
           .replace(new RegExp(`\\./${oldStem}\\.types`, 'gi'), `./${folder}.types`)
@@ -984,7 +1000,9 @@ function normalizeSingleComponentFolder(rawFolderName) {
         fileText = fileText.replace(new RegExp(`\\bUI${oldPascal}\\b`, 'g'), `UI${pascalName}`);
       }
       fs.writeFileSync(dstFile, fileText, 'utf8');
-      fs.rmSync(srcFile, { force: true });
+      if (srcFile !== dstFile && fs.existsSync(srcFile)) {
+        fs.rmSync(srcFile, { force: true });
+      }
     }
   }
 
@@ -1020,6 +1038,32 @@ function normalizeSingleComponentFolder(rawFolderName) {
   enforceFourFileStructure(folderPath, folder);
   appPageGenerator.ensureSingleComponentPage(folder);
   appPageGenerator.syncAppComponentPages();
+
+  // Track newly created/copied local component in .sync-state.json so Code -> Figma scan detects it as a pending ADD
+  try {
+    const statePath = path.join(process.cwd(), '.sync-state.json');
+    const state = fs.existsSync(statePath) ? JSON.parse(fs.readFileSync(statePath, 'utf8')) : { version: null, components: {} };
+    state.components = state.components || {};
+    const hasRecord = Object.values(state.components).some(
+      (c) => (c?.kebab || toKebabCase(c?.name || '')) === folder
+    );
+    if (!hasRecord) {
+      const syntheticId = `local:${folder}`;
+      state.components[syntheticId] = {
+        id: syntheticId,
+        name: pascalName,
+        kebab: folder,
+        type: 'COMPONENT',
+        pageName: pascalName,
+        source: 'code',
+        syncedToFigma: false,
+        generated: true,
+        updatedAt: new Date().toISOString()
+      };
+      fs.writeFileSync(statePath, JSON.stringify(state, null, 2), 'utf8');
+    }
+  } catch { /* ignore */ }
+
   return folder;
 }
 

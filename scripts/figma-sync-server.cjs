@@ -1455,7 +1455,8 @@ function executeSurgicalCodeToFigmaSync(confirmedItems, project) {
       const refreshedState = loadSyncState();
       syncDiffEngine.recordComponentCodeSnapshotInState(refreshedState, kebab, {
         id: item.nodeId,
-        name: item.componentName || pascal
+        name: item.componentName || pascal,
+        syncedToFigma: true
       });
       saveSyncState(refreshedState);
 
@@ -1901,6 +1902,73 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
+  if (req.method === 'POST' && pathname === '/api/sync/pre-check') {
+    const body = await parseBody(req);
+    const direction = body.direction || 'code-to-figma';
+    const sourcePayload = lastCanvasPayload || body.canvasPayload || {};
+    const pendingChanges = direction === 'code-to-figma'
+      ? syncDiffEngine.computeCodeToFigmaDiff(sourcePayload)
+      : syncDiffEngine.computeFigmaToCodeDiff(sourcePayload);
+    lastPendingDiff = {
+      direction,
+      items: pendingChanges,
+      payload: sourcePayload,
+      timestamp: Date.now()
+    };
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ direction, pendingChanges }));
+    return;
+  }
+
+  if (req.method === 'POST' && pathname === '/api/sync/confirm') {
+    const body = await parseBody(req);
+    const direction = body.direction || lastPendingDiff.direction || 'code-to-figma';
+    const sourcePayload = lastPendingDiff.payload || lastCanvasPayload || {};
+    const project = resolveProjectContext(sourcePayload);
+    const pendingItems = Array.isArray(body.pendingChanges) && body.pendingChanges.length > 0
+      ? body.pendingChanges
+      : (Array.isArray(lastPendingDiff.items) ? lastPendingDiff.items : []);
+    const confirmedSlugsSet = new Set(
+      Array.isArray(body.confirmedSlugs) && body.confirmedSlugs.length > 0
+        ? body.confirmedSlugs
+        : pendingItems.map((i) => i.slug)
+    );
+
+    if (direction === 'code-to-figma') {
+      const result = executeSurgicalCodeToFigmaSync(
+        pendingItems.filter((i) => confirmedSlugsSet.has(i.slug)),
+        project
+      );
+      broadcastToChannel('figma-sync', {
+        event: 'CODE_TO_FIGMA_COMPLETE',
+        result,
+        updatesList: result.updatesList,
+        historyEntries: result.historyEntries,
+        projectDir: project.projectDir,
+        repoName: project.repoName
+      });
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ status: 'ok', result }));
+      return;
+    }
+
+    const result = applyFigmaLivePayload(sourcePayload, {
+      targetSlugs: confirmedSlugsSet,
+      pendingChanges: pendingItems
+    });
+    broadcastToChannel('figma-sync', {
+      event: 'FIGMA_TO_CODE_COMPLETE',
+      result,
+      updatesList: result.updatesList || [],
+      historyEntries: result.historyEntries || [],
+      projectDir: project.projectDir,
+      repoName: project.repoName
+    });
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ status: 'ok', result }));
+    return;
+  }
+
   if (req.method === 'POST' && pathname === '/api/sync/figma-to-code') {
     triggerFigmaToCodeSync('http-api');
     res.writeHead(200, { 'Content-Type': 'application/json' });
@@ -1975,6 +2043,89 @@ wss.on('connection', socket => {
 // Server Start
 // ==========================================
 
+function setupLocalComponentFolderScaffolder() {
+  const componentsDir = getComponentsDir();
+  if (!fs.existsSync(componentsDir)) return;
+
+  let knownFolders = new Set(
+    fs.readdirSync(componentsDir, { withFileTypes: true })
+      .filter((d) => d.isDirectory() && d.name !== 'assets')
+      .map((d) => d.name)
+  );
+
+  setInterval(() => {
+    if (Date.now() < suppressWatcherUntil) return;
+    if (!fs.existsSync(componentsDir)) return;
+
+    const currentFolders = fs.readdirSync(componentsDir, { withFileTypes: true })
+      .filter((d) => d.isDirectory() && d.name !== 'assets')
+      .map((d) => d.name);
+
+    const currentSet = new Set(currentFolders);
+    let anyScaffolded = false;
+
+    for (const rawFolder of currentFolders) {
+      const kebab = codeGenerator.toKebabCase(rawFolder);
+      const pascal = codeGenerator.toPascalCase(kebab);
+      const pageName = `${pascal}Page`;
+      const compDir = path.join(componentsDir, rawFolder);
+      const pageDir = path.join(getPagesDir(), pageName);
+      const needsNormalize =
+        !knownFolders.has(rawFolder) ||
+        rawFolder !== kebab ||
+        !fs.existsSync(path.join(compDir, `${kebab}.tsx`)) ||
+        !fs.existsSync(path.join(compDir, `${kebab}.md`)) ||
+        (kebab !== 'button' && !fs.existsSync(path.join(pageDir, `${pageName}.tsx`)));
+
+      if (needsNormalize) {
+        suppressWatcherUntil = Date.now() + 2000;
+        const normalized = codeGenerator.normalizeSingleComponentFolder(rawFolder) || kebab;
+        knownFolders.delete(rawFolder);
+        knownFolders.add(normalized);
+        anyScaffolded = true;
+        console.log(`[LocalScaffolder] ⚡ Auto-scaffolded src/components/${normalized}/ (5-file bundle) & src/app/pages/${pageName}/`);
+        broadcastToChannel('figma-sync', {
+          event: 'LOCAL_COMPONENT_SCAFFOLDED',
+          slug: normalized,
+          componentName: pascal,
+          pageName,
+          summary: `${normalized}: auto-scaffolded 5-file bundle & ${pageName} in local portal (ready to sync to Figma)`
+        });
+      }
+    }
+
+    // If a component folder was deleted locally, clean its local portal page & index.ts export
+    // while keeping its record in .sync-state.json so "Scan Code -> Figma Changes" detects it as a pending DELETE on Figma
+    for (const prevFolder of Array.from(knownFolders)) {
+      if (!currentSet.has(prevFolder) && !fs.existsSync(path.join(componentsDir, prevFolder))) {
+        knownFolders.delete(prevFolder);
+        suppressWatcherUntil = Date.now() + 2000;
+        const pascal = codeGenerator.toPascalCase(prevFolder);
+        const pageName = `${pascal}Page`;
+        const pageDir = path.join(getPagesDir(), pageName);
+        if (fs.existsSync(pageDir)) {
+          fs.rmSync(pageDir, { recursive: true, force: true });
+        }
+        codeGenerator.sanitizeComponentIndex();
+        appPageGenerator.syncAppComponentPages();
+        anyScaffolded = true;
+        console.log(`[LocalScaffolder] 🗑️ Cleaned local page ${pageName} for deleted folder src/components/${prevFolder}`);
+        broadcastToChannel('figma-sync', {
+          event: 'LOCAL_COMPONENT_SCAFFOLDED',
+          slug: prevFolder,
+          componentName: pascal,
+          pageName,
+          summary: `${prevFolder}: removed local ${pageName} (click "Scan Code ➔ Figma" to remove from Figma)`
+        });
+      }
+    }
+
+    if (anyScaffolded) {
+      appPageGenerator.touchHmrEntryPoints();
+    }
+  }, 1500);
+}
+
 if (require.main === module) {
   let startupErrorLogged = false;
   function handleStartupError(error) {
@@ -2004,6 +2155,7 @@ if (require.main === module) {
     console.log('====================================================');
 
     codeGenerator.generateForExistingComponents();
+    setupLocalComponentFolderScaffolder();
     try {
       const state = loadSyncState();
       const compDir = getComponentsDir();

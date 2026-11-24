@@ -337,13 +337,37 @@ function inspectTokenMapChanges(tokenMap) {
  * Compute granular Pre-Sync Diff for FIGMA -> CODE (or FIGMA -> GITHUB)
  * Only returns components/tokens that actually have additions, edits, or deletions.
  */
-function computeFigmaToCodeDiff(payload) {
+function computeFigmaToCodeDiff(payload = {}) {
   const pendingChanges = [];
   const componentsDir = getComponentsDir();
   const pagesDir = getPagesDir();
-  const syncState = loadSyncState();
+
+  // First ensure any raw local component folders in src/components/ are normalized
+  try {
+    codeGenerator.generateForExistingComponents();
+  } catch { /* ignore */ }
 
   codeParser.invalidateTokenCache();
+
+  // If triggered from the Portal when no live canvas payload was sent yet, fall back to src/figma/components.json
+  let effectiveComponents = Array.isArray(payload?.components) ? payload.components : [];
+  if (effectiveComponents.length === 0) {
+    try {
+      const catalogPath = path.join(process.cwd(), 'src', 'figma', 'components.json');
+      if (fs.existsSync(catalogPath)) {
+        const catalog = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
+        if (Array.isArray(catalog.components)) {
+          effectiveComponents = catalog.components.map((c) => ({
+            id: c.nodeId || c.key,
+            name: c.name,
+            type: c.type || 'COMPONENT_SET',
+            pageName: c.pageName || 'Canvas',
+            description: c.description || ''
+          }));
+        }
+      }
+    } catch { /* ignore */ }
+  }
 
   // 1. Check Token Variable Changes
   const changedTokens = inspectTokenMapChanges(payload?.tokenMap);
@@ -364,15 +388,13 @@ function computeFigmaToCodeDiff(payload) {
 
   // 2. Deduplicate incoming Figma components by kebab name
   const dedupedByKebab = new Map();
-  if (Array.isArray(payload?.components)) {
-    for (const comp of payload.components) {
-      if (!comp || !comp.id || !comp.name) continue;
-      const kebab = codeGenerator.toKebabCase(comp.name);
-      if (!kebab || kebab === 'assets') continue;
-      const existing = dedupedByKebab.get(kebab);
-      if (!existing || (comp.type === 'COMPONENT_SET' && existing.type !== 'COMPONENT_SET')) {
-        dedupedByKebab.set(kebab, comp);
-      }
+  for (const comp of effectiveComponents) {
+    if (!comp || !(comp.id || comp.nodeId) || !comp.name) continue;
+    const kebab = codeGenerator.toKebabCase(comp.name);
+    if (!kebab || kebab === 'assets') continue;
+    const existing = dedupedByKebab.get(kebab);
+    if (!existing || (comp.type === 'COMPONENT_SET' && existing.type !== 'COMPONENT_SET')) {
+      dedupedByKebab.set(kebab, { ...comp, id: comp.id || comp.nodeId });
     }
   }
 
@@ -684,8 +706,14 @@ function computeCodeToFigmaDiff(payload = {}) {
   const pendingChanges = [];
   const componentsDir = getComponentsDir();
   const pagesDir = getPagesDir();
-  const syncState = loadSyncState();
 
+  // First ensure any newly created/copied raw folders in src/components/ (e.g. "button copy", "new-card")
+  // are normalized to kebab-case with their 5-file bundle and <ComponentName>Page scaffolded!
+  try {
+    codeGenerator.generateForExistingComponents();
+  } catch { /* ignore */ }
+
+  const syncState = loadSyncState();
   codeParser.invalidateTokenCache();
 
   // Map incoming Figma canvas components by kebab name
@@ -728,11 +756,13 @@ function computeCodeToFigmaDiff(payload = {}) {
   }
 
   // 1. Check for DELETED components in local code:
-  // Any component that exists on the Figma canvas (or in .sync-state.json)
+  // Any component that exists on the Figma canvas (or was synced with Figma in .sync-state.json)
   // whose src/components/<kebab> folder was deleted (or whose <Pascal>Page was deleted after being synced)
   const candidateKnownKebabs = new Set([
     ...canvasByKebab.keys(),
-    ...stateByKebab.keys()
+    ...Array.from(stateByKebab.entries())
+      .filter(([, entry]) => !String(entry.id).startsWith('local:') || entry.syncedToFigma === true)
+      .map(([kebab]) => kebab)
   ]);
 
   for (const kebab of candidateKnownKebabs) {
@@ -744,9 +774,6 @@ function computeCodeToFigmaDiff(payload = {}) {
     const compFolderExists = localFolders.has(kebab);
     const wasTrackedInState = stateByKebab.has(kebab);
 
-    // A component is considered deleted in local code if:
-    // - its src/components/<kebab> folder is gone, OR
-    // - it was tracked in .sync-state.json and its src/app/pages/<Pascal>Page folder was deleted by the user
     if (!compFolderExists || (wasTrackedInState && !pageExists)) {
       const canvasComp = canvasByKebab.get(kebab);
       const stateEntry = stateByKebab.get(kebab);
@@ -780,7 +807,6 @@ function computeCodeToFigmaDiff(payload = {}) {
 
   // 2. Check for ADDED or UPDATED components in local code
   for (const kebab of localFolders) {
-    // Skip if already queued for deletion
     if (pendingChanges.some((p) => p.slug === kebab)) continue;
 
     const pascal = codeGenerator.toPascalCase(kebab);
@@ -789,8 +815,15 @@ function computeCodeToFigmaDiff(payload = {}) {
     const stateEntry = stateByKebab.get(kebab);
     const parsedCode = codeParser.parseComponentDir(kebab);
 
-    // If canvas payload was provided and this component does not exist on the Figma canvas yet
-    if (Array.isArray(payload.components) && payload.components.length > 0 && !canvasComp) {
+    const isLocalOnlyComponent =
+      !stateEntry ||
+      stateEntry.syncedToFigma === false ||
+      (stateEntry.source === 'code' && stateEntry.syncedToFigma !== true) ||
+      (String(stateEntry.id || '').startsWith('local:') && stateEntry.syncedToFigma !== true);
+    const missingFromProvidedCanvas =
+      Array.isArray(payload.components) && payload.components.length > 0 && !canvasComp;
+
+    if (isLocalOnlyComponent || missingFromProvidedCanvas) {
       pendingChanges.push({
         id: `create:${kebab}`,
         slug: kebab,
@@ -799,14 +832,19 @@ function computeCodeToFigmaDiff(payload = {}) {
         pageName,
         action: 'add',
         direction: 'code-to-figma',
-        title: `Create on Figma: ${pascal}`,
-        summary: `${kebab}: create new component on Figma canvas from local code (src/components/${kebab})`,
+        title: `Create on Figma: ${pascal} (${pageName})`,
+        summary: `${kebab}: create new component "${pascal}" on Figma canvas from local code (src/components/${kebab}/ & ${pageName})`,
         details: [
-          `Create "${pascal}" component on Figma canvas with styles from src/components/${kebab}/${kebab}.scss`
+          `Create "${pascal}" component on Figma canvas with styles from src/components/${kebab}/${kebab}.scss`,
+          `Sync 5-file bundle (${kebab}.tsx, .types.ts, .scss, .dart, .md) & portal page ${pageName}`
         ],
         files: [
           `src/components/${kebab}/${kebab}.tsx`,
-          `src/components/${kebab}/${kebab}.scss`
+          `src/components/${kebab}/${kebab}.types.ts`,
+          `src/components/${kebab}/${kebab}.scss`,
+          `src/components/${kebab}/${kebab}.dart`,
+          `src/components/${kebab}/${kebab}.md`,
+          `src/app/pages/${pageName}/${pageName}.tsx`
         ]
       });
       continue;
@@ -865,6 +903,7 @@ function recordComponentCodeSnapshotInState(syncState, kebab, figmaMeta = {}) {
     kebab,
     type: figmaMeta.type || existing.type || 'COMPONENT_SET',
     pageName: figmaMeta.pageName || existing.pageName || 'Canvas',
+    syncedToFigma: figmaMeta.syncedToFigma !== undefined ? figmaMeta.syncedToFigma : existing.syncedToFigma,
     generated: true,
     updatedAt: new Date().toISOString(),
     codeCombinedHash: bundle.combinedHash,

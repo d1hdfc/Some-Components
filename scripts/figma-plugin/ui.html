@@ -648,17 +648,17 @@
     </details>
   </div>
 
-  <!-- Pre-Sync Confirmation Modal ("Yes" / "Cancel") -->
+  <!-- Pre-Sync Confirmation Modal ("Allow" / "Cancel") -->
   <div id="confirmModalOverlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="confirmModalTitle">
     <div class="modal-card">
       <div class="modal-header">
         <h3 id="confirmModalTitle">Confirm Pending Sync Changes</h3>
-        <p id="confirmModalSubtitle">Only the selected items below will be synced. Do you want to proceed?</p>
+        <p id="confirmModalSubtitle">Only the selected items below will be synced. Click "Allow" to proceed.</p>
       </div>
       <div id="confirmModalList" class="modal-body"></div>
       <div class="modal-footer">
         <button id="confirmCancelBtn" type="button" class="btn-confirm-cancel">Cancel</button>
-        <button id="confirmYesBtn" type="button" class="btn-confirm-yes">Yes, Sync Now</button>
+        <button id="confirmYesBtn" type="button" class="btn-confirm-yes">✓ Allow</button>
       </div>
     </div>
   </div>
@@ -839,7 +839,8 @@
           : 'Confirm Figma ➔ Code Sync';
 
       confirmModalTitle.textContent = `${dirTitle} (${pendingChanges.length} change${pendingChanges.length === 1 ? '' : 's'})`;
-      confirmModalSubtitle.textContent = 'Review the detected changes below. Click "Yes, Sync Now" to apply only these changes:';
+      confirmModalSubtitle.textContent = 'Review the detected changes below. Click "Allow" to apply only these changes:';
+      confirmYesBtn.textContent = `✓ Allow (${pendingChanges.length})`;
 
       confirmModalList.innerHTML = pendingChanges.map((item, idx) => {
         const action = (item.action || 'update').toLowerCase();
