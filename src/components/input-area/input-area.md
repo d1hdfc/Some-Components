@@ -5,7 +5,7 @@
 
 _No description set in Figma._
 
-> Last updated: 2026-11-24T10:19:58.210Z
+> Last updated: 2026-11-25T07:06:10.457Z
 
 ## Overview
 
@@ -27,12 +27,12 @@ _No description set in Figma._
 ## Installation
 
 ```bash
-npm install @d1hdfc/Some-Components@main
+npm install @d1hdfc/ui-components@main
 ```
 
 ```tsx
-import { InputArea } from '@d1hdfc/Some-Components';
-import '@d1hdfc/Some-Components/style.css';
+import { InputArea } from '@d1hdfc/ui-components';
+import '@d1hdfc/ui-components/style.css';
 
 <InputArea size="small">Label</InputArea>
 ```
