@@ -7,7 +7,6 @@ import {
   isFigmaSourcedMarkdown
 } from './componentMarkdown';
 import { ComponentSourceInspector, MarkdownView } from '../../components/MarkdownView';
-import { RecentUpdatesBanner } from '../../components/RecentUpdatesBanner';
 import type { SyncHistoryEntry } from '../../hooks/useSyncWebSocket';
 import initialSyncHistory from '../../../figma/syncHistory.json';
 import './ComponentPage.scss';
@@ -145,12 +144,12 @@ export function ComponentPage({
     <main className="docs-content auto-component-page" id={component.routeSlug}>
       {/* Breadcrumb */}
       <div className="docs-breadcrumbs">
-        <a href="#button">Components</a>
+        <a href="#dashboard">Dashboard</a>
+        <span>/</span>
+        <span>Components</span>
         <span>/</span>
         <strong>{component.title}</strong>
       </div>
-
-      <RecentUpdatesBanner entries={historyEntries} activeSlug={component.slug} />
 
       {/* Header */}
       <header className="docs-heading">

@@ -8,9 +8,6 @@ import type {
 } from '../../../components/button/button.types';
 import './ButtonPage.scss';
 import { ComponentMarkdownSection } from '../../components/MarkdownView';
-import { RecentUpdatesBanner } from '../../components/RecentUpdatesBanner';
-import { ProjectOverviewDashboard } from '../../components/ProjectOverviewDashboard';
-import type { SyncHistoryEntry, SyncStatus } from '../../hooks/useSyncWebSocket';
 
 const buttonSourceUrl = 'https://github.com/d1hdfc/Some-Components/tree/main/src/components/button';
 const installCode = `npm install @d1hdfc/Some-Components@main`;
@@ -114,15 +111,7 @@ function CodeExample({
   );
 }
 
-export function ButtonPage({
-  historyEntries = [],
-  syncStatus = 'connected',
-  onRequestPreSync
-}: {
-  historyEntries?: SyncHistoryEntry[];
-  syncStatus?: SyncStatus;
-  onRequestPreSync?: (direction: 'figma-to-code' | 'code-to-figma' | 'figma-to-github') => void;
-}) {
+export function ButtonPage() {
   const [playgroundVariant, setPlaygroundVariant] = useState<ButtonVariant>('primary');
   const [playgroundSize, setPlaygroundSize] = useState<ButtonSize>('large');
   const [playgroundState, setPlaygroundState] = useState<ButtonState>('default');
@@ -228,13 +217,13 @@ font-size: var(${fontSizeTokenName}, ${computedMetrics.fontSize});`;
 
   return (
     <main className="docs-content" id="button">
-      <ProjectOverviewDashboard
-        syncStatus={syncStatus}
-        historyEntries={historyEntries}
-        onRequestPreSync={onRequestPreSync}
-      />
-
-      <RecentUpdatesBanner entries={historyEntries} activeSlug="button" />
+      <div className="docs-breadcrumbs">
+        <a href="#dashboard">Dashboard</a>
+        <span>/</span>
+        <span>Form Controls</span>
+        <span>/</span>
+        <strong>Button</strong>
+      </div>
 
       <header className="docs-heading">
         <div className="docs-heading-top">

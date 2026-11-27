@@ -5,17 +5,17 @@
 
 _No description set in Figma._
 
-> Last updated: 2026-11-26T11:18:16.267Z
+> Last updated: 2026-11-27T07:08:35.357Z
 
 ## Overview
 
 | Field | Value |
 | --- | --- |
 | Figma name | Button |
-| Node ID | 8130:1199 |
+| Node ID | 8185:6 |
 | Node type | COMPONENT_SET |
 | Figma page | Button |
-| Variants | 318 |
+| Variants | 320 |
 | Code folder | `src/components/button/` |
 
 ## Text elements
@@ -23,6 +23,7 @@ _No description set in Figma._
 | Element | Default text |
 | --- | --- |
 | Primary label | Button |
+| `label` (text property) | Button |
 
 ## Installation
 
@@ -34,7 +35,7 @@ npm install @d1hdfc/ui-components@main
 import { Button } from '@d1hdfc/ui-components';
 import '@d1hdfc/ui-components/style.css';
 
-<Button>Button</Button>
+<Button variant="primary" size="large">Button</Button>
 ```
 
 ```dart
@@ -44,14 +45,22 @@ UIButton()
 
 ## Properties
 
-_No component properties defined in Figma._
+| Property | Type | Default | Options |
+| --- | --- | --- | --- |
+| `label` | TEXT | Button | — |
+| `leadingIcon` | BOOLEAN | true | — |
+| `size` | VARIANT | Large | Large, Medium, Small, Xsmall |
+| `state` | VARIANT | Default | Default, Hover, Pressed, Disabled, Focus |
+| `style` | VARIANT | Primary | Primary, Secondary, Tertiary, Link |
+| `trailingIcon` | BOOLEAN | true | — |
+| `type` | VARIANT | Default | Default, Icon, Gradient, White |
 
 ## Size configurations
 
 | Size | Width × Height | Padding (T R B L) | Gap | Radius | Font size |
 | --- | --- | --- | --- | --- | --- |
-| Large | 150px × 48px | 0px 20px 0px 20px | 4px | 12px | 14px |
-| Medium | 118px × 230px | 0px 0px 0px 0px | 12px | 0px | 14px |
+| Large | 154px × 48px | 0px 40px 0px 40px | 0px | 12px | 18px |
+| Medium | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px |
 | Small | 117px × 36px | 0px 12px 0px 12px | 0px | 8px | 14px |
 | Xsmall | 95px × 28px | 0px 8px 0px 8px | 0px | 8px | 12px |
 
@@ -59,18 +68,18 @@ _No component properties defined in Figma._
 
 | Spec | Value |
 | --- | --- |
-| Width × Height | 150px × 48px |
-| Padding | 0px 20px 0px 20px |
-| Gap | 4px |
+| Width × Height | 154px × 48px |
+| Padding | 0px 40px 0px 40px |
+| Gap | 0px |
 | Corner radius | 12px |
-| Font size | 14px |
+| Font size | 18px |
 | Line height | — |
-| Background | — |
+| Background | #C7B9FF |
 | Text color | #FFFFFF |
-| Border color | — |
+| Border color | #FFFFFF |
 | Layout mode | HORIZONTAL |
 
-## Variants (318)
+## Variants (320)
 
 | Variant | W × H | Padding | Gap | Radius | Font size | Background | Text | Border |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -94,16 +103,18 @@ _No component properties defined in Figma._
 | size=Large, style=Link, state=Pressed, type=Gradient | 114px × 24px | 0px 0px 0px 0px | 0px | 0px | 18px | — | — | — |
 | size=Large, style=Link, state=Pressed, type=Icon | 24px × 24px | 0px 0px 0px 0px | 0px | 0px | 18px | — | #FFFFFF | — |
 | size=Large, style=Link, state=Pressed, type=White | 114px × 24px | 0px 0px 0px 0px | 0px | 0px | 18px | — | #FFFFFF | — |
-| size=Large, style=Primary, state=Default, type=Gradient | 150px × 48px | 0px 20px 0px 20px | 4px | 12px | 14px | — | #FFFFFF | — |
+| size=Large, style=Primary, state=Default, type=Default | 154px × 48px | 0px 40px 0px 40px | 0px | 12px | 18px | #C7B9FF | #FFFFFF | #FFFFFF |
+| size=Large, style=Primary, state=Default, type=Gradient | 194px × 72px | 0px 40px 0px 40px | 0px | 12px | 18px | — | #FFFFFF | — |
 | size=Large, style=Primary, state=Default, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #1C3FCA | #FFFFFF | — |
-| size=Large, style=Primary, state=Default, type=White | 150px × 48px | 0px 20px 0px 20px | 4px | 12px | 14px | #FFFFFF | #1C3FCA | — |
+| size=Large, style=Primary, state=Default, type=White | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #FFFFFF | #1C3FCA | — |
 | size=Large, style=Primary, state=Disabled, type=Default | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #00815A | #F3F6FD | — |
 | size=Large, style=Primary, state=Disabled, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | — | #FFFFFF | — |
 | size=Large, style=Primary, state=Disabled, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #00815A | #FFFFFF | — |
 | size=Large, style=Primary, state=Disabled, type=White | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #FFFFFF | #9CB4F7 | — |
-| size=Large, style=Primary, state=Focus, type=Gradient | 150px × 48px | 0px 20px 0px 20px | 4px | 12px | 14px | — | #FFFFFF | — |
+| size=Large, style=Primary, state=Focus, type=Default | 155px × 49px | 0px 40px 0px 40px | 0px | 12px | 18px | #C7B9FF | #FFFFFF | #FFFFFF |
+| size=Large, style=Primary, state=Focus, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | — | #FFFFFF | — |
 | size=Large, style=Primary, state=Focus, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #1C3FCA | #FFFFFF | — |
-| size=Large, style=Primary, state=Focus, type=White | 150px × 48px | 0px 20px 0px 20px | 4px | 12px | 14px | #FFFFFF | #1C3FCA | — |
+| size=Large, style=Primary, state=Focus, type=White | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #FFFFFF | #1C3FCA | — |
 | size=Large, style=Primary, state=Hover, type=Default | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #D61C53 | #FFFFFF | — |
 | size=Large, style=Primary, state=Hover, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | — | #FFFFFF | — |
 | size=Large, style=Primary, state=Hover, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #D61C53 | #FFFFFF | — |
@@ -112,7 +123,7 @@ _No component properties defined in Figma._
 | size=Large, style=Primary, state=Pressed, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | — | #FFFFFF | — |
 | size=Large, style=Primary, state=Pressed, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #00815A | #FFFFFF | — |
 | size=Large, style=Primary, state=Pressed, type=White | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #FFFFFF | #1C3FCA | — |
-| size=Large, style=Secondary, state=Default, type=Default | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #00815A | #1C3FCA | #1C3FCA |
+| size=Large, style=Secondary, state=Default, type=Default | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #1F30AD | #1C3FCA | #1C3FCA |
 | size=Large, style=Secondary, state=Default, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #00815A | — | — |
 | size=Large, style=Secondary, state=Default, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #00815A | #FFFFFF | #1C3FCA |
 | size=Large, style=Secondary, state=Default, type=White | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #FFFFFF | #FFFFFF | #FFFFFF |
@@ -175,7 +186,7 @@ _No component properties defined in Figma._
 | size=Medium, style=Primary, state=Default, type=Default | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #1C3FCA | #FFFFFF | — |
 | size=Medium, style=Primary, state=Default, type=Gradient | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | — | #FFFFFF | — |
 | size=Medium, style=Primary, state=Default, type=Icon | 40px × 40px | 0px 12px 0px 12px | 0px | 12px | 18px | #1C3FCA | #FFFFFF | — |
-| size=Medium, style=Primary, state=Default, type=White | 118px × 230px | 0px 0px 0px 0px | 12px | 0px | 14px | #FFFFFF | #1C3FCA | — |
+| size=Medium, style=Primary, state=Default, type=White | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #FFFFFF | #1C3FCA | — |
 | size=Medium, style=Primary, state=Disabled, type=Default | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #00815A | #F3F6FD | — |
 | size=Medium, style=Primary, state=Disabled, type=Gradient | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | — | #FFFFFF | — |
 | size=Medium, style=Primary, state=Disabled, type=Icon | 40px × 40px | 0px 12px 0px 12px | 0px | 12px | 18px | #00815A | #FFFFFF | — |
@@ -183,7 +194,7 @@ _No component properties defined in Figma._
 | size=Medium, style=Primary, state=Focus, type=Default | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #1C3FCA | #FFFFFF | — |
 | size=Medium, style=Primary, state=Focus, type=Gradient | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | — | #FFFFFF | — |
 | size=Medium, style=Primary, state=Focus, type=Icon | 40px × 40px | 0px 12px 0px 12px | 0px | 12px | 18px | #1C3FCA | #FFFFFF | — |
-| size=Medium, style=Primary, state=Focus, type=White | 117px × 230px | 0px 0px 0px 0px | 12px | 0px | 14px | #FFFFFF | #1C3FCA | — |
+| size=Medium, style=Primary, state=Focus, type=White | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #FFFFFF | #1C3FCA | — |
 | size=Medium, style=Primary, state=Hover, type=Default | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | #D61C53 | #FFFFFF | — |
 | size=Medium, style=Primary, state=Hover, type=Gradient | 131px × 40px | 0px 16px 0px 16px | 0px | 12px | 16px | — | #FFFFFF | — |
 | size=Medium, style=Primary, state=Hover, type=Icon | 40px × 40px | 0px 12px 0px 12px | 0px | 12px | 18px | #D61C53 | #FFFFFF | — |
@@ -395,8 +406,50 @@ _No component properties defined in Figma._
 
 ## Figma Changelog & Diff Status
 
-> [!TIP]
-> **Nothing changed** — the latest Figma sync matches the previous snapshot.
+> [!IMPORTANT]
+> **39 change(s) detected** in the latest Figma sync (2026-11-27T07:08:35.325Z).
+
+### Changes in latest sync
+
+- Property added: `leadingIcon` (BOOLEAN)
+- Property added: `label` (TEXT)
+- Property added: `trailingIcon` (BOOLEAN)
+- Property added: `size` (VARIANT)
+- Property added: `style` (VARIANT)
+- Property added: `state` (VARIANT)
+- Property added: `type` (VARIANT)
+- Base Width × Height: `150px × 48px` → `154px × 48px`
+- Base Padding: `0px 20px 0px 20px` → `0px 40px 0px 40px`
+- Base Gap: `4px` → `0px`
+- Base Font size: `14px` → `18px`
+- Base Background: `—` → `#C7B9FF`
+- Base Border color: `—` → `#FFFFFF`
+- Variant added: `size=Large, style=Primary, state=Default, type=Default`
+- Variant added: `size=Large, style=Primary, state=Focus, type=Default`
+- Variant `size=Large, style=Primary, state=Default, type=Gradient` — Width × Height: `150px × 48px` → `194px × 72px`
+- Variant `size=Large, style=Primary, state=Default, type=Gradient` — Padding: `0px 20px 0px 20px` → `0px 40px 0px 40px`
+- Variant `size=Large, style=Primary, state=Default, type=Gradient` — Gap: `4px` → `0px`
+- Variant `size=Large, style=Primary, state=Default, type=Gradient` — Font size: `14px` → `18px`
+- Variant `size=Large, style=Primary, state=Focus, type=Gradient` — Width × Height: `150px × 48px` → `154px × 48px`
+- Variant `size=Large, style=Primary, state=Focus, type=Gradient` — Gap: `4px` → `0px`
+- Variant `size=Large, style=Primary, state=Focus, type=Gradient` — Font size: `14px` → `18px`
+- Variant `size=Large, style=Primary, state=Default, type=White` — Width × Height: `150px × 48px` → `154px × 48px`
+- Variant `size=Large, style=Primary, state=Default, type=White` — Gap: `4px` → `0px`
+- Variant `size=Large, style=Primary, state=Default, type=White` — Font size: `14px` → `18px`
+- Variant `size=Large, style=Primary, state=Focus, type=White` — Width × Height: `150px × 48px` → `154px × 48px`
+- Variant `size=Large, style=Primary, state=Focus, type=White` — Gap: `4px` → `0px`
+- Variant `size=Large, style=Primary, state=Focus, type=White` — Font size: `14px` → `18px`
+- Variant `size=Medium, style=Primary, state=Default, type=White` — Width × Height: `118px × 230px` → `131px × 40px`
+- Variant `size=Medium, style=Primary, state=Default, type=White` — Padding: `0px 0px 0px 0px` → `0px 16px 0px 16px`
+- Variant `size=Medium, style=Primary, state=Default, type=White` — Gap: `12px` → `0px`
+- Variant `size=Medium, style=Primary, state=Default, type=White` — Corner radius: `0px` → `12px`
+- Variant `size=Medium, style=Primary, state=Default, type=White` — Font size: `14px` → `16px`
+- Variant `size=Medium, style=Primary, state=Focus, type=White` — Width × Height: `117px × 230px` → `131px × 40px`
+- Variant `size=Medium, style=Primary, state=Focus, type=White` — Padding: `0px 0px 0px 0px` → `0px 16px 0px 16px`
+- Variant `size=Medium, style=Primary, state=Focus, type=White` — Gap: `12px` → `0px`
+- Variant `size=Medium, style=Primary, state=Focus, type=White` — Corner radius: `0px` → `12px`
+- Variant `size=Medium, style=Primary, state=Focus, type=White` — Font size: `14px` → `16px`
+- Variant `size=Large, style=Secondary, state=Default, type=Default` — Background: `#00815A` → `#1F30AD`
 
 ### Previous changes
 
@@ -1138,12 +1191,6 @@ _No component properties defined in Figma._
 - Variant `size=Large, style=Primary, state=Disabled, type=Icon` — Gap: `0px` → `4px`
 - Variant `size=Large, style=Secondary, state=Default, type=Icon` — Gap: `0px` → `4px`
 - Variant `size=Large, style=Secondary, state=Focus, type=Icon` — Gap: `0px` → `4px`
-
-**2026-11-17T07:34:02.614Z**
-
-- Variant `size=Large, style=Primary, state=Default, type=Gradient` — Width × Height: `195px × 72px` → `163px × 48px`
-- Variant `size=Large, style=Primary, state=Default, type=Gradient` — Padding: `0px 40px 0px 40px` → `0px 20px 0px 20px`
-- Variant `size=Large, style=Primary, state=Default, type=Gradient` — Gap: `0px` → `4px`
 
 ## Code files
 

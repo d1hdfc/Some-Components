@@ -53,9 +53,9 @@ export function HeaderPage({
       <div className="docs-topbar-left">
         <a
           className="docs-brand"
-          href="#button"
+          href="#dashboard"
           aria-label="HDFC design system home"
-          onClick={() => onNav('button')}
+          onClick={() => onNav('dashboard')}
         >
           <span className="docs-brand-mark">H</span>
           <span className="docs-brand-text">HDFC Some Components</span>

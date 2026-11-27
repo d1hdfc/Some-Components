@@ -159,8 +159,9 @@ export function SidebarPage({ currentPage, updatesCount = 0 }: SidebarPageProps)
         <p className="docs-nav-heading">OVERVIEW &amp; SYNC</p>
 
         <a
-          href="#button"
-          className={`docs-nav-overview-item${currentPage === 'button' ? ' docs-nav-active' : ''}`}
+          href="#dashboard"
+          className={`docs-nav-overview-item${currentPage === 'dashboard' ? ' docs-nav-active' : ''}`}
+          aria-current={currentPage === 'dashboard' ? 'page' : undefined}
         >
           <span className="docs-nav-link-inner">
             <svg className="docs-nav-inline-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -176,6 +177,7 @@ export function SidebarPage({ currentPage, updatesCount = 0 }: SidebarPageProps)
         <a
           href="#updated-code"
           className={`docs-nav-overview-item${currentPage === 'updated-code' ? ' docs-nav-active' : ''}`}
+          aria-current={currentPage === 'updated-code' ? 'page' : undefined}
         >
           <span className="docs-nav-link-inner">
             <svg className="docs-nav-inline-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -193,6 +195,7 @@ export function SidebarPage({ currentPage, updatesCount = 0 }: SidebarPageProps)
         <a
           href="#installation"
           className={`docs-nav-overview-item${currentPage === 'installation' ? ' docs-nav-active' : ''}`}
+          aria-current={currentPage === 'installation' ? 'page' : undefined}
         >
           <span className="docs-nav-link-inner">
             <svg className="docs-nav-inline-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

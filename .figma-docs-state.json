@@ -1,8 +1,52 @@
 {
   "button": {
-    "status": "unchanged",
+    "status": "changed",
     "baselineAt": "2026-11-09T07:52:17.559Z",
     "history": [
+      {
+        "at": "2026-11-27T07:08:35.325Z",
+        "changes": [
+          "Property added: `leadingIcon` (BOOLEAN)",
+          "Property added: `label` (TEXT)",
+          "Property added: `trailingIcon` (BOOLEAN)",
+          "Property added: `size` (VARIANT)",
+          "Property added: `style` (VARIANT)",
+          "Property added: `state` (VARIANT)",
+          "Property added: `type` (VARIANT)",
+          "Base Width × Height: `150px × 48px` → `154px × 48px`",
+          "Base Padding: `0px 20px 0px 20px` → `0px 40px 0px 40px`",
+          "Base Gap: `4px` → `0px`",
+          "Base Font size: `14px` → `18px`",
+          "Base Background: `—` → `#C7B9FF`",
+          "Base Border color: `—` → `#FFFFFF`",
+          "Variant added: `size=Large, style=Primary, state=Default, type=Default`",
+          "Variant added: `size=Large, style=Primary, state=Focus, type=Default`",
+          "Variant `size=Large, style=Primary, state=Default, type=Gradient` — Width × Height: `150px × 48px` → `194px × 72px`",
+          "Variant `size=Large, style=Primary, state=Default, type=Gradient` — Padding: `0px 20px 0px 20px` → `0px 40px 0px 40px`",
+          "Variant `size=Large, style=Primary, state=Default, type=Gradient` — Gap: `4px` → `0px`",
+          "Variant `size=Large, style=Primary, state=Default, type=Gradient` — Font size: `14px` → `18px`",
+          "Variant `size=Large, style=Primary, state=Focus, type=Gradient` — Width × Height: `150px × 48px` → `154px × 48px`",
+          "Variant `size=Large, style=Primary, state=Focus, type=Gradient` — Gap: `4px` → `0px`",
+          "Variant `size=Large, style=Primary, state=Focus, type=Gradient` — Font size: `14px` → `18px`",
+          "Variant `size=Large, style=Primary, state=Default, type=White` — Width × Height: `150px × 48px` → `154px × 48px`",
+          "Variant `size=Large, style=Primary, state=Default, type=White` — Gap: `4px` → `0px`",
+          "Variant `size=Large, style=Primary, state=Default, type=White` — Font size: `14px` → `18px`",
+          "Variant `size=Large, style=Primary, state=Focus, type=White` — Width × Height: `150px × 48px` → `154px × 48px`",
+          "Variant `size=Large, style=Primary, state=Focus, type=White` — Gap: `4px` → `0px`",
+          "Variant `size=Large, style=Primary, state=Focus, type=White` — Font size: `14px` → `18px`",
+          "Variant `size=Medium, style=Primary, state=Default, type=White` — Width × Height: `118px × 230px` → `131px × 40px`",
+          "Variant `size=Medium, style=Primary, state=Default, type=White` — Padding: `0px 0px 0px 0px` → `0px 16px 0px 16px`",
+          "Variant `size=Medium, style=Primary, state=Default, type=White` — Gap: `12px` → `0px`",
+          "Variant `size=Medium, style=Primary, state=Default, type=White` — Corner radius: `0px` → `12px`",
+          "Variant `size=Medium, style=Primary, state=Default, type=White` — Font size: `14px` → `16px`",
+          "Variant `size=Medium, style=Primary, state=Focus, type=White` — Width × Height: `117px × 230px` → `131px × 40px`",
+          "Variant `size=Medium, style=Primary, state=Focus, type=White` — Padding: `0px 0px 0px 0px` → `0px 16px 0px 16px`",
+          "Variant `size=Medium, style=Primary, state=Focus, type=White` — Gap: `12px` → `0px`",
+          "Variant `size=Medium, style=Primary, state=Focus, type=White` — Corner radius: `0px` → `12px`",
+          "Variant `size=Medium, style=Primary, state=Focus, type=White` — Font size: `14px` → `16px`",
+          "Variant `size=Large, style=Secondary, state=Default, type=Default` — Background: `#00815A` → `#1F30AD`"
+        ]
+      },
       {
         "at": "2026-11-26T07:11:20.014Z",
         "changes": [
@@ -759,95 +803,166 @@
           "Variant `size=Large, style=Secondary, state=Default, type=Icon` — Gap: `0px` → `4px`",
           "Variant `size=Large, style=Secondary, state=Focus, type=Icon` — Gap: `0px` → `4px`"
         ]
-      },
-      {
-        "at": "2026-11-17T07:34:02.614Z",
-        "changes": [
-          "Variant `size=Large, style=Primary, state=Default, type=Gradient` — Width × Height: `195px × 72px` → `163px × 48px`",
-          "Variant `size=Large, style=Primary, state=Default, type=Gradient` — Padding: `0px 40px 0px 40px` → `0px 20px 0px 20px`",
-          "Variant `size=Large, style=Primary, state=Default, type=Gradient` — Gap: `0px` → `4px`"
-        ]
       }
     ],
     "snapshot": {
       "name": "Button",
       "description": "",
       "textContent": "Button",
-      "properties": {},
+      "properties": {
+        "leadingIcon": {
+          "type": "BOOLEAN",
+          "defaultValue": "true",
+          "options": []
+        },
+        "label": {
+          "type": "TEXT",
+          "defaultValue": "Button",
+          "options": []
+        },
+        "trailingIcon": {
+          "type": "BOOLEAN",
+          "defaultValue": "true",
+          "options": []
+        },
+        "size": {
+          "type": "VARIANT",
+          "defaultValue": "Large",
+          "options": [
+            "Large",
+            "Medium",
+            "Small",
+            "Xsmall"
+          ]
+        },
+        "style": {
+          "type": "VARIANT",
+          "defaultValue": "Primary",
+          "options": [
+            "Primary",
+            "Secondary",
+            "Tertiary",
+            "Link"
+          ]
+        },
+        "state": {
+          "type": "VARIANT",
+          "defaultValue": "Default",
+          "options": [
+            "Default",
+            "Hover",
+            "Pressed",
+            "Disabled",
+            "Focus"
+          ]
+        },
+        "type": {
+          "type": "VARIANT",
+          "defaultValue": "Default",
+          "options": [
+            "Default",
+            "Icon",
+            "Gradient",
+            "White"
+          ]
+        }
+      },
       "base": {
-        "size": "150px × 48px",
-        "padding": "0px 20px 0px 20px",
-        "gap": "4px",
+        "size": "154px × 48px",
+        "padding": "0px 40px 0px 40px",
+        "gap": "0px",
         "radius": "12px",
-        "fontSize": "14px",
+        "fontSize": "18px",
         "lineHeight": null,
-        "background": null,
+        "background": "#C7B9FF",
         "textColor": "#FFFFFF",
-        "border": null,
+        "border": "#FFFFFF",
         "layoutMode": "HORIZONTAL"
       },
       "variants": {
-        "size=Large, style=Primary, state=Default, type=Gradient": {
-          "size": "150px × 48px",
-          "padding": "0px 20px 0px 20px",
-          "gap": "4px",
+        "size=Large, style=Primary, state=Default, type=Default": {
+          "size": "154px × 48px",
+          "padding": "0px 40px 0px 40px",
+          "gap": "0px",
           "radius": "12px",
-          "fontSize": "14px",
+          "fontSize": "18px",
+          "lineHeight": "24px",
+          "background": "#C7B9FF",
+          "textColor": "#FFFFFF",
+          "border": "#FFFFFF"
+        },
+        "size=Large, style=Primary, state=Focus, type=Default": {
+          "size": "155px × 49px",
+          "padding": "0px 40px 0px 40px",
+          "gap": "0px",
+          "radius": "12px",
+          "fontSize": "18px",
+          "lineHeight": "24px",
+          "background": "#C7B9FF",
+          "textColor": "#FFFFFF",
+          "border": "#FFFFFF"
+        },
+        "size=Large, style=Primary, state=Default, type=Gradient": {
+          "size": "194px × 72px",
+          "padding": "0px 40px 0px 40px",
+          "gap": "0px",
+          "radius": "12px",
+          "fontSize": "18px",
           "lineHeight": "24px",
           "background": null,
           "textColor": "#FFFFFF",
           "border": null
         },
         "size=Large, style=Primary, state=Focus, type=Gradient": {
-          "size": "150px × 48px",
+          "size": "154px × 48px",
           "padding": "0px 20px 0px 20px",
-          "gap": "4px",
+          "gap": "0px",
           "radius": "12px",
-          "fontSize": "14px",
+          "fontSize": "18px",
           "lineHeight": "24px",
           "background": null,
           "textColor": "#FFFFFF",
           "border": null
         },
         "size=Large, style=Primary, state=Default, type=White": {
-          "size": "150px × 48px",
+          "size": "154px × 48px",
           "padding": "0px 20px 0px 20px",
-          "gap": "4px",
+          "gap": "0px",
           "radius": "12px",
-          "fontSize": "14px",
+          "fontSize": "18px",
           "lineHeight": "24px",
           "background": "#FFFFFF",
           "textColor": "#1C3FCA",
           "border": null
         },
         "size=Large, style=Primary, state=Focus, type=White": {
-          "size": "150px × 48px",
+          "size": "154px × 48px",
           "padding": "0px 20px 0px 20px",
-          "gap": "4px",
+          "gap": "0px",
           "radius": "12px",
-          "fontSize": "14px",
+          "fontSize": "18px",
           "lineHeight": "24px",
           "background": "#FFFFFF",
           "textColor": "#1C3FCA",
           "border": null
         },
         "size=Medium, style=Primary, state=Default, type=White": {
-          "size": "118px × 230px",
-          "padding": "0px 0px 0px 0px",
-          "gap": "12px",
-          "radius": "0px",
-          "fontSize": "14px",
+          "size": "131px × 40px",
+          "padding": "0px 16px 0px 16px",
+          "gap": "0px",
+          "radius": "12px",
+          "fontSize": "16px",
           "lineHeight": "20px",
           "background": "#FFFFFF",
           "textColor": "#1C3FCA",
           "border": null
         },
         "size=Medium, style=Primary, state=Focus, type=White": {
-          "size": "117px × 230px",
-          "padding": "0px 0px 0px 0px",
-          "gap": "12px",
-          "radius": "0px",
-          "fontSize": "14px",
+          "size": "131px × 40px",
+          "padding": "0px 16px 0px 16px",
+          "gap": "0px",
+          "radius": "12px",
+          "fontSize": "16px",
           "lineHeight": "20px",
           "background": "#FFFFFF",
           "textColor": "#1C3FCA",
@@ -2301,7 +2416,7 @@
           "radius": "12px",
           "fontSize": "18px",
           "lineHeight": "24px",
-          "background": "#00815A",
+          "background": "#1F30AD",
           "textColor": "#1C3FCA",
           "border": "#1C3FCA"
         },
