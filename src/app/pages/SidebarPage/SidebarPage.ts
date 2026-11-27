@@ -1,1 +1,1 @@
-export { SidebarPage } from './SidebarPage.tsx';
+export * from './SidebarPage.tsx';

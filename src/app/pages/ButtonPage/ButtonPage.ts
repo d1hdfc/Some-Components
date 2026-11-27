@@ -1,1 +1,1 @@
-export { ButtonPage } from './ButtonPage.tsx';
+export * from './ButtonPage.tsx';

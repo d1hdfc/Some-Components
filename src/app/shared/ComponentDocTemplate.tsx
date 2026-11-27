@@ -1,15 +1,14 @@
 import { createElement, useState } from 'react';
 import type { ComponentDocumentation } from './componentRegistry';
 import {
+  ComponentSourceInspector,
+  MarkdownView,
   getComponentChangelogStatus,
   getComponentMarkdown,
   getComponentSourceFiles,
   isFigmaSourcedMarkdown
-} from './componentMarkdown';
-import { ComponentSourceInspector, MarkdownView } from '../../components/MarkdownView';
-import type { SyncHistoryEntry } from '../../hooks/useSyncWebSocket';
-import initialSyncHistory from '../../../figma/syncHistory.json';
-import './ComponentPage.scss';
+} from './MarkdownView';
+import './ComponentDocTemplate.scss';
 
 function formatValue(value: unknown): string | undefined {
   if (typeof value === 'string') return `"${value.replaceAll('"', '\\"')}"`;
@@ -81,19 +80,16 @@ function ComponentPreview({
 type PortalMainTab = 'preview' | 'code' | 'specs';
 type QuickCodeTab = 'tsx' | 'scss' | 'dart' | 'md';
 
-export function ComponentPage({
-  component,
-  historyEntries = (initialSyncHistory as { entries?: SyncHistoryEntry[] }).entries ?? []
+export function ComponentDocTemplate({
+  component
 }: {
   component: ComponentDocumentation;
-  historyEntries?: SyncHistoryEntry[];
 }) {
   const [portalTab, setPortalTab] = useState<PortalMainTab>('preview');
   const [showCode, setShowCode] = useState(false);
   const [activeCodeTab, setActiveCodeTab] = useState<QuickCodeTab>('tsx');
   const [copyStatus, setCopyStatus] = useState('Copy');
 
-  // Interactive playground controls for component preview
   const [variantOverride, setVariantOverride] = useState<string>(
     String(component.previewProps.variant ?? 'primary')
   );
@@ -118,8 +114,8 @@ export function ComponentPage({
   const markdown = getComponentMarkdown(component.slug);
   const changelog = getComponentChangelogStatus(component.slug);
 
-  const installCode = 'npm install @d1hdfc/ui-components@main';
-  const importCode = `import { ${component.name} } from '@d1hdfc/ui-components';\nimport '@d1hdfc/ui-components/style.scss';`;
+  const installCode = 'npm install @d1hdfc/Some-Components@main';
+  const importCode = `import { ${component.name} } from '@d1hdfc/Some-Components';\nimport '@d1hdfc/Some-Components/style.scss';`;
   const exampleCode = getExampleCode(component, liveOverrides);
   const sourceUrl = `https://github.com/d1hdfc/Some-Components/tree/main/src/components/${component.slug}`;
 
@@ -142,7 +138,6 @@ export function ComponentPage({
 
   return (
     <main className="docs-content auto-component-page" id={component.routeSlug}>
-      {/* Breadcrumb */}
       <div className="docs-breadcrumbs">
         <a href="#dashboard">Dashboard</a>
         <span>/</span>
@@ -151,10 +146,9 @@ export function ComponentPage({
         <strong>{component.title}</strong>
       </div>
 
-      {/* Header */}
       <header className="docs-heading">
         <div className="docs-heading-inner">
-          <p className="docs-eyebrow">ATLASSIAN DESIGN SYSTEM Â· COMPONENT</p>
+          <p className="docs-eyebrow">HDFC DESIGN SYSTEM · COMPONENT</p>
           <div className="docs-title-row">
             <h1>{component.title}</h1>
             <span className="docs-status-badge">
@@ -166,7 +160,7 @@ export function ComponentPage({
                 changelog.hasChanges ? 'docs-diff-badge--updated' : 'docs-diff-badge--clean'
               }`}
             >
-              {changelog.hasChanges ? 'â— Figma Changes Synced' : 'âœ“ Nothing changed'}
+              {changelog.hasChanges ? '● Figma Changes Synced' : '✓ Nothing changed'}
             </span>
           </div>
           <p className="docs-intro">
@@ -177,17 +171,16 @@ export function ComponentPage({
           </p>
           <div className="docs-heading-links">
             <a href={sourceUrl} target="_blank" rel="noopener noreferrer">
-              â†— View source
+              ↗ View source
             </a>
             {component.figmaUrl && (
               <a href={component.figmaUrl} target="_blank" rel="noopener noreferrer">
-                ðŸŽ¨ Open in Figma
+                Open in Figma ↗
               </a>
             )}
           </div>
         </div>
 
-        {/* Atlassian-Style Top-Level Portal Tabs */}
         <div className="atlassian-portal-tabs" role="tablist" aria-label="Component portal tabs">
           <button
             type="button"
@@ -198,7 +191,7 @@ export function ComponentPage({
             }`}
             onClick={() => setPortalTab('preview')}
           >
-            1. Preview & Playground
+            1. Preview &amp; Playground
           </button>
           <button
             type="button"
@@ -209,7 +202,7 @@ export function ComponentPage({
             }`}
             onClick={() => setPortalTab('code')}
           >
-            2. Code Snippets (.tsx Â· .scss Â· .dart Â· .md)
+            2. Code Snippets (.tsx · .scss · .dart · .md)
           </button>
           <button
             type="button"
@@ -220,12 +213,11 @@ export function ComponentPage({
             }`}
             onClick={() => setPortalTab('specs')}
           >
-            3. Figma Specs & Changelog
+            3. Figma Specs &amp; Changelog
           </button>
         </div>
       </header>
 
-      {/* TAB 2: CODE SNIPPETS INSPECTOR */}
       {portalTab === 'code' && (
         <section className="docs-section" id="component-code-inspector">
           <div className="docs-section-heading">
@@ -239,12 +231,11 @@ export function ComponentPage({
         </section>
       )}
 
-      {/* TAB 3: FIGMA SPECS & CHANGELOG */}
       {portalTab === 'specs' && (
         <section className="docs-section" id="component-docs">
           <div className="docs-section-heading md-docs-heading">
             <div>
-              <h2>Figma Specifications & Changelog ({component.title})</h2>
+              <h2>Figma Specifications &amp; Changelog ({component.title})</h2>
               <p>
                 Rendered live from <code>src/components/{component.slug}/{component.slug}.md</code>.
               </p>
@@ -271,13 +262,11 @@ export function ComponentPage({
         </section>
       )}
 
-      {/* TAB 1: PREVIEW, PLAYGROUND, INSTALLATION, GUIDELINES & API */}
       {portalTab === 'preview' && (
         <>
-          {/* Live Interactive Preview & Playground */}
           <section className="docs-section" id="component-examples">
             <div className="docs-section-heading">
-              <h2>Interactive Preview & Playground</h2>
+              <h2>Interactive Preview &amp; Playground</h2>
               <p>Test variants, sizes, and states live from source.</p>
             </div>
 
@@ -285,7 +274,7 @@ export function ComponentPage({
               <div className="auto-component-example-heading">
                 <div>
                   <h3>{component.title}</h3>
-                  <p>Live interactive rendering Â· Adjust controls below</p>
+                  <p>Live interactive rendering · Adjust controls below</p>
                 </div>
                 <div className="auto-example-actions">
                   <button
@@ -293,7 +282,7 @@ export function ComponentPage({
                     className="auto-view-code-btn"
                     onClick={() => setPortalTab('code')}
                   >
-                    Inspect 5 Files â†—
+                    Inspect 5 Files ↗
                   </button>
                   <button
                     type="button"
@@ -306,7 +295,6 @@ export function ComponentPage({
                 </div>
               </div>
 
-              {/* Interactive Controls Bar */}
               <div className="auto-playground-controls">
                 <label className="auto-playground-field">
                   <span>Variant</span>
@@ -366,10 +354,10 @@ export function ComponentPage({
                           {tab === 'tsx'
                             ? 'React (.tsx)'
                             : tab === 'scss'
-                            ? 'Styles (.scss)'
-                            : tab === 'dart'
-                            ? 'Flutter (.dart)'
-                            : 'Markdown (.md)'}
+                              ? 'Styles (.scss)'
+                              : tab === 'dart'
+                                ? 'Flutter (.dart)'
+                                : 'Markdown (.md)'}
                         </button>
                       ))}
                     </div>
@@ -390,7 +378,6 @@ export function ComponentPage({
             </article>
           </section>
 
-          {/* Installation */}
           <section className="docs-section" id="component-installation">
             <div className="docs-section-heading">
               <h2>Installation</h2>
@@ -412,11 +399,10 @@ export function ComponentPage({
             </div>
           </section>
 
-          {/* Inline Figma Changelog & Diff Summary Card */}
           <section className="docs-section" id="component-docs">
             <div className="docs-section-heading md-docs-heading">
               <div>
-                <h2>Figma Changelog & Diff Status</h2>
+                <h2>Figma Changelog &amp; Diff Status</h2>
                 <p>
                   Live status from <code>src/components/{component.slug}/{component.slug}.md</code>.
                 </p>
@@ -426,7 +412,7 @@ export function ComponentPage({
                 className="auto-view-code-btn"
                 onClick={() => setPortalTab('specs')}
               >
-                Open Full Figma Specs â†’
+                Open Full Figma Specs →
               </button>
             </div>
             <div className="md-docs-card">
@@ -434,7 +420,6 @@ export function ComponentPage({
             </div>
           </section>
 
-          {/* Usage Guidelines */}
           <section className="docs-section" id="component-guidelines">
             <div className="docs-section-heading">
               <h2>Usage guidelines</h2>
@@ -443,27 +428,27 @@ export function ComponentPage({
             <div className="auto-guidelines-grid">
               <div className="auto-guideline-card auto-guideline-card--do">
                 <div className="auto-guideline-card-header">
-                  <span className="auto-guideline-icon">âœ“</span>
+                  <span className="auto-guideline-icon">✓</span>
                   <strong>Do</strong>
                 </div>
                 <p>
                   Use <strong>{component.title}</strong> for its intended purpose following HDFC
-                  design tokens (`token&gt;variables`).
+                  design tokens (<code>src/tokens/variables/</code>).
                 </p>
               </div>
               <div className="auto-guideline-card auto-guideline-card--dont">
                 <div className="auto-guideline-card-header">
-                  <span className="auto-guideline-icon">âœ—</span>
-                  <strong>Don't</strong>
+                  <span className="auto-guideline-icon">✗</span>
+                  <strong>Don&apos;t</strong>
                 </div>
                 <p>
-                  Don't hardcode raw hex or pixel values â€” always reference semantic token variables.
+                  Don&apos;t hardcode raw hex or pixel values — always reference semantic token
+                  variables.
                 </p>
               </div>
             </div>
           </section>
 
-          {/* API Reference */}
           <section className="docs-section" id="component-api">
             <div className="docs-section-heading">
               <h2>API reference</h2>
@@ -485,7 +470,7 @@ export function ComponentPage({
                       <code>variant</code>
                     </td>
                     <td>
-                      <code>'primary' | 'secondary' | 'tertiary' | 'outlined'</code>
+                      <code>&apos;primary&apos; | &apos;secondary&apos; | &apos;tertiary&apos; | &apos;outlined&apos;</code>
                     </td>
                     <td>
                       <code>{String(component.previewProps.variant ?? 'primary')}</code>
@@ -497,7 +482,7 @@ export function ComponentPage({
                       <code>size</code>
                     </td>
                     <td>
-                      <code>'small' | 'medium' | 'large'</code>
+                      <code>&apos;small&apos; | &apos;medium&apos; | &apos;large&apos;</code>
                     </td>
                     <td>
                       <code>{String(component.previewProps.size ?? 'medium')}</code>
@@ -527,7 +512,7 @@ export function ComponentPage({
                     <td>
                       <code>ReactNode</code>
                     </td>
-                    <td>â€“</td>
+                    <td>–</td>
                     <td>Child content rendered inside the component.</td>
                   </tr>
                 </tbody>

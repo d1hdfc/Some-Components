@@ -1,30 +1,30 @@
 import { useState } from 'react';
 import type { SyncHistoryEntry, SyncStatus } from '../../hooks/useSyncWebSocket';
-import { componentDocumentation } from '../ComponentPage/componentRegistry';
-import { ComponentSourceInspector } from '../../components/MarkdownView';
-import { RecentUpdatesBanner } from '../../components/RecentUpdatesBanner';
-import './UpdatedCodePage.scss';
+import { componentDocumentation } from '../../shared/componentRegistry';
+import { ComponentSourceInspector } from '../../shared/MarkdownView';
+import { SyncFeedTableCard } from '../DashboardPage/DashboardPage';
+import './LatestUpdatedCodePage.scss';
 
-interface UpdatedCodePageProps {
+interface LatestUpdatedCodePageProps {
   entries: SyncHistoryEntry[];
   syncStatus?: SyncStatus;
   onRequestPreSync?: (direction: 'figma-to-code' | 'code-to-figma' | 'figma-to-github') => void;
 }
 
-export function UpdatedCodePage({
+export function LatestUpdatedCodePage({
   entries,
   onRequestPreSync
-}: UpdatedCodePageProps) {
+}: LatestUpdatedCodePageProps) {
   const [selectedLiveSlug, setSelectedLiveSlug] = useState<string>(
     componentDocumentation[0]?.slug ?? 'button'
   );
 
   return (
-    <main className="docs-content updated-code-page" id="updated-code">
+    <main className="docs-content updated-code-page" id="latest-updated-code">
       <div className="docs-breadcrumbs">
         <a href="#dashboard">Dashboard</a>
         <span>/</span>
-        <strong>Updated Code &amp; Diffs</strong>
+        <strong>Latest Updated Code</strong>
       </div>
 
       <header className="docs-heading" style={{ marginBottom: 24 }}>
@@ -32,7 +32,7 @@ export function UpdatedCodePage({
           <div>
             <p className="docs-eyebrow">SURGICAL BI-DIRECTIONAL SYNC · CODE &amp; DIFF INSPECTOR</p>
             <div className="docs-title-row">
-              <h1>Updated Code &amp; Sync Activity</h1>
+              <h1>Latest Updated Code</h1>
               <span className="docs-status">
                 <i /> Targeted Single-Component Sync
               </span>
@@ -67,7 +67,7 @@ export function UpdatedCodePage({
       </header>
 
       {/* SECTION 1: 5-Column "What Updated (Recent Sync Feed)" Table Card with Expandable File Diffs */}
-      <RecentUpdatesBanner entries={entries} />
+      <SyncFeedTableCard entries={entries} />
 
       {/* SECTION 2: ALL ACTIVE COMPONENT CODE BUNDLES (.tsx, .scss, .types.ts, .dart, .md) */}
       <section className="docs-section" id="active-code-bundles">
@@ -128,4 +128,5 @@ export function UpdatedCodePage({
   );
 }
 
-export default UpdatedCodePage;
+export default LatestUpdatedCodePage;
+

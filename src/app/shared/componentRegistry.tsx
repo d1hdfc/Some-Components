@@ -1,5 +1,5 @@
 import type { ComponentType, ReactNode } from 'react';
-import catalogSource from '../../../figma/components.json';
+import catalogSource from '../../figma/components.json';
 
 type PreviewComponent = ComponentType<Record<string, unknown>>;
 
@@ -28,7 +28,7 @@ const previewExamples: Record<string, PreviewExample> = {
 };
 
 const componentModules = import.meta.glob<Record<string, unknown>>(
-  '../../../components/*/*.tsx',
+  '../../components/*/*.tsx',
   { eager: true }
 );
 
@@ -91,3 +91,4 @@ export const componentDocumentation: ComponentDocumentation[] = Object.entries(c
     }];
   })
   .sort((left, right) => left.title.localeCompare(right.title));
+

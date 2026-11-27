@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import type { PendingSyncItem } from '../hooks/useSyncWebSocket';
-import './RecentUpdatesBanner.scss';
 
 interface SyncConfirmModalProps {
   open: boolean;
@@ -169,3 +168,4 @@ export function SyncConfirmModal({
     </div>
   );
 }
+

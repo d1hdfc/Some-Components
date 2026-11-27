@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { componentDocumentation } from '../ComponentPage/componentRegistry';
+import { componentDocumentation } from '../../shared/componentRegistry';
 import './SidebarPage.scss';
 
 const CATEGORIES: Record<string, string[]> = {
@@ -170,14 +170,14 @@ export function SidebarPage({ currentPage, updatesCount = 0 }: SidebarPageProps)
               <rect x="14" y="14" width="7" height="7" rx="1.5" />
               <rect x="3" y="14" width="7" height="7" rx="1.5" />
             </svg>
-            <span>Dashboard Overview</span>
+            <span>Dashboard</span>
           </span>
         </a>
 
         <a
-          href="#updated-code"
-          className={`docs-nav-overview-item${currentPage === 'updated-code' ? ' docs-nav-active' : ''}`}
-          aria-current={currentPage === 'updated-code' ? 'page' : undefined}
+          href="#latest-updated-code"
+          className={`docs-nav-overview-item${currentPage === 'latest-updated-code' ? ' docs-nav-active' : ''}`}
+          aria-current={currentPage === 'latest-updated-code' ? 'page' : undefined}
         >
           <span className="docs-nav-link-inner">
             <svg className="docs-nav-inline-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -185,7 +185,7 @@ export function SidebarPage({ currentPage, updatesCount = 0 }: SidebarPageProps)
               <polyline points="8 6 2 12 8 18" />
               <line x1="14" y1="4" x2="10" y2="20" />
             </svg>
-            <span>Updated Code &amp; Diffs</span>
+            <span>Latest Updated Code</span>
           </span>
           {updatesCount > 0 && (
             <span className="docs-nav-count docs-nav-count--blue">{updatesCount}</span>
@@ -193,9 +193,9 @@ export function SidebarPage({ currentPage, updatesCount = 0 }: SidebarPageProps)
         </a>
 
         <a
-          href="#installation"
-          className={`docs-nav-overview-item${currentPage === 'installation' ? ' docs-nav-active' : ''}`}
-          aria-current={currentPage === 'installation' ? 'page' : undefined}
+          href="#installation-and-token"
+          className={`docs-nav-overview-item${currentPage === 'installation-and-token' ? ' docs-nav-active' : ''}`}
+          aria-current={currentPage === 'installation-and-token' ? 'page' : undefined}
         >
           <span className="docs-nav-link-inner">
             <svg className="docs-nav-inline-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -205,7 +205,7 @@ export function SidebarPage({ currentPage, updatesCount = 0 }: SidebarPageProps)
               <circle cx="6.5" cy="12.5" r=".5" fill="currentColor" />
               <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z" />
             </svg>
-            <span>Installation &amp; Tokens</span>
+            <span>Installation and Token</span>
           </span>
         </a>
 

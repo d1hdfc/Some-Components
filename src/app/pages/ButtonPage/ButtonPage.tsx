@@ -7,7 +7,7 @@ import type {
   ButtonVisualType
 } from '../../../components/button/button.types';
 import './ButtonPage.scss';
-import { ComponentMarkdownSection } from '../../components/MarkdownView';
+import { ComponentMarkdownSection } from '../../shared/MarkdownView';
 
 const buttonSourceUrl = 'https://github.com/d1hdfc/Some-Components/tree/main/src/components/button';
 const installCode = `npm install @d1hdfc/Some-Components@main`;
