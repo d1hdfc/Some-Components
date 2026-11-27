@@ -1,6 +1,127 @@
 {
-  "lastUpdated": "2026-11-27T07:27:57.581Z",
+  "lastUpdated": "2026-11-27T10:36:15.693Z",
   "entries": [
+    {
+      "id": "sync-tokens-1795775764138",
+      "timestamp": "2026-11-27T10:36:03.902Z",
+      "direction": "figma-to-code",
+      "action": "updated",
+      "slug": "tokens",
+      "componentName": "Design Tokens",
+      "pageName": "semantics.scss",
+      "summary": "tokens: updated --button-size-small-height (var(--global-scale-2175) → var(--layout-size-4xl)), --button-size-medium-height (var(--global-scale-2875) → var(--layout-size-5xl)), --button-size-small-padding-x (var(--global-scale-0) → var(--layout-spacing-md)) (+5 more)",
+      "details": [
+        "--button-size-small-height (var(--global-scale-2175) → var(--layout-size-4xl))",
+        "--button-size-medium-height (var(--global-scale-2875) → var(--layout-size-5xl))",
+        "--button-size-small-padding-x (var(--global-scale-0) → var(--layout-spacing-md))",
+        "--button-size-small-radius (var(--layout-radius-3xs) → var(--layout-radius-sm))",
+        "--button-size-small-gap (var(--layout-spacing-sm) → var(--layout-spacing-2xs))",
+        "--button-size-medium-padding-x (var(--global-scale-0) → var(--layout-spacing-lg))",
+        "--button-size-medium-radius (var(--layout-radius-3xs) → var(--layout-radius-md))",
+        "--button-size-medium-gap (var(--layout-spacing-md) → var(--layout-spacing-xs))"
+      ],
+      "files": [
+        {
+          "path": "src/tokens/variables/semantics.scss",
+          "ext": "scss",
+          "action": "updated",
+          "diff": "+ --button-size-small-height (var(--global-scale-2175) → var(--layout-size-4xl))\n+ --button-size-medium-height (var(--global-scale-2875) → var(--layout-size-5xl))\n+ --button-size-small-padding-x (var(--global-scale-0) → var(--layout-spacing-md))\n+ --button-size-small-radius (var(--layout-radius-3xs) → var(--layout-radius-sm))\n+ --button-size-small-gap (var(--layout-spacing-sm) → var(--layout-spacing-2xs))\n+ --button-size-medium-padding-x (var(--global-scale-0) → var(--layout-spacing-lg))\n+ --button-size-medium-radius (var(--layout-radius-3xs) → var(--layout-radius-md))\n+ --button-size-medium-gap (var(--layout-spacing-md) → var(--layout-spacing-xs))"
+        }
+      ]
+    },
+    {
+      "id": "sync-upd-button-1795775774494",
+      "timestamp": "2026-11-27T10:36:03.902Z",
+      "direction": "figma-to-code",
+      "action": "updated",
+      "slug": "button",
+      "componentName": "Button",
+      "pageName": "ButtonPage",
+      "summary": "button: updated large horizontal padding (20px → 40px); large gap (4px → 0px) (+17 more)",
+      "details": [
+        "large horizontal padding (20px → 40px)",
+        "large gap (4px → 0px)",
+        "primary background color (#FF0000 → #C7B9FF)",
+        "primary hover background color (#F2B102 → #D61C53)",
+        "primary pressed background color (#111111 → #00815A)",
+        "primary disabled background color (#1C3FCA → #00815A)",
+        "medium height (230px → 40px)",
+        "medium horizontal padding (0px → 16px)",
+        "medium corner radius (0px → 12px)",
+        "medium gap (12px → 0px)",
+        "small height (174px → 36px)",
+        "small horizontal padding (0px → 12px)",
+        "small corner radius (0px → 8px)",
+        "small gap (8px → 0px)",
+        "xsmall gap (2px → 0px)",
+        "secondary background color (#B65805 → #00815A)",
+        "secondary hover background color (#D61C53 → #00815A)",
+        "Variant size=Large, style=Primary, state=Focus, type=Default — Width × Height: 155px × 49px → 195px × 72px",
+        "Variant size=Large, style=Secondary, state=Default, type=Default — Background: #1F30AD → #00815A",
+        "medium gap (4px → 0px)",
+        "small gap (2px → 0px)"
+      ],
+      "files": [
+        {
+          "path": "src/components/button/button.md",
+          "ext": "md",
+          "action": "updated",
+          "diff": "- | Node ID | 8185:6 |\n- | size=Large, style=Primary, state=Focus, type=Default | 155px × 49px | 0px 40px 0px 40px | 0px | 12px | 18px | #C7B9FF | #FFFFFF | #FFFFFF |\n- | size=Large, style=Secondary, state=Default, type=Default | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #1F30AD | #1C3FCA | #1C3FCA |\n- > **39 change(s) detected** in the latest Figma sync (2026-11-27T07:08:35.325Z).\n- **2026-11-17T08:07:48.515Z**\n- - Base Width × Height: `162px × 48px` → `194px × 72px`\n- - Base Background: `#1C3FCA` → `#C7B9FF`\n- - Variant `size=Large, style=Primary, state=Default, type=Default` — Width × Height: `162px × 48px` → `194px × 72px`\n- - Variant `size=Large, style=Primary, state=Default, type=Default` — Padding: `0px 20px 0px 20px` → `0px 40px 0px 40px`\n- - Variant `size=Large, style=Primary, state=Default, type=Default` — Gap: `4px` → `0px`\n- - Variant `size=Large, style=Primary, state=Default, type=Default` — Background: `#1C3FCA` → `#C7B9FF`\n- - Variant `size=Large, style=Primary, state=Focus, type=Default` — Width × Height: `163px × 48px` → `195px × 72px`\n- - Variant `size=Large, style=Primary, state=Focus, type=Default` — Gap: `4px` → `0px`\n- - Variant `size=Large, style=Primary, state=Focus, type=Default` — Background: `#1C3FCA` → `#C7B9FF`\n- - Variant `size=Large, style=Primary, state=Focus, type=Gradient` — Width × Height: `195px × 72px` → `163px × 48px`\n- - Variant `size=Large, style=Primary, state=Default, type=White` — Width × Height: `195px × 72px` → `163px × 48px`"
+        }
+      ]
+    },
+    {
+      "id": "sync-add-button-2-1795775775268",
+      "timestamp": "2026-11-27T10:36:03.902Z",
+      "direction": "figma-to-code",
+      "action": "added",
+      "slug": "button-2",
+      "componentName": "Button2",
+      "pageName": "Button2Page",
+      "summary": "button-2: scaffold 5-file bundle in src/components/button-2/ & register Button2Page in portal sidebar",
+      "details": [
+        "Create src/components/button-2/button-2.tsx, .types.ts, .scss, .dart, .md",
+        "Create src/app/pages/Button2Page/Button2Page.tsx, .ts, .scss & register route #button-2"
+      ],
+      "files": [
+        {
+          "path": "src/components/button-2/button-2.tsx",
+          "ext": "tsx",
+          "action": "added",
+          "diff": "+ // Generated from Figma by scripts/code-generator.cjs.\n+ import React from 'react';\n+ import type { Button2Props } from './button-2.types';\n+ import './button-2.scss';\n+ const cx = (...parts: Array<string | false | undefined>) => parts.filter(Boolean).join(' ');\n+ export const Button2: React.FC<Button2Props> = ({\n+   children = 'Button',\n+   size = 'medium',\n+   variant = 'primary',\n+   disabled = false,\n+   loading = false,\n+   fullWidth = false,\n+   className,\n+   ...rest"
+        },
+        {
+          "path": "src/components/button-2/button-2.types.ts",
+          "ext": "ts",
+          "action": "added",
+          "diff": "+ // Generated from Figma by scripts/code-generator.cjs.\n+ import type React from 'react';\n+ export type Button2Variant = 'primary' | 'secondary' | 'tertiary' | 'link' | 'default' | 'icon' | 'gradient' | 'white';\n+ export type Button2Size = 'large' | 'medium' | 'small' | 'xsmall';\n+ export interface Button2Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {\n+   children?: React.ReactNode;\n+   variant?: Button2Variant;\n+   size?: Button2Size;\n+   disabled?: boolean;\n+   loading?: boolean;\n+   fullWidth?: boolean;\n+   className?: string;\n+ }"
+        },
+        {
+          "path": "src/components/button-2/button-2.scss",
+          "ext": "scss",
+          "action": "added",
+          "diff": "+ @use 'sass:map';\n+ $button-2-sizes: (\n+   small: (\n+     height: var(--button-size-small-height),\n+     padding: var(--button-size-small-padding-x),\n+     radius: var(--button-size-small-radius),\n+     gap: var(--button-size-small-gap),\n+     font-size: var(--button-size-small-font-size),\n+     line-height: var(--font-line-height-paragraph-xsm)\n+   ),\n+   medium: (\n+     height: var(--button-size-medium-height),\n+     padding: var(--button-size-medium-padding-x),\n+     radius: var(--button-size-medium-radius),"
+        },
+        {
+          "path": "src/components/button-2/button-2.dart",
+          "ext": "dart",
+          "action": "added",
+          "diff": "+ import 'package:flutter/material.dart';\n+ enum UIButton2Variant { primary, secondary, tertiary, link, default, icon, gradient, white }\n+ enum UIButton2Size { large, medium, small, xsmall }\n+ /// Auto-generated Flutter widget for [Button2] from Figma.\n+ class UIButton2 extends StatelessWidget {\n+   final String label;\n+   final Widget? child;\n+   final VoidCallback? onPressed;\n+   final UIButton2Variant variant;\n+   final UIButton2Size size;\n+   final bool isDisabled;\n+   final bool isLoading;\n+   final bool isFullWidth;\n+   final Widget? leadingIcon;"
+        },
+        {
+          "path": "src/components/button-2/button-2.md",
+          "ext": "md",
+          "action": "added",
+          "diff": "+ <!-- Generated by scripts/docs-generator.cjs. Manual edits are overwritten on the next Figma sync. -->\n+ <!-- docs-source: figma -->\n+ # Button2\n+ _No description set in Figma._\n+ > Last updated: 2026-11-27T10:36:14.570Z\n+ ## Overview\n+ | Field | Value |\n+ | --- | --- |\n+ | Figma name | Button 2 |\n+ | Node ID | 8200:5034 |\n+ | Node type | COMPONENT_SET |\n+ | Figma page | Button 2 |\n+ | Variants | 320 |\n+ | Code folder | `src/components/button-2/` |"
+        },
+        {
+          "path": "src/app/pages/Button2Page/Button2Page.tsx",
+          "ext": "tsx",
+          "action": "added",
+          "diff": "+ // Generated by scripts/code-generator.cjs.\n+ import { componentDocumentation } from '../ComponentPage/componentRegistry';\n+ import { ComponentPage } from '../ComponentPage/ComponentPage';\n+ import './Button2Page.scss';\n+ export const componentSlug = \"button-2\";\n+ export function Button2Page() {\n+   const component = componentDocumentation.find((entry) => entry.slug === componentSlug);\n+   return component ? <ComponentPage component={component} /> : null;\n+ }\n+ export default Button2Page;"
+        }
+      ]
+    },
     {
       "id": "sync-tokens-1795764476344",
       "timestamp": "2026-11-27T07:27:56.130Z",
@@ -1569,104 +1690,6 @@
           "ext": "tsx",
           "action": "added",
           "diff": "+ // Generated by scripts/code-generator.cjs.\n+ import { componentDocumentation } from '../ComponentPage/componentRegistry';\n+ import { ComponentPage } from '../ComponentPage/ComponentPage';\n+ import './ButtonCopyPage.scss';\n+ export const componentSlug = \"button-copy\";\n+ export function ButtonCopyPage() {\n+   const component = componentDocumentation.find((entry) => entry.slug === componentSlug);\n+   return component ? <ComponentPage component={component} /> : null;\n+ }\n+ export default ButtonCopyPage;"
-        }
-      ]
-    },
-    {
-      "id": "sync-tokens-1795089187332",
-      "timestamp": "2026-11-19T11:53:07.125Z",
-      "direction": "figma-to-code",
-      "action": "updated",
-      "slug": "tokens",
-      "componentName": "Design Tokens",
-      "pageName": "semantics.scss",
-      "summary": "tokens: updated --button-size-small-height (var(--global-scale-2175) → var(--layout-size-4xl)), --button-size-medium-height (var(--global-scale-2875) → var(--layout-size-5xl)), --button-size-xsmall-gap (var(--global-scale-0) → var(--layout-spacing-2xs)) (+9 more)",
-      "details": [
-        "--button-size-small-height (var(--global-scale-2175) → var(--layout-size-4xl))",
-        "--button-size-medium-height (var(--global-scale-2875) → var(--layout-size-5xl))",
-        "--button-size-xsmall-gap (var(--global-scale-0) → var(--layout-spacing-2xs))",
-        "--button-size-small-padding-x (var(--global-scale-0) → var(--layout-spacing-md))",
-        "--button-size-small-radius (var(--layout-radius-3xs) → var(--layout-radius-sm))",
-        "--button-size-small-gap (var(--layout-spacing-sm) → var(--layout-spacing-2xs))",
-        "--button-size-medium-padding-x (var(--global-scale-0) → var(--layout-spacing-lg))",
-        "--button-size-medium-radius (var(--layout-radius-3xs) → var(--layout-radius-md))",
-        "--button-size-medium-gap (var(--layout-spacing-md) → var(--layout-spacing-xs))",
-        "--button-size-large-padding-x (var(--layout-spacing-5xl) → var(--layout-spacing-xl))",
-        "--button-size-large-gap (var(--global-scale-0) → var(--layout-spacing-xs))",
-        "--button-primary-background-color-default (var(--global-colors-violet-200) → var(--surface-static-error))"
-      ],
-      "files": [
-        {
-          "path": "src/tokens/variables/semantics.scss",
-          "ext": "scss",
-          "action": "updated",
-          "diff": "+ --button-size-small-height (var(--global-scale-2175) → var(--layout-size-4xl))\n+ --button-size-medium-height (var(--global-scale-2875) → var(--layout-size-5xl))\n+ --button-size-xsmall-gap (var(--global-scale-0) → var(--layout-spacing-2xs))\n+ --button-size-small-padding-x (var(--global-scale-0) → var(--layout-spacing-md))\n+ --button-size-small-radius (var(--layout-radius-3xs) → var(--layout-radius-sm))\n+ --button-size-small-gap (var(--layout-spacing-sm) → var(--layout-spacing-2xs))\n+ --button-size-medium-padding-x (var(--global-scale-0) → var(--layout-spacing-lg))\n+ --button-size-medium-radius (var(--layout-radius-3xs) → var(--layout-radius-md))\n+ --button-size-medium-gap (var(--layout-spacing-md) → var(--layout-spacing-xs))\n+ --button-size-large-padding-x (var(--layout-spacing-5xl) → var(--layout-spacing-xl))"
-        }
-      ]
-    },
-    {
-      "id": "sync-upd-button-1795089193730",
-      "timestamp": "2026-11-19T11:53:07.125Z",
-      "direction": "figma-to-code",
-      "action": "updated",
-      "slug": "button",
-      "componentName": "Button",
-      "pageName": "ButtonPage",
-      "summary": "button: updated medium height (230px → 40px); medium horizontal padding (0px → 16px) (+6 more)",
-      "details": [
-        "medium height (230px → 40px)",
-        "medium horizontal padding (0px → 16px)",
-        "medium corner radius (0px → 12px)",
-        "medium gap (12px → 0px)",
-        "small height (174px → 36px)",
-        "small horizontal padding (0px → 12px)",
-        "small corner radius (0px → 8px)",
-        "small gap (8px → 0px)",
-        "large horizontal padding (20px → 40px)",
-        "large gap (4px → 0px)",
-        "primary background color (#D61C53 → #C7B9FF)",
-        "medium gap (4px → 0px)",
-        "small gap (2px → 0px)",
-        "xsmall gap (2px → 0px)"
-      ],
-      "files": [
-        {
-          "path": "src/components/button/button.md",
-          "ext": "md",
-          "action": "updated",
-          "diff": "- > [!IMPORTANT]\n- > **78 change(s) detected** in the latest Figma sync (2026-11-19T09:12:47.606Z).\n- ### Changes in latest sync\n+ > [!TIP]\n+ > **Nothing changed** — the latest Figma sync matches the previous snapshot.\n+ **2026-11-19T09:12:47.606Z**"
-        }
-      ]
-    },
-    {
-      "id": "sync-tokens-1795079559707",
-      "timestamp": "2026-11-19T09:12:39.473Z",
-      "direction": "figma-to-code",
-      "action": "updated",
-      "slug": "tokens",
-      "componentName": "Design Tokens",
-      "pageName": "semantics.scss",
-      "summary": "tokens: updated --button-size-small-height (var(--global-scale-175) → var(--layout-size-4xl)), --button-size-medium-height (var(--global-scale-1175) → var(--layout-size-5xl)), --button-size-large-height (var(--global-scale-700) → var(--layout-size-6xl)) (+14 more)",
-      "details": [
-        "--button-size-small-height (var(--global-scale-175) → var(--layout-size-4xl))",
-        "--button-size-medium-height (var(--global-scale-1175) → var(--layout-size-5xl))",
-        "--button-size-large-height (var(--global-scale-700) → var(--layout-size-6xl))",
-        "--button-size-small-padding-x (var(--global-scale-87) → var(--layout-spacing-md))",
-        "--button-size-small-radius (var(--layout-radius-full) → var(--layout-radius-sm))",
-        "--button-size-small-gap (var(--global-scale-75) → var(--layout-spacing-2xs))",
-        "--button-size-medium-padding-x (var(--global-scale-0) → var(--layout-spacing-lg))",
-        "--button-size-medium-radius (var(--layout-radius-3xs) → var(--layout-radius-md))",
-        "--button-size-medium-gap (var(--layout-spacing-md) → var(--layout-spacing-xs))",
-        "--button-size-large-padding-x (var(--global-scale-0) → var(--layout-spacing-xl))",
-        "--button-size-large-radius (var(--layout-radius-3xs) → var(--layout-radius-md))",
-        "--button-size-large-gap (var(--layout-spacing-lg) → var(--layout-spacing-xs))"
-      ],
-      "files": [
-        {
-          "path": "src/tokens/variables/semantics.scss",
-          "ext": "scss",
-          "action": "updated",
-          "diff": "+ --button-size-small-height (var(--global-scale-175) → var(--layout-size-4xl))\n+ --button-size-medium-height (var(--global-scale-1175) → var(--layout-size-5xl))\n+ --button-size-large-height (var(--global-scale-700) → var(--layout-size-6xl))\n+ --button-size-small-padding-x (var(--global-scale-87) → var(--layout-spacing-md))\n+ --button-size-small-radius (var(--layout-radius-full) → var(--layout-radius-sm))\n+ --button-size-small-gap (var(--global-scale-75) → var(--layout-spacing-2xs))\n+ --button-size-medium-padding-x (var(--global-scale-0) → var(--layout-spacing-lg))\n+ --button-size-medium-radius (var(--layout-radius-3xs) → var(--layout-radius-md))\n+ --button-size-medium-gap (var(--layout-spacing-md) → var(--layout-spacing-xs))\n+ --button-size-large-padding-x (var(--global-scale-0) → var(--layout-spacing-xl))"
         }
       ]
     }

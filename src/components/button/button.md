@@ -5,14 +5,14 @@
 
 _No description set in Figma._
 
-> Last updated: 2026-11-27T07:08:35.357Z
+> Last updated: 2026-11-27T10:36:14.439Z
 
 ## Overview
 
 | Field | Value |
 | --- | --- |
 | Figma name | Button |
-| Node ID | 8185:6 |
+| Node ID | 8200:2245 |
 | Node type | COMPONENT_SET |
 | Figma page | Button |
 | Variants | 320 |
@@ -111,7 +111,7 @@ UIButton()
 | size=Large, style=Primary, state=Disabled, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | — | #FFFFFF | — |
 | size=Large, style=Primary, state=Disabled, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #00815A | #FFFFFF | — |
 | size=Large, style=Primary, state=Disabled, type=White | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #FFFFFF | #9CB4F7 | — |
-| size=Large, style=Primary, state=Focus, type=Default | 155px × 49px | 0px 40px 0px 40px | 0px | 12px | 18px | #C7B9FF | #FFFFFF | #FFFFFF |
+| size=Large, style=Primary, state=Focus, type=Default | 195px × 72px | 0px 40px 0px 40px | 0px | 12px | 18px | #C7B9FF | #FFFFFF | #FFFFFF |
 | size=Large, style=Primary, state=Focus, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | — | #FFFFFF | — |
 | size=Large, style=Primary, state=Focus, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #1C3FCA | #FFFFFF | — |
 | size=Large, style=Primary, state=Focus, type=White | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #FFFFFF | #1C3FCA | — |
@@ -123,7 +123,7 @@ UIButton()
 | size=Large, style=Primary, state=Pressed, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | — | #FFFFFF | — |
 | size=Large, style=Primary, state=Pressed, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #00815A | #FFFFFF | — |
 | size=Large, style=Primary, state=Pressed, type=White | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #FFFFFF | #1C3FCA | — |
-| size=Large, style=Secondary, state=Default, type=Default | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #1F30AD | #1C3FCA | #1C3FCA |
+| size=Large, style=Secondary, state=Default, type=Default | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #00815A | #1C3FCA | #1C3FCA |
 | size=Large, style=Secondary, state=Default, type=Gradient | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #00815A | — | — |
 | size=Large, style=Secondary, state=Default, type=Icon | 48px × 48px | 0px 12px 0px 12px | 0px | 12px | 18px | #00815A | #FFFFFF | #1C3FCA |
 | size=Large, style=Secondary, state=Default, type=White | 154px × 48px | 0px 20px 0px 20px | 0px | 12px | 18px | #FFFFFF | #FFFFFF | #FFFFFF |
@@ -407,9 +407,16 @@ UIButton()
 ## Figma Changelog & Diff Status
 
 > [!IMPORTANT]
-> **39 change(s) detected** in the latest Figma sync (2026-11-27T07:08:35.325Z).
+> **2 change(s) detected** in the latest Figma sync (2026-11-27T10:36:14.411Z).
 
 ### Changes in latest sync
+
+- Variant `size=Large, style=Primary, state=Focus, type=Default` — Width × Height: `155px × 49px` → `195px × 72px`
+- Variant `size=Large, style=Secondary, state=Default, type=Default` — Background: `#1F30AD` → `#00815A`
+
+### Previous changes
+
+**2026-11-27T07:08:35.325Z**
 
 - Property added: `leadingIcon` (BOOLEAN)
 - Property added: `label` (TEXT)
@@ -450,8 +457,6 @@ UIButton()
 - Variant `size=Medium, style=Primary, state=Focus, type=White` — Corner radius: `0px` → `12px`
 - Variant `size=Medium, style=Primary, state=Focus, type=White` — Font size: `14px` → `16px`
 - Variant `size=Large, style=Secondary, state=Default, type=Default` — Background: `#00815A` → `#1F30AD`
-
-### Previous changes
 
 **2026-11-26T07:11:20.014Z**
 
@@ -1050,147 +1055,6 @@ UIButton()
 - Variant `size=Large, style=Primary, state=Disabled, type=Icon` — Gap: `4px` → `0px`
 - Variant `size=Large, style=Secondary, state=Default, type=Icon` — Gap: `4px` → `0px`
 - Variant `size=Large, style=Secondary, state=Focus, type=Icon` — Gap: `4px` → `0px`
-
-**2026-11-17T08:07:48.515Z**
-
-- Base Width × Height: `162px × 48px` → `194px × 72px`
-- Base Padding: `0px 20px 0px 20px` → `0px 40px 0px 40px`
-- Base Gap: `4px` → `0px`
-- Base Background: `#1C3FCA` → `#C7B9FF`
-- Variant `size=Large, style=Primary, state=Default, type=Default` — Width × Height: `162px × 48px` → `194px × 72px`
-- Variant `size=Large, style=Primary, state=Default, type=Default` — Padding: `0px 20px 0px 20px` → `0px 40px 0px 40px`
-- Variant `size=Large, style=Primary, state=Default, type=Default` — Gap: `4px` → `0px`
-- Variant `size=Large, style=Primary, state=Default, type=Default` — Background: `#1C3FCA` → `#C7B9FF`
-- Variant `size=Large, style=Primary, state=Focus, type=Default` — Width × Height: `163px × 48px` → `195px × 72px`
-- Variant `size=Large, style=Primary, state=Focus, type=Default` — Padding: `0px 20px 0px 20px` → `0px 40px 0px 40px`
-- Variant `size=Large, style=Primary, state=Focus, type=Default` — Gap: `4px` → `0px`
-- Variant `size=Large, style=Primary, state=Focus, type=Default` — Background: `#1C3FCA` → `#C7B9FF`
-- Variant `size=Large, style=Primary, state=Focus, type=Gradient` — Width × Height: `195px × 72px` → `163px × 48px`
-- Variant `size=Large, style=Primary, state=Focus, type=Gradient` — Padding: `0px 40px 0px 40px` → `0px 20px 0px 20px`
-- Variant `size=Large, style=Primary, state=Focus, type=Gradient` — Gap: `0px` → `4px`
-- Variant `size=Large, style=Primary, state=Default, type=White` — Width × Height: `195px × 72px` → `163px × 48px`
-- Variant `size=Large, style=Primary, state=Default, type=White` — Padding: `0px 40px 0px 40px` → `0px 20px 0px 20px`
-- Variant `size=Large, style=Primary, state=Default, type=White` — Gap: `0px` → `4px`
-- Variant `size=Large, style=Primary, state=Focus, type=White` — Width × Height: `195px × 72px` → `163px × 48px`
-- Variant `size=Large, style=Primary, state=Focus, type=White` — Padding: `0px 40px 0px 40px` → `0px 20px 0px 20px`
-- Variant `size=Large, style=Primary, state=Focus, type=White` — Gap: `0px` → `4px`
-- Variant `size=Medium, style=Primary, state=Default, type=White` — Width × Height: `132px × 40px` → `124px × 230px`
-- Variant `size=Medium, style=Primary, state=Default, type=White` — Padding: `0px 16px 0px 16px` → `0px 0px 0px 0px`
-- Variant `size=Medium, style=Primary, state=Default, type=White` — Gap: `0px` → `12px`
-- Variant `size=Medium, style=Primary, state=Default, type=White` — Corner radius: `12px` → `0px`
-- Variant `size=Medium, style=Primary, state=Focus, type=White` — Width × Height: `132px × 40px` → `124px × 230px`
-- Variant `size=Medium, style=Primary, state=Focus, type=White` — Padding: `0px 16px 0px 16px` → `0px 0px 0px 0px`
-- Variant `size=Medium, style=Primary, state=Focus, type=White` — Gap: `0px` → `12px`
-- Variant `size=Medium, style=Primary, state=Focus, type=White` — Corner radius: `12px` → `0px`
-- Variant `size=Medium, style=Primary, state=Hover, type=White` — Width × Height: `132px × 40px` → `124px × 230px`
-- Variant `size=Medium, style=Primary, state=Hover, type=White` — Padding: `0px 16px 0px 16px` → `0px 0px 0px 0px`
-- Variant `size=Medium, style=Primary, state=Hover, type=White` — Gap: `0px` → `12px`
-- Variant `size=Medium, style=Primary, state=Hover, type=White` — Corner radius: `12px` → `0px`
-- Variant `size=Medium, style=Primary, state=Pressed, type=White` — Width × Height: `132px × 40px` → `124px × 230px`
-- Variant `size=Medium, style=Primary, state=Pressed, type=White` — Padding: `0px 16px 0px 16px` → `0px 0px 0px 0px`
-- Variant `size=Medium, style=Primary, state=Pressed, type=White` — Gap: `0px` → `12px`
-- Variant `size=Medium, style=Primary, state=Pressed, type=White` — Corner radius: `12px` → `0px`
-- Variant `size=Medium, style=Primary, state=Disabled, type=White` — Width × Height: `132px × 40px` → `124px × 230px`
-- Variant `size=Medium, style=Primary, state=Disabled, type=White` — Padding: `0px 16px 0px 16px` → `0px 0px 0px 0px`
-- Variant `size=Medium, style=Primary, state=Disabled, type=White` — Gap: `0px` → `12px`
-- Variant `size=Medium, style=Primary, state=Disabled, type=White` — Corner radius: `12px` → `0px`
-- Variant `size=Small, style=Primary, state=Default, type=White` — Width × Height: `118px × 36px` → `110px × 174px`
-- Variant `size=Small, style=Primary, state=Default, type=White` — Padding: `0px 12px 0px 12px` → `0px 0px 0px 0px`
-- Variant `size=Small, style=Primary, state=Default, type=White` — Gap: `0px` → `8px`
-- Variant `size=Small, style=Primary, state=Default, type=White` — Corner radius: `8px` → `0px`
-- Variant `size=Small, style=Primary, state=Focus, type=White` — Width × Height: `121px × 36px` → `110px × 174px`
-- Variant `size=Small, style=Primary, state=Focus, type=White` — Padding: `0px 12px 0px 12px` → `0px 0px 0px 0px`
-- Variant `size=Small, style=Primary, state=Focus, type=White` — Gap: `2px` → `8px`
-- Variant `size=Small, style=Primary, state=Focus, type=White` — Corner radius: `8px` → `0px`
-- Variant `size=Small, style=Primary, state=Hover, type=White` — Width × Height: `117px × 36px` → `110px × 174px`
-- Variant `size=Small, style=Primary, state=Hover, type=White` — Padding: `0px 12px 0px 12px` → `0px 0px 0px 0px`
-- Variant `size=Small, style=Primary, state=Hover, type=White` — Gap: `0px` → `8px`
-- Variant `size=Small, style=Primary, state=Hover, type=White` — Corner radius: `8px` → `0px`
-- Variant `size=Small, style=Primary, state=Pressed, type=White` — Width × Height: `117px × 36px` → `110px × 174px`
-- Variant `size=Small, style=Primary, state=Pressed, type=White` — Padding: `0px 12px 0px 12px` → `0px 0px 0px 0px`
-- Variant `size=Small, style=Primary, state=Pressed, type=White` — Gap: `0px` → `8px`
-- Variant `size=Small, style=Primary, state=Pressed, type=White` — Corner radius: `8px` → `0px`
-- Variant `size=Small, style=Primary, state=Disabled, type=White` — Width × Height: `117px × 36px` → `110px × 174px`
-- Variant `size=Small, style=Primary, state=Disabled, type=White` — Padding: `0px 12px 0px 12px` → `0px 0px 0px 0px`
-- Variant `size=Small, style=Primary, state=Disabled, type=White` — Gap: `0px` → `8px`
-- Variant `size=Small, style=Primary, state=Disabled, type=White` — Corner radius: `8px` → `0px`
-- Variant `size=Xsmall, style=Primary, state=Default, type=White` — Width × Height: `95px × 28px` → `99px × 28px`
-- Variant `size=Xsmall, style=Primary, state=Default, type=White` — Gap: `0px` → `2px`
-- Variant `size=Xsmall, style=Primary, state=Focus, type=White` — Width × Height: `95px × 28px` → `99px × 28px`
-- Variant `size=Xsmall, style=Primary, state=Focus, type=White` — Gap: `0px` → `2px`
-- Variant `size=Xsmall, style=Primary, state=Hover, type=White` — Width × Height: `95px × 28px` → `99px × 28px`
-- Variant `size=Xsmall, style=Primary, state=Hover, type=White` — Gap: `0px` → `2px`
-- Variant `size=Xsmall, style=Primary, state=Pressed, type=White` — Width × Height: `95px × 28px` → `99px × 28px`
-- Variant `size=Xsmall, style=Primary, state=Pressed, type=White` — Gap: `0px` → `2px`
-- Variant `size=Xsmall, style=Primary, state=Disabled, type=White` — Width × Height: `95px × 28px` → `99px × 28px`
-- Variant `size=Xsmall, style=Primary, state=Disabled, type=White` — Gap: `0px` → `2px`
-- Variant `size=Large, style=Primary, state=Hover, type=Gradient` — Width × Height: `154px × 48px` → `163px × 48px`
-- Variant `size=Large, style=Primary, state=Hover, type=Gradient` — Gap: `0px` → `4px`
-- Variant `size=Large, style=Primary, state=Pressed, type=Gradient` — Width × Height: `154px × 48px` → `163px × 48px`
-- Variant `size=Large, style=Primary, state=Pressed, type=Gradient` — Gap: `0px` → `4px`
-- Variant `size=Large, style=Primary, state=Pressed, type=White` — Width × Height: `154px × 48px` → `163px × 48px`
-- Variant `size=Large, style=Primary, state=Pressed, type=White` — Gap: `0px` → `4px`
-- Variant `size=Large, style=Primary, state=Disabled, type=Gradient` — Width × Height: `154px × 48px` → `163px × 48px`
-- Variant `size=Large, style=Primary, state=Disabled, type=Gradient` — Gap: `0px` → `4px`
-- Variant `size=Large, style=Primary, state=Disabled, type=White` — Width × Height: `154px × 48px` → `163px × 48px`
-- Variant `size=Large, style=Primary, state=Disabled, type=White` — Gap: `0px` → `4px`
-- Variant `size=Large, style=Primary, state=Default, type=Icon` — Gap: `0px` → `4px`
-- Variant `size=Large, style=Primary, state=Focus, type=Icon` — Gap: `0px` → `4px`
-- Variant `size=Medium, style=Primary, state=Default, type=Icon` — Width × Height: `40px × 40px` → `230px × 230px`
-- Variant `size=Medium, style=Primary, state=Default, type=Icon` — Gap: `0px` → `12px`
-- Variant `size=Medium, style=Primary, state=Default, type=Icon` — Corner radius: `12px` → `0px`
-- Variant `size=Medium, style=Primary, state=Default, type=Icon` — Font size: `18px` → `16px`
-- Variant `size=Medium, style=Primary, state=Focus, type=Icon` — Width × Height: `40px × 40px` → `230px × 230px`
-- Variant `size=Medium, style=Primary, state=Focus, type=Icon` — Gap: `0px` → `12px`
-- Variant `size=Medium, style=Primary, state=Focus, type=Icon` — Corner radius: `12px` → `0px`
-- Variant `size=Medium, style=Primary, state=Focus, type=Icon` — Font size: `18px` → `16px`
-- Variant `size=Small, style=Primary, state=Default, type=Icon` — Width × Height: `36px × 36px` → `174px × 174px`
-- Variant `size=Small, style=Primary, state=Default, type=Icon` — Gap: `0px` → `8px`
-- Variant `size=Small, style=Primary, state=Default, type=Icon` — Corner radius: `8px` → `0px`
-- Variant `size=Small, style=Primary, state=Default, type=Icon` — Font size: `18px` → `14px`
-- Variant `size=Small, style=Primary, state=Focus, type=Icon` — Width × Height: `36px × 36px` → `174px × 174px`
-- Variant `size=Small, style=Primary, state=Focus, type=Icon` — Gap: `0px` → `8px`
-- Variant `size=Small, style=Primary, state=Focus, type=Icon` — Corner radius: `8px` → `0px`
-- Variant `size=Small, style=Primary, state=Focus, type=Icon` — Font size: `18px` → `14px`
-- Variant `size=Xsmall, style=Primary, state=Default, type=Icon` — Gap: `0px` → `2px`
-- Variant `size=Xsmall, style=Primary, state=Default, type=Icon` — Font size: `18px` → `12px`
-- Variant `size=Xsmall, style=Primary, state=Focus, type=Icon` — Gap: `0px` → `2px`
-- Variant `size=Xsmall, style=Primary, state=Focus, type=Icon` — Font size: `18px` → `12px`
-- Variant `size=Medium, style=Primary, state=Hover, type=Icon` — Width × Height: `40px × 40px` → `230px × 230px`
-- Variant `size=Medium, style=Primary, state=Hover, type=Icon` — Gap: `0px` → `12px`
-- Variant `size=Medium, style=Primary, state=Hover, type=Icon` — Corner radius: `12px` → `0px`
-- Variant `size=Medium, style=Primary, state=Hover, type=Icon` — Font size: `18px` → `16px`
-- Variant `size=Small, style=Primary, state=Hover, type=Icon` — Width × Height: `36px × 36px` → `174px × 174px`
-- Variant `size=Small, style=Primary, state=Hover, type=Icon` — Gap: `0px` → `8px`
-- Variant `size=Small, style=Primary, state=Hover, type=Icon` — Corner radius: `8px` → `0px`
-- Variant `size=Small, style=Primary, state=Hover, type=Icon` — Font size: `18px` → `14px`
-- Variant `size=Xsmall, style=Primary, state=Hover, type=Icon` — Gap: `0px` → `2px`
-- Variant `size=Xsmall, style=Primary, state=Hover, type=Icon` — Font size: `18px` → `12px`
-- Variant `size=Medium, style=Primary, state=Pressed, type=Icon` — Width × Height: `40px × 40px` → `230px × 230px`
-- Variant `size=Medium, style=Primary, state=Pressed, type=Icon` — Gap: `0px` → `12px`
-- Variant `size=Medium, style=Primary, state=Pressed, type=Icon` — Corner radius: `12px` → `0px`
-- Variant `size=Medium, style=Primary, state=Pressed, type=Icon` — Font size: `18px` → `16px`
-- Variant `size=Small, style=Primary, state=Pressed, type=Icon` — Width × Height: `36px × 36px` → `174px × 174px`
-- Variant `size=Small, style=Primary, state=Pressed, type=Icon` — Gap: `0px` → `8px`
-- Variant `size=Small, style=Primary, state=Pressed, type=Icon` — Corner radius: `8px` → `0px`
-- Variant `size=Small, style=Primary, state=Pressed, type=Icon` — Font size: `18px` → `14px`
-- Variant `size=Xsmall, style=Primary, state=Pressed, type=Icon` — Gap: `0px` → `2px`
-- Variant `size=Xsmall, style=Primary, state=Pressed, type=Icon` — Font size: `18px` → `12px`
-- Variant `size=Medium, style=Primary, state=Disabled, type=Icon` — Width × Height: `40px × 40px` → `230px × 230px`
-- Variant `size=Medium, style=Primary, state=Disabled, type=Icon` — Gap: `0px` → `12px`
-- Variant `size=Medium, style=Primary, state=Disabled, type=Icon` — Corner radius: `12px` → `0px`
-- Variant `size=Medium, style=Primary, state=Disabled, type=Icon` — Font size: `18px` → `16px`
-- Variant `size=Small, style=Primary, state=Disabled, type=Icon` — Width × Height: `36px × 36px` → `174px × 174px`
-- Variant `size=Small, style=Primary, state=Disabled, type=Icon` — Gap: `0px` → `8px`
-- Variant `size=Small, style=Primary, state=Disabled, type=Icon` — Corner radius: `8px` → `0px`
-- Variant `size=Small, style=Primary, state=Disabled, type=Icon` — Font size: `18px` → `14px`
-- Variant `size=Xsmall, style=Primary, state=Disabled, type=Icon` — Gap: `0px` → `2px`
-- Variant `size=Xsmall, style=Primary, state=Disabled, type=Icon` — Font size: `18px` → `12px`
-- Variant `size=Large, style=Primary, state=Hover, type=Icon` — Gap: `0px` → `4px`
-- Variant `size=Large, style=Primary, state=Pressed, type=Icon` — Gap: `0px` → `4px`
-- Variant `size=Large, style=Primary, state=Disabled, type=Icon` — Gap: `0px` → `4px`
-- Variant `size=Large, style=Secondary, state=Default, type=Icon` — Gap: `0px` → `4px`
-- Variant `size=Large, style=Secondary, state=Focus, type=Icon` — Gap: `0px` → `4px`
 
 ## Code files
 
