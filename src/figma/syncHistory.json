@@ -1,6 +1,108 @@
 {
-  "lastUpdated": "2026-11-26T11:18:19.504Z",
+  "lastUpdated": "2026-11-27T05:17:11.543Z",
   "entries": [
+    {
+      "id": "sync-tokens-1795756628201",
+      "timestamp": "2026-11-27T05:17:07.811Z",
+      "direction": "figma-to-code",
+      "action": "updated",
+      "slug": "tokens",
+      "componentName": "Design Tokens",
+      "pageName": "semantics.scss",
+      "summary": "tokens: updated --button-size-xsmall-gap (var(--global-scale-0) → var(--layout-spacing-2xs)), --button-size-small-gap (var(--global-scale-0) → var(--layout-spacing-2xs)), --button-size-medium-gap (var(--global-scale-0) → var(--layout-spacing-xs)) (+4 more)",
+      "details": [
+        "--button-size-xsmall-gap (var(--global-scale-0) → var(--layout-spacing-2xs))",
+        "--button-size-small-gap (var(--global-scale-0) → var(--layout-spacing-2xs))",
+        "--button-size-medium-gap (var(--global-scale-0) → var(--layout-spacing-xs))",
+        "--button-primary-background-color-pressed (var(--global-colors-green-500) → var(--surface-static-neutral-2))",
+        "--button-primary-background-color-disabled (var(--global-colors-green-500) → var(--surface-static-blue))",
+        "--button-secondary-background-color-default (var(--global-colors-green-500) → var(--surface-static-warning))",
+        "--button-secondary-background-color-hover (var(--global-colors-green-500) → var(--surface-static-error))"
+      ],
+      "files": [
+        {
+          "path": "src/tokens/variables/semantics.scss",
+          "ext": "scss",
+          "action": "updated",
+          "diff": "+ --button-size-xsmall-gap (var(--global-scale-0) → var(--layout-spacing-2xs))\n+ --button-size-small-gap (var(--global-scale-0) → var(--layout-spacing-2xs))\n+ --button-size-medium-gap (var(--global-scale-0) → var(--layout-spacing-xs))\n+ --button-primary-background-color-pressed (var(--global-colors-green-500) → var(--surface-static-neutral-2))\n+ --button-primary-background-color-disabled (var(--global-colors-green-500) → var(--surface-static-blue))\n+ --button-secondary-background-color-default (var(--global-colors-green-500) → var(--surface-static-warning))\n+ --button-secondary-background-color-hover (var(--global-colors-green-500) → var(--surface-static-error))"
+        }
+      ]
+    },
+    {
+      "id": "sync-upd-input-area-1795756630353",
+      "timestamp": "2026-11-27T05:17:07.811Z",
+      "direction": "figma-to-code",
+      "action": "updated",
+      "slug": "input-area",
+      "componentName": "InputArea",
+      "pageName": "InputAreaPage",
+      "summary": "input-area: updated small height (36px → 174px); small horizontal padding (12px → 0px) (+6 more)",
+      "details": [
+        "small height (36px → 174px)",
+        "small horizontal padding (12px → 0px)",
+        "small corner radius (8px → 0px)",
+        "small gap (0px → 8px)",
+        "medium height (40px → 230px)",
+        "medium horizontal padding (16px → 0px)",
+        "medium corner radius (12px → 0px)",
+        "medium gap (0px → 12px)",
+        "small gap (2px → 8px)",
+        "medium gap (4px → 12px)"
+      ],
+      "files": []
+    },
+    {
+      "id": "sync-del-chips-1795756631042",
+      "timestamp": "2026-11-27T05:17:07.811Z",
+      "direction": "figma-to-code",
+      "action": "deleted",
+      "slug": "chips",
+      "componentName": "Chips",
+      "pageName": "ChipsPage",
+      "summary": "chips: remove src/components/chips/ & ChipsPage because it was deleted in Figma",
+      "details": [
+        "Removed folder src/components/chips/ and cleaned export in src/components/index.ts",
+        "Removed portal page src/app/pages/ChipsPage/"
+      ],
+      "files": [
+        {
+          "path": "src/components/chips/chips.tsx",
+          "ext": "tsx",
+          "action": "deleted",
+          "diff": "- // Generated from Figma by scripts/code-generator.cjs.\n- import React from 'react';\n- import type { ChipsProps } from './chips.types';\n- import './chips.scss';\n- const cx = (...parts: Array<string | false | undefined>) => parts.filter(Boolean).join(' ');\n- export const Chips: React.FC<ChipsProps> = ({\n-   children = 'Chips',\n-   size = 'medium',\n-   variant = 'default',\n-   disabled = false,\n-   loading = false,\n-   fullWidth = false,\n-   className,\n-   ...rest"
+        },
+        {
+          "path": "src/components/chips/chips.types.ts",
+          "ext": "ts",
+          "action": "deleted",
+          "diff": "- // Generated from Figma by scripts/code-generator.cjs.\n- import type React from 'react';\n- export type ChipsVariant = 'default' | 'primary' | 'warning' | 'destructive' | 'success' | 'neutral' | 'violet' | 'rust' | 'yellow' | 'purple' | 'info' | 'filled' | 'accent' | 'outline';\n- export type ChipsSize = 'large' | 'medium' | 'small';\n- export interface ChipsProps extends React.HTMLAttributes<HTMLDivElement> {\n-   children?: React.ReactNode;\n-   variant?: ChipsVariant;\n-   size?: ChipsSize;\n-   disabled?: boolean;\n-   loading?: boolean;\n-   fullWidth?: boolean;\n-   className?: string;\n- }"
+        },
+        {
+          "path": "src/components/chips/chips.scss",
+          "ext": "scss",
+          "action": "deleted",
+          "diff": "- @use 'sass:map';\n- $chips-sizes: (\n-   small: (\n-     height: var(--button-size-small-height),\n-     padding: var(--button-size-small-padding-x),\n-     radius: var(--button-size-small-radius),\n-     gap: var(--button-size-small-gap),\n-     font-size: var(--button-size-small-font-size),\n-     line-height: var(--font-line-height-paragraph-xsm)\n-   ),\n-   medium: (\n-     height: var(--button-size-medium-height),\n-     padding: var(--button-size-medium-padding-x),\n-     radius: var(--button-size-medium-radius),"
+        },
+        {
+          "path": "src/components/chips/chips.dart",
+          "ext": "dart",
+          "action": "deleted",
+          "diff": "- import 'package:flutter/material.dart';\n- enum UIChipsVariant { default, primary, warning, destructive, success, neutral, violet, rust, yellow, purple, info, filled, accent, outline }\n- enum UIChipsSize { large, medium, small }\n- /// Auto-generated Flutter widget for [Chips] from Figma.\n- class UIChips extends StatelessWidget {\n-   final String label;\n-   final Widget? child;\n-   final VoidCallback? onPressed;\n-   final UIChipsVariant variant;\n-   final UIChipsSize size;\n-   final bool isDisabled;\n-   final bool isLoading;\n-   final bool isFullWidth;\n-   final Widget? leadingIcon;"
+        },
+        {
+          "path": "src/components/chips/chips.md",
+          "ext": "md",
+          "action": "deleted",
+          "diff": "- <!-- Generated by scripts/docs-generator.cjs. Manual edits are overwritten on the next Figma sync. -->\n- <!-- docs-source: figma -->\n- # Chips\n- _No description set in Figma._\n- > Last updated: 2026-11-26T11:18:16.405Z\n- ## Overview\n- | Field | Value |\n- | --- | --- |\n- | Figma name | Chips |\n- | Node ID | 8157:2261 |\n- | Node type | COMPONENT_SET |\n- | Figma page | Chips |\n- | Variants | 252 |\n- | Code folder | `src/components/chips/` |"
+        },
+        {
+          "path": "src/app/pages/ChipsPage/ChipsPage.tsx",
+          "ext": "tsx",
+          "action": "deleted",
+          "diff": "- // Generated by scripts/code-generator.cjs.\n- import { componentDocumentation } from '../ComponentPage/componentRegistry';\n- import { ComponentPage } from '../ComponentPage/ComponentPage';\n- import './ChipsPage.scss';\n- export const componentSlug = \"chips\";\n- export function ChipsPage() {\n-   const component = componentDocumentation.find((entry) => entry.slug === componentSlug);\n-   return component ? <ComponentPage component={component} /> : null;\n- }\n- export default ChipsPage;"
+        }
+      ]
+    },
     {
       "id": "sync-tokens-1795691867263",
       "timestamp": "2026-11-26T11:17:47.039Z",
@@ -1645,40 +1747,6 @@
           "ext": "tsx",
           "action": "added",
           "diff": "+ export const componentSlug = \"input-area\";\n+ export function InputAreaPage() { ... }"
-        }
-      ]
-    },
-    {
-      "id": "sync-init-button01",
-      "timestamp": "2026-11-19T07:41:43.000Z",
-      "direction": "figma-to-code",
-      "action": "added",
-      "slug": "button01",
-      "componentName": "Button01",
-      "pageName": "Button01Page",
-      "summary": "button01: scaffolded 5-file component bundle & registered Button01Page in portal sidebar",
-      "details": [
-        "Created src/components/button01/ (button01.tsx, button01.types.ts, button01.scss, button01.dart, button01.md)",
-        "Created src/app/pages/Button01Page/ (Button01Page.tsx, Button01Page.ts, Button01Page.scss)"
-      ],
-      "files": [
-        {
-          "path": "src/components/button01/button01.tsx",
-          "ext": "tsx",
-          "action": "added",
-          "diff": "+ export const Button01: React.FC<Button01Props> = ({ children = 'Button01', size = 'medium', variant = 'primary', ... })"
-        },
-        {
-          "path": "src/components/button01/button01.scss",
-          "ext": "scss",
-          "action": "added",
-          "diff": "+ $button01-sizes: ( small: (...), medium: (...), large: (...) );\n+ .ui-button01 { display: inline-flex; ... }"
-        },
-        {
-          "path": "src/app/pages/Button01Page/Button01Page.tsx",
-          "ext": "tsx",
-          "action": "added",
-          "diff": "+ export const componentSlug = \"button01\";\n+ export function Button01Page() { ... }"
         }
       ]
     }

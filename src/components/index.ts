@@ -9,6 +9,3 @@ export type {
 
 export { InputArea } from './input-area/input-area'
 export type { InputAreaProps } from './input-area/input-area.types'
-
-export { Chips } from './chips/chips'
-export type { ChipsProps } from './chips/chips.types'

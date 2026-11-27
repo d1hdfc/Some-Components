@@ -40,11 +40,11 @@ npm run dev
 
 ## TEST A: Code Edit (SCSS / Token Variables) ➔ Figma Canvas Update
 
-**Test:** Change `font-size`, `padding`, `border-radius`, or a token variable in VS Code ➔ verify Figma canvas updates live.
+**Test:** Change `font-size`, `padding`, `border-radius`, or a token variable in Code ➔ verify Figma canvas updates live.
 
 ### Steps:
-1. Open `src\components\button\Button.scss` or `src\tokens\variables\semantics.scss` in VS Code
-2. Change a property or token variable and save (`Ctrl+S`), or click **"Sync VS Code ➔ Figma Canvas"** in the Figma plugin
+1. Open `src\components\button\Button.scss` or `src\tokens\variables\semantics.scss` in Code
+2. Change a property or token variable and save (`Ctrl+S`), or click **"Sync Code ➔ Figma Canvas"** in the Figma plugin
 3. Watch **Terminal 1** — you should see:
    ```
    [CodeWatcher] CHANGED: src/components/button/Button -> Syncing to Figma Canvas
@@ -65,14 +65,14 @@ npm run dev
 
 ---
 
-## TEST C: Figma Edit (Variables & Components) ➔ VS Code & Live UI
+## TEST C: Figma Edit (Variables & Components) ➔ Code & Live UI
 
 **Test:** Change a local Variable (e.g., `Semantics ➔ button ➔ primary ➔ background-color`) or component property in Figma ➔ verify code files and UI update.
 
 ### Steps:
 1. In Figma, open the plugin (`Plugins > Development > HDFC Some Components Two-Way Auto-Sync`)
 2. Edit any Variable in Figma or modify/add/delete a component on the Figma canvas
-3. Wait 3 seconds (auto-detected) OR click **"Sync Figma File ➔ VS Code (Variables & Components)"**
+3. Wait 3 seconds (auto-detected) OR click **"Sync Figma File ➔ Code (Variables & Components)"**
 4. Watch **Terminal 1**:
    ```
    [Bridge] Received live Figma payload from "Foundations Dhenu"

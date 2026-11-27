@@ -87,22 +87,7 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    if (!lastEvent) return;
-    if (
-      lastEvent.event === 'FIGMA_TO_CODE_COMPLETE' ||
-      lastEvent.event === 'FIGMA_TO_GITHUB_COMPLETE' ||
-      lastEvent.event === 'CODE_TO_FIGMA_COMPLETE' ||
-      lastEvent.event === 'LOCAL_COMPONENT_SCAFFOLDED'
-    ) {
-      const created = lastEvent.result?.createdCount ?? 0;
-      const deleted = lastEvent.result?.deletedCount ?? 0;
-      if (created > 0 || deleted > 0 || lastEvent.event === 'LOCAL_COMPONENT_SCAFFOLDED') {
-        const timer = window.setTimeout(() => {
-          window.location.reload();
-        }, 650);
-        return () => window.clearTimeout(timer);
-      }
-    }
+    // Vite HMR updates all component modules, pages, and SCSS live without forcing a full browser page reload.
   }, [lastEvent]);
 
   const isUpdatedCodePage = currentPage === 'updated-code';

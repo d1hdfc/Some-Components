@@ -1,6 +1,6 @@
 // ============================================================
 // HDFC Some Components — Figma Plugin Sandbox (code.js)
-// Full Bi-Directional Auto-Sync Engine: Figma ↔ VS Code
+// Full Bi-Directional Auto-Sync Engine: Figma ↔ Code
 // Compatible with "documentAccess": "dynamic-page"
 // ============================================================
 figma.showUI(__html__, { width: 420, height: 560 });
@@ -512,7 +512,7 @@ async function exportFullFigmaState(reason = 'manual', options = {}) {
     }
   });
 
-  log(`📤 Exported ${rawVariables.length} variable(s) & ${components.length} component(s)${deletedComponents.length ? ` (-${deletedComponents.length} deleted)` : ''} to VS Code (${reason})`);
+  log(`📤 Exported ${rawVariables.length} variable(s) & ${components.length} component(s)${deletedComponents.length ? ` (-${deletedComponents.length} deleted)` : ''} to Code (${reason})`);
 }
 
 // ── Code ➔ Figma: Canvas & Variable Mutation Helpers ────────
@@ -744,7 +744,7 @@ figma.ui.onmessage = async (msg) => {
       break;
     }
 
-    // ── Full Export Request (Figma ➔ VS Code / GitHub) ──────
+    // ── Full Export Request (Figma ➔ Code / GitHub) ──────
     case 'REQUEST_FULL_FIGMA_EXPORT': {
       await exportFullFigmaState(msg.reason || 'manual', { pushToGithub: Boolean(msg.pushToGithub) });
       break;
@@ -1057,11 +1057,11 @@ figma.ui.onmessage = async (msg) => {
       break;
     }
 
-    // ── CAPTURE / PUSH current selection to VS Code ─────────
+    // ── CAPTURE / PUSH current selection to Code ─────────
     case 'CAPTURE_SELECTION':
     case 'PUSH_SELECTION_TO_CODE': {
       await exportFullFigmaState('selection-push');
-      figma.notify('📤 Synced Figma selection & variables to VS Code');
+      figma.notify('📤 Synced Figma selection & variables to Code');
       break;
     }
 

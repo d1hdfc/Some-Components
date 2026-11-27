@@ -1256,7 +1256,7 @@ function handleSocketMessage(socket, rawMessage) {
         payload.reason === 'github-sync'
       );
 
-      console.log(`\n[Bridge] 🖲️ Manual Button Action (${isGithubPushRequest ? '🚀 Figma to GitHub Sync' : 'Sync Figma File -> VS Code'}) from "${payload.fileName || 'Figma'}" -> Target: ${project.projectDir}`);
+      console.log(`\n[Bridge] 🖲️ Manual Button Action (${isGithubPushRequest ? '🚀 Figma to GitHub Sync' : 'Sync Figma File -> Code'}) from "${payload.fileName || 'Figma'}" -> Target: ${project.projectDir}`);
       const pendingChanges = syncDiffEngine.computeFigmaToCodeDiff(payload);
       const targetSlugs = new Set(pendingChanges.map((p) => p.slug));
       const result = applyFigmaLivePayload(payload, {
@@ -2070,12 +2070,17 @@ function setupLocalComponentFolderScaffolder() {
       const pageName = `${pascal}Page`;
       const compDir = path.join(componentsDir, rawFolder);
       const pageDir = path.join(getPagesDir(), pageName);
+      const basePageDir = path.join(getPagesDir(), `${pascal}BasePage`);
+      const hasCustomOrGeneratedPage =
+        ['button', 'text-area', 'text-field', 'header'].includes(kebab) ||
+        fs.existsSync(path.join(pageDir, `${pageName}.tsx`)) ||
+        fs.existsSync(path.join(basePageDir, `${pascal}BasePage.tsx`));
       const needsNormalize =
         !knownFolders.has(rawFolder) ||
         rawFolder !== kebab ||
         !fs.existsSync(path.join(compDir, `${kebab}.tsx`)) ||
         !fs.existsSync(path.join(compDir, `${kebab}.md`)) ||
-        (kebab !== 'button' && !fs.existsSync(path.join(pageDir, `${pageName}.tsx`)));
+        !hasCustomOrGeneratedPage;
 
       if (needsNormalize) {
         suppressWatcherUntil = Date.now() + 2000;

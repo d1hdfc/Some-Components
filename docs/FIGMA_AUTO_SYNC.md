@@ -52,7 +52,7 @@ When a component or component set is added, modified, or removed in Figma:
 1. **Detection**:
    - **Figma Webhook**: The server listens at `POST /api/webhook` for `FILE_UPDATE`, `FILE_VERSION_UPDATE`, and `LIBRARY_PUBLISH` events.
    - **REST API Polling**: Background poller checks Figma file versions every 30 seconds (configurable via `SYNC_POLL_INTERVAL_MS`).
-   - **Figma Plugin**: While the plugin is open, canvas edits are debounced and sent over the WebSocket bridge. **Sync Figma File to VS Code** also requests an immediate full-file sync; no canvas selection is required.
+   - **Figma Plugin**: While the plugin is open, canvas edits are debounced and sent over the WebSocket bridge. **Sync Figma File to Code** also requests an immediate full-file sync; no canvas selection is required.
    - The poller remains as a fallback when the plugin is closed. It checks the latest saved Figma version every 30 seconds.
 2. **Multi-Framework Code Generation**:
    - For each eligible component or component set detected (including nested components):
@@ -70,7 +70,7 @@ When a component or component set is added, modified, or removed in Figma:
 
 ## 2. Code to Figma Auto-Sync
 
-When a developer modifies or deletes a component in VS Code / Git:
+When a developer modifies or deletes a component in Code / Git:
 
 1. **File Watcher (`src/components/`)**:
    - The watcher detects added, modified, or deleted component files with debounce protection.
@@ -123,14 +123,14 @@ npm run figma:webhook list
 
 ## Loading the Figma Plugin
 
-To enable real-time canvas mutations (updates and deletions on the Figma canvas directly from VS Code):
+To enable real-time canvas mutations (updates and deletions on the Figma canvas directly from Code):
 
 1. Open **Figma Desktop** (or Figma in Chrome).
 2. Go to `Plugins` -> `Development` -> `Import plugin from manifest...`.
 3. Select `scripts/figma-plugin/manifest.json`.
 4. Run the plugin **HDFC Some Components Two-Way Auto-Sync**.
 5. Before first use, run `npm run sync:figma-to-code` once to save component signatures for future change detection.
-6. Start `npm run sync:server` and `npm run dev` in separate VS Code terminals. The plugin connects to `ws://localhost:3055`.
+6. Start `npm run sync:server` and `npm run dev` in separate Code terminals. The plugin connects to `ws://localhost:3055`.
 7. Keep the plugin open for canvas-change notifications. Save/publish changes as appropriate; the server poller also checks the latest saved file version every 30 seconds.
 8. Open the documentation UI at `http://localhost:5173/#figma-components`. New/removed components update the catalog, and generated component pages appear in the sidebar.
 

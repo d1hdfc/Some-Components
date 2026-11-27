@@ -47,10 +47,10 @@ export function SyncConfirmModal({
 
   const dirBadge =
     direction === 'code-to-figma'
-      ? 'VS CODE ➔ FIGMA CANVAS'
+      ? 'Code ➔ FIGMA CANVAS'
       : direction === 'figma-to-github'
         ? 'FIGMA ➔ CODE & GITHUB'
-        : 'FIGMA CANVAS ➔ VS CODE';
+        : 'FIGMA CANVAS ➔ Code';
 
   return (
     <div

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>HDFC Design System — Surgical Bi-Directional Sync</title>
@@ -358,17 +359,20 @@
       letter-spacing: 0.03em;
     }
 
-    .action-pill--added, .action-pill--add {
+    .action-pill--added,
+    .action-pill--add {
       background: #16a34a;
       color: #fff;
     }
 
-    .action-pill--updated, .action-pill--update {
+    .action-pill--updated,
+    .action-pill--update {
       background: #2563eb;
       color: #fff;
     }
 
-    .action-pill--deleted, .action-pill--delete {
+    .action-pill--deleted,
+    .action-pill--delete {
       background: #dc2626;
       color: #fff;
     }
@@ -572,6 +576,7 @@
     }
   </style>
 </head>
+
 <body>
   <!-- Header -->
   <div class="plugin-header">
@@ -608,10 +613,11 @@
     <div id="syncStatusBanner" class="status-banner"></div>
 
     <div class="btn-grid">
-      <button id="syncFigmaToCodeBtn" class="btn" title="Scan changed Figma components/tokens & confirm sync to VS Code">
+      <button id="syncFigmaToCodeBtn" class="btn" title="Scan changed Figma components/tokens & confirm sync to Code">
         Figma ➔ Code
       </button>
-      <button id="syncCodeToFigmaBtn" class="btn btn-code-to-figma" title="Scan edited/deleted code components & confirm sync to Figma">
+      <button id="syncCodeToFigmaBtn" class="btn btn-code-to-figma"
+        title="Scan edited/deleted code components & confirm sync to Figma">
         Code ➔ Figma
       </button>
     </div>
@@ -649,7 +655,8 @@
   </div>
 
   <!-- Pre-Sync Confirmation Modal ("Allow" / "Cancel") -->
-  <div id="confirmModalOverlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="confirmModalTitle">
+  <div id="confirmModalOverlay" class="modal-overlay" role="dialog" aria-modal="true"
+    aria-labelledby="confirmModalTitle">
     <div class="modal-card">
       <div class="modal-header">
         <h3 id="confirmModalTitle">Confirm Pending Sync Changes</h3>
@@ -1013,7 +1020,7 @@
                 addUpdatesToSummaryFeed(updates);
                 const count = updates.length || ((result.createdCount || 0) + (result.updatedCount || 0) + (result.deletedCount || 0));
                 const statusMsg = count > 0
-                  ? `✅ Synced ${count} update(s) from Figma to VS Code & Portal`
+                  ? `✅ Synced ${count} update(s) from Figma to Code & Portal`
                   : '✅ All components & pages are in sync';
                 setBanner('success', statusMsg);
                 log(statusMsg);
@@ -1032,7 +1039,7 @@
                 const count = updates.length || ((result.createdCount || 0) + (result.updatedCount || 0) + (result.deletedCount || 0));
                 const statusMsg = count > 0
                   ? `✅ Applied ${count} code change(s) to Figma Canvas`
-                  : '✅ Figma Canvas is in sync with VS Code';
+                  : '✅ Figma Canvas is in sync with Code';
                 setBanner('success', statusMsg);
                 log(statusMsg);
               } else if (payload.event === 'FIGMA_TO_GITHUB_COMPLETE') {
@@ -1175,4 +1182,5 @@
     connect();
   </script>
 </body>
+
 </html>
